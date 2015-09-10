@@ -23,7 +23,8 @@
 	// * @param {Object} data
 	// */
 	// Action.prototype._notify = function(name, data) {
-	// };
+	// };
+
 	/**
 	 *
 	 * @param {String} name

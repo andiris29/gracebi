@@ -31,9 +31,16 @@
         var i, j;
         var fromExcel = raw.source === 'excel';
         var columnDescriptors = raw.columnDescriptors;
+        // Handler numRecords
+        columnDescriptors.push({
+            'id' : 'numRecords',
+            'name' : '#记录数',
+            'converterType' : ConverterType.NUMBER,
+            'analysisType' : AnalysisType.MEASURE
+        });
+        var numColumns = columnDescriptors.length;
         var rows = raw.rows;
         var numRows = rows.length;
-        var numColumns = columnDescriptors.length;
 
         Log.interaction('parseColumnRows', [numColumns, numRows].join(','));
         if (numRows === 0) {
@@ -70,6 +77,8 @@
         for ( i = numRows - 1; i >= 0; i--) {
             values2d[i] = [];
             var row = rows[i];
+            // Handler numRecords
+            row.push(1);
             for ( j = numColumns - 1; j >= 0; j--) {
                 var cell/*String*/ = row[j];
 
@@ -102,7 +111,8 @@
                         tryExcelDate = false;
                     }
                     var match = DataConvertUtil.match(cell, tryExcelDate);
-                    type = match.type;
+
+                    type = match.type;
                     value = match.value;
                 }
                 if (!converter.numByType[type]) {
@@ -140,7 +150,7 @@
                         }
                         // Set data type when numOfType is greater than 50%
                         if (numOfType / (numRows - numOfAny) > .5) {
-                            if (type === ConverterType.EXCEL_DATE || type === ConverterType.DATE) {
+                            if (type === ConverterType.DATE_IN_EXCEL || type === ConverterType.DATE_IN_TEXT || type === ConverterType.DATE_IN_MS) {
                                 a.valueType(ValueType.DATE);
                             } else if (type === ConverterType.NUMBER) {
                                 a.valueType(ValueType.NUMBER);

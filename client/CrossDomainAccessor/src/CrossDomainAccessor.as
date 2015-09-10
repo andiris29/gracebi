@@ -7,7 +7,7 @@ package {
 	import flash.events.Event;
 	import flash.external.ExternalInterface;
 
-	import iris.external.JS;
+	import andrea.iris.external.JS;
 
 	public class CrossDomainAccessor extends Sprite {
 		private var _readyCallback:String;
@@ -20,8 +20,15 @@ package {
 			_dataCallback = flashVars.dataCallback;
 			_completeCallback = flashVars.completeCallback;
 
-			TOP.appKey = '21613035';
-			TOP.appSecret = '0cdf701594faeb88d2dd5c564bbbe5ce';
+			if (flashVars.appKey === '21700680') {
+				// Development
+				TOP.appKey = '21700680';
+				TOP.appSecret = '98831154902e1129c977cf7f8c2e2145';
+			} else if (flashVars.appKey === '21613035') {
+				// Production
+				TOP.appKey = '21613035';
+				TOP.appSecret = '0cdf701594faeb88d2dd5c564bbbe5ce';
+			}
 
 			if (ExternalInterface.available) {
 				ExternalInterface.addCallback('setAccessToken', function(accessToken:String):void {

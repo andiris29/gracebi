@@ -29,6 +29,10 @@
         return this._$dom;
     };
 
+    View.prototype.destroy = function() {
+        this._$dom.empty().detach();
+    };
+    
     View.prototype.activateAnimation = function() {
         this._animationActivated = true;
     };
@@ -59,7 +63,7 @@
             return {
                 width : this._explicitWidth != null ? this._explicitWidth : this._measuredWidth,
                 height : this._explicitHeight != null ? this._explicitHeight : this._measuredHeight,
-            }
+            };
         }
     };
     View.prototype.invalidateSize = function() {

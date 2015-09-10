@@ -4,18 +4,24 @@
     var DataSourceEvent = grace.views.analysisContainer.events.DataSourceEvent;
     var Log = grace.managers.Log;
     var URLUtil = grace.utils.URLUtil;
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel;
+    var SerializeManager = grace.managers.SerializeManager;
 
     andrea.blink.declare("andrea.grace.Grace");
-    var Grace = grace.Grace = function(dependencyFiles) {
+    var Grace = grace.Grace = function(dependentJSs, dependentCSSs) {
         var hashPairs = URLUtil.hashPairs();
         Log.user = hashPairs.andrea_user ? hashPairs.andrea_user : 'user';
         Log.interaction('open', JSON.stringify($.browser));
-        // Static
-        Grace._instance = this;
 
         $($.proxy(function() {
             // Load dependency js files for DataDiscovery
-            LazyLoad.js(dependencyFiles, $.proxy(this._jsReady, this));
+            LazyLoad.js(dependentJSs, $.proxy(function() {
+                if (dependentCSSs && dependentCSSs.length) {
+                    LazyLoad.css(dependentCSSs, $.proxy(this._jsReady, this));
+                } else {
+                    this._jsReady();
+                }
+            }, this));
             //
             this._$dataSource = $('#divDataSource');
             this._$dataDiscovery = $("#divDataDiscovery");
@@ -24,7 +30,7 @@
             });
 
             var dataSource = this._dataSource = new grace.DataSource(this._$dataSource[0]);
-            dataSource.addEventListener(DataSourceEvent.DATA_SOURCE_READY, this._dataSourceDataSourceReadyHandler, this);
+            dataSource.addEventListener(DataSourceEvent.DATA_PROVIDER_READY, this._dataSourceDataSourceReadyHandler, this);
         }, this));
 
         this._dataSource = null;
@@ -33,51 +39,26 @@
 
         this._lazyLoading = true;
         this._dp = null;
+        this._dsInfo = null;
 
-    };
-    // ------------------------------------
-    // Static for flash
-    // ------------------------------------
-    Grace._instance = null;
-
-    Grace._flashCallback = function(context, handler, args) {
-        _.defer($.proxy(function() {
-            this[handler].apply(this, arguments[0]);
-        }, context), args);
-    };
-    // File accessor callbacks
-    Grace.faHoverCallback = function(hover) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faHoverHandler', arguments);
-    };
-    Grace.faClickCallback = function(hover) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faClickHandler', arguments);
-    };
-    Grace.faCancelCallback = function(rows, columnDescriptors) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faCancelHandler', arguments);
-    };
-    Grace.faDataCallback = function(rows, columnDescriptors) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faDataHandler', arguments);
-        return true;
-    };
-    // Cross domain accessor callbacks
-    Grace.cdaReadyCallback = function() {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaReadyHandler', arguments);
-    };
-    Grace.cdaDataCallback = function(response) {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaDataHandler', arguments);
-    };
-    Grace.cdaCompleteCallback = function() {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaCompleteHandler', arguments);
+        this._startup();
     };
     // ------------------------------------
     // Private methods
     // ------------------------------------
+    Grace.prototype._startup = function() {
+    };
     // Goto DataDiscovery
     Grace.prototype._dataSourceDataSourceReadyHandler = function(event) {
-        this._dp = event.data;
+        this._dp = event.data.dataProvider;
+        this._dsInfo = event.data.dsInfo;
         this._gotoDataDiscovery();
-    }
+    };
     Grace.prototype._jsReady = function() {
+        ZeroClipboard.config({
+            'moviePath' : grace.Settings.zeroClipboard.moviePath
+        });
+
         this._lazyLoading = false;
         this._gotoDataDiscovery();
     };
@@ -91,6 +72,7 @@
         this._dataSource.destroy();
         // Draw data discovery
         var dataDiscovery = new grace.DataDiscovery(this._$dataDiscovery[0]);
+        SerializeManager.instance().saveDataSource(this._dsInfo);
         dataDiscovery.rowBasedDataProvider(this._dp.rows, this._dp.columnDescriptors, this._dp.source);
 
         // Play animation
@@ -98,10 +80,20 @@
             '$page' : this._$dataSource,
             'classes' : ['pt-page-scaleDownCenter']
         }, {
-            '$page' : this._$dataDiscovery,            'classes' : ['pt-page-scaleUpCenter'],
+            '$page' : this._$dataDiscovery,
+            'classes' : ['pt-page-scaleUpCenter'],
             'delay' : 180
         }, $.proxy(function() {
-            this._$dataSource.css('z-index', -1);
+            this._$dataSource.css({
+                'z-index' : -1,
+                'width' : '0px',
+                'height' : '0px',
+                'overflow' : 'hidden'
+            });
+            // Could not set display to none here, since save file swf will be unloaded when display = none.
+            // this._$dataSource.css('display', 'none');
+
+            dataDiscovery.loadCollaboration();
         }, this));
         _.defer(function() {
             pt.play();

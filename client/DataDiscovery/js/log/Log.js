@@ -50,27 +50,30 @@
         }
         Log._logCache[level].push(msg);
     };
+    Log._logServer = grace.Settings.log.url;
     Log._releaseCache = function() {
-        if (!Log._logCache) {
+        if (!Log._logCache || !Log._logServer) {
             return;
         }
         for (var level in Log._logCache) {
             var msg = Log._logCache[level].join(Log.LINE_SPLITTER);
             $.ajax({
                 'dataType' : 'json',
-                'url' : grace.Settings.log.url,
+                'url' : Log._logServer,
                 'data' : {
                     'level' : level,
                     'msg' : msg
                 },
                 'type' : 'POST'
+            }).fail(function() {
+                Log._logServer = null;
             });
         }
         Log._logCache = null;
-    }
+    };
     Log._time = function() {
         var d = new Date();
         var t = d.getTime().toString();
         return d.format('yyyy/MM/dd HH:mm:ss') + ',' + t.substr(t.length - 3);
-    }
+    };
 })(jQuery);

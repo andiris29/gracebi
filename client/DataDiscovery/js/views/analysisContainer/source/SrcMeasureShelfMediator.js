@@ -17,7 +17,7 @@
 
 	SrcMeasureShelfMediator.prototype.init = function() {
 		SrcMeasureShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
 	SrcMeasureShelfMediator.prototype._dataProviderChangedHandler = function() {
 		SrcMeasureShelfMediator.superclass._dataProviderChangedHandler.apply(this, arguments);
@@ -34,6 +34,5 @@
 			}
 		}
         this._view.activateAnimation();
-
-	}
+	};
 })(jQuery);

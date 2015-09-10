@@ -88,7 +88,7 @@ package andrea.taoSDK.loader {
 						throw new Error('Can not found total_results.');
 					}
 				}
-				if (content.total_results) {
+				if (!isNaN(content.total_results)) {
 					return Number(content.total_results);
 				} else {
 					throw new Error('Can not found total_results.');

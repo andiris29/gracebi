@@ -10,8 +10,9 @@
 	ConverterType.BOOLEAN = 'boolean';
 	ConverterType.STRING = 'string';
 	ConverterType.NUMBER = 'number';
-	ConverterType.EXCEL_DATE = 'excelDate';
-	ConverterType.DATE = 'date';
+	ConverterType.DATE_IN_EXCEL = 'dataInExcel';
+	ConverterType.DATE_IN_TEXT = 'dateInText';
+	ConverterType.DATE_IN_MS = 'dateInMS';
 
 	ConverterType._dateFormats = (function() {
 		var array = [];
@@ -28,7 +29,7 @@
 	})();
 	ConverterType.getDateFormats = function() {
 		return ConverterType._dateFormats;
-	}
+	};
 	ConverterType._monthFormats = (function() {
 		var array = [];
 		array.push('yyyy/M');
@@ -38,5 +39,5 @@
 	})();
 	ConverterType.getMonthFormats = function() {
 		return ConverterType._monthFormats;
-	}
+	};
 })();

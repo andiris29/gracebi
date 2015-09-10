@@ -66,7 +66,9 @@
             array.push('    ' + HighChartsOption.saToDisplayAbbr(dataSAs[2]) + ': {point.z}');
         }
         pointFormat = array.join("<br/>");
-        var headerFormat;        headerFormat = '';
+        var headerFormat;
+        headerFormat = '';
+
         // TODO Merge to tooltip
         highConfig.plotOptions = {
             "series" : {
@@ -78,7 +80,8 @@
         };
         highConfig.tooltip = {
             hideDelay : 240
-        };
+        };
+
         // Edit the common data config
         var highSeries;
         var highSeriesData;
@@ -116,7 +119,9 @@
                 'color' : 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', .65)'
             })
         }
-        highConfig.series = highSeries;        var multiSeries = highConfig.series.length > 1;
+        highConfig.series = highSeries;
+
+        var multiSeries = highConfig.series.length > 1;
         highConfig = _.defaults(highConfig, HighChartsOption.genLegend(multiSeries));
 
         if (highConfig.series.length > 50 || (highConfig.series.length * highConfig.series[0].data.length > 1000)) {

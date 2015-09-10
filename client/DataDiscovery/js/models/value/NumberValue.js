@@ -8,9 +8,6 @@
     };
     andrea.blink.extend(NumberValue, andrea.grace.models.value.ValueBase);
 
-    NumberValue.parseQuantified = function(quantified) {
-        return new NumberValue(quantified.toString(), quantified);
-    };
     NumberValue.prototype.quantified = function() {
         return this._value;
     };

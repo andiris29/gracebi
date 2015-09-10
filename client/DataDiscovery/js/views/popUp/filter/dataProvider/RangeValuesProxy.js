@@ -28,9 +28,9 @@
 		}
 	};
 	RangeValuesProxy.prototype.getMinCaption = function(value) {
-		return this.filter.parseQuantified(this.min()).caption();
+		return this.filter.fromQuantified(this.min()).caption();
 	};
 	RangeValuesProxy.prototype.getMaxCaption = function(value) {
-		return this.filter.parseQuantified(this.max()).caption();
+		return this.filter.fromQuantified(this.max()).caption();
 	};
 })(jQuery);

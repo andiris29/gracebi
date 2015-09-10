@@ -10,11 +10,17 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'VideoJS';
+    src: url('../font/vjs.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     background: #f0f0f0;
     margin: 0px;
 }
-html, body, input, select, textarea, button {
+html, body, input, select, textarea, button, p {
     font: 13px/18px Arial, Helvetica, sans-serif, FontAwesome;
     /*    "MicroSoft YaHei" "微软雅黑", */
     color: #393939;
@@ -26,6 +32,8 @@ html, body, input, select, textarea, button {
 }
 .grace-popup-layer {
     position: absolute;
+    top: 0px;
+    left: 0px;
     z-index: 1;
 }
 a {
@@ -83,4 +91,12 @@ input[type="radio"] + label span[usage="icon"] {
 
 input[type="radio"]:checked + label span[usage="icon"] {
     background: url('../assets/component/check_radio_sheet.png') -57px top no-repeat;
+}
+
+a:focus {
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
 }

@@ -17,7 +17,7 @@
 
     SrcDimensionShelfMediator.prototype.init = function() {
         SrcDimensionShelfMediator.superclass.init.apply(this, arguments);
-    }
+    };
 
     SrcDimensionShelfMediator.prototype._dataProviderChangedHandler = function() {
         SrcDimensionShelfMediator.superclass._dataProviderChangedHandler.apply(this, arguments);
@@ -31,5 +31,5 @@
             }
         }
         this._view.activateAnimation();
-    }
+    };
 })(jQuery);

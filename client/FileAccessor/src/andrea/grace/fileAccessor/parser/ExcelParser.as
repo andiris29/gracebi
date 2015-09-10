@@ -2,10 +2,10 @@ package andrea.grace.fileAccessor.parser {
 	import flash.events.EventDispatcher;
 	import flash.geom.Rectangle;
 
-	import iris.excelas.expose.ICell;
-	import iris.excelas.expose.IExcel;
-	import iris.excelas.expose.IRow;
-	import iris.excelas.expose.ISheet;
+	import andrea.iris.excelas.expose.ICell;
+	import andrea.iris.excelas.expose.IExcel;
+	import andrea.iris.excelas.expose.IRow;
+	import andrea.iris.excelas.expose.ISheet;
 
 	public class ExcelParser extends EventDispatcher implements IParser {
 		private var _this:ExcelParser;

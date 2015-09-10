@@ -1,4 +1,7 @@
-/*jslint browser: true, eqeqeq: true, bitwise: true, newcap: true, immed: true, regexp: false */
+/* Modernizr 2.7.1 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-touch-teststyles-prefixes
+ */
+;window.Modernizr=function(a,b,c){function v(a){i.cssText=a}function w(a,b){return v(l.join(a+";")+(b||""))}function x(a,b){return typeof a===b}function y(a,b){return!!~(""+a).indexOf(b)}function z(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:x(f,"function")?f.bind(d||b):f}return!1}var d="2.7.1",e={},f=b.documentElement,g="modernizr",h=b.createElement(g),i=h.style,j,k={}.toString,l=" -webkit- -moz- -o- -ms- ".split(" "),m={},n={},o={},p=[],q=p.slice,r,s=function(a,c,d,e){var h,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:g+(d+1),l.appendChild(j);return h=["&#173;",'<style id="s',g,'">',a,"</style>"].join(""),l.id=g,(m?l:n).innerHTML+=h,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=f.style.overflow,f.style.overflow="hidden",f.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),f.style.overflow=k),!!i},t={}.hasOwnProperty,u;!x(t,"undefined")&&!x(t.call,"undefined")?u=function(a,b){return t.call(a,b)}:u=function(a,b){return b in a&&x(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=q.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(q.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(q.call(arguments)))};return e}),m.touch=function(){var c;return"ontouchstart"in a||a.DocumentTouch&&b instanceof DocumentTouch?c=!0:s(["@media (",l.join("touch-enabled),("),g,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(a){c=a.offsetTop===9}),c};for(var A in m)u(m,A)&&(r=A.toLowerCase(),e[r]=m[A](),p.push((e[r]?"":"no-")+r));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)u(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof enableClasses!="undefined"&&enableClasses&&(f.className+=" "+(b?"":"no-")+a),e[a]=b}return e},v(""),h=j=null,e._version=d,e._prefixes=l,e.testStyles=s,e}(this,this.document);/*jslint browser: true, eqeqeq: true, bitwise: true, newcap: true, immed: true, regexp: false */
 
 /**
 LazyLoad makes it easy and painless to lazily load one or more external
@@ -2235,6 +2238,771 @@ Date.prototype.add = function(interval, number) {
 	}
 	
 })(jQuery);
+/*! Video.js v4.3.0 Copyright 2013 Brightcove, Inc. https://github.com/videojs/video.js/blob/master/LICENSE */ (function() {var b=void 0,f=!0,h=null,l=!1;function m(){return function(){}}function p(a){return function(){return this[a]}}function s(a){return function(){return a}}var t;document.createElement("video");document.createElement("audio");document.createElement("track");function u(a,c,d){if("string"===typeof a){0===a.indexOf("#")&&(a=a.slice(1));if(u.xa[a])return u.xa[a];a=u.w(a)}if(!a||!a.nodeName)throw new TypeError("The element or ID supplied is not valid. (videojs)");return a.player||new u.s(a,c,d)}var v=u;
+window.Td=window.Ud=u;u.Tb="4.3";u.Fc="https:"==document.location.protocol?"https://":"http://";u.options={techOrder:["html5","flash"],html5:{},flash:{},width:300,height:150,defaultVolume:0,children:{mediaLoader:{},posterImage:{},textTrackDisplay:{},loadingSpinner:{},bigPlayButton:{},controlBar:{}},notSupportedMessage:'Sorry, no compatible source and playback technology were found for this video. Try using another browser like <a href="http://bit.ly/ccMUEC">Chrome</a> or download the latest <a href="http://adobe.ly/mwfN1">Adobe Flash Player</a>.'};
+"GENERATED_CDN_VSN"!==u.Tb&&(v.options.flash.swf=u.Fc+"vjs.zencdn.net/"+u.Tb+"/video-js.swf");u.xa={};u.la=u.CoreObject=m();u.la.extend=function(a){var c,d;a=a||{};c=a.init||a.i||this.prototype.init||this.prototype.i||m();d=function(){c.apply(this,arguments)};d.prototype=u.k.create(this.prototype);d.prototype.constructor=d;d.extend=u.la.extend;d.create=u.la.create;for(var e in a)a.hasOwnProperty(e)&&(d.prototype[e]=a[e]);return d};
+u.la.create=function(){var a=u.k.create(this.prototype);this.apply(a,arguments);return a};u.d=function(a,c,d){var e=u.getData(a);e.z||(e.z={});e.z[c]||(e.z[c]=[]);d.t||(d.t=u.t++);e.z[c].push(d);e.W||(e.disabled=l,e.W=function(c){if(!e.disabled){c=u.kc(c);var d=e.z[c.type];if(d)for(var d=d.slice(0),k=0,q=d.length;k<q&&!c.pc();k++)d[k].call(a,c)}});1==e.z[c].length&&(document.addEventListener?a.addEventListener(c,e.W,l):document.attachEvent&&a.attachEvent("on"+c,e.W))};
+u.o=function(a,c,d){if(u.oc(a)){var e=u.getData(a);if(e.z)if(c){var g=e.z[c];if(g){if(d){if(d.t)for(e=0;e<g.length;e++)g[e].t===d.t&&g.splice(e--,1)}else e.z[c]=[];u.gc(a,c)}}else for(g in e.z)c=g,e.z[c]=[],u.gc(a,c)}};u.gc=function(a,c){var d=u.getData(a);0===d.z[c].length&&(delete d.z[c],document.removeEventListener?a.removeEventListener(c,d.W,l):document.detachEvent&&a.detachEvent("on"+c,d.W));u.Bb(d.z)&&(delete d.z,delete d.W,delete d.disabled);u.Bb(d)&&u.vc(a)};
+u.kc=function(a){function c(){return f}function d(){return l}if(!a||!a.Cb){var e=a||window.event;a={};for(var g in e)"layerX"!==g&&"layerY"!==g&&(a[g]=e[g]);a.target||(a.target=a.srcElement||document);a.relatedTarget=a.fromElement===a.target?a.toElement:a.fromElement;a.preventDefault=function(){e.preventDefault&&e.preventDefault();a.returnValue=l;a.Ab=c};a.Ab=d;a.stopPropagation=function(){e.stopPropagation&&e.stopPropagation();a.cancelBubble=f;a.Cb=c};a.Cb=d;a.stopImmediatePropagation=function(){e.stopImmediatePropagation&&
+e.stopImmediatePropagation();a.pc=c;a.stopPropagation()};a.pc=d;if(a.clientX!=h){g=document.documentElement;var j=document.body;a.pageX=a.clientX+(g&&g.scrollLeft||j&&j.scrollLeft||0)-(g&&g.clientLeft||j&&j.clientLeft||0);a.pageY=a.clientY+(g&&g.scrollTop||j&&j.scrollTop||0)-(g&&g.clientTop||j&&j.clientTop||0)}a.which=a.charCode||a.keyCode;a.button!=h&&(a.button=a.button&1?0:a.button&4?1:a.button&2?2:0)}return a};
+u.j=function(a,c){var d=u.oc(a)?u.getData(a):{},e=a.parentNode||a.ownerDocument;"string"===typeof c&&(c={type:c,target:a});c=u.kc(c);d.W&&d.W.call(a,c);if(e&&!c.Cb()&&c.bubbles!==l)u.j(e,c);else if(!e&&!c.Ab()&&(d=u.getData(c.target),c.target[c.type])){d.disabled=f;if("function"===typeof c.target[c.type])c.target[c.type]();d.disabled=l}return!c.Ab()};u.U=function(a,c,d){function e(){u.o(a,c,e);d.apply(this,arguments)}e.t=d.t=d.t||u.t++;u.d(a,c,e)};var w=Object.prototype.hasOwnProperty;
+u.e=function(a,c){var d,e;d=document.createElement(a||"div");for(e in c)w.call(c,e)&&(-1!==e.indexOf("aria-")||"role"==e?d.setAttribute(e,c[e]):d[e]=c[e]);return d};u.$=function(a){return a.charAt(0).toUpperCase()+a.slice(1)};u.k={};u.k.create=Object.create||function(a){function c(){}c.prototype=a;return new c};u.k.ua=function(a,c,d){for(var e in a)w.call(a,e)&&c.call(d||this,e,a[e])};u.k.B=function(a,c){if(!c)return a;for(var d in c)w.call(c,d)&&(a[d]=c[d]);return a};
+u.k.ic=function(a,c){var d,e,g;a=u.k.copy(a);for(d in c)w.call(c,d)&&(e=a[d],g=c[d],a[d]=u.k.qc(e)&&u.k.qc(g)?u.k.ic(e,g):c[d]);return a};u.k.copy=function(a){return u.k.B({},a)};u.k.qc=function(a){return!!a&&"object"===typeof a&&"[object Object]"===a.toString()&&a.constructor===Object};u.bind=function(a,c,d){function e(){return c.apply(a,arguments)}c.t||(c.t=u.t++);e.t=d?d+"_"+c.t:c.t;return e};u.ra={};u.t=1;u.expando="vdata"+(new Date).getTime();
+u.getData=function(a){var c=a[u.expando];c||(c=a[u.expando]=u.t++,u.ra[c]={});return u.ra[c]};u.oc=function(a){a=a[u.expando];return!(!a||u.Bb(u.ra[a]))};u.vc=function(a){var c=a[u.expando];if(c){delete u.ra[c];try{delete a[u.expando]}catch(d){a.removeAttribute?a.removeAttribute(u.expando):a[u.expando]=h}}};u.Bb=function(a){for(var c in a)if(a[c]!==h)return l;return f};u.n=function(a,c){-1==(" "+a.className+" ").indexOf(" "+c+" ")&&(a.className=""===a.className?c:a.className+" "+c)};
+u.u=function(a,c){var d,e;if(-1!=a.className.indexOf(c)){d=a.className.split(" ");for(e=d.length-1;0<=e;e--)d[e]===c&&d.splice(e,1);a.className=d.join(" ")}};u.na=u.e("video");u.F=navigator.userAgent;u.Mc=/iPhone/i.test(u.F);u.Lc=/iPad/i.test(u.F);u.Nc=/iPod/i.test(u.F);u.Kc=u.Mc||u.Lc||u.Nc;var aa=u,x;var y=u.F.match(/OS (\d+)_/i);x=y&&y[1]?y[1]:b;aa.Fd=x;u.Ic=/Android/i.test(u.F);var ba=u,z;var A=u.F.match(/Android (\d+)(?:\.(\d+))?(?:\.(\d+))*/i),B,C;
+A?(B=A[1]&&parseFloat(A[1]),C=A[2]&&parseFloat(A[2]),z=B&&C?parseFloat(A[1]+"."+A[2]):B?B:h):z=h;ba.Gc=z;u.Oc=u.Ic&&/webkit/i.test(u.F)&&2.3>u.Gc;u.Jc=/Firefox/i.test(u.F);u.Gd=/Chrome/i.test(u.F);u.ac=!!("ontouchstart"in window||window.Hc&&document instanceof window.Hc);
+u.xb=function(a){var c,d,e,g;c={};if(a&&a.attributes&&0<a.attributes.length){d=a.attributes;for(var j=d.length-1;0<=j;j--){e=d[j].name;g=d[j].value;if("boolean"===typeof a[e]||-1!==",autoplay,controls,loop,muted,default,".indexOf(","+e+","))g=g!==h?f:l;c[e]=g}}return c};
+u.Kd=function(a,c){var d="";document.defaultView&&document.defaultView.getComputedStyle?d=document.defaultView.getComputedStyle(a,"").getPropertyValue(c):a.currentStyle&&(d=a["client"+c.substr(0,1).toUpperCase()+c.substr(1)]+"px");return d};u.zb=function(a,c){c.firstChild?c.insertBefore(a,c.firstChild):c.appendChild(a)};u.Pb={};u.w=function(a){0===a.indexOf("#")&&(a=a.slice(1));return document.getElementById(a)};
+u.La=function(a,c){c=c||a;var d=Math.floor(a%60),e=Math.floor(a/60%60),g=Math.floor(a/3600),j=Math.floor(c/60%60),k=Math.floor(c/3600);if(isNaN(a)||Infinity===a)g=e=d="-";g=0<g||0<k?g+":":"";return g+(((g||10<=j)&&10>e?"0"+e:e)+":")+(10>d?"0"+d:d)};u.Tc=function(){document.body.focus();document.onselectstart=s(l)};u.Bd=function(){document.onselectstart=s(f)};u.trim=function(a){return(a+"").replace(/^\s+|\s+$/g,"")};u.round=function(a,c){c||(c=0);return Math.round(a*Math.pow(10,c))/Math.pow(10,c)};
+u.tb=function(a,c){return{length:1,start:function(){return a},end:function(){return c}}};
+u.get=function(a,c,d){var e,g;"undefined"===typeof XMLHttpRequest&&(window.XMLHttpRequest=function(){try{return new window.ActiveXObject("Msxml2.XMLHTTP.6.0")}catch(a){}try{return new window.ActiveXObject("Msxml2.XMLHTTP.3.0")}catch(c){}try{return new window.ActiveXObject("Msxml2.XMLHTTP")}catch(d){}throw Error("This browser does not support XMLHttpRequest.");});g=new XMLHttpRequest;try{g.open("GET",a)}catch(j){d(j)}e=0===a.indexOf("file:")||0===window.location.href.indexOf("file:")&&-1===a.indexOf("http");
+g.onreadystatechange=function(){4===g.readyState&&(200===g.status||e&&0===g.status?c(g.responseText):d&&d())};try{g.send()}catch(k){d&&d(k)}};u.td=function(a){try{var c=window.localStorage||l;c&&(c.volume=a)}catch(d){22==d.code||1014==d.code?u.log("LocalStorage Full (VideoJS)",d):18==d.code?u.log("LocalStorage not allowed (VideoJS)",d):u.log("LocalStorage Error (VideoJS)",d)}};u.mc=function(a){a.match(/^https?:\/\//)||(a=u.e("div",{innerHTML:'<a href="'+a+'">x</a>'}).firstChild.href);return a};
+u.log=function(){u.log.history=u.log.history||[];u.log.history.push(arguments);window.console&&window.console.log(Array.prototype.slice.call(arguments))};u.ad=function(a){var c,d;a.getBoundingClientRect&&a.parentNode&&(c=a.getBoundingClientRect());if(!c)return{left:0,top:0};a=document.documentElement;d=document.body;return{left:c.left+(window.pageXOffset||d.scrollLeft)-(a.clientLeft||d.clientLeft||0),top:c.top+(window.pageYOffset||d.scrollTop)-(a.clientTop||d.clientTop||0)}};
+u.c=u.la.extend({i:function(a,c,d){this.b=a;this.g=u.k.copy(this.g);c=this.options(c);this.Q=c.id||(c.el&&c.el.id?c.el.id:a.id()+"_component_"+u.t++);this.gd=c.name||h;this.a=c.el||this.e();this.G=[];this.qb={};this.V={};if((a=this.g)&&a.children){var e=this;u.k.ua(a.children,function(a,c){c!==l&&!c.loadEvent&&(e[a]=e.Z(a,c))})}this.L(d)}});t=u.c.prototype;
+t.D=function(){this.j("dispose");if(this.G)for(var a=this.G.length-1;0<=a;a--)this.G[a].D&&this.G[a].D();this.V=this.qb=this.G=h;this.o();this.a.parentNode&&this.a.parentNode.removeChild(this.a);u.vc(this.a);this.a=h};t.b=f;t.K=p("b");t.options=function(a){return a===b?this.g:this.g=u.k.ic(this.g,a)};t.e=function(a,c){return u.e(a,c)};t.w=p("a");t.id=p("Q");t.name=p("gd");t.children=p("G");
+t.Z=function(a,c){var d,e;"string"===typeof a?(e=a,c=c||{},d=c.componentClass||u.$(e),c.name=e,d=new window.videojs[d](this.b||this,c)):d=a;this.G.push(d);"function"===typeof d.id&&(this.qb[d.id()]=d);(e=e||d.name&&d.name())&&(this.V[e]=d);"function"===typeof d.el&&d.el()&&(this.sa||this.a).appendChild(d.el());return d};
+t.removeChild=function(a){"string"===typeof a&&(a=this.V[a]);if(a&&this.G){for(var c=l,d=this.G.length-1;0<=d;d--)if(this.G[d]===a){c=f;this.G.splice(d,1);break}c&&(this.qb[a.id]=h,this.V[a.name]=h,(c=a.w())&&c.parentNode===(this.sa||this.a)&&(this.sa||this.a).removeChild(a.w()))}};t.T=s("");t.d=function(a,c){u.d(this.a,a,u.bind(this,c));return this};t.o=function(a,c){u.o(this.a,a,c);return this};t.U=function(a,c){u.U(this.a,a,u.bind(this,c));return this};t.j=function(a,c){u.j(this.a,a,c);return this};
+t.L=function(a){a&&(this.aa?a.call(this):(this.Sa===b&&(this.Sa=[]),this.Sa.push(a)));return this};t.Ua=function(){this.aa=f;var a=this.Sa;if(a&&0<a.length){for(var c=0,d=a.length;c<d;c++)a[c].call(this);this.Sa=[];this.j("ready")}};t.n=function(a){u.n(this.a,a);return this};t.u=function(a){u.u(this.a,a);return this};t.show=function(){this.a.style.display="block";return this};t.C=function(){this.a.style.display="none";return this};function D(a){a.u("vjs-lock-showing")}
+t.disable=function(){this.C();this.show=m()};t.width=function(a,c){return E(this,"width",a,c)};t.height=function(a,c){return E(this,"height",a,c)};t.Xc=function(a,c){return this.width(a,f).height(c)};function E(a,c,d,e){if(d!==b)return a.a.style[c]=-1!==(""+d).indexOf("%")||-1!==(""+d).indexOf("px")?d:"auto"===d?"":d+"px",e||a.j("resize"),a;if(!a.a)return 0;d=a.a.style[c];e=d.indexOf("px");return-1!==e?parseInt(d.slice(0,e),10):parseInt(a.a["offset"+u.$(c)],10)}
+u.q=u.c.extend({i:function(a,c){u.c.call(this,a,c);var d=l;this.d("touchstart",function(a){a.preventDefault();d=f});this.d("touchmove",function(){d=l});var e=this;this.d("touchend",function(a){d&&e.p(a);a.preventDefault()});this.d("click",this.p);this.d("focus",this.Oa);this.d("blur",this.Na)}});t=u.q.prototype;
+t.e=function(a,c){c=u.k.B({className:this.T(),innerHTML:'<div class="vjs-control-content"><span class="vjs-control-text">'+(this.qa||"Need Text")+"</span></div>",qd:"button","aria-live":"polite",tabIndex:0},c);return u.c.prototype.e.call(this,a,c)};t.T=function(){return"vjs-control "+u.c.prototype.T.call(this)};t.p=m();t.Oa=function(){u.d(document,"keyup",u.bind(this,this.ba))};t.ba=function(a){if(32==a.which||13==a.which)a.preventDefault(),this.p()};
+t.Na=function(){u.o(document,"keyup",u.bind(this,this.ba))};u.O=u.c.extend({i:function(a,c){u.c.call(this,a,c);this.Sc=this.V[this.g.barName];this.handle=this.V[this.g.handleName];a.d(this.tc,u.bind(this,this.update));this.d("mousedown",this.Pa);this.d("touchstart",this.Pa);this.d("focus",this.Oa);this.d("blur",this.Na);this.d("click",this.p);this.b.d("controlsvisible",u.bind(this,this.update));a.L(u.bind(this,this.update));this.P={}}});t=u.O.prototype;
+t.e=function(a,c){c=c||{};c.className+=" vjs-slider";c=u.k.B({qd:"slider","aria-valuenow":0,"aria-valuemin":0,"aria-valuemax":100,tabIndex:0},c);return u.c.prototype.e.call(this,a,c)};t.Pa=function(a){a.preventDefault();u.Tc();this.P.move=u.bind(this,this.Hb);this.P.end=u.bind(this,this.Ib);u.d(document,"mousemove",this.P.move);u.d(document,"mouseup",this.P.end);u.d(document,"touchmove",this.P.move);u.d(document,"touchend",this.P.end);this.Hb(a)};
+t.Ib=function(){u.Bd();u.o(document,"mousemove",this.P.move,l);u.o(document,"mouseup",this.P.end,l);u.o(document,"touchmove",this.P.move,l);u.o(document,"touchend",this.P.end,l);this.update()};t.update=function(){if(this.a){var a,c=this.yb(),d=this.handle,e=this.Sc;isNaN(c)&&(c=0);a=c;if(d){a=this.a.offsetWidth;var g=d.w().offsetWidth;a=g?g/a:0;c*=1-a;a=c+a/2;d.w().style.left=u.round(100*c,2)+"%"}e.w().style.width=u.round(100*a,2)+"%"}};
+function F(a,c){var d,e,g,j;d=a.a;e=u.ad(d);j=g=d.offsetWidth;d=a.handle;if(a.g.Cd)return j=e.top,e=c.changedTouches?c.changedTouches[0].pageY:c.pageY,d&&(d=d.w().offsetHeight,j+=d/2,g-=d),Math.max(0,Math.min(1,(j-e+g)/g));g=e.left;e=c.changedTouches?c.changedTouches[0].pageX:c.pageX;d&&(d=d.w().offsetWidth,g+=d/2,j-=d);return Math.max(0,Math.min(1,(e-g)/j))}t.Oa=function(){u.d(document,"keyup",u.bind(this,this.ba))};
+t.ba=function(a){37==a.which?(a.preventDefault(),this.yc()):39==a.which&&(a.preventDefault(),this.zc())};t.Na=function(){u.o(document,"keyup",u.bind(this,this.ba))};t.p=function(a){a.stopImmediatePropagation();a.preventDefault()};u.ea=u.c.extend();u.ea.prototype.defaultValue=0;u.ea.prototype.e=function(a,c){c=c||{};c.className+=" vjs-slider-handle";c=u.k.B({innerHTML:'<span class="vjs-control-text">'+this.defaultValue+"</span>"},c);return u.c.prototype.e.call(this,"div",c)};u.ma=u.c.extend();
+function ca(a,c){a.Z(c);c.d("click",u.bind(a,function(){D(this)}))}u.ma.prototype.e=function(){var a=this.options().Vc||"ul";this.sa=u.e(a,{className:"vjs-menu-content"});a=u.c.prototype.e.call(this,"div",{append:this.sa,className:"vjs-menu"});a.appendChild(this.sa);u.d(a,"click",function(a){a.preventDefault();a.stopImmediatePropagation()});return a};u.N=u.q.extend({i:function(a,c){u.q.call(this,a,c);this.selected(c.selected)}});
+u.N.prototype.e=function(a,c){return u.q.prototype.e.call(this,"li",u.k.B({className:"vjs-menu-item",innerHTML:this.g.label},c))};u.N.prototype.p=function(){this.selected(f)};u.N.prototype.selected=function(a){a?(this.n("vjs-selected"),this.a.setAttribute("aria-selected",f)):(this.u("vjs-selected"),this.a.setAttribute("aria-selected",l))};
+u.R=u.q.extend({i:function(a,c){u.q.call(this,a,c);this.wa=this.Ka();this.Z(this.wa);this.I&&0===this.I.length&&this.C();this.d("keyup",this.ba);this.a.setAttribute("aria-haspopup",f);this.a.setAttribute("role","button")}});t=u.R.prototype;t.pa=l;t.Ka=function(){var a=new u.ma(this.b);this.options().title&&a.w().appendChild(u.e("li",{className:"vjs-menu-title",innerHTML:u.$(this.A),zd:-1}));if(this.I=this.createItems())for(var c=0;c<this.I.length;c++)ca(a,this.I[c]);return a};t.ta=m();
+t.T=function(){return this.className+" vjs-menu-button "+u.q.prototype.T.call(this)};t.Oa=m();t.Na=m();t.p=function(){this.U("mouseout",u.bind(this,function(){D(this.wa);this.a.blur()}));this.pa?G(this):H(this)};t.ba=function(a){a.preventDefault();32==a.which||13==a.which?this.pa?G(this):H(this):27==a.which&&this.pa&&G(this)};function H(a){a.pa=f;a.wa.n("vjs-lock-showing");a.a.setAttribute("aria-pressed",f);a.I&&0<a.I.length&&a.I[0].w().focus()}
+function G(a){a.pa=l;D(a.wa);a.a.setAttribute("aria-pressed",l)}
+u.s=u.c.extend({i:function(a,c,d){this.M=a;c=u.k.B(da(a),c);this.v={};this.uc=c.poster;this.sb=c.controls;a.controls=l;u.c.call(this,this,c,d);this.controls()?this.n("vjs-controls-enabled"):this.n("vjs-controls-disabled");this.U("play",function(a){u.j(this.a,{type:"firstplay",target:this.a})||(a.preventDefault(),a.stopPropagation(),a.stopImmediatePropagation())});this.d("ended",this.hd);this.d("play",this.Kb);this.d("firstplay",this.jd);this.d("pause",this.Jb);this.d("progress",this.ld);this.d("durationchange",
+this.sc);this.d("error",this.Gb);this.d("fullscreenchange",this.kd);u.xa[this.Q]=this;c.plugins&&u.k.ua(c.plugins,function(a,c){this[a](c)},this);var e,g,j,k;e=this.Mb;a=function(){e();clearInterval(g);g=setInterval(u.bind(this,e),250)};c=function(){e();clearInterval(g)};this.d("mousedown",a);this.d("mousemove",e);this.d("mouseup",c);this.d("keydown",e);this.d("keyup",e);this.d("touchstart",a);this.d("touchmove",e);this.d("touchend",c);this.d("touchcancel",c);j=setInterval(u.bind(this,function(){this.ka&&
+(this.ka=l,this.ja(f),clearTimeout(k),k=setTimeout(u.bind(this,function(){this.ka||this.ja(l)}),2E3))}),250);this.d("dispose",function(){clearInterval(j);clearTimeout(k)})}});t=u.s.prototype;t.g=u.options;t.D=function(){this.j("dispose");this.o("dispose");u.xa[this.Q]=h;this.M&&this.M.player&&(this.M.player=h);this.a&&this.a.player&&(this.a.player=h);clearInterval(this.Ra);this.za();this.h&&this.h.D();u.c.prototype.D.call(this)};
+function da(a){var c={sources:[],tracks:[]};u.k.B(c,u.xb(a));if(a.hasChildNodes()){var d,e,g,j;a=a.childNodes;g=0;for(j=a.length;g<j;g++)d=a[g],e=d.nodeName.toLowerCase(),"source"===e?c.sources.push(u.xb(d)):"track"===e&&c.tracks.push(u.xb(d))}return c}
+t.e=function(){var a=this.a=u.c.prototype.e.call(this,"div"),c=this.M;c.removeAttribute("width");c.removeAttribute("height");if(c.hasChildNodes()){var d,e,g,j,k;d=c.childNodes;e=d.length;for(k=[];e--;)g=d[e],j=g.nodeName.toLowerCase(),"track"===j&&k.push(g);for(d=0;d<k.length;d++)c.removeChild(k[d])}c.id=c.id||"vjs_video_"+u.t++;a.id=c.id;a.className=c.className;c.id+="_html5_api";c.className="vjs-tech";c.player=a.player=this;this.n("vjs-paused");this.width(this.g.width,f);this.height(this.g.height,
+f);c.parentNode&&c.parentNode.insertBefore(a,c);u.zb(c,a);return a};
+function I(a,c,d){a.h?(a.aa=l,a.h.D(),a.Eb&&(a.Eb=l,clearInterval(a.Ra)),a.Fb&&J(a),a.h=l):"Html5"!==c&&a.M&&(u.l.jc(a.M),a.M=h);a.ia=c;a.aa=l;var e=u.k.B({source:d,parentEl:a.a},a.g[c.toLowerCase()]);d&&(d.src==a.v.src&&0<a.v.currentTime&&(e.startTime=a.v.currentTime),a.v.src=d.src);a.h=new window.videojs[c](a,e);a.h.L(function(){this.b.Ua();if(!this.m.progressEvents){var a=this.b;a.Eb=f;a.Ra=setInterval(u.bind(a,function(){this.v.lb<this.buffered().end(0)?this.j("progress"):1==this.Ja()&&(clearInterval(this.Ra),
+this.j("progress"))}),500);a.h.U("progress",function(){this.m.progressEvents=f;var a=this.b;a.Eb=l;clearInterval(a.Ra)})}this.m.timeupdateEvents||(a=this.b,a.Fb=f,a.d("play",a.Cc),a.d("pause",a.za),a.h.U("timeupdate",function(){this.m.timeupdateEvents=f;J(this.b)}))})}function J(a){a.Fb=l;a.za();a.o("play",a.Cc);a.o("pause",a.za)}t.Cc=function(){this.hc&&this.za();this.hc=setInterval(u.bind(this,function(){this.j("timeupdate")}),250)};t.za=function(){clearInterval(this.hc)};
+t.Kb=function(){u.u(this.a,"vjs-paused");u.n(this.a,"vjs-playing")};t.jd=function(){this.g.starttime&&this.currentTime(this.g.starttime);this.n("vjs-has-started")};t.Jb=function(){u.u(this.a,"vjs-playing");u.n(this.a,"vjs-paused")};t.ld=function(){1==this.Ja()&&this.j("loadedalldata")};t.hd=function(){this.g.loop&&(this.currentTime(0),this.play())};t.sc=function(){this.duration(K(this,"duration"))};t.kd=function(){this.H?this.n("vjs-fullscreen"):this.u("vjs-fullscreen")};
+t.Gb=function(a){u.log("Video Error",a)};function L(a,c,d){if(a.h&&!a.h.aa)a.h.L(function(){this[c](d)});else try{a.h[c](d)}catch(e){throw u.log(e),e;}}function K(a,c){if(a.h&&a.h.aa)try{return a.h[c]()}catch(d){throw a.h[c]===b?u.log("Video.js: "+c+" method not defined for "+a.ia+" playback technology.",d):"TypeError"==d.name?(u.log("Video.js: "+c+" unavailable on "+a.ia+" playback technology element.",d),a.h.aa=l):u.log(d),d;}}t.play=function(){L(this,"play");return this};
+t.pause=function(){L(this,"pause");return this};t.paused=function(){return K(this,"paused")===l?l:f};t.currentTime=function(a){return a!==b?(this.v.rc=a,L(this,"setCurrentTime",a),this.Fb&&this.j("timeupdate"),this):this.v.currentTime=K(this,"currentTime")||0};t.duration=function(a){if(a!==b)return this.v.duration=parseFloat(a),this;this.v.duration===b&&this.sc();return this.v.duration};
+t.buffered=function(){var a=K(this,"buffered"),c=a.length-1,d=this.v.lb=this.v.lb||0;a&&(0<=c&&a.end(c)!==d)&&(d=a.end(c),this.v.lb=d);return u.tb(0,d)};t.Ja=function(){return this.duration()?this.buffered().end(0)/this.duration():0};t.volume=function(a){if(a!==b)return a=Math.max(0,Math.min(1,parseFloat(a))),this.v.volume=a,L(this,"setVolume",a),u.td(a),this;a=parseFloat(K(this,"volume"));return isNaN(a)?1:a};t.muted=function(a){return a!==b?(L(this,"setMuted",a),this):K(this,"muted")||l};
+t.Ta=function(){return K(this,"supportsFullScreen")||l};
+t.ya=function(){var a=u.Pb.ya;this.H=f;a?(u.d(document,a.vb,u.bind(this,function(c){this.H=document[a.H];this.H===l&&u.o(document,a.vb,arguments.callee);this.j("fullscreenchange")})),this.a[a.wc]()):this.h.Ta()?L(this,"enterFullScreen"):(this.cd=f,this.Yc=document.documentElement.style.overflow,u.d(document,"keydown",u.bind(this,this.lc)),document.documentElement.style.overflow="hidden",u.n(document.body,"vjs-full-window"),this.j("enterFullWindow"),this.j("fullscreenchange"));return this};
+t.ob=function(){var a=u.Pb.ya;this.H=l;if(a)document[a.nb]();else this.h.Ta()?L(this,"exitFullScreen"):(M(this),this.j("fullscreenchange"));return this};t.lc=function(a){27===a.keyCode&&(this.H===f?this.ob():M(this))};function M(a){a.cd=l;u.o(document,"keydown",a.lc);document.documentElement.style.overflow=a.Yc;u.u(document.body,"vjs-full-window");a.j("exitFullWindow")}
+t.src=function(a){if(a instanceof Array){var c;a:{c=a;for(var d=0,e=this.g.techOrder;d<e.length;d++){var g=u.$(e[d]),j=window.videojs[g];if(j.isSupported())for(var k=0,q=c;k<q.length;k++){var n=q[k];if(j.canPlaySource(n)){c={source:n,h:g};break a}}}c=l}c?(a=c.source,c=c.h,c==this.ia?this.src(a):I(this,c,a)):this.a.appendChild(u.e("p",{innerHTML:this.options().notSupportedMessage}))}else a instanceof Object?window.videojs[this.ia].canPlaySource(a)?this.src(a.src):this.src([a]):(this.v.src=a,this.aa?
+(L(this,"src",a),"auto"==this.g.preload&&this.load(),this.g.autoplay&&this.play()):this.L(function(){this.src(a)}));return this};t.load=function(){L(this,"load");return this};t.currentSrc=function(){return K(this,"currentSrc")||this.v.src||""};t.Qa=function(a){return a!==b?(L(this,"setPreload",a),this.g.preload=a,this):K(this,"preload")};t.autoplay=function(a){return a!==b?(L(this,"setAutoplay",a),this.g.autoplay=a,this):K(this,"autoplay")};
+t.loop=function(a){return a!==b?(L(this,"setLoop",a),this.g.loop=a,this):K(this,"loop")};t.poster=function(a){return a!==b?(this.uc=a,this):this.uc};t.controls=function(a){return a!==b?(a=!!a,this.sb!==a&&((this.sb=a)?(this.u("vjs-controls-disabled"),this.n("vjs-controls-enabled"),this.j("controlsenabled")):(this.u("vjs-controls-enabled"),this.n("vjs-controls-disabled"),this.j("controlsdisabled"))),this):this.sb};u.s.prototype.Sb;t=u.s.prototype;
+t.Rb=function(a){return a!==b?(a=!!a,this.Sb!==a&&((this.Sb=a)?(this.n("vjs-using-native-controls"),this.j("usingnativecontrols")):(this.u("vjs-using-native-controls"),this.j("usingcustomcontrols"))),this):this.Sb};t.error=function(){return K(this,"error")};t.seeking=function(){return K(this,"seeking")};t.ka=f;t.Mb=function(){this.ka=f};t.Qb=f;
+t.ja=function(a){return a!==b?(a=!!a,a!==this.Qb&&((this.Qb=a)?(this.ka=f,this.u("vjs-user-inactive"),this.n("vjs-user-active"),this.j("useractive")):(this.ka=l,this.h.U("mousemove",function(a){a.stopPropagation();a.preventDefault()}),this.u("vjs-user-active"),this.n("vjs-user-inactive"),this.j("userinactive"))),this):this.Qb};var N,O,P;P=document.createElement("div");O={};
+P.Hd!==b?(O.wc="requestFullscreen",O.nb="exitFullscreen",O.vb="fullscreenchange",O.H="fullScreen"):(document.mozCancelFullScreen?(N="moz",O.H=N+"FullScreen"):(N="webkit",O.H=N+"IsFullScreen"),P[N+"RequestFullScreen"]&&(O.wc=N+"RequestFullScreen",O.nb=N+"CancelFullScreen"),O.vb=N+"fullscreenchange");document[O.nb]&&(u.Pb.ya=O);u.Fa=u.c.extend();
+u.Fa.prototype.g={Md:"play",children:{playToggle:{},currentTimeDisplay:{},timeDivider:{},durationDisplay:{},remainingTimeDisplay:{},progressControl:{},fullscreenToggle:{},volumeControl:{},muteToggle:{}}};u.Fa.prototype.e=function(){return u.e("div",{className:"vjs-control-bar"})};u.Yb=u.q.extend({i:function(a,c){u.q.call(this,a,c);a.d("play",u.bind(this,this.Kb));a.d("pause",u.bind(this,this.Jb))}});t=u.Yb.prototype;t.qa="Play";t.T=function(){return"vjs-play-control "+u.q.prototype.T.call(this)};
+t.p=function(){this.b.paused()?this.b.play():this.b.pause()};t.Kb=function(){u.u(this.a,"vjs-paused");u.n(this.a,"vjs-playing");this.a.children[0].children[0].innerHTML="Pause"};t.Jb=function(){u.u(this.a,"vjs-playing");u.n(this.a,"vjs-paused");this.a.children[0].children[0].innerHTML="Play"};u.Ya=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.d("timeupdate",u.bind(this,this.Ca))}});
+u.Ya.prototype.e=function(){var a=u.c.prototype.e.call(this,"div",{className:"vjs-current-time vjs-time-controls vjs-control"});this.content=u.e("div",{className:"vjs-current-time-display",innerHTML:'<span class="vjs-control-text">Current Time </span>0:00',"aria-live":"off"});a.appendChild(u.e("div").appendChild(this.content));return a};
+u.Ya.prototype.Ca=function(){var a=this.b.Nb?this.b.v.currentTime:this.b.currentTime();this.content.innerHTML='<span class="vjs-control-text">Current Time </span>'+u.La(a,this.b.duration())};u.Za=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.d("timeupdate",u.bind(this,this.Ca))}});
+u.Za.prototype.e=function(){var a=u.c.prototype.e.call(this,"div",{className:"vjs-duration vjs-time-controls vjs-control"});this.content=u.e("div",{className:"vjs-duration-display",innerHTML:'<span class="vjs-control-text">Duration Time </span>0:00',"aria-live":"off"});a.appendChild(u.e("div").appendChild(this.content));return a};u.Za.prototype.Ca=function(){var a=this.b.duration();a&&(this.content.innerHTML='<span class="vjs-control-text">Duration Time </span>'+u.La(a))};
+u.cc=u.c.extend({i:function(a,c){u.c.call(this,a,c)}});u.cc.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-time-divider",innerHTML:"<div><span>/</span></div>"})};u.fb=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.d("timeupdate",u.bind(this,this.Ca))}});
+u.fb.prototype.e=function(){var a=u.c.prototype.e.call(this,"div",{className:"vjs-remaining-time vjs-time-controls vjs-control"});this.content=u.e("div",{className:"vjs-remaining-time-display",innerHTML:'<span class="vjs-control-text">Remaining Time </span>-0:00',"aria-live":"off"});a.appendChild(u.e("div").appendChild(this.content));return a};u.fb.prototype.Ca=function(){this.b.duration()&&(this.content.innerHTML='<span class="vjs-control-text">Remaining Time </span>-'+u.La(this.b.duration()-this.b.currentTime()))};
+u.Ga=u.q.extend({i:function(a,c){u.q.call(this,a,c)}});u.Ga.prototype.qa="Fullscreen";u.Ga.prototype.T=function(){return"vjs-fullscreen-control "+u.q.prototype.T.call(this)};u.Ga.prototype.p=function(){this.b.H?(this.b.ob(),this.a.children[0].children[0].innerHTML="Fullscreen"):(this.b.ya(),this.a.children[0].children[0].innerHTML="Non-Fullscreen")};u.eb=u.c.extend({i:function(a,c){u.c.call(this,a,c)}});u.eb.prototype.g={children:{seekBar:{}}};
+u.eb.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-progress-control vjs-control"})};u.Zb=u.O.extend({i:function(a,c){u.O.call(this,a,c);a.d("timeupdate",u.bind(this,this.Ba));a.L(u.bind(this,this.Ba))}});t=u.Zb.prototype;t.g={children:{loadProgressBar:{},playProgressBar:{},seekHandle:{}},barName:"playProgressBar",handleName:"seekHandle"};t.tc="timeupdate";t.e=function(){return u.O.prototype.e.call(this,"div",{className:"vjs-progress-holder","aria-label":"video progress bar"})};
+t.Ba=function(){var a=this.b.Nb?this.b.v.currentTime:this.b.currentTime();this.a.setAttribute("aria-valuenow",u.round(100*this.yb(),2));this.a.setAttribute("aria-valuetext",u.La(a,this.b.duration()))};t.yb=function(){var a;"Flash"===this.b.ia&&this.b.seeking()?(a=this.b.v,a=a.rc?a.rc:this.b.currentTime()):a=this.b.currentTime();return a/this.b.duration()};t.Pa=function(a){u.O.prototype.Pa.call(this,a);this.b.Nb=f;this.Dd=!this.b.paused();this.b.pause()};
+t.Hb=function(a){a=F(this,a)*this.b.duration();a==this.b.duration()&&(a-=0.1);this.b.currentTime(a)};t.Ib=function(a){u.O.prototype.Ib.call(this,a);this.b.Nb=l;this.Dd&&this.b.play()};t.zc=function(){this.b.currentTime(this.b.currentTime()+5)};t.yc=function(){this.b.currentTime(this.b.currentTime()-5)};u.ab=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.d("progress",u.bind(this,this.update))}});u.ab.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-load-progress",innerHTML:'<span class="vjs-control-text">Loaded: 0%</span>'})};
+u.ab.prototype.update=function(){this.a.style&&(this.a.style.width=u.round(100*this.b.Ja(),2)+"%")};u.Xb=u.c.extend({i:function(a,c){u.c.call(this,a,c)}});u.Xb.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-play-progress",innerHTML:'<span class="vjs-control-text">Progress: 0%</span>'})};u.gb=u.ea.extend();u.gb.prototype.defaultValue="00:00";u.gb.prototype.e=function(){return u.ea.prototype.e.call(this,"div",{className:"vjs-seek-handle"})};
+u.ib=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.h&&(a.h.m&&a.h.m.volumeControl===l)&&this.n("vjs-hidden");a.d("loadstart",u.bind(this,function(){a.h.m&&a.h.m.volumeControl===l?this.n("vjs-hidden"):this.u("vjs-hidden")}))}});u.ib.prototype.g={children:{volumeBar:{}}};u.ib.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-volume-control vjs-control"})};
+u.hb=u.O.extend({i:function(a,c){u.O.call(this,a,c);a.d("volumechange",u.bind(this,this.Ba));a.L(u.bind(this,this.Ba));setTimeout(u.bind(this,this.update),0)}});t=u.hb.prototype;t.Ba=function(){this.a.setAttribute("aria-valuenow",u.round(100*this.b.volume(),2));this.a.setAttribute("aria-valuetext",u.round(100*this.b.volume(),2)+"%")};t.g={children:{volumeLevel:{},volumeHandle:{}},barName:"volumeLevel",handleName:"volumeHandle"};t.tc="volumechange";
+t.e=function(){return u.O.prototype.e.call(this,"div",{className:"vjs-volume-bar","aria-label":"volume level"})};t.Hb=function(a){this.b.muted()&&this.b.muted(l);this.b.volume(F(this,a))};t.yb=function(){return this.b.muted()?0:this.b.volume()};t.zc=function(){this.b.volume(this.b.volume()+0.1)};t.yc=function(){this.b.volume(this.b.volume()-0.1)};u.dc=u.c.extend({i:function(a,c){u.c.call(this,a,c)}});
+u.dc.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-volume-level",innerHTML:'<span class="vjs-control-text"></span>'})};u.jb=u.ea.extend();u.jb.prototype.defaultValue="00:00";u.jb.prototype.e=function(){return u.ea.prototype.e.call(this,"div",{className:"vjs-volume-handle"})};
+u.da=u.q.extend({i:function(a,c){u.q.call(this,a,c);a.d("volumechange",u.bind(this,this.update));a.h&&(a.h.m&&a.h.m.volumeControl===l)&&this.n("vjs-hidden");a.d("loadstart",u.bind(this,function(){a.h.m&&a.h.m.volumeControl===l?this.n("vjs-hidden"):this.u("vjs-hidden")}))}});u.da.prototype.e=function(){return u.q.prototype.e.call(this,"div",{className:"vjs-mute-control vjs-control",innerHTML:'<div><span class="vjs-control-text">Mute</span></div>'})};
+u.da.prototype.p=function(){this.b.muted(this.b.muted()?l:f)};u.da.prototype.update=function(){var a=this.b.volume(),c=3;0===a||this.b.muted()?c=0:0.33>a?c=1:0.67>a&&(c=2);this.b.muted()?"Unmute"!=this.a.children[0].children[0].innerHTML&&(this.a.children[0].children[0].innerHTML="Unmute"):"Mute"!=this.a.children[0].children[0].innerHTML&&(this.a.children[0].children[0].innerHTML="Mute");for(a=0;4>a;a++)u.u(this.a,"vjs-vol-"+a);u.n(this.a,"vjs-vol-"+c)};
+u.oa=u.R.extend({i:function(a,c){u.R.call(this,a,c);a.d("volumechange",u.bind(this,this.update));a.h&&(a.h.m&&a.h.m.Dc===l)&&this.n("vjs-hidden");a.d("loadstart",u.bind(this,function(){a.h.m&&a.h.m.Dc===l?this.n("vjs-hidden"):this.u("vjs-hidden")}));this.n("vjs-menu-button")}});u.oa.prototype.Ka=function(){var a=new u.ma(this.b,{Vc:"div"}),c=new u.hb(this.b,u.k.B({Cd:f},this.g.Vd));a.Z(c);return a};u.oa.prototype.p=function(){u.da.prototype.p.call(this);u.R.prototype.p.call(this)};
+u.oa.prototype.e=function(){return u.q.prototype.e.call(this,"div",{className:"vjs-volume-menu-button vjs-menu-button vjs-control",innerHTML:'<div><span class="vjs-control-text">Mute</span></div>'})};u.oa.prototype.update=u.da.prototype.update;u.cb=u.q.extend({i:function(a,c){u.q.call(this,a,c);(!a.poster()||!a.controls())&&this.C();a.d("play",u.bind(this,this.C))}});
+u.cb.prototype.e=function(){var a=u.e("div",{className:"vjs-poster",tabIndex:-1}),c=this.b.poster();c&&("backgroundSize"in a.style?a.style.backgroundImage='url("'+c+'")':a.appendChild(u.e("img",{src:c})));return a};u.cb.prototype.p=function(){this.K().controls()&&this.b.play()};
+u.Wb=u.c.extend({i:function(a,c){u.c.call(this,a,c);a.d("canplay",u.bind(this,this.C));a.d("canplaythrough",u.bind(this,this.C));a.d("playing",u.bind(this,this.C));a.d("seeked",u.bind(this,this.C));a.d("seeking",u.bind(this,this.show));a.d("seeked",u.bind(this,this.C));a.d("error",u.bind(this,this.show));a.d("waiting",u.bind(this,this.show))}});u.Wb.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-loading-spinner"})};u.Wa=u.q.extend();
+u.Wa.prototype.e=function(){return u.q.prototype.e.call(this,"div",{className:"vjs-big-play-button",innerHTML:'<span aria-hidden="true"></span>',"aria-label":"play video"})};u.Wa.prototype.p=function(){this.b.play()};
+u.r=u.c.extend({i:function(a,c,d){u.c.call(this,a,c,d);var e,g;g=this;e=this.K();a=function(){if(e.controls()&&!e.Rb()){var a,c;g.d("mousedown",g.p);g.d("touchstart",function(a){a.preventDefault();a.stopPropagation();c=this.b.ja()});a=function(a){a.stopPropagation();c&&this.b.Mb()};g.d("touchmove",a);g.d("touchleave",a);g.d("touchcancel",a);g.d("touchend",a);var d,n,r;d=0;g.d("touchstart",function(){d=(new Date).getTime();r=f});a=function(){r=l};g.d("touchmove",a);g.d("touchleave",a);g.d("touchcancel",
+a);g.d("touchend",function(){r===f&&(n=(new Date).getTime()-d,250>n&&this.j("tap"))});g.d("tap",g.md)}};c=u.bind(g,g.pd);this.L(a);e.d("controlsenabled",a);e.d("controlsdisabled",c)}});u.r.prototype.pd=function(){this.o("tap");this.o("touchstart");this.o("touchmove");this.o("touchleave");this.o("touchcancel");this.o("touchend");this.o("click");this.o("mousedown")};u.r.prototype.p=function(a){0===a.button&&this.K().controls()&&(this.K().paused()?this.K().play():this.K().pause())};
+u.r.prototype.md=function(){this.K().ja(!this.K().ja())};u.r.prototype.m={volumeControl:f,fullscreenResize:l,progressEvents:l,timeupdateEvents:l};u.media={};u.media.Va="play pause paused currentTime setCurrentTime duration buffered volume setVolume muted setMuted width height supportsFullScreen enterFullScreen src load currentSrc preload setPreload autoplay setAutoplay loop setLoop error networkState readyState seeking initialTime startOffsetTime played seekable ended videoTracks audioTracks videoWidth videoHeight textTracks defaultPlaybackRate playbackRate mediaGroup controller controls defaultMuted".split(" ");
+function ea(){var a=u.media.Va[i];return function(){throw Error('The "'+a+"\" method is not available on the playback technology's API");}}for(var i=u.media.Va.length-1;0<=i;i--)u.r.prototype[u.media.Va[i]]=ea();
+u.l=u.r.extend({i:function(a,c,d){this.m.volumeControl=u.l.Uc();this.m.movingMediaElementInDOM=!u.Kc;this.m.fullscreenResize=f;u.r.call(this,a,c,d);(c=c.source)&&this.a.currentSrc===c.src&&0<this.a.networkState?a.j("loadstart"):c&&(this.a.src=c.src);if(u.ac&&a.options().nativeControlsForTouch!==l){var e,g,j,k;e=this;g=this.K();c=g.controls();e.a.controls=!!c;j=function(){e.a.controls=f};k=function(){e.a.controls=l};g.d("controlsenabled",j);g.d("controlsdisabled",k);c=function(){g.o("controlsenabled",
+j);g.o("controlsdisabled",k)};e.d("dispose",c);g.d("usingcustomcontrols",c);g.Rb(f)}a.L(function(){this.M&&(this.g.autoplay&&this.paused())&&(delete this.M.poster,this.play())});for(a=u.l.$a.length-1;0<=a;a--)u.d(this.a,u.l.$a[a],u.bind(this.b,this.$c));this.Ua()}});t=u.l.prototype;t.D=function(){u.r.prototype.D.call(this)};
+t.e=function(){var a=this.b,c=a.M,d;if(!c||this.m.movingMediaElementInDOM===l)c?(d=c.cloneNode(l),u.l.jc(c),c=d,a.M=h):c=u.e("video",{id:a.id()+"_html5_api",className:"vjs-tech"}),c.player=a,u.zb(c,a.w());d=["autoplay","preload","loop","muted"];for(var e=d.length-1;0<=e;e--){var g=d[e];a.g[g]!==h&&(c[g]=a.g[g])}return c};t.$c=function(a){this.j(a);a.stopPropagation()};t.play=function(){this.a.play()};t.pause=function(){this.a.pause()};t.paused=function(){return this.a.paused};t.currentTime=function(){return this.a.currentTime};
+t.sd=function(a){try{this.a.currentTime=a}catch(c){u.log(c,"Video is not ready. (Video.js)")}};t.duration=function(){return this.a.duration||0};t.buffered=function(){return this.a.buffered};t.volume=function(){return this.a.volume};t.xd=function(a){this.a.volume=a};t.muted=function(){return this.a.muted};t.vd=function(a){this.a.muted=a};t.width=function(){return this.a.offsetWidth};t.height=function(){return this.a.offsetHeight};
+t.Ta=function(){return"function"==typeof this.a.webkitEnterFullScreen&&(/Android/.test(u.F)||!/Chrome|Mac OS X 10.5/.test(u.F))?f:l};t.src=function(a){this.a.src=a};t.load=function(){this.a.load()};t.currentSrc=function(){return this.a.currentSrc};t.Qa=function(){return this.a.Qa};t.wd=function(a){this.a.Qa=a};t.autoplay=function(){return this.a.autoplay};t.rd=function(a){this.a.autoplay=a};t.controls=function(){return this.a.controls};t.loop=function(){return this.a.loop};
+t.ud=function(a){this.a.loop=a};t.error=function(){return this.a.error};t.seeking=function(){return this.a.seeking};u.l.isSupported=function(){return!!u.na.canPlayType};u.l.mb=function(a){try{return!!u.na.canPlayType(a.type)}catch(c){return""}};u.l.Uc=function(){var a=u.na.volume;u.na.volume=a/2+0.1;return a!==u.na.volume};u.l.$a="loadstart suspend abort error emptied stalled loadedmetadata loadeddata canplay canplaythrough playing waiting seeking seeked ended durationchange timeupdate progress play pause ratechange volumechange".split(" ");
+u.l.jc=function(a){if(a){a.player=h;for(a.parentNode&&a.parentNode.removeChild(a);a.hasChildNodes();)a.removeChild(a.firstChild);a.removeAttribute("src");"function"===typeof a.load&&a.load()}};u.Oc&&(document.createElement("video").constructor.prototype.canPlayType=function(a){return a&&-1!=a.toLowerCase().indexOf("video/mp4")?"maybe":""});
+u.f=u.r.extend({i:function(a,c,d){u.r.call(this,a,c,d);var e=c.source;d=c.parentEl;var g=this.a=u.e("div",{id:a.id()+"_temp_flash"}),j=a.id()+"_flash_api";a=a.g;var k=u.k.B({readyFunction:"videojs.Flash.onReady",eventProxyFunction:"videojs.Flash.onEvent",errorEventProxyFunction:"videojs.Flash.onError",autoplay:a.autoplay,preload:a.Qa,loop:a.loop,muted:a.muted},c.flashVars),q=u.k.B({wmode:"opaque",bgcolor:"#000000"},c.params),n=u.k.B({id:j,name:j,"class":"vjs-tech"},c.attributes);e&&(e.type&&u.f.ed(e.type)?
+(a=u.f.Ac(e.src),k.rtmpConnection=encodeURIComponent(a.rb),k.rtmpStream=encodeURIComponent(a.Ob)):k.src=encodeURIComponent(u.mc(e.src)));u.zb(g,d);c.startTime&&this.L(function(){this.load();this.play();this.currentTime(c.startTime)});if(c.iFrameMode===f&&!u.Jc){var r=u.e("iframe",{id:j+"_iframe",name:j+"_iframe",className:"vjs-tech",scrolling:"no",marginWidth:0,marginHeight:0,frameBorder:0});k.readyFunction="ready";k.eventProxyFunction="events";k.errorEventProxyFunction="errors";u.d(r,"load",u.bind(this,
+function(){var a,d=r.contentWindow;a=r.contentDocument?r.contentDocument:r.contentWindow.document;a.write(u.f.nc(c.swf,k,q,n));d.player=this.b;d.ready=u.bind(this.b,function(c){var d=this.h;d.a=a.getElementById(c);u.f.pb(d)});d.events=u.bind(this.b,function(a,c){this&&"flash"===this.ia&&this.j(c)});d.errors=u.bind(this.b,function(a,c){u.log("Flash Error",c)})}));g.parentNode.replaceChild(r,g)}else u.f.Zc(c.swf,g,k,q,n)}});t=u.f.prototype;t.D=function(){u.r.prototype.D.call(this)};t.play=function(){this.a.vjs_play()};
+t.pause=function(){this.a.vjs_pause()};t.src=function(a){u.f.dd(a)?(a=u.f.Ac(a),this.Qd(a.rb),this.Rd(a.Ob)):(a=u.mc(a),this.a.vjs_src(a));if(this.b.autoplay()){var c=this;setTimeout(function(){c.play()},0)}};t.currentSrc=function(){var a=this.a.vjs_getProperty("currentSrc");if(a==h){var c=this.Od(),d=this.Pd();c&&d&&(a=u.f.yd(c,d))}return a};t.load=function(){this.a.vjs_load()};t.poster=function(){this.a.vjs_getProperty("poster")};t.buffered=function(){return u.tb(0,this.a.vjs_getProperty("buffered"))};
+t.Ta=s(l);var Q=u.f.prototype,R="rtmpConnection rtmpStream preload currentTime defaultPlaybackRate playbackRate autoplay loop mediaGroup controller controls volume muted defaultMuted".split(" "),S="error currentSrc networkState readyState seeking initialTime duration startOffsetTime paused played seekable ended videoTracks audioTracks videoWidth videoHeight textTracks".split(" ");
+function fa(){var a=R[T],c=a.charAt(0).toUpperCase()+a.slice(1);Q["set"+c]=function(c){return this.a.vjs_setProperty(a,c)}}function U(a){Q[a]=function(){return this.a.vjs_getProperty(a)}}var T;for(T=0;T<R.length;T++)U(R[T]),fa();for(T=0;T<S.length;T++)U(S[T]);u.f.isSupported=function(){return 10<=u.f.version()[0]};u.f.mb=function(a){if(!a.type)return"";a=a.type.replace(/;.*/,"").toLowerCase();if(a in u.f.bd||a in u.f.Bc)return"maybe"};
+u.f.bd={"video/flv":"FLV","video/x-flv":"FLV","video/mp4":"MP4","video/m4v":"MP4"};u.f.Bc={"rtmp/mp4":"MP4","rtmp/flv":"FLV"};u.f.onReady=function(a){a=u.w(a);var c=a.player||a.parentNode.player,d=c.h;a.player=c;d.a=a;u.f.pb(d)};u.f.pb=function(a){a.w().vjs_getProperty?a.Ua():setTimeout(function(){u.f.pb(a)},50)};u.f.onEvent=function(a,c){u.w(a).player.j(c)};u.f.onError=function(a,c){u.w(a).player.j("error");u.log("Flash Error",c,a)};
+u.f.version=function(){var a="0,0,0";try{a=(new window.ActiveXObject("ShockwaveFlash.ShockwaveFlash")).GetVariable("$version").replace(/\D+/g,",").match(/^,?(.+),?$/)[1]}catch(c){try{navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin&&(a=(navigator.plugins["Shockwave Flash 2.0"]||navigator.plugins["Shockwave Flash"]).description.replace(/\D+/g,",").match(/^,?(.+),?$/)[1])}catch(d){}}return a.split(",")};
+u.f.Zc=function(a,c,d,e,g){a=u.f.nc(a,d,e,g);a=u.e("div",{innerHTML:a}).childNodes[0];d=c.parentNode;c.parentNode.replaceChild(a,c);var j=d.childNodes[0];setTimeout(function(){j.style.display="block"},1E3)};
+u.f.nc=function(a,c,d,e){var g="",j="",k="";c&&u.k.ua(c,function(a,c){g+=a+"="+c+"&amp;"});d=u.k.B({movie:a,flashvars:g,allowScriptAccess:"always",allowNetworking:"all"},d);u.k.ua(d,function(a,c){j+='<param name="'+a+'" value="'+c+'" />'});e=u.k.B({data:a,width:"100%",height:"100%"},e);u.k.ua(e,function(a,c){k+=a+'="'+c+'" '});return'<object type="application/x-shockwave-flash"'+k+">"+j+"</object>"};u.f.yd=function(a,c){return a+"&"+c};
+u.f.Ac=function(a){var c={rb:"",Ob:""};if(!a)return c;var d=a.indexOf("&"),e;-1!==d?e=d+1:(d=e=a.lastIndexOf("/")+1,0===d&&(d=e=a.length));c.rb=a.substring(0,d);c.Ob=a.substring(e,a.length);return c};u.f.ed=function(a){return a in u.f.Bc};u.f.Qc=/^rtmp[set]?:\/\//i;u.f.dd=function(a){return u.f.Qc.test(a)};
+u.Pc=u.c.extend({i:function(a,c,d){u.c.call(this,a,c,d);if(!a.g.sources||0===a.g.sources.length){c=0;for(d=a.g.techOrder;c<d.length;c++){var e=u.$(d[c]),g=window.videojs[e];if(g&&g.isSupported()){I(a,e);break}}}else a.src(a.g.sources)}});function V(a){a.Aa=a.Aa||[];return a.Aa}function W(a,c,d){for(var e=a.Aa,g=0,j=e.length,k,q;g<j;g++)k=e[g],k.id()===c?(k.show(),q=k):d&&(k.J()==d&&0<k.mode())&&k.disable();(c=q?q.J():d?d:l)&&a.j(c+"trackchange")}
+u.X=u.c.extend({i:function(a,c){u.c.call(this,a,c);this.Q=c.id||"vjs_"+c.kind+"_"+c.language+"_"+u.t++;this.xc=c.src;this.Wc=c["default"]||c.dflt;this.Ad=c.title;this.Ld=c.srclang;this.fd=c.label;this.fa=[];this.ec=[];this.ga=this.ha=0;this.b.d("fullscreenchange",u.bind(this,this.Rc))}});t=u.X.prototype;t.J=p("A");t.src=p("xc");t.ub=p("Wc");t.title=p("Ad");t.label=p("fd");t.readyState=p("ha");t.mode=p("ga");t.Rc=function(){this.a.style.fontSize=this.b.H?140*(screen.width/this.b.width())+"%":""};
+t.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-"+this.A+" vjs-text-track"})};t.show=function(){X(this);this.ga=2;u.c.prototype.show.call(this)};t.C=function(){X(this);this.ga=1;u.c.prototype.C.call(this)};t.disable=function(){2==this.ga&&this.C();this.b.o("timeupdate",u.bind(this,this.update,this.Q));this.b.o("ended",u.bind(this,this.reset,this.Q));this.reset();this.b.V.textTrackDisplay.removeChild(this);this.ga=0};
+function X(a){0===a.ha&&a.load();0===a.ga&&(a.b.d("timeupdate",u.bind(a,a.update,a.Q)),a.b.d("ended",u.bind(a,a.reset,a.Q)),("captions"===a.A||"subtitles"===a.A)&&a.b.V.textTrackDisplay.Z(a))}t.load=function(){0===this.ha&&(this.ha=1,u.get(this.xc,u.bind(this,this.nd),u.bind(this,this.Gb)))};t.Gb=function(a){this.error=a;this.ha=3;this.j("error")};
+t.nd=function(a){var c,d;a=a.split("\n");for(var e="",g=1,j=a.length;g<j;g++)if(e=u.trim(a[g])){-1==e.indexOf("--\x3e")?(c=e,e=u.trim(a[++g])):c=this.fa.length;c={id:c,index:this.fa.length};d=e.split(" --\x3e ");c.startTime=Y(d[0]);c.va=Y(d[1]);for(d=[];a[++g]&&(e=u.trim(a[g]));)d.push(e);c.text=d.join("<br/>");this.fa.push(c)}this.ha=2;this.j("loaded")};
+function Y(a){var c=a.split(":");a=0;var d,e,g;3==c.length?(d=c[0],e=c[1],c=c[2]):(d=0,e=c[0],c=c[1]);c=c.split(/\s+/);c=c.splice(0,1)[0];c=c.split(/\.|,/);g=parseFloat(c[1]);c=c[0];a+=3600*parseFloat(d);a+=60*parseFloat(e);a+=parseFloat(c);g&&(a+=g/1E3);return a}
+t.update=function(){if(0<this.fa.length){var a=this.b.currentTime();if(this.Lb===b||a<this.Lb||this.Ma<=a){var c=this.fa,d=this.b.duration(),e=0,g=l,j=[],k,q,n,r;a>=this.Ma||this.Ma===b?r=this.wb!==b?this.wb:0:(g=f,r=this.Db!==b?this.Db:c.length-1);for(;;){n=c[r];if(n.va<=a)e=Math.max(e,n.va),n.Ia&&(n.Ia=l);else if(a<n.startTime){if(d=Math.min(d,n.startTime),n.Ia&&(n.Ia=l),!g)break}else g?(j.splice(0,0,n),q===b&&(q=r),k=r):(j.push(n),k===b&&(k=r),q=r),d=Math.min(d,n.va),e=Math.max(e,n.startTime),
+n.Ia=f;if(g)if(0===r)break;else r--;else if(r===c.length-1)break;else r++}this.ec=j;this.Ma=d;this.Lb=e;this.wb=k;this.Db=q;a=this.ec;c="";d=0;for(e=a.length;d<e;d++)c+='<span class="vjs-tt-cue">'+a[d].text+"</span>";this.a.innerHTML=c;this.j("cuechange")}}};t.reset=function(){this.Ma=0;this.Lb=this.b.duration();this.Db=this.wb=0};u.Ub=u.X.extend();u.Ub.prototype.A="captions";u.$b=u.X.extend();u.$b.prototype.A="subtitles";u.Vb=u.X.extend();u.Vb.prototype.A="chapters";
+u.bc=u.c.extend({i:function(a,c,d){u.c.call(this,a,c,d);if(a.g.tracks&&0<a.g.tracks.length){c=this.b;a=a.g.tracks;var e;for(d=0;d<a.length;d++){e=a[d];var g=c,j=e.kind,k=e.label,q=e.language,n=e;e=g.Aa=g.Aa||[];n=n||{};n.kind=j;n.label=k;n.language=q;j=u.$(j||"subtitles");g=new window.videojs[j+"Track"](g,n);e.push(g)}}}});u.bc.prototype.e=function(){return u.c.prototype.e.call(this,"div",{className:"vjs-text-track-display"})};
+u.Y=u.N.extend({i:function(a,c){var d=this.ca=c.track;c.label=d.label();c.selected=d.ub();u.N.call(this,a,c);this.b.d(d.J()+"trackchange",u.bind(this,this.update))}});u.Y.prototype.p=function(){u.N.prototype.p.call(this);W(this.b,this.ca.Q,this.ca.J())};u.Y.prototype.update=function(){this.selected(2==this.ca.mode())};u.bb=u.Y.extend({i:function(a,c){c.track={J:function(){return c.kind},K:a,label:function(){return c.kind+" off"},ub:s(l),mode:s(l)};u.Y.call(this,a,c);this.selected(f)}});
+u.bb.prototype.p=function(){u.Y.prototype.p.call(this);W(this.b,this.ca.Q,this.ca.J())};u.bb.prototype.update=function(){for(var a=V(this.b),c=0,d=a.length,e,g=f;c<d;c++)e=a[c],e.J()==this.ca.J()&&2==e.mode()&&(g=l);this.selected(g)};u.S=u.R.extend({i:function(a,c){u.R.call(this,a,c);1>=this.I.length&&this.C()}});u.S.prototype.ta=function(){var a=[],c;a.push(new u.bb(this.b,{kind:this.A}));for(var d=0;d<V(this.b).length;d++)c=V(this.b)[d],c.J()===this.A&&a.push(new u.Y(this.b,{track:c}));return a};
+u.Da=u.S.extend({i:function(a,c,d){u.S.call(this,a,c,d);this.a.setAttribute("aria-label","Captions Menu")}});u.Da.prototype.A="captions";u.Da.prototype.qa="Captions";u.Da.prototype.className="vjs-captions-button";u.Ha=u.S.extend({i:function(a,c,d){u.S.call(this,a,c,d);this.a.setAttribute("aria-label","Subtitles Menu")}});u.Ha.prototype.A="subtitles";u.Ha.prototype.qa="Subtitles";u.Ha.prototype.className="vjs-subtitles-button";
+u.Ea=u.S.extend({i:function(a,c,d){u.S.call(this,a,c,d);this.a.setAttribute("aria-label","Chapters Menu")}});t=u.Ea.prototype;t.A="chapters";t.qa="Chapters";t.className="vjs-chapters-button";t.ta=function(){for(var a=[],c,d=0;d<V(this.b).length;d++)c=V(this.b)[d],c.J()===this.A&&a.push(new u.Y(this.b,{track:c}));return a};
+t.Ka=function(){for(var a=V(this.b),c=0,d=a.length,e,g,j=this.I=[];c<d;c++)if(e=a[c],e.J()==this.A&&e.ub()){if(2>e.readyState()){this.Id=e;e.d("loaded",u.bind(this,this.Ka));return}g=e;break}a=this.wa=new u.ma(this.b);a.a.appendChild(u.e("li",{className:"vjs-menu-title",innerHTML:u.$(this.A),zd:-1}));if(g){e=g.fa;for(var k,c=0,d=e.length;c<d;c++)k=e[c],k=new u.Xa(this.b,{track:g,cue:k}),j.push(k),a.Z(k)}0<this.I.length&&this.show();return a};
+u.Xa=u.N.extend({i:function(a,c){var d=this.ca=c.track,e=this.cue=c.cue,g=a.currentTime();c.label=e.text;c.selected=e.startTime<=g&&g<e.va;u.N.call(this,a,c);d.d("cuechange",u.bind(this,this.update))}});u.Xa.prototype.p=function(){u.N.prototype.p.call(this);this.b.currentTime(this.cue.startTime);this.update(this.cue.startTime)};u.Xa.prototype.update=function(){var a=this.cue,c=this.b.currentTime();this.selected(a.startTime<=c&&c<a.va)};
+u.k.B(u.Fa.prototype.g.children,{subtitlesButton:{},captionsButton:{},chaptersButton:{}});
+if("undefined"!==typeof window.JSON&&"function"===window.JSON.parse)u.JSON=window.JSON;else{u.JSON={};var Z=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;u.JSON.parse=function(a,c){function d(a,e){var k,q,n=a[e];if(n&&"object"===typeof n)for(k in n)Object.prototype.hasOwnProperty.call(n,k)&&(q=d(n,k),q!==b?n[k]=q:delete n[k]);return c.call(a,e,n)}var e;a=String(a);Z.lastIndex=0;Z.test(a)&&(a=a.replace(Z,function(a){return"\\u"+("0000"+a.charCodeAt(0).toString(16)).slice(-4)}));
+if(/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g,"")))return e=eval("("+a+")"),"function"===typeof c?d({"":e},""):e;throw new SyntaxError("JSON.parse(): invalid or malformed JSON data");}}
+u.fc=function(){var a,c,d=document.getElementsByTagName("video");if(d&&0<d.length)for(var e=0,g=d.length;e<g;e++)if((c=d[e])&&c.getAttribute)c.player===b&&(a=c.getAttribute("data-setup"),a!==h&&(a=u.JSON.parse(a||"{}"),v(c,a)));else{u.kb();break}else u.Ec||u.kb()};u.kb=function(){setTimeout(u.fc,1)};"complete"===document.readyState?u.Ec=f:u.U(window,"load",function(){u.Ec=f});u.kb();u.od=function(a,c){u.s.prototype[a]=c};var ga=this;ga.Ed=f;function $(a,c){var d=a.split("."),e=ga;!(d[0]in e)&&e.execScript&&e.execScript("var "+d[0]);for(var g;d.length&&(g=d.shift());)!d.length&&c!==b?e[g]=c:e=e[g]?e[g]:e[g]={}};$("videojs",u);$("_V_",u);$("videojs.options",u.options);$("videojs.players",u.xa);$("videojs.TOUCH_ENABLED",u.ac);$("videojs.cache",u.ra);$("videojs.Component",u.c);u.c.prototype.player=u.c.prototype.K;u.c.prototype.dispose=u.c.prototype.D;u.c.prototype.createEl=u.c.prototype.e;u.c.prototype.el=u.c.prototype.w;u.c.prototype.addChild=u.c.prototype.Z;u.c.prototype.children=u.c.prototype.children;u.c.prototype.on=u.c.prototype.d;u.c.prototype.off=u.c.prototype.o;u.c.prototype.one=u.c.prototype.U;
+u.c.prototype.trigger=u.c.prototype.j;u.c.prototype.triggerReady=u.c.prototype.Ua;u.c.prototype.show=u.c.prototype.show;u.c.prototype.hide=u.c.prototype.C;u.c.prototype.width=u.c.prototype.width;u.c.prototype.height=u.c.prototype.height;u.c.prototype.dimensions=u.c.prototype.Xc;u.c.prototype.ready=u.c.prototype.L;u.c.prototype.addClass=u.c.prototype.n;u.c.prototype.removeClass=u.c.prototype.u;$("videojs.Player",u.s);u.s.prototype.dispose=u.s.prototype.D;u.s.prototype.requestFullScreen=u.s.prototype.ya;
+u.s.prototype.cancelFullScreen=u.s.prototype.ob;u.s.prototype.bufferedPercent=u.s.prototype.Ja;u.s.prototype.usingNativeControls=u.s.prototype.Rb;u.s.prototype.reportUserActivity=u.s.prototype.Mb;u.s.prototype.userActive=u.s.prototype.ja;$("videojs.MediaLoader",u.Pc);$("videojs.TextTrackDisplay",u.bc);$("videojs.ControlBar",u.Fa);$("videojs.Button",u.q);$("videojs.PlayToggle",u.Yb);$("videojs.FullscreenToggle",u.Ga);$("videojs.BigPlayButton",u.Wa);$("videojs.LoadingSpinner",u.Wb);
+$("videojs.CurrentTimeDisplay",u.Ya);$("videojs.DurationDisplay",u.Za);$("videojs.TimeDivider",u.cc);$("videojs.RemainingTimeDisplay",u.fb);$("videojs.Slider",u.O);$("videojs.ProgressControl",u.eb);$("videojs.SeekBar",u.Zb);$("videojs.LoadProgressBar",u.ab);$("videojs.PlayProgressBar",u.Xb);$("videojs.SeekHandle",u.gb);$("videojs.VolumeControl",u.ib);$("videojs.VolumeBar",u.hb);$("videojs.VolumeLevel",u.dc);$("videojs.VolumeMenuButton",u.oa);$("videojs.VolumeHandle",u.jb);$("videojs.MuteToggle",u.da);
+$("videojs.PosterImage",u.cb);$("videojs.Menu",u.ma);$("videojs.MenuItem",u.N);$("videojs.MenuButton",u.R);u.R.prototype.createItems=u.R.prototype.ta;u.S.prototype.createItems=u.S.prototype.ta;u.Ea.prototype.createItems=u.Ea.prototype.ta;$("videojs.SubtitlesButton",u.Ha);$("videojs.CaptionsButton",u.Da);$("videojs.ChaptersButton",u.Ea);$("videojs.MediaTechController",u.r);u.r.prototype.features=u.r.prototype.m;u.r.prototype.m.volumeControl=u.r.prototype.m.Dc;u.r.prototype.m.fullscreenResize=u.r.prototype.m.Jd;
+u.r.prototype.m.progressEvents=u.r.prototype.m.Nd;u.r.prototype.m.timeupdateEvents=u.r.prototype.m.Sd;$("videojs.Html5",u.l);u.l.Events=u.l.$a;u.l.isSupported=u.l.isSupported;u.l.canPlaySource=u.l.mb;u.l.prototype.setCurrentTime=u.l.prototype.sd;u.l.prototype.setVolume=u.l.prototype.xd;u.l.prototype.setMuted=u.l.prototype.vd;u.l.prototype.setPreload=u.l.prototype.wd;u.l.prototype.setAutoplay=u.l.prototype.rd;u.l.prototype.setLoop=u.l.prototype.ud;$("videojs.Flash",u.f);u.f.isSupported=u.f.isSupported;
+u.f.canPlaySource=u.f.mb;u.f.onReady=u.f.onReady;$("videojs.TextTrack",u.X);u.X.prototype.label=u.X.prototype.label;$("videojs.CaptionsTrack",u.Ub);$("videojs.SubtitlesTrack",u.$b);$("videojs.ChaptersTrack",u.Vb);$("videojs.autoSetup",u.fc);$("videojs.plugin",u.od);$("videojs.createTimeRange",u.tb);})();
+/**
+ * alertify
+ * An unobtrusive customizable JavaScript notification system
+ *
+ * @author Fabien Doiron <fabien.doiron@gmail.com>
+ * @copyright Fabien Doiron 2013
+ * @license MIT <http://opensource.org/licenses/mit-license.php>
+ * @link http://fabien-d.github.com/alertify.js/
+ * @module alertify
+ * @version 0.3.11
+ */
+(function (global, undefined) {
+	"use strict";
+
+	var document = global.document,
+	    Alertify;
+
+	Alertify = function () {
+
+		var _alertify = {},
+		    dialogs   = {},
+		    isopen    = false,
+		    keys      = { ENTER: 13, ESC: 27, SPACE: 32 },
+		    queue     = [],
+		    $, btnCancel, btnOK, btnReset, btnResetBack, btnFocus, elCallee, elCover, elDialog, elLog, form, input, getTransitionEvent;
+
+		/**
+		 * Markup pieces
+		 * @type {Object}
+		 */
+		dialogs = {
+			buttons : {
+				holder : "<nav class=\"alertify-buttons\">{{buttons}}</nav>",
+				submit : "<button type=\"submit\" class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>",
+				ok     : "<button class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>",
+				cancel : "<button class=\"alertify-button alertify-button-cancel\" id=\"alertify-cancel\">{{cancel}}</button>"
+			},
+			input   : "<div class=\"alertify-text-wrapper\"><input type=\"text\" class=\"alertify-text\" id=\"alertify-text\"></div>",
+			message : "<p class=\"alertify-message\">{{message}}</p>",
+			log     : "<article class=\"alertify-log{{class}}\">{{message}}</article>"
+		};
+
+		/**
+		 * Return the proper transitionend event
+		 * @return {String}    Transition type string
+		 */
+		getTransitionEvent = function () {
+			var t,
+			    type,
+			    supported   = false,
+			    el          = document.createElement("fakeelement"),
+			    transitions = {
+				    "WebkitTransition" : "webkitTransitionEnd",
+				    "MozTransition"    : "transitionend",
+				    "OTransition"      : "otransitionend",
+				    "transition"       : "transitionend"
+			    };
+
+			for (t in transitions) {
+				if (el.style[t] !== undefined) {
+					type      = transitions[t];
+					supported = true;
+					break;
+				}
+			}
+
+			return {
+				type      : type,
+				supported : supported
+			};
+		};
+
+		/**
+		 * Shorthand for document.getElementById()
+		 *
+		 * @param  {String} id    A specific element ID
+		 * @return {Object}       HTML element
+		 */
+		$ = function (id) {
+			return document.getElementById(id);
+		};
+
+		/**
+		 * Alertify private object
+		 * @type {Object}
+		 */
+		_alertify = {
+
+			/**
+			 * Labels object
+			 * @type {Object}
+			 */
+			labels : {
+				ok     : "OK",
+				cancel : "Cancel"
+			},
+
+			/**
+			 * Delay number
+			 * @type {Number}
+			 */
+			delay : 5000,
+
+			/**
+			 * Whether buttons are reversed (default is secondary/primary)
+			 * @type {Boolean}
+			 */
+			buttonReverse : false,
+
+			/**
+			 * Which button should be focused by default
+			 * @type {String}	"ok" (default), "cancel", or "none"
+			 */
+			buttonFocus : "ok",
+
+			/**
+			 * Set the transition event on load
+			 * @type {[type]}
+			 */
+			transition : undefined,
+
+			/**
+			 * Set the proper button click events
+			 *
+			 * @param {Function} fn    [Optional] Callback function
+			 *
+			 * @return {undefined}
+			 */
+			addListeners : function (fn) {
+				var hasOK     = (typeof btnOK !== "undefined"),
+				    hasCancel = (typeof btnCancel !== "undefined"),
+				    hasInput  = (typeof input !== "undefined"),
+				    val       = "",
+				    self      = this,
+				    ok, cancel, common, key, reset;
+
+				// ok event handler
+				ok = function (event) {
+					if (typeof event.preventDefault !== "undefined") event.preventDefault();
+					common(event);
+					if (typeof input !== "undefined") val = input.value;
+					if (typeof fn === "function") {
+						if (typeof input !== "undefined") {
+							fn(true, val);
+						}
+						else fn(true);
+					}
+					return false;
+				};
+
+				// cancel event handler
+				cancel = function (event) {
+					if (typeof event.preventDefault !== "undefined") event.preventDefault();
+					common(event);
+					if (typeof fn === "function") fn(false);
+					return false;
+				};
+
+				// common event handler (keyup, ok and cancel)
+				common = function (event) {
+					self.hide();
+					self.unbind(document.body, "keyup", key);
+					self.unbind(btnReset, "focus", reset);
+					if (hasOK) self.unbind(btnOK, "click", ok);
+					if (hasCancel) self.unbind(btnCancel, "click", cancel);
+				};
+
+				// keyup handler
+				key = function (event) {
+					var keyCode = event.keyCode;
+					if ((keyCode === keys.SPACE && !hasInput) || (hasInput && keyCode === keys.ENTER)) ok(event);
+					if (keyCode === keys.ESC && hasCancel) cancel(event);
+				};
+
+				// reset focus to first item in the dialog
+				reset = function (event) {
+					if (hasInput) input.focus();
+					else if (!hasCancel || self.buttonReverse) btnOK.focus();
+					else btnCancel.focus();
+				};
+
+				// handle reset focus link
+				// this ensures that the keyboard focus does not
+				// ever leave the dialog box until an action has
+				// been taken
+				this.bind(btnReset, "focus", reset);
+				this.bind(btnResetBack, "focus", reset);
+				// handle OK click
+				if (hasOK) this.bind(btnOK, "click", ok);
+				// handle Cancel click
+				if (hasCancel) this.bind(btnCancel, "click", cancel);
+				// listen for keys, Cancel => ESC
+				this.bind(document.body, "keyup", key);
+				if (!this.transition.supported) {
+					this.setFocus();
+				}
+			},
+
+			/**
+			 * Bind events to elements
+			 *
+			 * @param  {Object}   el       HTML Object
+			 * @param  {Event}    event    Event to attach to element
+			 * @param  {Function} fn       Callback function
+			 *
+			 * @return {undefined}
+			 */
+			bind : function (el, event, fn) {
+				if (typeof el.addEventListener === "function") {
+					el.addEventListener(event, fn, false);
+				} else if (el.attachEvent) {
+					el.attachEvent("on" + event, fn);
+				}
+			},
+
+			/**
+			 * Use alertify as the global error handler (using window.onerror)
+			 *
+			 * @return {boolean} success
+			 */
+			handleErrors : function () {
+				if (typeof global.onerror !== "undefined") {
+					var self = this;
+					global.onerror = function (msg, url, line) {
+						self.error("[" + msg + " on line " + line + " of " + url + "]", 0);
+					};
+					return true;
+				} else {
+					return false;
+				}
+			},
+
+			/**
+			 * Append button HTML strings
+			 *
+			 * @param {String} secondary    The secondary button HTML string
+			 * @param {String} primary      The primary button HTML string
+			 *
+			 * @return {String}             The appended button HTML strings
+			 */
+			appendButtons : function (secondary, primary) {
+				return this.buttonReverse ? primary + secondary : secondary + primary;
+			},
+
+			/**
+			 * Build the proper message box
+			 *
+			 * @param  {Object} item    Current object in the queue
+			 *
+			 * @return {String}         An HTML string of the message box
+			 */
+			build : function (item) {
+				var html    = "",
+				    type    = item.type,
+				    message = item.message,
+				    css     = item.cssClass || "";
+
+				html += "<div class=\"alertify-dialog\">";
+				html += "<a id=\"alertify-resetFocusBack\" class=\"alertify-resetFocus\" href=\"#\">Reset Focus</a>";
+
+				if (_alertify.buttonFocus === "none") html += "<a href=\"#\" id=\"alertify-noneFocus\" class=\"alertify-hidden\"></a>";
+
+				// doens't require an actual form
+				if (type === "prompt") html += "<div id=\"alertify-form\">";
+
+				html += "<article class=\"alertify-inner\">";
+				html += dialogs.message.replace("{{message}}", message);
+
+				if (type === "prompt") html += dialogs.input;
+
+				html += dialogs.buttons.holder;
+				html += "</article>";
+
+				if (type === "prompt") html += "</div>";
+
+				html += "<a id=\"alertify-resetFocus\" class=\"alertify-resetFocus\" href=\"#\">Reset Focus</a>";
+				html += "</div>";
+
+				switch (type) {
+				case "confirm":
+					html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.ok));
+					html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
+					break;
+				case "prompt":
+					html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.submit));
+					html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
+					break;
+				case "alert":
+					html = html.replace("{{buttons}}", dialogs.buttons.ok);
+					html = html.replace("{{ok}}", this.labels.ok);
+					break;
+				default:
+					break;
+				}
+
+				elDialog.className = "alertify alertify-" + type + " " + css;
+				elCover.className  = "alertify-cover";
+				return html;
+			},
+
+			/**
+			 * Close the log messages
+			 *
+			 * @param  {Object} elem    HTML Element of log message to close
+			 * @param  {Number} wait    [optional] Time (in ms) to wait before automatically hiding the message, if 0 never hide
+			 *
+			 * @return {undefined}
+			 */
+			close : function (elem, wait) {
+				// Unary Plus: +"2" === 2
+				var timer = (wait && !isNaN(wait)) ? +wait : this.delay,
+				    self  = this,
+				    hideElement, transitionDone;
+
+				// set click event on log messages
+				this.bind(elem, "click", function () {
+					hideElement(elem);
+				});
+				// Hide the dialog box after transition
+				// This ensure it doens't block any element from being clicked
+				transitionDone = function (event) {
+					event.stopPropagation();
+					// unbind event so function only gets called once
+					self.unbind(this, self.transition.type, transitionDone);
+					// remove log message
+					elLog.removeChild(this);
+					if (!elLog.hasChildNodes()) elLog.className += " alertify-logs-hidden";
+				};
+				// this sets the hide class to transition out
+				// or removes the child if css transitions aren't supported
+				hideElement = function (el) {
+					// ensure element exists
+					if (typeof el !== "undefined" && el.parentNode === elLog) {
+						// whether CSS transition exists
+						if (self.transition.supported) {
+							self.bind(el, self.transition.type, transitionDone);
+							el.className += " alertify-log-hide";
+						} else {
+							elLog.removeChild(el);
+							if (!elLog.hasChildNodes()) elLog.className += " alertify-logs-hidden";
+						}
+					}
+				};
+				// never close (until click) if wait is set to 0
+				if (wait === 0) return;
+				// set timeout to auto close the log message
+				setTimeout(function () { hideElement(elem); }, timer);
+			},
+
+			/**
+			 * Create a dialog box
+			 *
+			 * @param  {String}   message        The message passed from the callee
+			 * @param  {String}   type           Type of dialog to create
+			 * @param  {Function} fn             [Optional] Callback function
+			 * @param  {String}   placeholder    [Optional] Default value for prompt input field
+			 * @param  {String}   cssClass       [Optional] Class(es) to append to dialog box
+			 *
+			 * @return {Object}
+			 */
+			dialog : function (message, type, fn, placeholder, cssClass) {
+				// set the current active element
+				// this allows the keyboard focus to be resetted
+				// after the dialog box is closed
+				elCallee = document.activeElement;
+				// check to ensure the alertify dialog element
+				// has been successfully created
+				var check = function () {
+					if ((elLog && elLog.scrollTop !== null) && (elCover && elCover.scrollTop !== null)) return;
+					else check();
+				};
+				// error catching
+				if (typeof message !== "string") throw new Error("message must be a string");
+				if (typeof type !== "string") throw new Error("type must be a string");
+				if (typeof fn !== "undefined" && typeof fn !== "function") throw new Error("fn must be a function");
+				// initialize alertify if it hasn't already been done
+				this.init();
+				check();
+
+				queue.push({ type: type, message: message, callback: fn, placeholder: placeholder, cssClass: cssClass });
+				if (!isopen) this.setup();
+
+				return this;
+			},
+
+			/**
+			 * Extend the log method to create custom methods
+			 *
+			 * @param  {String} type    Custom method name
+			 *
+			 * @return {Function}
+			 */
+			extend : function (type) {
+				if (typeof type !== "string") throw new Error("extend method must have exactly one paramter");
+				return function (message, wait) {
+					this.log(message, type, wait);
+					return this;
+				};
+			},
+
+			/**
+			 * Hide the dialog and rest to defaults
+			 *
+			 * @return {undefined}
+			 */
+			hide : function () {
+				var transitionDone,
+				    self = this;
+				// remove reference from queue
+				queue.splice(0,1);
+				// if items remaining in the queue
+				if (queue.length > 0) this.setup(true);
+				else {
+					isopen = false;
+					// Hide the dialog box after transition
+					// This ensure it doens't block any element from being clicked
+					transitionDone = function (event) {
+						event.stopPropagation();
+						// unbind event so function only gets called once
+						self.unbind(elDialog, self.transition.type, transitionDone);
+					};
+					// whether CSS transition exists
+					if (this.transition.supported) {
+						this.bind(elDialog, this.transition.type, transitionDone);
+						elDialog.className = "alertify alertify-hide alertify-hidden";
+					} else {
+						elDialog.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+					}
+					elCover.className  = "alertify-cover alertify-cover-hidden";
+					// set focus to the last element or body
+					// after the dialog is closed
+					elCallee.focus();
+				}
+			},
+
+			/**
+			 * Initialize Alertify
+			 * Create the 2 main elements
+			 *
+			 * @return {undefined}
+			 */
+			init : function () {
+				// ensure legacy browsers support html5 tags
+				document.createElement("nav");
+				document.createElement("article");
+				document.createElement("section");
+				// cover
+				if ($("alertify-cover") == null) {
+					elCover = document.createElement("div");
+					elCover.setAttribute("id", "alertify-cover");
+					elCover.className = "alertify-cover alertify-cover-hidden";
+					document.body.appendChild(elCover);
+				}
+				// main element
+				if ($("alertify") == null) {
+					isopen = false;
+					queue = [];
+					elDialog = document.createElement("section");
+					elDialog.setAttribute("id", "alertify");
+					elDialog.className = "alertify alertify-hidden";
+					document.body.appendChild(elDialog);
+				}
+				// log element
+				if ($("alertify-logs") == null) {
+					elLog = document.createElement("section");
+					elLog.setAttribute("id", "alertify-logs");
+					elLog.className = "alertify-logs alertify-logs-hidden";
+					document.body.appendChild(elLog);
+				}
+				// set tabindex attribute on body element
+				// this allows script to give it focus
+				// after the dialog is closed
+				document.body.setAttribute("tabindex", "0");
+				// set transition type
+				this.transition = getTransitionEvent();
+			},
+
+			/**
+			 * Show a new log message box
+			 *
+			 * @param  {String} message    The message passed from the callee
+			 * @param  {String} type       [Optional] Optional type of log message
+			 * @param  {Number} wait       [Optional] Time (in ms) to wait before auto-hiding the log
+			 *
+			 * @return {Object}
+			 */
+			log : function (message, type, wait) {
+				// check to ensure the alertify dialog element
+				// has been successfully created
+				var check = function () {
+					if (elLog && elLog.scrollTop !== null) return;
+					else check();
+				};
+				// initialize alertify if it hasn't already been done
+				this.init();
+				check();
+
+				elLog.className = "alertify-logs";
+				this.notify(message, type, wait);
+				return this;
+			},
+
+			/**
+			 * Add new log message
+			 * If a type is passed, a class name "alertify-log-{type}" will get added.
+			 * This allows for custom look and feel for various types of notifications.
+			 *
+			 * @param  {String} message    The message passed from the callee
+			 * @param  {String} type       [Optional] Type of log message
+			 * @param  {Number} wait       [Optional] Time (in ms) to wait before auto-hiding
+			 *
+			 * @return {undefined}
+			 */
+			notify : function (message, type, wait) {
+				var log = document.createElement("article");
+				log.className = "alertify-log" + ((typeof type === "string" && type !== "") ? " alertify-log-" + type : "");
+				log.innerHTML = message;
+				// append child
+				elLog.appendChild(log);
+				// triggers the CSS animation
+				setTimeout(function() { log.className = log.className + " alertify-log-show"; }, 50);
+				this.close(log, wait);
+			},
+
+			/**
+			 * Set properties
+			 *
+			 * @param {Object} args     Passing parameters
+			 *
+			 * @return {undefined}
+			 */
+			set : function (args) {
+				var k;
+				// error catching
+				if (typeof args !== "object" && args instanceof Array) throw new Error("args must be an object");
+				// set parameters
+				for (k in args) {
+					if (args.hasOwnProperty(k)) {
+						this[k] = args[k];
+					}
+				}
+			},
+
+			/**
+			 * Common place to set focus to proper element
+			 *
+			 * @return {undefined}
+			 */
+			setFocus : function () {
+				if (input) {
+					input.focus();
+					input.select();
+				}
+				else btnFocus.focus();
+			},
+
+			/**
+			 * Initiate all the required pieces for the dialog box
+			 *
+			 * @return {undefined}
+			 */
+			setup : function (fromQueue) {
+				var item = queue[0],
+				    self = this,
+				    transitionDone;
+
+				// dialog is open
+				isopen = true;
+				// Set button focus after transition
+				transitionDone = function (event) {
+					event.stopPropagation();
+					self.setFocus();
+					// unbind event so function only gets called once
+					self.unbind(elDialog, self.transition.type, transitionDone);
+				};
+				// whether CSS transition exists
+				if (this.transition.supported && !fromQueue) {
+					this.bind(elDialog, this.transition.type, transitionDone);
+				}
+				// build the proper dialog HTML
+				elDialog.innerHTML = this.build(item);
+				// assign all the common elements
+				btnReset  = $("alertify-resetFocus");
+				btnResetBack  = $("alertify-resetFocusBack");
+				btnOK     = $("alertify-ok")     || undefined;
+				btnCancel = $("alertify-cancel") || undefined;
+				btnFocus  = (_alertify.buttonFocus === "cancel") ? btnCancel : ((_alertify.buttonFocus === "none") ? $("alertify-noneFocus") : btnOK),
+				input     = $("alertify-text")   || undefined;
+				form      = $("alertify-form")   || undefined;
+				// add placeholder value to the input field
+				if (typeof item.placeholder === "string" && item.placeholder !== "") input.value = item.placeholder;
+				if (fromQueue) this.setFocus();
+				this.addListeners(item.callback);
+			},
+
+			/**
+			 * Unbind events to elements
+			 *
+			 * @param  {Object}   el       HTML Object
+			 * @param  {Event}    event    Event to detach to element
+			 * @param  {Function} fn       Callback function
+			 *
+			 * @return {undefined}
+			 */
+			unbind : function (el, event, fn) {
+				if (typeof el.removeEventListener === "function") {
+					el.removeEventListener(event, fn, false);
+				} else if (el.detachEvent) {
+					el.detachEvent("on" + event, fn);
+				}
+			}
+		};
+
+		return {
+			alert   : function (message, fn, cssClass) { _alertify.dialog(message, "alert", fn, "", cssClass); return this; },
+			confirm : function (message, fn, cssClass) { _alertify.dialog(message, "confirm", fn, "", cssClass); return this; },
+			extend  : _alertify.extend,
+			init    : _alertify.init,
+			log     : function (message, type, wait) { _alertify.log(message, type, wait); return this; },
+			prompt  : function (message, fn, placeholder, cssClass) { _alertify.dialog(message, "prompt", fn, placeholder, cssClass); return this; },
+			success : function (message, wait) { _alertify.log(message, "success", wait); return this; },
+			error   : function (message, wait) { _alertify.log(message, "error", wait); return this; },
+			set     : function (args) { _alertify.set(args); },
+			labels  : _alertify.labels,
+			debug   : _alertify.handleErrors
+		};
+	};
+
+	// AMD and window support
+	if (typeof define === "function") {
+		define([], function () { return new Alertify(); });
+	} else if (typeof global.alertify === "undefined") {
+		global.alertify = new Alertify();
+	}
+
+}(this));
 /**
  * Dependencies
  * 	jquery-1.8.3
@@ -2244,11 +3012,7 @@ Date.prototype.add = function(interval, number) {
     $.fn.appendAt = function(element, index) {
         var children = this.children();
         if (index < 0) {
-            if (children.length > 0) {
-                $(children[0]).before(element);
-            } else {
-                this.append(element);
-            }
+            this.append(element);
         } else {
             if (index < children.length) {
                 $(children[index]).before(element);
@@ -2313,7 +3077,19 @@ Date.prototype.add = function(interval, number) {
 	};
 
 })();
-andrea.blink.declare("andrea.grace");(function() {
+alertify.reset = function() {
+    alertify.set({
+        'labels' : {
+            'ok' : 'OK',
+            'cancel' : 'Cancel'
+        },
+        'delay' : 5000,
+        'buttonReverse' : false,
+        'buttonFocus' : 'ok'
+    });
+};
+andrea.blink.declare('andrea.grace');
+(function() {
     var grace = andrea.grace;
     andrea.blink.declare("andrea.grace.constants.AppConst");
 
@@ -2337,19 +3113,26 @@ andrea.blink.declare("andrea.grace");(function() {
     AppConst.MEDIATOR_ANALYSIS_RESULT = "MEDIATOR_ANALYSIS_RESULT";
 
     AppConst.MEDIATOR_VIZ_NAVIGATOR = "MEDIATOR_VIZ_NAVIGATOR";
+    
     /**
      * Actions
      */
     AppConst.ACTION_CHANGE_DATA_PROVIDER = "ACTION_CHANGE_DATA_PROVIDER";
     AppConst.ACTION_RUN_ANALYSIS = "ACTION_RUN_ANALYSIS";
+    AppConst.ACTION_SAVE_COLLABORATION = "ACTION_SAVE_COLLABORATION";
+    AppConst.ACTION_LOAD_COLLABORATION = "ACTION_LOAD_COLLABORATION";
     /**
      * Notifications
      */
     AppConst.NOTIFICATION_DATA_PROVIDER_CHANGED = "NOTIFICATION_DATA_PROVIDER_CHANGED";
     AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED = "NOTIFICATION_VIZ_CONTEXT_CHANGED";
     AppConst.NOTIFICATION_VIZ_CONTEXT_APPLIED = "NOTIFICATION_VIZ_CONTEXT_APPLIED";
+    AppConst.NOTIFICATION_VIZ_CONTEXT_RESET = "NOTIFICATION_VIZ_CONTEXT_RESET";
 
-    AppConst.VIEW_NOTIFICATION_PASTE_TO = "VIEW_NOTIFICATION_PASTE_TO";
+    AppConst.NOTIFICATION_VIEW_PASTE_TO = "NOTIFICATION_VIEW_PASTE_TO";
+    
+    AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_START = "NOTIFICATION_ACTION_SAVE_COLLABORATION_START";
+    AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_COMPLETE = "NOTIFICATION_ACTION_SAVE_COLLABORATION_COMPLETE";
 
 })();
 (function() {
@@ -2490,18 +3273,18 @@ andrea.blink.declare("andrea.grace");(function() {
 (function() {
     var grace = andrea.grace;
 
-    andrea.blink.declare("andrea.grace.constants.Taobao");
+    andrea.blink.declare("andrea.grace.constants.TaobaoAPI");
 
     /**
      * TODO Remove this class
      * It seems no needed
      */
-    var Taobao = grace.constants.Taobao = {
+    var TaobaoAPI = grace.constants.TaobaoAPI = {
         'trade' : {
         }
     };
 
-    Taobao.trade.status = {
+    TaobaoAPI.trade.status = {
         'TRADE_NO_CREATE_PAY' : '未创建支付宝交易',
         'WAIT_BUYER_PAY' : '等待买家付款',
         'SELLER_CONSIGNED_PART' : '卖家部分发货',
@@ -2514,9 +3297,9 @@ andrea.blink.declare("andrea.grace");(function() {
         'TRADE_FINISHED' : '交易成功',
         'TRADE_CLOSED' : '退款成功，交易关闭',
         'TRADE_CLOSED_BY_TAOBAO' : '未付款，交易关闭'
-    }
+    };
 
-    Taobao.trade.type = {
+    TaobaoAPI.trade.type = {
         'fixed' : '一口价',
         'auction' : '拍卖',
         'guarantee_trade' : '一口价、拍卖',
@@ -2532,7 +3315,7 @@ andrea.blink.declare("andrea.grace");(function() {
         'external_trade' : '统一外部交易',
         'step' : '万人团'
     };
-    Taobao.trade.shipping_type = {
+    TaobaoAPI.trade.shipping_type = {
         'free' : '卖家包邮',
         'post' : '平邮',
         'express' : '快递',
@@ -2542,31 +3325,112 @@ andrea.blink.declare("andrea.grace");(function() {
         '26' : '预约配送'
     };
 
-    Taobao.trade.trade_from = {
+    TaobaoAPI.trade.trade_from = {
         'WAP' : '手机',
         'HITAO' : '嗨淘',
         'TOP' : 'TOP平台',
         'TAOBAO' : '普通淘宝',
         'JHS' : '聚划算'
     };
-    Taobao.isKey = function(type, id) {
-        return Taobao[type] != null && Taobao[type][id] != null;
-    }
-    Taobao.toCaption = function(key, type, id) {
-        if (Taobao.isKey(type, id)) {
+    TaobaoAPI.isKey = function(type, id) {
+        return TaobaoAPI[type] != null && TaobaoAPI[type][id] != null;
+    };
+    TaobaoAPI.toCaption = function(key, type, id) {
+        if (TaobaoAPI.isKey(type, id)) {
             if (id === 'trade_from') {
                 var ids = id.split(',');
                 if (ids.length > 1) {
                     var captions = [];
                     _.each(ids, function(id) {
-                        captions.push(Taobao.toCaption(key, type, id));
-                    })
+                        captions.push(TaobaoAPI.toCaption(key, type, id));
+                    });
                     return captions.join('，');
                 }
             }
-            return Taobao[type][id][key];
+            return TaobaoAPI[type][id][key];
         } else {
-            return key
+            return key;
+        }
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    andrea.blink.declare("andrea.grace.constants.JingdongAPI");
+
+    /**
+     * TODO Remove this class
+     * It seems no needed
+     */
+    var JingdongAPI = grace.constants.JingdongAPI = {
+        'order' : {},
+        'coupon' : {}
+    };
+
+    JingdongAPI.order.pay_type = {
+        '1' : '货到付款',
+        '2' : '邮局汇款',
+        '3' : '自提',
+        '4' : '在线支付',
+        '5' : '公司转账',
+        '6' : '银行转账'
+    };
+    JingdongAPI.order.delivery_type = {
+        '1' : '只工作日送货',
+        '2' : '只双休日、假日送货',
+        '3' : '工作日、双休日与假日均可送货',
+        '*' : '任意时间'
+    };
+    JingdongAPI.order.order_state = {
+        'WAIT_SELLER_STOCK_OUT' : '等待出库',
+        // 只适用于LBP，SOPL商家
+        'SEND_TO_DISTRIBUTION_CENER' : '发往配送中心',
+        // 只适用于LBP，SOPL商家
+        'DISTRIBUTION_CENTER_RECEIVED' : '配送中心已收货',
+        'WAIT_GOODS_RECEIVE_CONFIRM' : '等待确认收货',
+        // 只适用于LBP，SOPL商家
+        'RECEIPTS_CONFIRM' : '收款确认（服务完成）',
+        // 只适用于海外购商家，等待境内发货 标签下的订单
+        'WAIT_SELLER_DELIVERY' : '等待发货',
+        'FINISHED_L' : '完成',
+        // 取消的订单不返回收货人基本信息
+        'TRADE_CANCELED' : '取消',
+        // 锁定的订单不返回收货人基本信息
+        'LOCKED' : '已锁定'
+    };
+    JingdongAPI.coupon.coupon_type = {
+        '20' : '套装优惠',
+        '28' : '闪团优惠',
+        '29' : '团购优惠',
+        '30' : '单品促销优惠',
+        '34' : '手机红包',
+        '35' : '满返满送(返现)',
+        '39' : '京豆优惠',
+        '41' : '京东券优惠',
+        '52' : '礼品卡优惠',
+        '100' : '店铺优惠'
+    };
+
+    // TODO Move to utils
+    JingdongAPI.isKey = function(type, id) {
+        return JingdongAPI[type] != null && JingdongAPI[type][id] != null;
+    };
+    // TODO Handler * as key
+    JingdongAPI.toCaption = function(key, type, id) {
+        if (JingdongAPI.isKey(type, id)) {
+            if (id === 'trade_from') {
+                var ids = id.split(',');
+                if (ids.length > 1) {
+                    var captions = [];
+                    _.each(ids, function(id) {
+                        captions.push(JingdongAPI.toCaption(key, type, id));
+                    });
+                    return captions.join('，');
+                }
+            }
+            return JingdongAPI[type][id][key];
+        } else {
+            return key;
         }
     };
 })();
@@ -2675,10 +3539,10 @@ andrea.blink.declare("andrea.grace");(function() {
                 Operation._CLASSIFICATION_TO_TYPES[classification] = [];
             }
             Operation._CLASSIFICATION_TO_TYPES[classification].push(type);
-        }
+        };
         var loadClassification = function(classification, name) {
             Operation._CLASSIFICATION_TO_NAME[classification] = name;
-        }
+        };
         // Classification
         loadClassification(OperationClassification.CARD_OPERATION, '删除');
         loadClassification(OperationClassification.CALCULATE, '计算');
@@ -2712,42 +3576,72 @@ andrea.blink.declare("andrea.grace");(function() {
         loadType(OperationClassification.DRILL, OperationType.DRILL_WEEK, '每周 (' + currentMon.format('yyyy/M/d') + ' - ' + nextMon.format('M/d') + ')', '每周');
         loadType(OperationClassification.DRILL, OperationType.DRILL_DATE, '每日 (' + today.format('yyyy/M/d') + ')', '每日');
         // GROUP
-        loadType(OperationClassification.GROUP, OperationType.GROUP_MONTH, '月 (1 - 12)', '月');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_DATE, '日 (1 - 31)', '日');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_DAY, '星期 (1 - 7)', '星');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_HOUR, '时 (0 - 23)', '时');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_MONTH, '分月 (1-12)', '月');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_DATE, '分日 (1-31)', '日');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_DAY, '分星期 (1-7)', '星');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_HOUR, '分时 (0-23)', '时');
     };
     Operation._loadClass();
 
     Operation.getTypes = function(classification) {
         return Operation._CLASSIFICATION_TO_TYPES[classification];
-    }
+    };
+
+    Operation.toJSON = function(instance) {
+        return {
+            'id' : instance.id,
+            'type' : instance.type,
+            'priority' : instance.priority,
+            'name' : instance.name,
+            'abbreviation' : instance.abbreviation,
+            'classification' : instance.classification,
+            'classificationName' : instance.classificationName
+        };
+    };
+    Operation.fromJSON = function(json) {
+        var instance = new Operation();
+        instance.id = json.id;
+        instance.type = json.type;
+        instance.priority = json.priority;
+        instance.name = json.name;
+        instance.abbreviation = json.abbreviation;
+        instance.classification = json.classification;
+        instance.classificationName = json.classificationName;
+        grace.operation.OperationFactory.register(instance);
+        return instance;
+    };
 })(jQuery);
 (function($) {
-	var grace = andrea.grace;
-	var Operation = grace.operation.Operation;
-	var OperationPriorityBaseline = grace.operation.OperationPriorityBaseline;
+    var grace = andrea.grace;
+    var Operation = grace.operation.Operation;
+    var OperationPriorityBaseline = grace.operation.OperationPriorityBaseline;
 
-	andrea.blink.declare("andrea.grace.operation.OperationFactory");
-	var OperationFactory = grace.operation.OperationFactory;
+    andrea.blink.declare("andrea.grace.operation.OperationFactory");
+    var OperationFactory = grace.operation.OperationFactory;
 
-	if (!OperationFactory._count) {
-		OperationFactory._count = 0;
-	}
-	if (!OperationFactory._mapping) {
-		OperationFactory._mapping = {};
-	}
-	OperationFactory.produce = function(type, baseline) {
-		var o = new Operation(type, baseline + OperationFactory._count);
+    if (!OperationFactory._count) {
+        OperationFactory._count = 0;
+    }
+    if (!OperationFactory._mapping) {
+        OperationFactory._mapping = {};
+    }
+    OperationFactory.produce = function(type, baseline) {
+        var o = new Operation(type, baseline + OperationFactory._count);
 
-		OperationFactory._count++;
-		OperationFactory._mapping[o.id] = o;
-		
-		return o;
-	};
-	OperationFactory.get = function(id) {
-		return OperationFactory._mapping[id];
-	};
+        OperationFactory._count++;
+        OperationFactory._mapping[o.id] = o;
+
+        return o;
+    };
+    OperationFactory.get = function(id) {
+        return OperationFactory._mapping[id];
+    };
+    OperationFactory.register = function(o) {
+        if (!OperationFactory._mapping[o.id]) {
+            OperationFactory._count++;
+            OperationFactory._mapping[o.id] = o;
+        }
+    };
 })(jQuery);
 (function($) {
     var grace = andrea.grace;
@@ -2810,7 +3704,7 @@ andrea.blink.declare("andrea.grace");(function() {
     OperationGroup.prototype.mapIDs = function() {
         return _.map(this._operations, function(o) {
             return o.id;
-        })
+        });
     };
     OperationGroup.prototype.mapNames = function() {
         return _.map(this._operations, function(o) {
@@ -2867,6 +3761,18 @@ andrea.blink.declare("andrea.grace");(function() {
         var operation = OperationFactory.get(id);
         this._operations = _.without(this._operations, operation);
         delete this._typeToOperation[operation.type];
+    };
+    OperationGroup.toJSON = function(instance) {
+        return {
+            '_operations' : grace.utils.SerializeUtil.batchToJSON(instance._operations, Operation.toJSON),
+            '_typeToOperation' : instance._typeToOperation
+        };
+    };
+    OperationGroup.fromJSON = function(json) {
+        var instance = new OperationGroup();
+        instance._operations = grace.utils.SerializeUtil.batchFromJSON(json._operations, Operation.fromJSON);
+        instance._typeToOperation = json._typeToOperation;
+        return instance;
     };
 })(jQuery);
 (function() {
@@ -2942,12 +3848,6 @@ andrea.blink.declare("andrea.grace");(function() {
 	};
 	andrea.blink.extend(DateValue, andrea.grace.models.value.ValueBase);
 
-	DateValue.parseQuantified = function(quantified) {
-		var d = new Date();
-		d.setTime(quantified);
-		return new DateValue(quantified.toString(), d);
-	};
-
 	DateValue._instances = {};
 	DateValue.instance = function(raw) {
 		return DateValue._instances[raw];
@@ -2995,7 +3895,7 @@ andrea.blink.declare("andrea.grace");(function() {
 				caption = Date.hourNames[this._value.getHours()];
 			}
 
-			this._captionsByFormat[format] = caption
+			this._captionsByFormat[format] = caption;
 		}
 		return this._captionsByFormat[format];
 	};
@@ -3038,9 +3938,6 @@ andrea.blink.declare("andrea.grace");(function() {
     };
     andrea.blink.extend(NumberValue, andrea.grace.models.value.ValueBase);
 
-    NumberValue.parseQuantified = function(quantified) {
-        return new NumberValue(quantified.toString(), quantified);
-    };
     NumberValue.prototype.quantified = function() {
         return this._value;
     };
@@ -3068,6 +3965,28 @@ andrea.blink.declare("andrea.grace");(function() {
 
     StringValue.prototype.caption = function() {
         return this._value;
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+    andrea.blink.declare("andrea.grace.models.value.supportClasses.QuantifiedHelper");
+
+    var DateValue = grace.models.value.DateValue;
+    var NumberValue = grace.models.value.NumberValue;
+
+    var QuantifiedHelper = grace.models.value.supportClasses.QuantifiedHelper = {};
+
+    QuantifiedHelper.TYPE_DATE = 'quantified_typeDate';
+    QuantifiedHelper.TYPE_NUMBER = 'quantified_typeNumber';
+
+    QuantifiedHelper.fromQuantified = function(type, quantified) {
+        if (type === QuantifiedHelper.TYPE_DATE) {
+            var d = new Date();
+            d.setTime(quantified);
+            return new DateValue(quantified.toString(), d);
+        } else if (type === QuantifiedHelper.TYPE_NUMBER) {
+            return new NumberValue(quantified.toString(), quantified);
+        }
     };
 })();
 (function() {
@@ -3109,6 +4028,17 @@ andrea.blink.declare("andrea.grace");(function() {
         }
         return _hashPairs;
     };
+
+    // URLUtil.isMobile = function() {
+        // var is = false;
+        // // http://detectmobilebrowsers.com/
+        // (function(a) {
+            // if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) {
+                // is = true;
+            // }
+        // })(navigator.userAgent || navigator.vendor || window.opera);
+        // return is;
+    // };
 })();
 (function() {
     var grace = andrea.grace;
@@ -3148,8 +4078,9 @@ andrea.blink.declare("andrea.grace");(function() {
 	ConverterType.BOOLEAN = 'boolean';
 	ConverterType.STRING = 'string';
 	ConverterType.NUMBER = 'number';
-	ConverterType.EXCEL_DATE = 'excelDate';
-	ConverterType.DATE = 'date';
+	ConverterType.DATE_IN_EXCEL = 'dataInExcel';
+	ConverterType.DATE_IN_TEXT = 'dateInText';
+	ConverterType.DATE_IN_MS = 'dateInMS';
 
 	ConverterType._dateFormats = (function() {
 		var array = [];
@@ -3166,7 +4097,7 @@ andrea.blink.declare("andrea.grace");(function() {
 	})();
 	ConverterType.getDateFormats = function() {
 		return ConverterType._dateFormats;
-	}
+	};
 	ConverterType._monthFormats = (function() {
 		var array = [];
 		array.push('yyyy/M');
@@ -3176,220 +4107,229 @@ andrea.blink.declare("andrea.grace");(function() {
 	})();
 	ConverterType.getMonthFormats = function() {
 		return ConverterType._monthFormats;
-	}
+	};
 })();
 (function() {
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	var ConverterType = grace.utils.ConverterType;
-	var DateValue = grace.models.value.DateValue;
-	var NullValue = grace.models.value.NullValue;
-	var BooleanValue = grace.models.value.BooleanValue;
-	var NumberValue = grace.models.value.NumberValue;
-	var StringValue = grace.models.value.StringValue;
+    var ConverterType = grace.utils.ConverterType;
+    var DateValue = grace.models.value.DateValue;
+    var NullValue = grace.models.value.NullValue;
+    var BooleanValue = grace.models.value.BooleanValue;
+    var NumberValue = grace.models.value.NumberValue;
+    var StringValue = grace.models.value.StringValue;
 
-	andrea.blink.declare('andrea.grace.utils.DataConvertUtil');
-	var DataConvertUtil = grace.utils.DataConvertUtil;
+    andrea.blink.declare('andrea.grace.utils.DataConvertUtil');
+    var DataConvertUtil = grace.utils.DataConvertUtil;
 
-	DataConvertUtil.match = function(raw, tryExcel) {
-		var value = null;
-		var type = null;
-		if (raw) {
-			value = DataConvertUtil._convertNumber(raw);
-			// We can't identify a number or a date exactly in excel date format, so we narrow down the date range to
-			// 1990/1/1 - 2030/12/31
-			if (value.notNull()) {
-				if (tryExcel && (value.value() >= 32874 && value.value() <= 47848 )) {
-					value = DataConvertUtil._convertExcelDate(raw);
-					type = ConverterType.EXCEL_DATE;
-				} else {
-					type = ConverterType.NUMBER;
-				}
-			}
-			if (!value.notNull()) {
-				value = DataConvertUtil._convertDate(raw);
-				type = ConverterType.DATE;
-			}
-			if (!value.notNull()) {
-				value = DataConvertUtil._convertBoolean(raw);
-				type = ConverterType.BOOLEAN;
-			}
-			if (!value.notNull()) {
-				value = DataConvertUtil._convertString(raw);
-				type = ConverterType.STRING;
-			}
-		} else {
-			type = ConverterType.ANY;
-			value = NullValue.instance();
-		}
-		return {
-			'type' : type,
-			'value' : value
-		};
-	};
-	DataConvertUtil.getConverter = function(type, raw) {
-		if (type === ConverterType.BOOLEAN) {
-			return DataConvertUtil._convertBoolean;
-		} else if (type === ConverterType.NUMBER) {
-			return DataConvertUtil._convertNumber;
-		} else if (type === ConverterType.DATE) {
-			return DataConvertUtil._convertDate;
-		} else if (type === ConverterType.EXCEL_DATE) {
-			return DataConvertUtil._convertExcelDate;
-		} else if (type === ConverterType.STRING) {
-			return DataConvertUtil._convertString;
-		} else {
-			return null;
-		}
-	};
-	DataConvertUtil._convertString = function(raw) {
-		if (raw != null) {
-			return new StringValue(raw, _.str.trim(raw.toString()));
-		} else {
-			return NullValue.instance();
-		}
-	};
-	DataConvertUtil._convertBoolean = function(raw) {
-		if (raw === false) {
-			return new BooleanValue.falseInstance();
-		} else if (raw === true) {
-			return new BooleanValue.trueInstance();
-		} else {
-			return NullValue.instance();
-		}
-	};
+    DataConvertUtil.match = function(raw, tryExcel) {
+        var value = null;
+        var type = null;
+        if (raw) {
+            value = DataConvertUtil._convertNumber(raw);
+            // We can't identify a number or a date exactly in excel date format, so we narrow down the date range to
+            // 1990/1/1 - 2030/12/31
+            if (value.notNull()) {
+                if (tryExcel && (value.value() >= 32874 && value.value() <= 47848 )) {
+                    value = DataConvertUtil._convertDateInExcel(raw);
+                    type = ConverterType.DATE_IN_EXCEL;
+                } else {
+                    type = ConverterType.NUMBER;
+                }
+            }
+            if (!value.notNull()) {
+                value = DataConvertUtil._convertDateInText(raw);
+                type = ConverterType.DATE_IN_TEXT;
+            }
+            if (!value.notNull()) {
+                value = DataConvertUtil._convertBoolean(raw);
+                type = ConverterType.BOOLEAN;
+            }
+            if (!value.notNull()) {
+                value = DataConvertUtil._convertString(raw);
+                type = ConverterType.STRING;
+            }
+        } else {
+            type = ConverterType.ANY;
+            value = NullValue.instance();
+        }
+        return {
+            'type' : type,
+            'value' : value
+        };
+    };
+    DataConvertUtil.getConverter = function(type, raw) {
+        if (type === ConverterType.BOOLEAN) {
+            return DataConvertUtil._convertBoolean;
+        } else if (type === ConverterType.NUMBER) {
+            return DataConvertUtil._convertNumber;
+        } else if (type === ConverterType.DATE_IN_TEXT) {
+            return DataConvertUtil._convertDateInText;
+        } else if (type === ConverterType.DATE_IN_EXCEL) {
+            return DataConvertUtil._convertDateInExcel;
+        } else if (type === ConverterType.DATE_IN_MS) {
+            return DataConvertUtil._convertDateInMS;
+        } else if (type === ConverterType.STRING) {
+            return DataConvertUtil._convertString;
+        } else {
+            return null;
+        }
+    };
+    DataConvertUtil._convertString = function(raw) {
+        if (raw != null) {
+            return new StringValue(raw, _.str.trim(raw.toString()));
+        } else {
+            return NullValue.instance();
+        }
+    };
+    DataConvertUtil._convertBoolean = function(raw) {
+        if (raw === false) {
+            return new BooleanValue.falseInstance();
+        } else if (raw === true) {
+            return new BooleanValue.trueInstance();
+        } else {
+            return NullValue.instance();
+        }
+    };
 
-	DataConvertUtil._convertNumber = function(raw) {
-		if (raw != null) {
-			var s = _.str.trim(raw.toString());
-			if (!isNaN(s)) {
-				return new NumberValue(raw, Number(s));
-			} else {
-				if (s.length > 1 && s.substr(s.length - 1, 1) === '%') {
-					s = s.substr(0, s.length - 1);
-					if (!isNaN(s)) {
-						return new NumberValue(raw, Number(s));
-					}
-				}
-			}
-		} else {
-			return NullValue.instance();
-		}
-		return NullValue.instance();
-	};
-	/**
-	 *
-	 * @param {Object} raw
-	 */
-	DataConvertUtil._convertDate = function(raw) {
-		if (!raw) {
-			return NullValue.instance();
-		}
-		var s = _.str.trim(raw.toString());
-		if (s.length < 6 || isNaN(s.substr(0, 1)) || isNaN(s.substr(s.length - 1, 1))) {
-			return NullValue.instance();
-		}
-		s = s.replace(/[年月日_-]/g, '/');
-		if (s.indexOf('/') === -1) {
-			return NullValue.instance();
-		}
-		var cache = DateValue.instance(raw);
-		if (cache) {
-			return cache;
-		}
-		var formatHMS;
-		if (s.indexOf(' ') !== -1) {
-			if (s.indexOf(':') === -1) {
-				return NullValue.instance();
-			} else {
-				if (s.indexOf(':') === s.lastIndexOf(':')) {
-					formatHMS = 'H:m';
-				} else {
-					formatHMS = 'H:m:s';
-				}
-			}
-		}
-		var date = null;
-		if (DataConvertUtil._preferDateTest) {
-			date = Date.parseString(s, DataConvertUtil._preferDateTest);
-		}
-		var formats;
-		var parts = s.split('/');
-		if (parts.length === 3) {
-			formats = ConverterType.getDateFormats();
-		} else if (parts.length === 2) {
-			formats = ConverterType.getMonthFormats();
-		}
-		for (var i = formats.length - 1; i >= 0 && !date; i--) {
-			var test = formats[i];
-			if (formatHMS) {
-				test = test + ' ' + formatHMS;
-			}
-			date = Date.parseString(s, test);
-			if (date) {
-				DataConvertUtil._preferDateTest = test;
-				break;
-			}
-		}
-		// console.log(date);
-		if (date) {
-			return new DateValue(raw, date);
-		} else {
-			return NullValue.instance();
-		}
-	}
-	DataConvertUtil._preferDateTest = null;
+    DataConvertUtil._convertNumber = function(raw) {
+        if (raw != null) {
+            var s = _.str.trim(raw.toString());
+            if (!isNaN(s)) {
+                return new NumberValue(raw, Number(s));
+            } else {
+                if (s.length > 1 && s.substr(s.length - 1, 1) === '%') {
+                    s = s.substr(0, s.length - 1);
+                    if (!isNaN(s)) {
+                        return new NumberValue(raw, Number(s));
+                    }
+                }
+            }
+        } else {
+            return NullValue.instance();
+        }
+        return NullValue.instance();
+    };
 
-	/**
-	 *
-	 * @param {Object} raw
-	 */
-	DataConvertUtil._convertExcelDate = function(raw) {
-		if (!raw) {
-			return NullValue.instance();
-		}
-		var s = _.str.trim(raw.toString());
-		if (isNaN(s)) {
-			return NullValue.instance();
-		}
-		var cache = DateValue.instance(raw);
-		if (cache) {
-			return cache;
-		}
+    DataConvertUtil._convertDateInMS = function(raw) {
+        if (!raw) {
+            return NullValue.instance();
+        }
+        return new DateValue(raw, new Date(raw));
+    };
+    /**
+     *
+     * @param {Object} raw
+     */
+    DataConvertUtil._convertDateInText = function(raw) {
+        if (!raw) {
+            return NullValue.instance();
+        }
+        var s = _.str.trim(raw.toString());
+        if (s.length < 6 || isNaN(s.substr(0, 1)) || isNaN(s.substr(s.length - 1, 1))) {
+            return NullValue.instance();
+        }
+        s = s.replace(/[年月日_-]/g, '/');
+        if (s.indexOf('/') === -1) {
+            return NullValue.instance();
+        }
+        var cache = DateValue.instance(raw);
+        if (cache) {
+            return cache;
+        }
+        var formatHMS;
+        if (s.indexOf(' ') !== -1) {
+            if (s.indexOf(':') === -1) {
+                return NullValue.instance();
+            } else {
+                if (s.indexOf(':') === s.lastIndexOf(':')) {
+                    formatHMS = 'H:m';
+                } else {
+                    formatHMS = 'H:m:s';
+                }
+            }
+        }
+        var date = null;
+        if (DataConvertUtil._preferDateTest) {
+            date = Date.parseString(s, DataConvertUtil._preferDateTest);
+        }
+        var formats;
+        var parts = s.split('/');
+        if (parts.length === 3) {
+            formats = ConverterType.getDateFormats();
+        } else if (parts.length === 2) {
+            formats = ConverterType.getMonthFormats();
+        }
+        for (var i = formats.length - 1; i >= 0 && !date; i--) {
+            var test = formats[i];
+            if (formatHMS) {
+                test = test + ' ' + formatHMS;
+            }
+            date = Date.parseString(s, test);
+            if (date) {
+                DataConvertUtil._preferDateTest = test;
+                break;
+            }
+        }
+        // console.log(date);
+        if (date) {
+            return new DateValue(raw, date);
+        } else {
+            return NullValue.instance();
+        }
+    };
+    DataConvertUtil._preferDateTest = null;
 
-		excelTime = parseFloat(s);
-		// Adjust excelTime overflow
-		if (excelTime > DataConvertUtil._WRONG_DATE_IN_EXCEL_FORMAT)
-			excelTime = excelTime - 1;
+    /**
+     *
+     * @param {Object} raw
+     */
+    DataConvertUtil._convertDateInExcel = function(raw) {
+        if (!raw) {
+            return NullValue.instance();
+        }
+        var s = _.str.trim(raw.toString());
+        if (isNaN(s)) {
+            return NullValue.instance();
+        }
+        var cache = DateValue.instance(raw);
+        if (cache) {
+            return cache;
+        }
 
-		var excelBaseMS = DataConvertUtil._EXCEL_BASE_TIME - DataConvertUtil._DAY_IN_MILLISECONDS;
-		var dateMSUTC = excelBaseMS + excelTime * DataConvertUtil._DAY_IN_MILLISECONDS;
+        excelTime = parseFloat(s);
+        // Adjust excelTime overflow
+        if (excelTime > DataConvertUtil._WRONG_DATE_IN_EXCEL_FORMAT)
+            excelTime = excelTime - 1;
 
-		var date = new Date();
-		date.setTime(dateMSUTC + DataConvertUtil._getTimezoneOffsetMS());
-		return new DateValue(raw, date);
-	};
-	// Date.UTC(1900, 0);
-	DataConvertUtil._EXCEL_BASE_TIME = -2208988800000;
-	// February 29th 1900, There is no 'February 29' in 1900, wrong set in Excel Date
-	DataConvertUtil._WRONG_DATE_IN_EXCEL_FORMAT = 60;
-	// milliseconds of 1 day, 24 * 60 * 60 * 1000
-	DataConvertUtil._DAY_IN_MILLISECONDS = 86400000;
+        var excelBaseMS = DataConvertUtil._EXCEL_BASE_TIME - DataConvertUtil._DAY_IN_MILLISECONDS;
+        var dateMSUTC = excelBaseMS + excelTime * DataConvertUtil._DAY_IN_MILLISECONDS;
 
-	DataConvertUtil._TIMEZONE_OFFSET_MS = 0;
-	DataConvertUtil._createAndReadTimezoneOffset = function() {
-		// Create
-		DataConvertUtil._TIMEZONE_OFFSET_MS = new Date().getTimezoneOffset() * 60 * 1000;
-		// Redirect the get method to Read
-		DataConvertUtil._getTimezoneOffsetMS = DataConvertUtil._readTimezoneOffset;
-		// Read
-		return DataConvertUtil._readTimezoneOffset();
-	};
-	DataConvertUtil._readTimezoneOffset = function() {
-		return DataConvertUtil._TIMEZONE_OFFSET_MS;
-	};
-	// Default get method is Write
-	DataConvertUtil._getTimezoneOffsetMS = DataConvertUtil._createAndReadTimezoneOffset;
+        var date = new Date();
+        date.setTime(dateMSUTC + DataConvertUtil._getTimezoneOffsetMS());
+        return new DateValue(raw, date);
+    };
+    // Date.UTC(1900, 0);
+    DataConvertUtil._EXCEL_BASE_TIME = -2208988800000;
+    // February 29th 1900, There is no 'February 29' in 1900, wrong set in Excel Date
+    DataConvertUtil._WRONG_DATE_IN_EXCEL_FORMAT = 60;
+    // milliseconds of 1 day, 24 * 60 * 60 * 1000
+    DataConvertUtil._DAY_IN_MILLISECONDS = 86400000;
+
+    DataConvertUtil._TIMEZONE_OFFSET_MS = 0;
+    DataConvertUtil._createAndReadTimezoneOffset = function() {
+        // Create
+        DataConvertUtil._TIMEZONE_OFFSET_MS = new Date().getTimezoneOffset() * 60 * 1000;
+        // Redirect the get method to Read
+        DataConvertUtil._getTimezoneOffsetMS = DataConvertUtil._readTimezoneOffset;
+        // Read
+        return DataConvertUtil._readTimezoneOffset();
+    };
+    DataConvertUtil._readTimezoneOffset = function() {
+        return DataConvertUtil._TIMEZONE_OFFSET_MS;
+    };
+    // Default get method is Write
+    DataConvertUtil._getTimezoneOffsetMS = DataConvertUtil._createAndReadTimezoneOffset;
 })();
 (function() {
     var grace = andrea.grace;
@@ -3458,6 +4398,40 @@ andrea.blink.declare("andrea.grace");(function() {
         return this._e - this._s;
     };
 })();
+(function() {
+    var grace = andrea.grace;
+
+    andrea.blink.declare("andrea.grace.utils.SerializeUtil");
+    var SerializeUtil = grace.utils.SerializeUtil;
+
+    SerializeUtil.batchToJSON = function(instances, toJSON) {
+        if (_.isArray(instances)) {
+            var result = [];
+            for (var i = 0; i < instances.length; i++) {
+                result.push(toJSON.call(null, instances[i]));
+            }
+            return result;
+        } else if (instances) {
+            return toJSON.call(null, instances);
+        } else {
+            return null;
+        }
+    };
+
+    SerializeUtil.batchFromJSON = function(array, fromJSON) {
+        if (_.isArray(array)) {
+            var result = [];
+            for (var i = 0; i < array.length; i++) {
+                result.push(fromJSON.call(null, array[i]));
+            }
+            return result;
+        } else if (array) {
+            return fromJSON.call(null, array);
+        } else {
+            return null;
+        }
+    };
+})();
 (function($) {
     var grace = andrea.grace;
 
@@ -3510,29 +4484,32 @@ andrea.blink.declare("andrea.grace");(function() {
         }
         Log._logCache[level].push(msg);
     };
+    Log._logServer = grace.Settings.log.url;
     Log._releaseCache = function() {
-        if (!Log._logCache) {
+        if (!Log._logCache || !Log._logServer) {
             return;
         }
         for (var level in Log._logCache) {
             var msg = Log._logCache[level].join(Log.LINE_SPLITTER);
             $.ajax({
                 'dataType' : 'json',
-                'url' : grace.Settings.log.url,
+                'url' : Log._logServer,
                 'data' : {
                     'level' : level,
                     'msg' : msg
                 },
                 'type' : 'POST'
+            }).fail(function() {
+                Log._logServer = null;
             });
         }
         Log._logCache = null;
-    }
+    };
     Log._time = function() {
         var d = new Date();
         var t = d.getTime().toString();
         return d.format('yyyy/MM/dd HH:mm:ss') + ',' + t.substr(t.length - 3);
-    }
+    };
 })(jQuery);
 (function() {
     var grace = andrea.grace;
@@ -3761,98 +4738,160 @@ andrea.blink.declare("andrea.grace");(function() {
     IFilter.prototype.filter = function(value) {
         return false;
     };
+    IFilter.prototype.type = function() {
+        return undefined;
+    };
+    IFilter.toJSON = function(instance) {
+        var type = instance.type();
+
+        if (type === 'RangeFilter') {
+            return grace.filter.RangeFilter.toJSON(instance);
+        } else if (type === 'TextFilter') {
+            return grace.filter.TextFilter.toJSON(instance);
+        }
+    };
+    IFilter.fromJSON = function(json) {
+        var type = json.type;
+
+        if (type === 'RangeFilter') {
+            return grace.filter.RangeFilter.fromJSON(json);
+        } else if (type === 'TextFilter') {
+            return grace.filter.TextFilter.fromJSON(json);
+        }
+    };
 })();
 (function() {
-	var grace = andrea.grace;
-	andrea.blink.declare("andrea.grace.filter.TextFilter");
+    var grace = andrea.grace;
+    andrea.blink.declare("andrea.grace.filter.TextFilter");
 
-	var TextFilter = grace.filter.TextFilter = function(optionValues, nullable) {
-		var options = this._options = {};
-		_.each(optionValues, function(value) {
-			options[value.caption()] = true;
-		});
+    var TextFilter = grace.filter.TextFilter = function(optionValues, nullable) {
+        var options = this._options = {};
+        _.each(optionValues, function(value) {
+            options[value.caption()] = true;
+        });
 
-		this.nullable = nullable;
-	};
-	andrea.blink.extend(TextFilter, grace.filter.IFilter);
+        this.nullable = nullable;
+    };
+    andrea.blink.extend(TextFilter, grace.filter.IFilter);
 
-	/**
-	 *
-	 * @param {Object} value
-	 * @return The result of filter
-	 * 	true: use normally
-	 * 	false: will be skip
-	 */
-	TextFilter.prototype.filter = function(value) {
-		return this._options[value.caption()];
-	};
+    TextFilter.prototype.type = function() {
+        return 'TextFilter';
+    };
+    /**
+     *
+     * @param {Object} value
+     * @return The result of filter
+     * 	true: use normally
+     * 	false: will be skip
+     */
+    TextFilter.prototype.filter = function(value) {
+        return this._options[value.caption()];
+    };
 
-	TextFilter.prototype.addOption = function(value) {
-		this._options[value.caption()] = true;
-	};
-	TextFilter.prototype.removeOption = function(value) {
-		this._options[value.caption()] = false;
-	};
+    TextFilter.prototype.addOption = function(value) {
+        this._options[value.caption()] = true;
+    };
+    TextFilter.prototype.removeOption = function(value) {
+        this._options[value.caption()] = false;
+    };
+
+    TextFilter.toJSON = function(instance) {
+        return {
+            'type' : instance.type(),
+            'options' : instance._options,
+            'nullable' : instance.nullable
+        };
+    };
+    TextFilter.fromJSON = function(json) {
+        var instance = new TextFilter([], json.quantifiedType);
+        instance._options = json.options;
+        return instance;
+    };
 })();
 (function() {
-	var grace = andrea.grace;
-	andrea.blink.declare("andrea.grace.filter.RangeFilter");
+    var grace = andrea.grace;
+    andrea.blink.declare("andrea.grace.filter.RangeFilter");
 
-	var RangeFilter = grace.filter.RangeFilter = function(optionValues, nullable, parseQuantified) {
-		this._from = Number.MAX_VALUE;
-		this._to = -Number.MAX_VALUE;
+    var QuantifiedHelper = grace.models.value.supportClasses.QuantifiedHelper;
 
-		_.each(optionValues, $.proxy(function(value) {
-			var quantified = value.quantified();
-			this._from = Math.min(this._from, quantified);
-			this._to = Math.max(this._to, quantified);
-		}, this));
+    var RangeFilter = grace.filter.RangeFilter = function(optionValues, nullable, quantifiedType) {
+        this._from = Number.MAX_VALUE;
+        this._to = -Number.MAX_VALUE;
 
-		this._min = this._from;
-		this._max = this._to;
+        _.each(optionValues, $.proxy(function(value) {
+            var quantified = value.quantified();
+            this._from = Math.min(this._from, quantified);
+            this._to = Math.max(this._to, quantified);
+        }, this));
 
-		this.nullable = nullable;
-		this._parseQuantified = parseQuantified;
-	};
-	andrea.blink.extend(RangeFilter, grace.filter.IFilter);
+        this._min = this._from;
+        this._max = this._to;
 
-	/**
-	 *
-	 * @param {Object} value
-	 * @return The result of filter
-	 * 	true: use normally
-	 * 	false: will be skip
-	 */
-	RangeFilter.prototype.filter = function(value) {
-		var quantified = value.quantified();
-		return this._max >= quantified && this._min <= quantified;
-	};
+        this.nullable = nullable;
+        this._quantifiedType = quantifiedType;
+    };
+    andrea.blink.extend(RangeFilter, grace.filter.IFilter);
 
-	RangeFilter.prototype.from = function(value) {
-		return this._from;
-	};
-	RangeFilter.prototype.to = function(value) {
-		return this._to;
-	};
-	RangeFilter.prototype.min = function(value) {
-		if (arguments.length > 0) {
-			this._min = value;
-			return this;
-		} else {
-			return this._min;
-		}
-	};
-	RangeFilter.prototype.max = function(value) {
-		if (arguments.length > 0) {
-			this._max = value;
-			return this;
-		} else {
-			return this._max;
-		}
-	};
-	RangeFilter.prototype.parseQuantified = function(quantified) {
-		return this._parseQuantified.call(null, quantified);
-	}
+    RangeFilter.prototype.type = function() {
+        return 'RangeFilter';
+    };
+    /**
+     *
+     * @param {Object} value
+     * @return The result of filter
+     * 	true: use normally
+     * 	false: will be skip
+     */
+    RangeFilter.prototype.filter = function(value) {
+        var quantified = value.quantified();
+        return this._max >= quantified && this._min <= quantified;
+    };
+
+    RangeFilter.prototype.from = function(value) {
+        return this._from;
+    };
+    RangeFilter.prototype.to = function(value) {
+        return this._to;
+    };
+    RangeFilter.prototype.min = function(value) {
+        if (arguments.length > 0) {
+            this._min = value;
+            return this;
+        } else {
+            return this._min;
+        }
+    };
+    RangeFilter.prototype.max = function(value) {
+        if (arguments.length > 0) {
+            this._max = value;
+            return this;
+        } else {
+            return this._max;
+        }
+    };
+    RangeFilter.prototype.fromQuantified = function(quantified) {
+        return QuantifiedHelper.fromQuantified(this._quantifiedType, quantified);
+    };
+
+    RangeFilter.toJSON = function(instance) {
+        return {
+            'type' : instance.type(),
+            'from' : instance._from,
+            'to' : instance._to,
+            'min' : instance._min,
+            'max' : instance._max,
+            'nullable' : instance.nullable,
+            'quantifiedType' : instance._quantifiedType
+        };
+    };
+    RangeFilter.fromJSON = function(json) {
+        var instance = new RangeFilter([], json.nullable, json.quantifiedType);
+        instance._from = json.from;
+        instance._to = json.to;
+        instance._min = json.min;
+        instance._max = json.max;
+        return instance;
+    };
 })();
 (function($) {
     var grace = andrea.grace;
@@ -3872,54 +4911,196 @@ andrea.blink.declare("andrea.grace");(function() {
         var $popUp = $(popUp.dom());
         $popUp.appendTo($layer);
         return popUp;
-    }
+    };
     PopUpManager.removePopUp = function(popUp) {
         var $popUp = $(popUp.dom());
-        $popUp.parent().detach();
-    }
+        $popUp.parent().empty().detach();
+    };
     PopUpManager.centerPopUp = function(popUp) {
         var $popUp = $(popUp.dom());
         var $body = $('body');
-        var $root = $body.children().eq(0)
+        var $root = $body.children().eq(0);
         $popUp.css({
             'left' : ($root.width() - $popUp.width()) / 2 + 'px',
             'top' : ($root.height() - $popUp.height()) / 2 - 36 + 'px'
         });
-    }
+    };
+})(jQuery);
+(function($) {
+    var grace = andrea.grace;
+    andrea.blink.declare('andrea.grace.managers.SerializeManager');
+
+    var SerializeUtil = grace.utils.SerializeUtil;
+    var Log = grace.managers.Log;
+
+    var SerializeManager = grace.managers.SerializeManager = function() {
+        this._serializing = {};
+        this._deserializing = null;
+
+        this._requestedSerializations = [];
+    };
+    SerializeManager._instance = null;
+
+    SerializeManager.instance = function() {
+        if (!SerializeManager._instance) {
+            SerializeManager._instance = new SerializeManager();
+        }
+        return SerializeManager._instance;
+    };
+
+    SerializeManager.prototype.serializable = function() {
+        return this._serializing.dsInfo !== null && this._serializing.dsInfo !== undefined;
+    };
+
+    SerializeManager.prototype.serialize = function(layout, callback) {
+        if (!this._serializing.dsInfo) {
+            this._requestedSerializations.push(arguments);
+            return;
+        }
+
+        _.extend(this._serializing, {
+            'layout' : layout
+        });
+
+        $.ajax({
+            'url' : grace.Settings.nodeServer + '/collaboration/create',
+            'type' : 'POST',
+            'data' : {
+                'collaboration' : JSON.stringify(this._serializing)
+            }
+        }).done($.proxy(function(data) {
+            data = JSON.parse(data);
+            callback(data.sn);
+        }, this)).fail($.proxy(function() {
+            Log.console('serialize collaboration fail.');
+        }, this));
+    };
+
+    SerializeManager.prototype.deserialize = function(collaborationSN) {
+        $.ajax({
+            'url' : grace.Settings.nodeServer + '/collaboration/get',
+            'dataType' : 'jsonp',
+            'data' : {
+                'sn' : collaborationSN
+            }
+        }).done($.proxy(function(data) {
+            this._deserializing = data.collaboration;
+
+            grace.api.config.dataDiscovery.layout = this._deserializing.layout;
+            grace.api.dataSource.load(this._deserializing.dsInfo);
+        }, this)).fail($.proxy(function() {
+            Log.console('deserialize visualization fail.');
+        }, this));
+    };
+
+    SerializeManager.prototype.loadVizContext = function(callback) {
+        if (this._deserializing) {
+            var ShelvedAnalysis = grace.models.vo.ShelvedAnalysis;
+
+            var loaded = {
+                'vizType' : this._deserializing.vizType,
+                'analysisDimesions' : SerializeUtil.batchFromJSON(this._deserializing.analysisDimesions, ShelvedAnalysis.fromJSON),
+                'analysisDatas' : SerializeUtil.batchFromJSON(this._deserializing.analysisDatas, ShelvedAnalysis.fromJSON),
+                'analysisFilters' : SerializeUtil.batchFromJSON(this._deserializing.analysisFilters, ShelvedAnalysis.fromJSON)
+            };
+            if (this._deserializing.title) {
+                var array = document.title.split(' - ');
+                array[array.length - 1] = this._deserializing.title;
+                document.title = array.join(' - ');
+
+                var HighChartsOption = grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption;
+                HighChartsOption.title = this._deserializing.title;
+            }
+
+            callback(loaded);
+        }
+    };
+
+    SerializeManager.prototype.saveDataSource = function(dsInfo) {
+        this._serializing.dsInfo = dsInfo;
+
+        if (this._serializing.dsInfo && this._requestedSerializations.length) {
+            _.each(this._requestedSerializations, $.proxy(function(args) {
+                this.serialize.apply(this, args);
+            }, this));
+            this._requestedSerializations = [];
+        }
+    };
+
+    SerializeManager.prototype.saveVizContext = function(vizType, analysisDimesions, analysisDatas, analysisFilters, title) {
+        var ShelvedAnalysis = grace.models.vo.ShelvedAnalysis;
+        _.extend(this._serializing, {
+            'vizType' : vizType,
+            'analysisDimesions' : SerializeUtil.batchToJSON(analysisDimesions, ShelvedAnalysis.toJSON),
+            'analysisDatas' : SerializeUtil.batchToJSON(analysisDatas, ShelvedAnalysis.toJSON),
+            'analysisFilters' : SerializeUtil.batchToJSON(analysisFilters, ShelvedAnalysis.toJSON),
+            'title' : title
+        });
+    };
+
+    SerializeManager.prototype.saveViz = function(viz) {
+        this._serializing.viz = viz;
+    };
 })(jQuery);
 (function() {
 
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare('andrea.grace.models.vo.Analysis');
+    andrea.blink.declare('andrea.grace.models.vo.Analysis');
 
-	var ShelfType = grace.constants.ShelfType;
-	var DataConvertUtil = grace.utils.DataConvertUtil;
-	var ValueType = grace.constants.ValueType;
+    var ShelfType = grace.constants.ShelfType;
+    var DataConvertUtil = grace.utils.DataConvertUtil;
+    var ValueType = grace.constants.ValueType;
+    var AnalysisType = grace.constants.AnalysisType;
 
-	var Analysis = grace.models.vo.Analysis = function(id) {
-		this.id = id ? id : _.uniqueId('analysisID_');
-		this.index = null;
-		this.name = null;
+    var Analysis = grace.models.vo.Analysis = function(id) {
+        this.id = id ? id : _.uniqueId('analysisID_');
+        this.index = null;
+        this.name = null;
 
-		this._valueType = null;
-		this.quantifiable = false;
+        this._valueType = null;
+        this.quantifiable = false;
 
-		this.analysisType = null;
-		// For dimension
-		this.numUniqueValue/*Number*/ = null;
-		// For dimension, DATE
-		this.dateSpan/*Number*/ = null;
-	};
-	Analysis.prototype.valueType = function(value) {
-		if (arguments.length > 0) {
-			this._valueType = value;
-			this.quantifiable = this._valueType === ValueType.NUMBER || this._valueType === ValueType.DATE;
-			return this;
-		} else {
-			return this._valueType;
-		}
-	}
+        this.analysisType = null;
+        // For dimension
+        this.numUniqueValue/*Number*/ = null;
+        // For dimension, DATE
+        this.dateSpan/*Number*/ = null;
+    };
+    Analysis.prototype.valueType = function(value) {
+        if (arguments.length > 0) {
+            this._valueType = value;
+            this.quantifiable = this._valueType === ValueType.NUMBER || this._valueType === ValueType.DATE;
+            return this;
+        } else {
+            return this._valueType;
+        }
+    };
+
+    Analysis.toJSON = function(instance) {
+        return {
+            'id' : instance.id,
+            'index' : instance.index,
+            'name' : instance.name,
+            '_valueType' : instance._valueType,
+            'quantifiable' : instance.quantifiable,
+            'analysisType' : instance.analysisType,
+            'numUniqueValue' : instance.numUniqueValue,
+            'dateSpan' : instance.dateSpan,
+        };
+    };
+    Analysis.fromJSON = function(json) {
+        var instance = new Analysis();
+        instance.id = json.id;
+        instance.index = json.index;
+        instance.name = json.name;
+        instance._valueType = json._valueType;
+        instance.quantifiable = json.quantifiable;
+        instance.analysisType = json.analysisType;
+        instance.numUniqueValue = json.numUniqueValue;
+        instance.dateSpan = json.dateSpan;
+        return instance;
+    };
 })();
 (function() {
     var grace = andrea.grace;
@@ -3941,19 +5122,45 @@ andrea.blink.declare("andrea.grace");(function() {
         this.filter = null;
     };
     ShelvedAnalysis.prototype.isDateSeries = function() {
-        return this.source.valueType() === ValueType.DATE && this.operationGroup.hasClassification(OperationClassification.DRILL)
+        return this.source.valueType() === ValueType.DATE && this.operationGroup.hasClassification(OperationClassification.DRILL);
     };
 
-    ShelvedAnalysis.prototype.multiply = function(sa) {
+    ShelvedAnalysis.prototype.multiply = function(instance) {
         // TODO Build a full multiply logic for extensibility
         var result = {};
 
-        if (sa && sa.source && sa.source.numUniqueValue) {
-            result.numUniqueValue = this.source.numUniqueValue * sa.source.numUniqueValue;
+        if (instance && instance.source && instance.source.numUniqueValue) {
+            result.numUniqueValue = this.source.numUniqueValue * instance.source.numUniqueValue;
         } else {
-            result.numUniqueValue = this.source.numUniqueValue
+            result.numUniqueValue = this.source.numUniqueValue;
         }
         return result;
+    };
+
+    ShelvedAnalysis.toJSON = function(instance) {
+        var json = {
+            'id' : instance.id,
+            'source' : grace.models.vo.Analysis.toJSON(instance.source),
+            'operationGroup' : grace.operation.OperationGroup.toJSON(instance.operationGroup),
+            'visualized' : instance.visualized,
+            'numPartialVisualized' : instance.numPartialVisualized
+        };
+        if (instance.filter) {
+            json.filter = grace.filter.IFilter.toJSON(instance.filter);
+        }
+        return json;
+    };
+    ShelvedAnalysis.fromJSON = function(json) {
+        var instance = new ShelvedAnalysis();
+        instance.id = json.id;
+        instance.source = grace.models.vo.Analysis.fromJSON(json.source);
+        instance.operationGroup = grace.operation.OperationGroup.fromJSON(json.operationGroup);
+        instance.visualized = json.visualized;
+        instance.numPartialVisualized = json.numPartialVisualized;
+        if (json.filter) {
+            instance.filter = grace.filter.IFilter.fromJSON(json.filter);
+        }
+        return instance;
     };
 })();
 (function($) {
@@ -3970,7 +5177,8 @@ andrea.blink.declare("andrea.grace");(function() {
         this.numRows = 0;
         this.numColumns = 0;
 
-        this._columnBased = null;
+        this._columnBased = null;
+
         this._build();
     };
     andrea.blink.extend(DataProvider, andrea.blink.mvc.Model);
@@ -3987,7 +5195,8 @@ andrea.blink.declare("andrea.grace");(function() {
             'notNullValue2d' : [],
             'notNullUniqueValues2d' : [],
             'hasNull2d' : []
-        }
+        };
+
         this.numRows = this._values2d.length;
         this.numColumns = this.numRows > 0 ? this._values2d[0].length : 0;
 
@@ -4047,129 +5256,141 @@ andrea.blink.declare("andrea.grace");(function() {
 })(jQuery);
 (function($) {
 
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare("andrea.grace.models.DataDiscoveryModel");
+    andrea.blink.declare("andrea.grace.models.DataDiscoveryModel");
 
-	var ShelfType = grace.constants.ShelfType;
-	var AppConst = andrea.grace.constants.AppConst;
-	var VizType = grace.constants.VizType;
-	/**
-	 * App Model host all widgets (including chart, cross table and other widget).
-	 */
-	var DataDiscoveryModel = grace.models.DataDiscoveryModel = function() {
-		DataDiscoveryModel.superclass.constructor.apply(this, arguments);
-		DataDiscoveryModel._instance = this;
+    var ShelfType = grace.constants.ShelfType;
+    var AppConst = andrea.grace.constants.AppConst;
+    var VizType = grace.constants.VizType;
+    /**
+     * App Model host all widgets (including chart, cross table and other widget).
+     */
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel = function() {
+        DataDiscoveryModel.superclass.constructor.apply(this, arguments);
+        DataDiscoveryModel._instance = this;
 
-		this.raw/*Object*/ = null;
-		this.analyses/*Array.<Analysis>*/ = null;
-		this.dataProvider = null;
+        this.raw/*Object*/ = null;
+        this.analyses/*Array.<Analysis>*/ = null;
+        this.dataProvider = null;
 
-		this._analysisFilters/*Array.<ShelvedAnalysis>*/ = [];
-		this._analysisDimesions/*Array.<ShelvedAnalysis>*/ = [];
-		this._analysisDatas/*Array.<ShelvedAnalysis>*/ = [];
+        this._analysisFilters/*Array.<ShelvedAnalysis>*/ = [];
+        this._analysisDimesions/*Array.<ShelvedAnalysis>*/ = [];
+        this._analysisDatas/*Array.<ShelvedAnalysis>*/ = [];
 
-		this._vizType = VizType.RECOMMEND;
-	};
-	andrea.blink.extend(DataDiscoveryModel, andrea.blink.mvc.Model);
+        this._vizType = VizType.RECOMMEND;
+    };
+    andrea.blink.extend(DataDiscoveryModel, andrea.blink.mvc.Model);
 
-	// TODO Remove this method after refator view mediator, static method for view get model currently
-	DataDiscoveryModel._instance = null;
-	DataDiscoveryModel.instance = function() {
-		return DataDiscoveryModel._instance;
-	}
-	/**
-	 * A short cut way for view-view communication
-	 * TODO Refactor it
-	 */
-	DataDiscoveryModel.prototype.viewNotify = function(name, data) {
-		this._notify(name, data);
-	}
-	/**
-	 *
-	 */
-	DataDiscoveryModel.prototype.setDataProvider = function(raw, analyses, dataProvider) {
-		this.raw = raw;
-		this.analyses = analyses;
-		this.dataProvider = dataProvider;
+    // TODO Remove this method after refator view mediator, static method for view get model currently
+    DataDiscoveryModel._instance = null;
+    DataDiscoveryModel.instance = function() {
+        return DataDiscoveryModel._instance;
+    };
+    /**
+     * A short cut way for view-view, action-view communication
+     * TODO Refactor it
+     */
+    DataDiscoveryModel.prototype.hackNotify = function(name, data) {
+        this._notify(name, data);
+    };
+    /**
+     *
+     */
+    DataDiscoveryModel.prototype.setDataProvider = function(raw, analyses, dataProvider) {
+        this.raw = raw;
+        this.analyses = analyses;
+        this.dataProvider = dataProvider;
 
-		this._vizType = VizType.RECOMMEND;
+        this._vizType = VizType.RECOMMEND;
 
-		this._analysisFilters = [];
-		this._analysisDimesions = [];
-		this._analysisDatas = [];
+        this._analysisFilters = [];
+        this._analysisDimesions = [];
+        this._analysisDatas = [];
 
-		this._notify(AppConst.NOTIFICATION_DATA_PROVIDER_CHANGED);
-	}	/**
-	 *
-	 */
-	DataDiscoveryModel.prototype.vizType = function(value) {
-		if (arguments.length > 0) {
-			if (this._vizType !== value) {
-				this._vizType = value;
-				this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
-			}
-		} else {
-			return this._vizType;
-		}
-	}
-	DataDiscoveryModel.prototype.analysisFilters = function(value) {
-		if (arguments.length > 0) {
-			this._analysisFilters = value;
-			this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
-		} else {
-			return this._analysisFilters;
-		}
-	}
-	DataDiscoveryModel.prototype.analysisDimesions = function(value) {
-		if (arguments.length > 0) {
-			this._analysisDimesions = value;
-			this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
-		} else {
-			return this._analysisDimesions;
-		}
-	}
-	DataDiscoveryModel.prototype.analysisDatas = function(value) {
-		if (arguments.length > 0) {
-			this._analysisDatas = value;
-			this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
-		} else {
-			return this._analysisDatas;
-		}
-	}
-	DataDiscoveryModel.prototype.invalidateShelvedAnalysis = function() {
-		this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_APPLIED);
-	}
-	/**
-	 *
-	 */	DataDiscoveryModel.prototype.getAnalyses = function(ids) {
-		var as = [];
-		for (var i = 0; i < ids.length; i++) {
-			as.push(this.getAnalysis(ids[i]));
-		}
-		return as;
-	}
-	DataDiscoveryModel.prototype.getAnalysis = function(id) {
-		return this._get(id, this.analyses);
-	}
-	DataDiscoveryModel.prototype.getShelvedAnalysis = function(id) {
-		var sa = this._get(id, this._analysisFilters);
-		if (!sa) {
-			sa = this._get(id, this._analysisDimesions);
-		}
-		if (!sa) {
-			sa = this._get(id, this._analysisDatas);
-		}
-		return sa;
-	}
-	DataDiscoveryModel.prototype._get = function(id, items) {
-		for (var i = 0; i < items.length; i++) {
-			if (items[i].id === id) {
-				return items[i];
-			}
-		}
-		return null;
-	}
+        this._notify(AppConst.NOTIFICATION_DATA_PROVIDER_CHANGED);
+    };
+    /**
+     *
+     */
+    DataDiscoveryModel.prototype.vizType = function(value) {
+        if (arguments.length > 0) {
+            if (this._vizType !== value) {
+                this._vizType = value;
+                this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
+            }
+        } else {
+            return this._vizType;
+        }
+    };
+    DataDiscoveryModel.prototype.analysisFilters = function(value) {
+        if (arguments.length > 0) {
+            this._analysisFilters = value || [];
+            this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
+        } else {
+            return this._analysisFilters;
+        }
+    };
+    DataDiscoveryModel.prototype.analysisDimesions = function(value) {
+        if (arguments.length > 0) {
+            this._analysisDimesions = value || [];
+            this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
+        } else {
+            return this._analysisDimesions;
+        }
+    };
+    DataDiscoveryModel.prototype.analysisDatas = function(value) {
+        if (arguments.length > 0) {
+            this._analysisDatas = value || [];
+            this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED);
+        } else {
+            return this._analysisDatas;
+        }
+    };
+
+    DataDiscoveryModel.prototype.resetVizContext = function(vizType, analysisDimesions, analysisDatas, analysisFilters) {
+        this.vizType(vizType);
+        this.analysisDimesions(analysisDimesions);
+        this.analysisDatas(analysisDatas);
+        this.analysisFilters(analysisFilters);
+
+        this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_RESET);
+    };
+
+    DataDiscoveryModel.prototype.invalidateShelvedAnalysis = function() {
+        this._deferNotify(AppConst.NOTIFICATION_VIZ_CONTEXT_APPLIED);
+    };
+    /**
+     *
+     */
+    DataDiscoveryModel.prototype.getAnalyses = function(ids) {
+        var as = [];
+        for (var i = 0; i < ids.length; i++) {
+            as.push(this.getAnalysis(ids[i]));
+        }
+        return as;
+    };
+    DataDiscoveryModel.prototype.getAnalysis = function(id) {
+        return this._get(id, this.analyses);
+    };
+    DataDiscoveryModel.prototype.getShelvedAnalysis = function(id) {
+        var sa = this._get(id, this._analysisFilters);
+        if (!sa) {
+            sa = this._get(id, this._analysisDimesions);
+        }
+        if (!sa) {
+            sa = this._get(id, this._analysisDatas);
+        }
+        return sa;
+    };
+    DataDiscoveryModel.prototype._get = function(id, items) {
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].id === id) {
+                return items[i];
+            }
+        }
+        return null;
+    };
 })(jQuery);
 (function() {
     var grace = andrea.grace;
@@ -4204,9 +5425,16 @@ andrea.blink.declare("andrea.grace");(function() {
         var i, j;
         var fromExcel = raw.source === 'excel';
         var columnDescriptors = raw.columnDescriptors;
+        // Handler numRecords
+        columnDescriptors.push({
+            'id' : 'numRecords',
+            'name' : '#记录数',
+            'converterType' : ConverterType.NUMBER,
+            'analysisType' : AnalysisType.MEASURE
+        });
+        var numColumns = columnDescriptors.length;
         var rows = raw.rows;
         var numRows = rows.length;
-        var numColumns = columnDescriptors.length;
 
         Log.interaction('parseColumnRows', [numColumns, numRows].join(','));
         if (numRows === 0) {
@@ -4243,6 +5471,8 @@ andrea.blink.declare("andrea.grace");(function() {
         for ( i = numRows - 1; i >= 0; i--) {
             values2d[i] = [];
             var row = rows[i];
+            // Handler numRecords
+            row.push(1);
             for ( j = numColumns - 1; j >= 0; j--) {
                 var cell/*String*/ = row[j];
 
@@ -4275,7 +5505,8 @@ andrea.blink.declare("andrea.grace");(function() {
                         tryExcelDate = false;
                     }
                     var match = DataConvertUtil.match(cell, tryExcelDate);
-                    type = match.type;
+
+                    type = match.type;
                     value = match.value;
                 }
                 if (!converter.numByType[type]) {
@@ -4313,7 +5544,7 @@ andrea.blink.declare("andrea.grace");(function() {
                         }
                         // Set data type when numOfType is greater than 50%
                         if (numOfType / (numRows - numOfAny) > .5) {
-                            if (type === ConverterType.EXCEL_DATE || type === ConverterType.DATE) {
+                            if (type === ConverterType.DATE_IN_EXCEL || type === ConverterType.DATE_IN_TEXT || type === ConverterType.DATE_IN_MS) {
                                 a.valueType(ValueType.DATE);
                             } else if (type === ConverterType.NUMBER) {
                                 a.valueType(ValueType.NUMBER);
@@ -4453,6 +5684,60 @@ andrea.blink.declare("andrea.grace");(function() {
 })();
 (function() {
     var grace = andrea.grace;
+
+    andrea.blink.declare("andrea.grace.actions.SaveCollaborationAction");
+
+    var AppConst = andrea.grace.constants.AppConst;
+    var Log = grace.managers.Log;
+    var SerializeManager = grace.managers.SerializeManager;
+
+    var SaveCollaborationAction = grace.actions.SaveCollaborationAction = function() {
+        SaveCollaborationAction.superclass.constructor.apply(this, arguments);
+    };
+    andrea.blink.extend(SaveCollaborationAction, andrea.blink.mvc.Action);
+
+    SaveCollaborationAction.prototype.execute = function(parameters) {
+        SaveCollaborationAction.superclass.execute.apply(this, arguments);
+
+        var model = this._getModel(AppConst.MODEL_GRACE);
+
+        model.hackNotify(AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_START);
+        SerializeManager.instance().saveVizContext(model._vizType, model.analysisDimesions(), model.analysisDatas(), model.analysisFilters(), parameters.title);
+        SerializeManager.instance().serialize(parameters.layout, function(sn) {
+            model.hackNotify(AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_COMPLETE, {
+                'sn' : sn
+            });
+        });
+    };
+
+})();
+(function() {
+    var grace = andrea.grace;
+
+    andrea.blink.declare("andrea.grace.actions.LoadCollaborationAction");
+
+    var AppConst = andrea.grace.constants.AppConst;
+    var Log = grace.managers.Log;
+    var SerializeManager = grace.managers.SerializeManager;
+
+    var LoadCollaborationAction = grace.actions.LoadCollaborationAction = function() {
+        LoadCollaborationAction.superclass.constructor.apply(this, arguments);
+    };
+    andrea.blink.extend(LoadCollaborationAction, andrea.blink.mvc.Action);
+
+    LoadCollaborationAction.prototype.execute = function(parameters) {
+        LoadCollaborationAction.superclass.execute.apply(this, arguments);
+
+        var model = this._getModel(AppConst.MODEL_GRACE);
+
+        SerializeManager.instance().loadVizContext(function(loaded) {
+            model.resetVizContext(loaded.vizType, loaded.analysisDimesions, loaded.analysisDatas, loaded.analysisFilters);
+        });
+    };
+
+})();
+(function() {
+    var grace = andrea.grace;
     andrea.blink.declare("andrea.grace.views.analysisContainer.events.ShelfEvent");
 
     var ShelfEvent = grace.views.analysisContainer.events.ShelfEvent = function(type, target, data) {
@@ -4553,6 +5838,8 @@ andrea.blink.declare("andrea.grace");(function() {
         });
 
         this._classVisible = null;
+        this._visibleAnimationDuration = 600;
+
         this._$dock = null;
     };
     andrea.blink.extend(PopUpBase, andrea.blink.mvc.View);
@@ -4581,16 +5868,16 @@ andrea.blink.declare("andrea.grace");(function() {
         PopUpManager.createPopUp(this, modal);
 
         this.dispatchEvent(new PopUpEvent(PopUpEvent.POPUP_OPENED, this));
-    }
+    };
     PopUpBase.prototype.close = function(delay) {
         var _this = this;
         var $dom = $(this._dom);
         if (delay == null) {
-            delay = 1
+            delay = 1;
         }
         if (this._classVisible) {
             $dom.removeClass(this._classVisible);
-            delay = 2000;
+            delay = this._visibleAnimationDuration;
         }
         if (delay > 0) {
             setTimeout(function() {
@@ -4604,153 +5891,156 @@ andrea.blink.declare("andrea.grace");(function() {
     };
     PopUpBase.prototype.closeImmediately = function() {
         this.close(0);
-    }
+    };
 })(jQuery);
 (function($) {
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare("andrea.grace.views.popUp.HoverPopUpBase");
+    andrea.blink.declare("andrea.grace.views.popUp.HoverPopUpBase");
 
-	var HoverPopUpBase = grace.views.popUp.HoverPopUpBase = function(dom) {
-		HoverPopUpBase.superclass.constructor.apply(this, arguments);
-		this._hover = null;
-		this._click = null;
-		this._mousedown = null;
-		this._mouseup = null;
-	};
-	andrea.blink.extend(HoverPopUpBase, grace.views.popUp.PopUpBase);
+    var HoverPopUpBase = grace.views.popUp.HoverPopUpBase = function(dom) {
+        HoverPopUpBase.superclass.constructor.apply(this, arguments);
+        this._hover = null;
+        this._click = null;
+        this._mousedown = null;
+        this._mouseup = null;
+    };
+    andrea.blink.extend(HoverPopUpBase, grace.views.popUp.PopUpBase);
 
-	HoverPopUpBase.prototype.open = function($dock) {
-		HoverPopUpBase.superclass.open.apply(this, arguments);
-		this._closeByHover(true);
-	};
-	HoverPopUpBase.prototype.close = function() {
-		HoverPopUpBase.superclass.close.apply(this, arguments);
-		this._closeByHover(false);
-	};
-	HoverPopUpBase.prototype._closeByClick = function(activate) {
-		if (activate) {
-			var _this = this;
+    HoverPopUpBase.prototype.open = function($dock) {
+        HoverPopUpBase.superclass.open.apply(this, arguments);
+        this._closeByHover(true);
+        this._closeByClick(true);
+    };
+    HoverPopUpBase.prototype.close = function() {
+        HoverPopUpBase.superclass.close.apply(this, arguments);
+        this._closeByHover(false);
+        this._closeByClick(false);
+    };
+    HoverPopUpBase.prototype._closeByClick = function(activate) {
+        if (activate) {
+            var _this = this;
 
-			var click = this._click = $.proxy(function(event) {
-				if (this._$dom[0] != event.target && !$.contains(this._$dom[0], event.target)) {
-					if (this._$dock[0] != event.target && !$.contains(this._$dock[0], event.target)) {
-						this.close();
-					}
-				}
-			}, this);
-			$('body').on('click', click);
-		} else {
-			$('body').off('click', this._click);
-		}
-	};
+            var click = this._click = $.proxy(function(event) {
+                if (this._$dom[0] != event.target && !$.contains(this._$dom[0], event.target)) {
+                    if (this._$dock[0] != event.target && !$.contains(this._$dock[0], event.target)) {
+                        this.close();
+                    }
+                }
+            }, this);
+            $(document.body).on('click', click).on('touchstart', click);
+        } else {
+            $(document.body).off('click', this._click).off('touchstart', this._click);
+        }
+    };
 
-	HoverPopUpBase.prototype._closeByHover = function(activate) {
-		if (activate) {
-			var _this = this;
-			// Event lisenter
-			var inside = true;
-			var operating = false;
-			var closeOutside = function() {
-				if (operating) {
-					return;
-				}
-				// Delay serveral ms to wait moving to submenu
-				setTimeout(function() {
-					if (!inside) {
-						_this.close();
-					}
-				}, 120)
-			}
-			var hover = this._hover = function(event) {
-				// console.log(event.type, event.currentTarget)
-				if (event.type === 'mouseenter') {
-					inside = true;
-				} else if (event.type === 'mouseleave') {
-					inside = false;
-					closeOutside();
-				}
-			};
-			var mousedown = this._mousedown = function() {
-				operating = true;
-			}
-			var mouseup = this._mouseup = function() {
-				operating = false;
-				if (!inside) {
-					closeOutside();
-				}
-			}
-			this._$dock.on('hover', hover);
-			this._$dom.on('hover', hover);
-			this._$dom.on('mousedown', mousedown);
-			$('body').on('mouseup', mouseup);
-		} else {
-			this._$dock.off('hover', this._hover);
-			this._$dom.off('hover', this._hover);
-			this._$dom.off('mousedown', this._mousedown);
-			$('body').off('mouseup', this._mouseup);
+    HoverPopUpBase.prototype._closeByHover = function(activate) {
+        if (activate) {
+            var _this = this;
+            // Event lisenter
+            var inside = true;
+            var operating = false;
+            var closeOutside = function() {
+                if (operating) {
+                    return;
+                }
+                // Delay serveral ms to wait moving to submenu
+                setTimeout(function() {
+                    if (!inside) {
+                        _this.close();
+                    }
+                }, 120)
+            }
+            var hover = this._hover = function(event) {
+                // console.log(event.type, event.currentTarget)
+                if (event.type === 'mouseenter') {
+                    inside = true;
+                } else if (event.type === 'mouseleave') {
+                    inside = false;
+                    closeOutside();
+                }
+            };
+            var mousedown = this._mousedown = function() {
+                operating = true;
+            }
+            var mouseup = this._mouseup = function() {
+                operating = false;
+                if (!inside) {
+                    closeOutside();
+                }
+            }
+            this._$dock.on('hover', hover);
+            this._$dom.on('hover', hover);
+            this._$dom.on('mousedown', mousedown);
+            $(document.body).on('mouseup', mouseup);
+        } else {
+            this._$dock.off('hover', this._hover);
+            this._$dom.off('hover', this._hover);
+            this._$dom.off('mousedown', this._mousedown);
+            $(document.body).off('mouseup', this._mouseup);
 
-		}
-	};
+        }
+    };
 })(jQuery);
 (function($) {
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	var PopUpManager = grace.managers.PopUpManager;
+    var PopUpManager = grace.managers.PopUpManager;
 
-	andrea.blink.declare('andrea.grace.views.popUp.Loading');
-	var Loading = grace.views.popUp.Loading = function(dom, label) {
-		Loading.superclass.constructor.apply(this, arguments);
+    andrea.blink.declare('andrea.grace.views.popUp.Loading');
+    var Loading = grace.views.popUp.Loading = function(dom, label) {
+        Loading.superclass.constructor.apply(this, arguments);
 
-		this._classVisible = 'grace-loading-visible';
-		this._$spin = null;
-		this._spinner = null;
+        this._classVisible = 'grace-loading-visible';
+        this._visibleAnimationDuration = 300;
+        this._$spin = null;
+        this._spinner = null;
 
-		this._label = label;
-		this._percent = 0;
-		this._$label = null;
+        this._label = label;
+        this._percent = 0;
+        this._$label = null;
 
-		this._createChildren()
-	};
-	andrea.blink.extend(Loading, grace.views.popUp.PopUpBase);
+        this._createChildren();
+    };
+    andrea.blink.extend(Loading, grace.views.popUp.PopUpBase);
 
-	Loading.prototype.open = function($dock, model) {
-		Loading.superclass.open.apply(this, arguments);
+    Loading.prototype.open = function($dock, model) {
+        Loading.superclass.open.apply(this, arguments);
 
-		if (this._label == null) {
-			this._$dom.width(90);
-			this._$dom.height(90);
-		} else {
-			this._$dom.width(90);
-			this._$dom.height(105);
-			this._$label = $('<div/>').addClass('grace-loading-label').appendTo(this._$dom);
-			this._validateLabel();
-		}
-		this._$spin.width(this._$dom.width());
-		this._$spin.height(90);
-		this._spinner = new Spinner({
-			'color' : '#ffffff'
-		});
-		this._spinner.spin(this._$spin[0]);
+        if (this._label == null) {
+            this._$dom.width(90);
+            this._$dom.height(90);
+        } else {
+            this._$dom.width(90);
+            this._$dom.height(105);
+            this._$label = $('<div/>').addClass('grace-loading-label').appendTo(this._$dom);
+            this._validateLabel();
+        }
+        this._$spin.width(this._$dom.width());
+        this._$spin.height(90);
+        this._spinner = new Spinner({
+            'color' : '#ffffff'
+        });
+        this._spinner.spin(this._$spin[0]);
 
-		PopUpManager.centerPopUp(this, $dock);
-	};
-	Loading.prototype.percent = function(value) {
-		this._percent = value;
-		this._validateLabel();
-	};
-	Loading.prototype._validateLabel = function() {
-		var caption = Math.min(99, Math.round(this._percent * 100)) + '%';
-		if (this._label) {
-			caption = this._label + ': ' + caption;
-		}
-		this._$label.text(caption);
-	};
-	Loading.prototype._createChildren = function() {
-		this._$dom.addClass('grace-loading');
+        PopUpManager.centerPopUp(this, $dock);
+    };
+    Loading.prototype.percent = function(value) {
+        this._percent = value;
+        this._validateLabel();
+    };
+    Loading.prototype._validateLabel = function() {
+        var caption = Math.min(99, Math.round(this._percent * 100)) + '%';
+        if (this._label) {
+            caption = this._label + ': ' + caption;
+        }
+        this._$label.text(caption);
+    };
+    Loading.prototype._createChildren = function() {
+        this._$dom.addClass('grace-loading');
 
-		this._$spin = $('<div/>').addClass('grace-loading-spin').appendTo(this._$dom);
-	};
+        this._$spin = $('<div/>').addClass('grace-loading-spin').appendTo(this._$dom);
+    };
 })(jQuery);
 (function($) {
     var grace = andrea.grace;
@@ -4824,10 +6114,10 @@ andrea.blink.declare("andrea.grace");(function() {
 		}
 	};
 	RangeValuesProxy.prototype.getMinCaption = function(value) {
-		return this.filter.parseQuantified(this.min()).caption();
+		return this.filter.fromQuantified(this.min()).caption();
 	};
 	RangeValuesProxy.prototype.getMaxCaption = function(value) {
-		return this.filter.parseQuantified(this.max()).caption();
+		return this.filter.fromQuantified(this.max()).caption();
 	};
 })(jQuery);
 (function() {
@@ -5162,6 +6452,7 @@ andrea.blink.declare("andrea.grace");(function() {
     var OperationClassification = grace.operation.OperationClassification;
     var OperationPriorityBaseline = grace.operation.OperationPriorityBaseline;
     var OperationType = grace.operation.OperationType;
+    var QuantifiedHelper = grace.models.value.supportClasses.QuantifiedHelper;
 
     var TextFilter = grace.filter.TextFilter;
     var FilterUtil = grace.utils.FilterUtil;
@@ -5237,7 +6528,7 @@ andrea.blink.declare("andrea.grace");(function() {
                         }
                     } else {
                         if (ShelfType.src(from)) {
-                            return true
+                            return true;
                         }
                     }
                 } else if (ShelfType.des(to)) {
@@ -5283,11 +6574,12 @@ andrea.blink.declare("andrea.grace");(function() {
                     '$helper' : ui.helper,
                     'from' : from,
                     'to' : to
-                }))
+                }));
 
                 _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this, {
                     'shelvedContexts' : _this.getShelvedContexts()
-                }));            },
+                }));
+            },
             over : function(event, ui) {
                 ui.helper.attr('__overContainerType', _this._type);
                 _this._$ph.attr('__toIndex', '');
@@ -5312,12 +6604,13 @@ andrea.blink.declare("andrea.grace");(function() {
                             top : $card.offset().top,
                             left : $card.offset().left
                         });
-                    }, true, false)
+                    }, true, false);
+
                     var p;
                     if (_this._layout === 'vertical') {
                         p = 'top';
                     } else if (_this._layout === 'horizontal') {
-                        p = 'left'
+                        p = 'left';
                     }
                     var draggingPosition = ui.helper.offset()[p];
                     for ( i = -1; i < bases.length; i++) {
@@ -5365,7 +6658,7 @@ andrea.blink.declare("andrea.grace");(function() {
             contexts.push(ctx);
         }, true, true);
         return contexts;
-    }
+    };
     ShelfBase.prototype._traversalCards = function(callback, ignorePH, ignoreDragging) {
         var $cards = this._$cards;
         var children = $cards.children();
@@ -5385,11 +6678,11 @@ andrea.blink.declare("andrea.grace");(function() {
             callback.call(card, index);
             index++;
         }
-    }
+    };
     ShelfBase.prototype._setTitle = function(title) {
         var $h2 = $(this._dom).find('h2');
         $h2.text(title);
-    }
+    };
     ShelfBase.prototype._setRequired = function(required) {
         var $h2 = $(this._dom).find('h2');
         if (required) {
@@ -5397,7 +6690,7 @@ andrea.blink.declare("andrea.grace");(function() {
         } else {
             $h2.removeClass('grace-analysis-title-text_required');
         }
-    }
+    };
     ShelfBase.prototype.addSuffix = function(suffix) {
         var $h2 = $(this._dom).find('h2');
 
@@ -5408,34 +6701,51 @@ andrea.blink.declare("andrea.grace");(function() {
         } else {
             $h2.removeClass('grace-analysis-title-text_suffix');
         }
-    }
+    };
     ShelfBase.prototype.type = function(value) {
         if (arguments.length > 0) {
             this._type = value;
         } else {
             return this._type;
         }
-    }
+    };
     ShelfBase.prototype.dropAnalysis = function(a, $helper, from, to) {
-        var $card = this._addCardAt(a, parseInt(this._$ph.attr('__toIndex')), $helper, from !== to);
+        var shelvedAnalysisID, operationIDs;
+        if (from === to) {
+            shelvedAnalysisID = $helper.attr('__shelvedAnalysisID');
+        }
+        if ($helper.attr('__operationIDs') && $helper.attr('__shelfType') === this._type) {
+            operationIDs = JSON.parse($helper.attr('__operationIDs'));
+        }
+        var $card = this._addCardAt(a, parseInt(this._$ph.attr('__toIndex')), shelvedAnalysisID, operationIDs);
     };
 
-    ShelfBase.prototype.addCard = function(a) {
-        return this._addCardAt(a);
+    ShelfBase.prototype.addCard = function(a, sa) {
+        var shelvedAnalysisID, operationIDs;
+        if (sa) {
+            shelvedAnalysisID = sa.id;
+        }
+        if (sa && sa.operationGroup) {
+            operationIDs = sa.operationGroup.mapIDs();
+        }
+        var filter;
+        if (sa && sa.filter) {
+            filter = sa.filter;
+        }
+        return this._addCardAt(a, -1, shelvedAnalysisID, operationIDs, filter);
     };
     // Override by child class
     ShelfBase.prototype._getOperationInfo = function() {
         return {
             'availableOGs' : [],
-            'defaultTypes' : []        }
+            'defaultTypes' : []
+        };
     };
     /**
      * @param a Analysis
      * @param index optional int
-     * @param $helper optional object
-     * @param newShelved optional boolean
      */
-    ShelfBase.prototype._addCardAt = function(a, index, $helper, newShelved) {
+    ShelfBase.prototype._addCardAt = function(a, index, shelvedAnalysisID, operationIDs, filter) {
         var _this = this;
 
         var $cards = this._$cards;
@@ -5445,11 +6755,10 @@ andrea.blink.declare("andrea.grace");(function() {
         }
         $card.width('');
 
-        $cards.appendAt($card, index);
+        $cards.appendAt($card, index);
+
         var shelvedAnalysisID;
-        if ($helper && !newShelved) {
-            shelvedAnalysisID = $helper.attr('__shelvedAnalysisID');
-        } else {
+        if (!shelvedAnalysisID) {
             shelvedAnalysisID = _.uniqueId('shelvedAnalysisID_');
         }
         // TODO Use data replace attr
@@ -5472,10 +6781,6 @@ andrea.blink.declare("andrea.grace");(function() {
             $card.attr('title', '');
         });
         // Handler operation
-        var operationIDs;
-        if ($helper && $helper.attr('__operationIDs') && $helper.attr('__shelfType') === this._type) {
-            operationIDs = JSON.parse($helper.attr('__operationIDs'));
-        }
         var info = this._getOperationInfo(a);
         var availableOGs = info.availableOGs;
         var defaultTypes = info.defaultTypes;
@@ -5483,86 +6788,108 @@ andrea.blink.declare("andrea.grace");(function() {
         var stopPropagation = function(event) {
             return false;
         };
-        var removeFromShelf = function() {
-            var $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-removeFromShelf', 'grace-analysis-card-operation-1'].join(' '));
-            $operation.attr('title', '移除');
-            $operation.on('click', function() {                _this._hide($card, function() {
-                    $card.detach();
-                    _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
-                });
-            }).on('mousedown', stopPropagation);
+        var genOperation = function(type, position, title, handlers) {
+            var $operation = $('<span/>').appendTo($card);
+            $operation.addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
+            $operation.addClass(['grace-analysis-card-operation-' + type, 'grace-analysis-card-operation-' + position].join(' '));
+            if (title) {
+                $operation.attr('title', title);
+            }
+            $operation.on('click', function(event) {
+                if (handlers && handlers.click) {
+                    handlers.click(event);
+                }
+            }).on('mouseenter', function(event) {
+                if (handlers && handlers.mouseenter) {
+                    handlers.mouseenter(event);
+                }
+            }).on('mousedown', function(event) {
+                event.stopPropagation();
+            });
             return $operation;
-        }
+        };
+        var genOperationRemove = function() {
+            return genOperation('remove', 1, '移除', {
+                'click' : function() {
+                    _this._hide($card, function() {
+                        $card.detach();
+                        _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
+                    });
+                }
+            });
+        };
         var $operation;
         if (ShelfType.proc(this._type)) {
             // Proc filter shelf
             // Remove
-            removeFromShelf();
+            genOperationRemove();
             // Filter
-            var cValues = this._model().dataProvider.getCValues(a.index, true, false);
-            var hasNull = this._model().dataProvider.isCHasNull(a.index);
-            if (a.quantifiable) {
-                if (a.valueType() === ValueType.DATE) {
-                    $card.data('__filter', new RangeFilter(cValues, hasNull, DateValue.parseQuantified));
-                } else if (a.valueType() === ValueType.NUMBER) {
-                    $card.data('__filter', new RangeFilter(cValues, hasNull, NumberValue.parseQuantified));
-                }
+            if (filter) {
+                $card.data('__filter', filter);
             } else {
-                $card.data('__filter', new TextFilter(cValues, hasNull));
+                var cValues = this._model().dataProvider.getCValues(a.index, true, false);
+                var hasNull = this._model().dataProvider.isCHasNull(a.index);
+                if (a.quantifiable) {
+                    if (a.valueType() === ValueType.DATE) {
+                        $card.data('__filter', new RangeFilter(cValues, hasNull, QuantifiedHelper.TYPE_DATE));
+                    } else if (a.valueType() === ValueType.NUMBER) {
+                        $card.data('__filter', new RangeFilter(cValues, hasNull, QuantifiedHelper.TYPE_NUMBER));
+                    }
+                } else {
+                    $card.data('__filter', new TextFilter(cValues, hasNull));
+                }
             }
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-filter', 'grace-analysis-card-operation-2'].join(' '));
-            $operation.on('hover', function(event) {
-                if (event.type === 'mouseenter') {
+            $operation = genOperation('filter', 2, '', {
+                'mouseenter' : function(event) {
                     _this._createPopUpFilter(a, $card, $operation);
                 }
-            }).on('mousedown', stopPropagation);
+            });
         } else if (ShelfType.des(this._type)) {
             // Des shelf
             // Remove
-            removeFromShelf();
+            genOperationRemove();
             // Drop down
             if (availableOGs && availableOGs.length > 0) {
-                $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-                $operation.addClass(['grace-analysis-card-operation-dropDown', 'grace-analysis-card-operation-2'].join(' '));
-                $operation.on('hover', function(event) {
-                    if (event.type === 'mouseenter') {
+                $operation = genOperation('dropDown', 2, '', {
+                    'mouseenter' : function(event) {
                         _this._createPopUpMenu(availableOGs, a, $card, $operation);
                     }
-                }).on('mousedown', stopPropagation);
+                });
             }
         } else if (ShelfType.src(this._type)) {
             // Src shelf
-            // Add
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-addToAnalysis', 'grace-analysis-card-operation-1'].join(' '));
-            if (this._type === ShelfType.SRC_DIM)
-                $operation.attr('title', '添加到分析纬度');
-            else if (this._type === ShelfType.SRC_MEA)
-                $operation.attr('title', '添加到分析指标');
-
-            var copyCard = function() {
-                var pasteTo;
-                if (this._type === ShelfType.SRC_DIM) {
-                    pasteTo = ShelfType.DES_DIM;
-                } else if (this._type === ShelfType.SRC_MEA) {
-                    pasteTo = ShelfType.DES_VALUE;
+            // Add to analysis
+            var copyCard = $.proxy(function(event, pasteTo) {
+                if (!pasteTo) {
+                    if (this._type === ShelfType.SRC_DIM) {
+                        pasteTo = ShelfType.DES_DIM;
+                    } else if (this._type === ShelfType.SRC_MEA) {
+                        pasteTo = ShelfType.DES_VALUE;
+                    }
                 }
                 this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_COPIED, this, {
                     'analysis' : $card.data('__analysis'),
                     'pasteTo' : pasteTo
                 }));
-            }
-            $card.on('dblclick', $.proxy(copyCard, this))
-            $operation.on('click', $.proxy(copyCard, this)).on('mousedown', stopPropagation);
+            }, this);
+
+            $operation = genOperation('addToAnalysis', 1, '分析', {
+                'click' : copyCard
+            });
+            $card.on('dblclick', copyCard);
+            // Add to filter
+            $operation = genOperation('addToFilter', 2, '过滤', {
+                'click' : function(event) {
+                    copyCard(event, ShelfType.PROC_FILTER);
+                }
+            });
             // Hide
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-moveToTrash', 'grace-analysis-card-operation-2'].join(' '));
-            $operation.attr('title', '隐藏');
-            $operation.on('click', $.proxy(function() {
+            var moveToTrash = $.proxy(function() {
                 this._addToTrash($card);
-            }, this)).on('mousedown', stopPropagation);
+            }, this);
+            $operation = genOperation('moveToTrash', 3, '隐藏', {
+                'click' : moveToTrash
+            });
         }
         if (!operationIDs || operationIDs.length === 0) {
             operationIDs = OperationGroup.createByTypes(defaultTypes).mapIDs();
@@ -5675,7 +7002,12 @@ andrea.blink.declare("andrea.grace");(function() {
 
         var operationIDsStringify = JSON.stringify(operationIDs);
         if (operationIDsStringify) {
-            if ($card.attr('__operationIDs') !== operationIDsStringify) {
+            var existing = $card.attr('__operationIDs');
+            if (!existing) {
+                $card.attr({
+                    '__operationIDs' : operationIDsStringify
+                });
+            } else if (existing !== operationIDsStringify) {
                 $card.attr({
                     '__shelvedAnalysisID' : _.uniqueId('shelvedAnalysisID_'),
                     '__operationIDs' : operationIDsStringify
@@ -5723,7 +7055,8 @@ andrea.blink.declare("andrea.grace");(function() {
                 filterSAs.push(sa);
             }
         });
-        var dataProvider = FilterUtil.filter(model.dataProvider, filterSAs)        var cValues = dataProvider.getCValues(a.index, true, true);
+        var dataProvider = FilterUtil.filter(model.dataProvider, filterSAs);
+        var cValues = dataProvider.getCValues(a.index, true, true);
         var hasNull = dataProvider.isCHasNull(a.index);
         if (a.quantifiable) {
             this._popUpFilter = PopUpRangeFilter.create(new RangeValuesProxy($card.data('__filter'), hasNull));
@@ -5744,7 +7077,7 @@ andrea.blink.declare("andrea.grace");(function() {
             _this._popUpFilter = null;
         }, this);
         this._popUpFilter.open($operation);
-    }
+    };
     ShelfBase.prototype._showOperation = function(show, $card, $operation) {
         if (show) {
             $card.find('.grace-analysis-card-text').addClass('grace-analysis-card-text-shrink');
@@ -5753,7 +7086,7 @@ andrea.blink.declare("andrea.grace");(function() {
             $card.find('.grace-analysis-card-text').removeClass('grace-analysis-card-text-shrink');
             $operation.removeClass('grace-analysis-card-operation-show');
         }
-    }
+    };
     /**
      * Should be overrided
      * @param {Object} $card
@@ -5769,7 +7102,8 @@ andrea.blink.declare("andrea.grace");(function() {
         // Update menu when open
         this._popUpMenu = PopUpMenu.create(new OperationGroupProxy(operationGroups));
         this._popUpMenu.addEventListener(MenuEvent.ITEM_SELECTED, function(event) {
-            var operation = event.data.item;            _this._addOperation(operation.type, $card);
+            var operation = event.data.item;
+            _this._addOperation(operation.type, $card);
             // Dispatch CARD_SHELVED to notify visualization update
             _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
         });
@@ -5782,7 +7116,7 @@ andrea.blink.declare("andrea.grace");(function() {
             _this._popUpMenu = null;
         }, this);
         this._popUpMenu.open($operation);
-    }
+    };
     ShelfBase.prototype.updateShelvedAnalyses = function(getSA) {
         var _this = this;
         var numVisualized = 0;
@@ -5829,7 +7163,7 @@ andrea.blink.declare("andrea.grace");(function() {
                     }, this);
                     trashMenu.open($trashBin);
                 }
-            }, this)
+            }, this);
             this._show($trashBin).on('hover', hover);
         }
         trash.push(a);
@@ -5852,14 +7186,23 @@ andrea.blink.declare("andrea.grace");(function() {
     };
     ShelfBase.prototype._hide = function($target, complete) {
         $target.width($target.width());
-        return $target.show(0).hide('explode', {
-            'easing' : 'easeOutSine'
-        }, 180, complete);
+
+        if ($(':visible', $target).length > 0) {
+            return $target.show(0).hide('explode', {
+                'easing' : 'easeOutSine'
+            }, 180, complete);
+        } else {
+            return $target.hide();
+        }
     };
     ShelfBase.prototype._show = function($target, complete) {
-        return $target.hide(0).show('explode', {
-            'easing' : 'easeInSine'
-        }, 250, complete);
+        if ($(':visible', $target).length > 0) {
+            return $target.hide(0).show('explode', {
+                'easing' : 'easeInSine'
+            }, 300, complete);
+        } else {
+            return $target.show();
+        }
     };
     ShelfBase.prototype.removeAll = function() {
         this._$cards.empty();
@@ -5908,7 +7251,7 @@ andrea.blink.declare("andrea.grace");(function() {
                 'shelfType' : _this._view.type(),
                 'shelvedContexts' : _this._view.getShelvedContexts()
             });
-        }
+        };
 
         this._view.addEventListener(ShelfEvent.CARD_SHELVED, function(event) {
             runAnalysis();
@@ -5919,13 +7262,13 @@ andrea.blink.declare("andrea.grace");(function() {
             _this._view.dropAnalysis(a, event.data.$helper, event.data.from, event.data.to);
         });
         this._view.addEventListener(ShelfEvent.CARD_COPIED, function(event) {
-            _this._model.viewNotify(AppConst.VIEW_NOTIFICATION_PASTE_TO, {
+            _this._model.hackNotify(AppConst.NOTIFICATION_VIEW_PASTE_TO, {
                 'analysis' : event.data.analysis,
                 'targetShelfType' : event.data.pasteTo
             });
         });
 
-        this._subscribe(AppConst.VIEW_NOTIFICATION_PASTE_TO, function(notification) {
+        this._subscribe(AppConst.NOTIFICATION_VIEW_PASTE_TO, function(notification) {
             if (_this._view.type() === notification.data.targetShelfType) {
                 _this._view.addCard(notification.data.analysis);
             }
@@ -5940,13 +7283,30 @@ andrea.blink.declare("andrea.grace");(function() {
                 return _this._model.getShelvedAnalysis(id);
             });
         });
-    }
+
+        this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_RESET, function(notification) {
+            var analyses = _this._modelAnalyses();
+
+            if (analyses && analyses.length) {
+                _.each(analyses, function(sa) {
+                    _this._view.addCard(sa.source, sa);
+                });
+
+                _this._view.updateShelvedAnalyses(function(id) {
+                    return _this._model.getShelvedAnalysis(id);
+                });
+            }
+        });
+    };
+    ShelfBaseMediator.prototype._modelAnalyses = function() {
+        return [];
+    };
     /**
      * @protected
      */
     ShelfBaseMediator.prototype._dataProviderChangedHandler = function(notification) {
         this._view.removeAll();
-    }
+    };
 })(jQuery);
 (function() {
     var grace = andrea.grace;
@@ -5989,7 +7349,8 @@ andrea.blink.declare("andrea.grace");(function() {
         // availableOGs.push(OperationGroup.createByTypes([OperationType.CARD_ADD_TO_DIMENSION, OperationType.CARD_ADD_TO_MEASURE]));
         // SrcDimensionShelf.OGS_DEFAULT = availableOGs;
     // };
-    // SrcDimensionShelf._loadClass();
+    // SrcDimensionShelf._loadClass();
+
 })();
 (function($) {
 
@@ -6010,7 +7371,7 @@ andrea.blink.declare("andrea.grace");(function() {
 
     SrcDimensionShelfMediator.prototype.init = function() {
         SrcDimensionShelfMediator.superclass.init.apply(this, arguments);
-    }
+    };
 
     SrcDimensionShelfMediator.prototype._dataProviderChangedHandler = function() {
         SrcDimensionShelfMediator.superclass._dataProviderChangedHandler.apply(this, arguments);
@@ -6024,7 +7385,7 @@ andrea.blink.declare("andrea.grace");(function() {
             }
         }
         this._view.activateAnimation();
-    }
+    };
 })(jQuery);
 (function() {
     var grace = andrea.grace;
@@ -6063,7 +7424,8 @@ andrea.blink.declare("andrea.grace");(function() {
         // availableOGs.push(OperationGroup.createByTypes([OperationType.CARD_ADD_TO_MEASURE]));
         // SrcMeasureShelf.OGS_DEFAULT = availableOGs;
     // };
-    // SrcMeasureShelf._loadClass();
+    // SrcMeasureShelf._loadClass();
+
 })();
 (function($) {
 
@@ -6084,7 +7446,7 @@ andrea.blink.declare("andrea.grace");(function() {
 
 	SrcMeasureShelfMediator.prototype.init = function() {
 		SrcMeasureShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
 	SrcMeasureShelfMediator.prototype._dataProviderChangedHandler = function() {
 		SrcMeasureShelfMediator.superclass._dataProviderChangedHandler.apply(this, arguments);
@@ -6101,8 +7463,7 @@ andrea.blink.declare("andrea.grace");(function() {
 			}
 		}
         this._view.activateAnimation();
-
-	}
+	};
 })(jQuery);
 (function() {
     var grace = andrea.grace;
@@ -6177,23 +7538,27 @@ andrea.blink.declare("andrea.grace");(function() {
 })();
 (function($) {
 
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare("andrea.grace.views.analysisContainer.destination.DesDimensionShelfMediator");
+    andrea.blink.declare("andrea.grace.views.analysisContainer.destination.DesDimensionShelfMediator");
 
-	var AppConst = grace.constants.AppConst;
-	/**
-	 * App Mediator.
-	 */
-	var DesDimensionShelfMediator = grace.views.analysisContainer.destination.DesDimensionShelfMediator = function() {
-		DesDimensionShelfMediator.superclass.constructor.apply(this, arguments);
-	};
+    var AppConst = grace.constants.AppConst;
+    /**
+     * App Mediator.
+     */
+    var DesDimensionShelfMediator = grace.views.analysisContainer.destination.DesDimensionShelfMediator = function() {
+        DesDimensionShelfMediator.superclass.constructor.apply(this, arguments);
+    };
 
-	andrea.blink.extend(DesDimensionShelfMediator, grace.views.analysisContainer.supportClasses.ShelfBaseMediator);
+    andrea.blink.extend(DesDimensionShelfMediator, grace.views.analysisContainer.supportClasses.ShelfBaseMediator);
 
-	DesDimensionShelfMediator.prototype.init = function() {
-		DesDimensionShelfMediator.superclass.init.apply(this, arguments);
-	}
+    DesDimensionShelfMediator.prototype.init = function() {
+        DesDimensionShelfMediator.superclass.init.apply(this, arguments);
+    };
+
+    DesDimensionShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisDimesions();
+    };
 
 })(jQuery);
 (function() {
@@ -6276,8 +7641,11 @@ andrea.blink.declare("andrea.grace");(function() {
 
 	DesMeasureShelfMediator.prototype.init = function() {
 		DesMeasureShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
+    DesMeasureShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisDatas();
+    };
 })(jQuery);
 (function() {
 	var grace = andrea.grace;
@@ -6317,8 +7685,11 @@ andrea.blink.declare("andrea.grace");(function() {
 
 	FilterShelfMediator.prototype.init = function() {
 		FilterShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
+    FilterShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisFilters();
+    };
 })(jQuery);
 (function($) {
 	var grace = andrea.grace;
@@ -6352,42 +7723,42 @@ andrea.blink.declare("andrea.grace");(function() {
 	};
 })(jQuery);
 (function($) {
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare("andrea.grace.views.analysisResult.viz.VizBase");
+    andrea.blink.declare("andrea.grace.views.analysisResult.viz.VizBase");
 
-	var VizBase = grace.views.analysisResult.viz.VizBase = function(dom) {
-		VizBase.superclass.constructor.apply(this, arguments);
+    var VizBase = grace.views.analysisResult.viz.VizBase = function(dom) {
+        VizBase.superclass.constructor.apply(this, arguments);
 
-		this._$dom = $(dom);
-		this._$dom.addClass('grace-result-viz');
-	};
-	andrea.blink.extend(VizBase, andrea.blink.mvc.View);
+        this._$dom = $(dom);
+        this._$dom.addClass('grace-result-viz');
+    };
+    andrea.blink.extend(VizBase, andrea.blink.mvc.View);
 
-	/**
-	 * Should be overrided by child class
-	 *
-	 * @param {Object} dataProvider
-	 * @param {Object} dimesionSAs
-	 * @param {Object} dataSAs
-	 *
-	 */
-	VizBase.prototype.render = function(dataProvider, dimesionSAs, dataSAs) {
-		VizBase._renderingCache = null;
-		return true;
-	};
-	VizBase._renderingCache = null;
-	VizBase.prototype.destroy = function() {
-		return true;
-	};
-	VizBase.prototype._addMessage = function(msgID) {
-		// TODO
-	};
-	VizBase.prototype._removeMessages = function(msgID) {
+    /**
+     * Should be overrided by child class
+     *
+     * @param {Object} dataProvider
+     * @param {Object} dimesionSAs
+     * @param {Object} dataSAs
+     *
+     */
+    VizBase.prototype.render = function(dataProvider, dimesionSAs, dataSAs) {
+        VizBase._renderingCache = null;
+        return true;
+    };
+    VizBase._renderingCache = null;
+    VizBase.prototype.toJSON = function() {
+        return null;
+    };
+    VizBase.prototype._addMessage = function(msgID) {
+        // TODO
+    };
+    VizBase.prototype._removeMessages = function(msgID) {
 
-	};
-	VizBase._MESSAGES = {
-	};
+    };
+    VizBase._MESSAGES = {
+    };
 })(jQuery);
 (function($) {
 	var grace = andrea.grace;
@@ -6624,20 +7995,33 @@ andrea.blink.declare("andrea.grace");(function() {
     andrea.blink.declare("andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption");
     var HighChartsOption = andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption;
 
+    // TODO Integrate title to model
+    HighChartsOption.title = null;
+
     HighChartsOption.genMain = function(chartType) {
-        return {
+        var main = {
             chart : {
                 type : chartType
             },
             title : {
-                text : null
+                text : HighChartsOption.title
             },
             credits : {
                 enabled : false
+            },
+            navigation : {
+                buttonOptions : {
+                    enabled : false
+                }
+            },
+            exporting : {
+                filename : 'chart',
+                type : 'image/jpeg'
             }
-
-        }
-    }
+        };
+        HighChartsOption.title = null;
+        return main;
+    };
     HighChartsOption.genLegend = function(enabled) {
         var legend = null;
         if (enabled) {
@@ -6645,16 +8029,16 @@ andrea.blink.declare("andrea.grace");(function() {
                 layout : 'vertical',
                 align : 'left',
                 verticalAlign : 'middle'
-            }
+            };
         } else {
             legend = {
                 "enabled" : false
-            }
+            };
         }
         return {
             "legend" : legend
-        }
-    }
+        };
+    };
     HighChartsOption._visualize = function(analyses, index) {
         var sa/*ShelvedAnalysis*/ = null;
         if (index < analyses.length) {
@@ -6662,7 +8046,7 @@ andrea.blink.declare("andrea.grace");(function() {
             sa.visualized = true;
         }
         return sa;
-    }
+    };
     HighChartsOption._setVisualized = function(shelvedAnalyses) {
         if (!shelvedAnalyses) {
             return;
@@ -6674,7 +8058,7 @@ andrea.blink.declare("andrea.grace");(function() {
             var sa = shelvedAnalyses[i];
             sa.visualized = true;
         }
-    }
+    };
     /**
      *
      */
@@ -6702,7 +8086,7 @@ andrea.blink.declare("andrea.grace");(function() {
 
             sortOperations.push(og.ascend());
             sortOperations.push(og.descend());
-        }
+        };
         if (seriesSA) {
             prepareRinseOperation(seriesSA.operationGroup);
         }
@@ -6710,12 +8094,12 @@ andrea.blink.declare("andrea.grace");(function() {
             prepareRinseOperation(categorySA.operationGroup);
         }
         for ( di = 0; di < dataSAs.length; di++) {
-            prepareRinseOperation(dataSAs[0].operationGroup);
+            prepareRinseOperation(dataSAs[di].operationGroup);
         }
         sortOperations = _.without(sortOperations, undefined);
         sortOperations.sort(function(o1, o2) {
             return o1.priority - o2.priority;
-        })
+        });
         sortOperations.pop();
         _.each(ogs, function(og) {
             _.each(sortOperations, function(o) {
@@ -6727,13 +8111,13 @@ andrea.blink.declare("andrea.grace");(function() {
             if (isSeriesByDatas) {
                 querySeriesIndex = function(values, indexDataSA) {
                     return indexDataSA;
-                }
+                };
                 sl = dataSAs.length;
                 dl = 1;
             } else {
                 querySeriesIndex = function(values, indexDataSA) {
                     return 0;
-                }
+                };
                 sl = 1;
                 dl = dataSAs.length;
             }
@@ -6741,7 +8125,7 @@ andrea.blink.declare("andrea.grace");(function() {
             sq = new ValueQuery(dataProvider, seriesSA, turboThreshold);
             querySeriesIndex = function(values, indexDataSA) {
                 return sq.queryIndex(values);
-            }
+            };
             sl = sq.names().length;
             dl = dataSAs.length;
         }
@@ -6749,13 +8133,13 @@ andrea.blink.declare("andrea.grace");(function() {
         if (!categorySA) {
             queryCategoryIndex = function(values) {
                 return 0;
-            }
+            };
             cl = 1;
         } else {
             cq = new ValueQuery(dataProvider, categorySA, turboThreshold);
             queryCategoryIndex = function(values) {
                 return cq.queryIndex(values);
-            }
+            };
             cl = cq.names().length;
         }
 
@@ -6781,7 +8165,7 @@ andrea.blink.declare("andrea.grace");(function() {
                             'si' : si,
                             'di' : di,
                             'ascend' : og.ascend()
-                        }
+                        };
                     }
                 }
             }
@@ -6873,7 +8257,7 @@ andrea.blink.declare("andrea.grace");(function() {
         } else {
             return sa.source.name;
         }
-    }
+    };
     HighChartsOption.saToDisplayAbbr = function(sa) {
         var abbr = sa.operationGroup.mapAbbrs().join(HighChartsOption.OPERATION_DISPLAY_SPLITTER_ABBR);
         if (abbr) {
@@ -6881,7 +8265,7 @@ andrea.blink.declare("andrea.grace");(function() {
         } else {
             return sa.source.name;
         }
-    }
+    };
 })();
 (function($) {
     var grace = andrea.grace;
@@ -6889,6 +8273,7 @@ andrea.blink.declare("andrea.grace");(function() {
     var HighChartsOption = andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption;
     var VizType = grace.constants.VizType;
     var VizBase = grace.views.analysisResult.viz.VizBase;
+    var Log = grace.managers.Log;
 
     /**
      * chartType: column, bar, line, area
@@ -6900,6 +8285,17 @@ andrea.blink.declare("andrea.grace");(function() {
 
         this._chartType = chartType;
         this._vizType = vizType;
+
+        this._$highcharts = null;
+        this._highConfig = null;
+
+        this._$print = $('<button/>').addClass('grace-result-print');
+        this._$print.text('导出').appendTo(this._$dom);
+        this._$print.on('click', $.proxy(function() {
+            this._$highcharts.highcharts().exportChart();
+        }, this));
+        
+        this._validateSize();
     };
     andrea.blink.extend(HighChartsBase, VizBase);
 
@@ -6927,8 +8323,8 @@ andrea.blink.declare("andrea.grace");(function() {
                 'dataSAs' : dataSAs,
                 'isSeriesByDatas' : isSeriesByDatas,
                 'turboThreshold' : turboThreshold
-            }
-        }
+            };
+        };
         toObject.apply(this, dataConfigArgs.array);
         // Set visualized
         this._setVisualized.apply(this, dataConfigArgs.array);
@@ -6961,20 +8357,51 @@ andrea.blink.declare("andrea.grace");(function() {
                 }
             }
         }
-        $(this._dom).highcharts(highConfig);
+        this._highConfig = JSON.parse(JSON.stringify(highConfig));
+        this._$highcharts.highcharts(highConfig);
         return true;
     };
     HighChartsBase.prototype.dataConfigArgs = function(dataProvider, dimesionSAs, dataSAs) {
     };
     HighChartsBase.prototype.completeHighConfig = function(highConfig, dataConfig, dataProvider, dimesionSAs, dataSAs) {
     };
-    HighChartsBase.checkOutdate = function(vizType, dataConfigArgs) {        var clone = function(value) {
+
+    HighChartsBase.prototype._validateSize = function() {
+        var size = this.size();
+
+        this._$dom.css({
+            'height' : size.height + 'px',
+            'width' : size.width + 'px'
+        });
+        if (this._$highcharts) {
+            this._$highcharts.empty().detach();
+        }
+        // this._$highcharts = $('<div/>').appendTo(this._$dom);
+        this._$highcharts = $('<div/>');
+        this._$print.before(this._$highcharts);        
+        this._$highcharts.css({
+            'height' : size.height + 'px',
+            'width' : size.width + 'px'
+        });
+        if (this._highConfig) {
+            this._$highcharts.highcharts(this._highConfig);
+        }
+    };
+    HighChartsBase.prototype.toJSON = function() {
+        return {
+            'type' : 'highcharts',
+            'highConfig' : this._highConfig
+        };
+    };
+    HighChartsBase.checkOutdate = function(vizType, dataConfigArgs) {
+        var clone = function(value) {
             if (value != null) {
                 return JSON.parse(JSON.stringify(value));
             } else {
                 return null;
             }
-        }        var current = {
+        };
+        var current = {
             'vizType' : vizType,
             'numRows' : dataConfigArgs.object.dataProvider.numRows,
             'seriesSA' : clone(dataConfigArgs.object.seriesSA),
@@ -6988,12 +8415,12 @@ andrea.blink.declare("andrea.grace");(function() {
             outdate = {
                 'render' : true,
                 'animation' : true
-            }
+            };
         } else if (!_.isEqual(cache, current)) {
             outdate = {
                 'render' : true,
                 'animation' : cache.numRows === current.numRows
-            }
+            };
         } else {
             outdate = {
                 'render' : false
@@ -7094,7 +8521,7 @@ andrea.blink.declare("andrea.grace");(function() {
             return [dataProvider, dimesionSAs[1], dimesionSAs[0], dataSAs, this._isSeriesByDatas, turboThreshold];
         } else {
             dataSAs = dataSAs;
-            this._isSeriesByDatas = true
+            this._isSeriesByDatas = true;
             return [dataProvider, null, dimesionSAs[0], dataSAs, this._isSeriesByDatas, turboThreshold];
         }
     };
@@ -7103,18 +8530,18 @@ andrea.blink.declare("andrea.grace");(function() {
         if (dimesionSAs && dimesionSAs[0]) {
             highConfig.xAxis.title = {
                 'text' : HighChartsOption.saToDisplayAbbr(dimesionSAs[0])
-            }
+            };
         } else {
             highConfig.xAxis.title = {
                 'text' : null
-            }
+            };
         }
         if (dataConfig.categories) {
             highConfig.xAxis.categories = dataConfig.categories;
             highConfig.xAxis.labels = {
                 'rotation' : -45,
                 'align' : 'right'
-            }
+            };
         } else {
             highConfig.xAxis.categories = [''];
         }
@@ -7133,8 +8560,8 @@ andrea.blink.declare("andrea.grace");(function() {
                 'title' : {
                     'text' : title
                 }
-            }
-        }
+            };
+        };
         if (this._isSeriesByDatas) {
             for (var i = 0; i < dataSAs.length; i++) {
                 var y = genYAxis.call(this, dataSAs[i]);
@@ -7144,7 +8571,8 @@ andrea.blink.declare("andrea.grace");(function() {
         } else {
             highConfig.yAxis.push(genYAxis.call(this, dataSAs.length === 1 ? dataSAs[0] : null));
         }
-        // Edit the common data config
+
+        // Edit the common data config
         for (var i = 0; i < dataConfig.series.length; i++) {
             var series = dataConfig.series[i];
             if (highConfig.yAxis.length === dataConfig.series.length) {
@@ -7168,9 +8596,9 @@ andrea.blink.declare("andrea.grace");(function() {
             hideDelay : 240
         };
         if (multiSeries) {
-            highConfig.tooltip.pointFormat = '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y}</b></td></tr>'
+            highConfig.tooltip.pointFormat = '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y}</b></td></tr>';
         } else {
-            highConfig.tooltip.pointFormat = '<tr>' + '<td style="padding:0"><b>{point.y}</b></td></tr>'
+            highConfig.tooltip.pointFormat = '<tr>' + '<td style="padding:0"><b>{point.y}</b></td></tr>';
         }
         if (this._vizType) {
             if (this._vizType === VizType.RADAR) {
@@ -7178,13 +8606,13 @@ andrea.blink.declare("andrea.grace");(function() {
                 highConfig.xAxis.labels = {
                     'rotation' : 0,
                     'align' : 'center'
-                }
+                };
             } else if (this._vizType === VizType.STACKED_BAR || this._vizType === VizType.STACKED_COLUMN) {
                 highConfig.plotOptions = {
                     'series' : {
                         'stacking' : 'normal'
                     }
-                }
+                };
             }
         }
 
@@ -7207,7 +8635,7 @@ andrea.blink.declare("andrea.grace");(function() {
         if (sizeProp && minSize > this._$dom[sizeProp]()) {
             this._$dom[sizeProp](minSize);
         }
-    }
+    };
 })(jQuery);
 (function($) {
     var grace = andrea.grace;
@@ -7277,7 +8705,9 @@ andrea.blink.declare("andrea.grace");(function() {
             array.push('    ' + HighChartsOption.saToDisplayAbbr(dataSAs[2]) + ': {point.z}');
         }
         pointFormat = array.join("<br/>");
-        var headerFormat;        headerFormat = '';
+        var headerFormat;
+        headerFormat = '';
+
         // TODO Merge to tooltip
         highConfig.plotOptions = {
             "series" : {
@@ -7289,7 +8719,8 @@ andrea.blink.declare("andrea.grace");(function() {
         };
         highConfig.tooltip = {
             hideDelay : 240
-        };
+        };
+
         // Edit the common data config
         var highSeries;
         var highSeriesData;
@@ -7327,7 +8758,9 @@ andrea.blink.declare("andrea.grace");(function() {
                 'color' : 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', .65)'
             })
         }
-        highConfig.series = highSeries;        var multiSeries = highConfig.series.length > 1;
+        highConfig.series = highSeries;
+
+        var multiSeries = highConfig.series.length > 1;
         highConfig = _.defaults(highConfig, HighChartsOption.genLegend(multiSeries));
 
         if (highConfig.series.length > 50 || (highConfig.series.length * highConfig.series[0].data.length > 1000)) {
@@ -7342,6 +8775,17 @@ andrea.blink.declare("andrea.grace");(function() {
         }
     }
 })(jQuery);
+(function() {
+    var grace = andrea.grace;
+    andrea.blink.declare("grace.views.analysisResult.AnalysisResultEvent");
+
+    var AnalysisResultEvent = grace.views.analysisResult.AnalysisResultEvent = function(type, target, data) {
+        AnalysisResultEvent.superclass.constructor.apply(this, arguments);
+    };
+    andrea.blink.extend(AnalysisResultEvent, andrea.blink.events.Event);
+
+    AnalysisResultEvent.SAVE = "save";
+})();
 (function($) {
     var grace = andrea.grace;
 
@@ -7351,6 +8795,9 @@ andrea.blink.declare("andrea.grace");(function() {
     var VizType = grace.constants.VizType;
     var DataProvider = grace.models.DataProvider;
     var FilterUtil = grace.utils.FilterUtil;
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel;
+    var AnalysisResultEvent = grace.views.analysisResult.AnalysisResultEvent;
+    var SerializeManager = grace.managers.SerializeManager;
 
     var AnalysisResult = grace.views.analysisResult.AnalysisResult = function(dom) {
         AnalysisResult.superclass.constructor.apply(this, arguments);
@@ -7358,10 +8805,50 @@ andrea.blink.declare("andrea.grace");(function() {
         this._$dom = $(dom);
         this._$dom.addClass('grace-result fancy-scrollbar');
 
-        this._renderArgs = null;
+        this._viz = null;
+        this._vizContainer$ = null;
+
+        this._$collab = null;
+
+        this._createChildren();
     };
     andrea.blink.extend(AnalysisResult, andrea.blink.mvc.View);
 
+    AnalysisResult.prototype._createChildren = function() {
+        this._vizContainer$ = $('<div/>').appendTo(this._$dom);
+
+        this._$collab = $('<div/>').addClass('grace-result-collab-container');
+
+        this._$save = $('<button/>').addClass('grace-result-collab grace-result-collab-save');
+        this._$save.attr('title', '保存当前状态');
+        this._$save.on('click', $.proxy(function() {
+            this.dispatchEvent(new AnalysisResultEvent(AnalysisResultEvent.SAVE, this, {
+                'layout' : 'dataDiscovery',
+            }));
+        }, this));
+        this._$save.appendTo(this._$collab);
+
+        this._$share = $('<button/>').addClass('grace-result-collab grace-result-collab-share');
+        this._$share.attr('title', '分享图表');
+        this._$share.on('click', $.proxy(function() {
+            alertify.reset();
+            alertify.prompt('为图表输入标题：', $.proxy(function(ok, title) {
+                if (ok) {
+                    this.dispatchEvent(new AnalysisResultEvent(AnalysisResultEvent.SAVE, this, {
+                        'layout' : 'vizOnly',
+                        'title' : title
+                    }));
+                } else {
+                    alertify.error('保存取消。');
+                }
+            }, this));
+        }, this));
+        this._$share.appendTo(this._$collab);
+
+        if (grace.Config.dataDiscovery.layout === 'vizOnly') {
+            this._$collab.hide();
+        }
+    };
     /**
      *
      * @param {Array.<Array.<*>>} dataProvider
@@ -7369,13 +8856,11 @@ andrea.blink.declare("andrea.grace");(function() {
      * @param {Array.<ShelvedAnalysis>} dataSAs
      */
     AnalysisResult.prototype.render = function(selectedVizType, dataProvider, filterSAs, dimesionSAs, dataSAs) {
-        this._renderArgs = arguments;
-
         // Prepare data
         var clear = function(sa) {
             sa.visualized = false;
             sa.numPartialVisualized = 0;
-        }
+        };
         _.each(dimesionSAs, clear);
         _.each(dataSAs, clear);
 
@@ -7399,35 +8884,41 @@ andrea.blink.declare("andrea.grace");(function() {
         // Prepare DOM
         var $viz = $('<div/>').css({
             'height' : this.size().height + 'px'
-        });
-        // this._$dom.empty().append($viz);
-        this._$dom.append($viz);
+        }).appendTo(this._vizContainer$);
         // Render viz
         var viz/*VizBase*/ = VizFactory.produce($viz[0], vizType, selectedVizType);
         var success = viz.render(dataProvider, dimesionSAs, dataSAs);
+
         if (success) {
-            while (this._$dom.children().length > 1) {
-                this._$dom.children().eq(0).detach();
+            // Rmove old one
+            this._$collab.detach();
+            if (this._viz) {
+                this._viz.destroy();
+            }
+            // Init new one
+            this._viz = viz;
+            var vizJSON = this._viz.toJSON();
+            SerializeManager.instance().saveViz(vizJSON);
+            if (vizJSON && SerializeManager.instance().serializable()) {
+                this._$collab.appendTo(this._$dom);
             }
             // Add scroll bar
             var domSize = this.size();
             var vizSize = viz.size();
-            this._$dom.css({
+            this._vizContainer$.css({
                 'overflow-x' : 'hidden',
                 'overflow-y' : 'hidden'
-            })
+            });
             if (vizSize.width > domSize.width) {
-                this._$dom.css('overflow-x', 'auto');
+                this._vizContainer$.css('overflow-x', 'auto');
             }
             if (vizSize.height > domSize.height) {
-                this._$dom.css('overflow-y', 'auto');
+                this._vizContainer$.css('overflow-y', 'auto');
             }
         } else {
-            while (this._$dom.children().length > 1) {
-                this._$dom.children().eq(this._$dom.children().length - 1).detach();
-            }
+            $viz.detach();
         }
-    }
+    };
     AnalysisResult.prototype._validateSize = function() {
         var size = this.size();
 
@@ -7436,11 +8927,12 @@ andrea.blink.declare("andrea.grace");(function() {
             'width' : size.width + 'px'
         });
 
-        if (this._renderArgs) {
-            this.render.apply(this, this._renderArgs);
+        if (this._viz) {
+            this._viz.size(size);
         }
     };
-    AnalysisResult.prototype._recommend = function(dataProvider, dimesionSAs, dataSAs) {        if (dataSAs.length === 0) {
+    AnalysisResult.prototype._recommend = function(dataProvider, dimesionSAs, dataSAs) {
+        if (dataSAs.length === 0) {
             return null;
         }
         // Dimension
@@ -7480,7 +8972,8 @@ andrea.blink.declare("andrea.grace");(function() {
             // Dim 0
             return VizType.BAR;
         }
-        return null;
+
+        return null;
     };
 
     AnalysisResult.prototype._valid = function(vizType, dataProvider, dimesionSAs, dataSAs) {
@@ -7488,7 +8981,8 @@ andrea.blink.declare("andrea.grace");(function() {
         var required = manifest.required;
 
         return dimesionSAs.length >= required.numDimensions && dataSAs.length >= required.numMeasures;
-    };})(jQuery);
+    };
+})(jQuery);
 (function($) {
 
     var grace = andrea.grace;
@@ -7497,6 +8991,7 @@ andrea.blink.declare("andrea.grace");(function() {
 
     var AppConst = grace.constants.AppConst;
     var Log = grace.managers.Log;
+    var AnalysisResultEvent = grace.views.analysisResult.AnalysisResultEvent;
 
     /**
      * App Mediator.
@@ -7511,7 +9006,6 @@ andrea.blink.declare("andrea.grace");(function() {
     andrea.blink.extend(AnalysisResultMediator, andrea.blink.mvc.ViewMediator);
 
     AnalysisResultMediator.prototype.init = function() {
-        var _this = this;
         var model = this._model = this._getModel(AppConst.MODEL_GRACE);
 
         var logFmt = function(shelvedAnalyses) {
@@ -7520,14 +9014,18 @@ andrea.blink.declare("andrea.grace");(function() {
                 names.push(sa.source.name);
             });
             return [shelvedAnalyses.length, names.join('|')].join(',');
-        }
-        this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED, function(notification) {
+        };
+        this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED, $.proxy(function(notification) {
             Log.interaction('analysis', [logFmt(model.analysisDimesions()), logFmt(model.analysisDatas()), logFmt(model.analysisFilters())].join(','));
-            _this._view.render(model.vizType(), model.dataProvider, model.analysisFilters(), model.analysisDimesions(), model.analysisDatas());
+            this._view.render(model.vizType(), model.dataProvider, model.analysisFilters(), model.analysisDimesions(), model.analysisDatas());
 
             model.invalidateShelvedAnalysis();
-        });
-        _this._view.render(model.vizType(), model.dataProvider, model.analysisFilters(), model.analysisDimesions(), model.analysisDatas());
+        }, this));
+        this._view.render(model.vizType(), model.dataProvider, model.analysisFilters(), model.analysisDimesions(), model.analysisDatas());
+
+        this._view.addEventListener(AnalysisResultEvent.SAVE, function(event) {
+            this._action(AppConst.ACTION_SAVE_COLLABORATION, event.data);
+        }, this);
     };
 })(jQuery);
 (function() {
@@ -7796,6 +9294,7 @@ andrea.blink.declare("andrea.grace");(function() {
     andrea.blink.declare("andrea.grace.DataDiscovery");
 
     var App = andrea.blink.mvc.App;
+    var Loading = grace.views.popUp.Loading;
     var AppConst = grace.constants.AppConst;
 
     var DataDiscovery = grace.DataDiscovery = function(div) {
@@ -7803,6 +9302,8 @@ andrea.blink.declare("andrea.grace");(function() {
 
         this._div = div;
         this._$dom = $(div);
+
+        this._loading = null;
 
         this._viewSourceDim = null;
         this._viewSourceMea = null;
@@ -7817,9 +9318,41 @@ andrea.blink.declare("andrea.grace");(function() {
 
         this._applyHighSettings();
         this._startup();
+
+        $('#divHeader', this._dom).click(function() {
+            window.location.href = grace.Settings.home;
+        });
+        // Guide
+        this._guide$ = $('#divGuide', this._dom);
+        this._$dom.droppable({
+            'accept' : function() {
+                return true;
+            },
+            'activate' : $.proxy(function(event) {
+                if (this._guide$) {
+                    this._guide$.fadeOut(100);
+                }
+            }, this),
+            'deactivate' : $.proxy(function(event) {
+                _.defer($.proxy(function() {
+                    if (this._guide$) {
+                        this._guide$.fadeIn(100);
+                    }
+                }, this));
+            }, this)
+        });
     };
     andrea.blink.extend(DataDiscovery, andrea.blink.mvc.View);
 
+    DataDiscovery.prototype.vizContextChanged = function(numAnalysisDatas) {
+        if (this._guide$ && numAnalysisDatas > 0) {
+            var guide$ = this._guide$;
+            this._guide$.fadeOut(400, function() {
+                guide$.empty().detach();
+            });
+            this._guide$ = null;
+        }
+    };
     DataDiscovery.prototype._applyHighSettings = function() {
         Highcharts.setOptions({
             'chart' : {
@@ -7828,7 +9361,20 @@ andrea.blink.declare("andrea.grace");(function() {
                 }
             }
         });
-    }
+    };
+
+    DataDiscovery.prototype.addLoading = function() {
+        if (!this._loading) {
+            this._loading = new Loading($('<div/>'));
+            this._loading.open(this._$dom, true);
+        }
+    };
+    DataDiscovery.prototype.removeLoading = function() {
+        if (this._loading) {
+            this._loading.close();
+            this._loading = null;
+        }
+    };
     /**
      *
      * @param {Object} rows [
@@ -7848,8 +9394,12 @@ andrea.blink.declare("andrea.grace");(function() {
     DataDiscovery.prototype.rowBasedDataProvider = function(rows, columnDescriptors, source) {
         this._apiMediator.rowBasedDataProvider(rows, columnDescriptors, source);
     };
+    DataDiscovery.prototype.loadCollaboration = function() {
+        this._apiMediator.loadCollaboration();
+    };
 
     DataDiscovery.prototype._startup = function() {
+        // TODO Refactor app to Grace.js, not the DataDiscovery
         var app = new App();
 
         var view = null;
@@ -7871,12 +9421,14 @@ andrea.blink.declare("andrea.grace");(function() {
         // Actions
         app.registerAction(AppConst.ACTION_CHANGE_DATA_PROVIDER, grace.actions.ChangeDataProviderAction);
         app.registerAction(AppConst.ACTION_RUN_ANALYSIS, grace.actions.RunAnalysisAction);
+        app.registerAction(AppConst.ACTION_SAVE_COLLABORATION, grace.actions.SaveCollaborationAction);
+        app.registerAction(AppConst.ACTION_LOAD_COLLABORATION, grace.actions.LoadCollaborationAction);
 
         // Views
         // var appView = this._appView = new grace.views.analysisContainer.AppView(this._div);
 
         // Mediators
-        mediator = new grace.DataDiscoveryMediator();
+        mediator = new grace.DataDiscoveryMediator(this);
         app.registerViewMediator(AppConst.MEDIATOR_DATA_DISCOVERY, mediator);
         this._apiMediator = mediator;
 
@@ -7931,57 +9483,73 @@ andrea.blink.declare("andrea.grace");(function() {
             "width" : mainWidth + "px"
         });
 
-        // Col1: source dim, source mea
-        var column1Width = 172;
-        $("#divCol1").css({
-            "width" : column1Width + "px",
-            "height" : mainHeight + "px"
-        });
+        if (grace.Config.dataDiscovery.layout === 'vizOnly') {
+            $("#divCol1").hide();
+            $("#divCol2").hide();
+            $("#divCol3").css({
+                "width" : mainWidth + "px",
+                "height" : mainHeight + "px"
+            });
+            $("#divAnalysis").hide();
+            this._viewAnalysisResult.size({
+                "width" : mainWidth,
+                "height" : mainHeight
+            });
+            $("#divGuide").hide();
+            
+        } else {
+            // Col1: source dim, source mea
+            var column1Width = 172;
+            $("#divCol1").css({
+                "width" : column1Width + "px",
+                "height" : mainHeight + "px"
+            });
 
-        $div = $(this._viewSourceDim.dom());
-        var vGap = parseInt($(this._viewSourceDim.dom()).css("margin-bottom"));
-        this._viewSourceDim.size({
-            "width" : column1Width,
-            "height" : (mainHeight - vGap) / 2 + vGap - $div.vPadding() - 6
-        });
-        this._viewSourceMea.size({
-            "width" : column1Width,
-            "height" : (mainHeight - vGap) / 2 + vGap - $div.vPadding() - 6
-        });
+            $div = $(this._viewSourceDim.dom());
+            var vGap = parseInt($(this._viewSourceDim.dom()).css("margin-bottom"));
+            this._viewSourceDim.size({
+                "width" : column1Width,
+                "height" : (mainHeight - vGap) / 2 + vGap - $div.vPadding() - 6
+            });
+            this._viewSourceMea.size({
+                "width" : column1Width,
+                "height" : (mainHeight - vGap) / 2 + vGap - $div.vPadding() - 6
+            });
 
-        // Col2: proc filter, des marker
-        var column2Width = 142;
-        $("#divCol2").css({
-            "width" : column2Width + "px",
-            // "height" : 300 + "px"
-        });
-        this._viewFilterShelf.size({
-            "height" : 228
-        });
+            // Col2: proc filter, des marker
+            var column2Width = 142;
+            $("#divCol2").css({
+                "width" : column2Width + "px",
+                // "height" : 300 + "px"
+            });
+            this._viewFilterShelf.size({
+                "height" : 228
+            });
 
-        // Col3: proc filter, des marker
-        w = mainWidth - $("#divCol1").layoutWidth() - $("#divCol2").layoutWidth();
-        $("#divCol3").css({
-            "width" : w + "px",
-            "height" : mainHeight + "px"
-        });
+            // Col3: proc filter, des marker
+            w = mainWidth - $("#divCol1").layoutWidth() - $("#divCol2").layoutWidth();
+            $("#divCol3").css({
+                "width" : w + "px",
+                "height" : mainHeight + "px"
+            });
 
-        var $divNavigator = $('#divVizNavigator', this._$dom);
+            var $divNavigator = $('#divVizNavigator', this._$dom);
 
-        var $divDestinations = $('#divDestinations', this._$dom);
-        $divDestinations.css({
-            'width' : Math.min(1024, w - $divNavigator.width() - parseInt($divDestinations.css('margin-right'))) + 'px'
-        });
+            var $divDestinations = $('#divDestinations', this._$dom);
+            $divDestinations.css({
+                'width' : Math.min(1024, w - $divNavigator.width() - parseInt($divDestinations.css('margin-right'))) + 'px'
+            });
 
-        this._viewDesDimensionShelf.size({
-            "height" : 35 + 34 * 1 - 6
-        });
-        this._viewDesMeasureShelf.size({
-            "height" : 35 + 34 * 1 - 6
-        });
-        this._viewAnalysisResult.size({
-            "height" : mainHeight - (35 + 34 * 1) * 2
-        });
+            this._viewDesDimensionShelf.size({
+                "height" : 35 + 34 * 1 - 6
+            });
+            this._viewDesMeasureShelf.size({
+                "height" : 35 + 34 * 1 - 6
+            });
+            this._viewAnalysisResult.size({
+                "height" : mainHeight - (35 + 34 * 1) * 2
+            });
+        }
     };
     DataDiscovery.prototype._createChildDiv = function(parent) {
         var div = document.createElement('div');
@@ -7996,24 +9564,69 @@ andrea.blink.declare("andrea.grace");(function() {
 
     var grace = andrea.grace;
 
-    andrea.blink.declare("andrea.grace.DataDiscoveryMediator");
+    andrea.blink.declare('andrea.grace.DataDiscoveryMediator');
 
     var AppConst = grace.constants.AppConst;
     /**
      * App Mediator.
      */
-    var DataDiscoveryMediator = andrea.grace.DataDiscoveryMediator = function() {
+    var DataDiscoveryMediator = andrea.grace.DataDiscoveryMediator = function(view) {
         DataDiscoveryMediator.superclass.constructor.apply(this, arguments);
+
+        this._view = view;
+        this._model = null;
     };
 
     andrea.blink.extend(DataDiscoveryMediator, andrea.blink.mvc.ViewMediator);
 
     DataDiscoveryMediator.prototype.rowBasedDataProvider = function(rows, columnDescriptors, source) {
+        var model = this._getModel(AppConst.MODEL_GRACE);
+
+        this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED, $.proxy(function(notification) {
+            this._view.vizContextChanged(model.analysisDatas().length);
+        }, this));
+
         this._action(AppConst.ACTION_CHANGE_DATA_PROVIDER, {
             'rows' : rows,
             'columnDescriptors' : columnDescriptors,
             'source' : source
         });
+
+        this._subscribe(AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_START, $.proxy(function(notification) {
+            this._view.addLoading();
+        }, this));
+        this._subscribe(AppConst.NOTIFICATION_ACTION_SAVE_COLLABORATION_COMPLETE, $.proxy(function(notification) {
+            this._view.removeLoading();
+
+            var url = grace.Settings.home + '?collab=' + notification.data.sn;
+
+            alertify.reset();
+            alertify.set({
+                'labels' : {
+                    'ok' : '复制',
+                    'cancel' : '跳转至...'
+                },
+                'buttonFocus' : 'ok'
+            });
+            alertify.confirm('保存成功：' + url, function(confirmed) {
+                if (!confirmed) {
+                    _.delay(function() {
+                        window.open(url, '_blank');
+                    }, 500);
+                }
+            });
+            var alertify$ = $('#alertify');
+            var ok$ = $('.alertify-button-ok', alertify$);
+            ok$.attr('data-clipboard-text', url);
+            var client = ZeroClipboard(ok$);
+            client.on('complete', function(client, args) {
+                ok$[0].click();
+                alertify.success('成功将保存地址写入剪贴板。');
+            });
+        }, this));
+    };
+    DataDiscoveryMediator.prototype.loadCollaboration = function() {
+        this._action(AppConst.ACTION_LOAD_COLLABORATION);
     };
 
 })(jQuery);
@@ -8026,368 +9639,164 @@ andrea.blink.declare("andrea.grace");(function() {
     };
     andrea.blink.extend(DataSourceEvent, andrea.blink.events.Event);
 
-    DataSourceEvent.DATA_SOURCE_READY = "dataSourceReady";
+    DataSourceEvent.DATA_PROVIDER_READY = "dataSourceReady";
+
+    DataSourceEvent.STATE_CHANGED = "stateChanged";
 })();
 (function() {
     var grace = andrea.grace;
-    var MoreButton = grace.views.components.MoreButton;
+
     var DataSourceEvent = grace.views.analysisContainer.events.DataSourceEvent;
-    var URLUtil = grace.utils.URLUtil;
-    var AnalysisType = grace.constants.AnalysisType;
-    var Taobao = grace.constants.Taobao;
-    var ConverterType = grace.utils.ConverterType;
-    var Loading = grace.views.popUp.Loading;
-    var Stopwatch = grace.utils.Stopwatch;
-    var Log = grace.managers.Log;
+    var MoreButton = grace.views.components.MoreButton;
 
-    andrea.blink.declare('andrea.grace.DataSource');
-    var DataSource = grace.DataSource = function(div) {
-        DataSource.superclass.constructor.apply(this, arguments);
+    andrea.blink.declare('andrea.grace.views.dataSources.DataSourceBase');
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase = function(div) {
+        DataSourceBase.superclass.constructor.apply(this, arguments);
 
-        this._$main = $('#divDataSourceMain', this._$dom);
-        this._$main.empty();
+        this._swfReady = false;
 
-        this._loading = null;
+        this._state = DataSourceBase.STATE_NORMAL;
+        this._progress = null;
 
-        this._btnAnalysis = null;
-        this._$btnAnalysis = null;
+        this._options = null;
+    };
+    andrea.blink.extend(DataSourceBase, andrea.blink.mvc.View);
 
-        this._watch
-        this._cdaReady = false;
-        this._cdsNumTrades = 0;
+    DataSourceBase.STATE_NORMAL = 'normal';
+    DataSourceBase.STATE_LOADING = 'loading';
 
-        this._dp = null;
-
-        // Create container
-        var $container = this._genCell(0, 0, 3, 2).addClass('grace-dataSource-main-container').appendTo(this._$main);
-        $container.css({
-            'position' : 'absolute',
-            'left' : (this._$main.width() - $container.width()) / 2,
-            'top' : (this._$main.height() - $container.height()) / 2
-        });
-
-        if ($.browser.webkit) {
-            // Chrome, Safari
-            this._createChildren($container);
+    DataSourceBase.prototype.state = function(value) {
+        if (arguments.length > 0) {
+            this._state = value;
+            this.dispatchEvent(new DataSourceEvent(DataSourceEvent.STATE_CHANGED, this));
+            return this;
         } else {
-            // Browser fail
-            var $chrome = this._genCell(0, 0, 3, 2).appendTo($container);
-            $chrome.text('请通过谷歌浏览器使用易分析！').addClass('grace-dataSource-chrome')
-            $chrome.css('line-height', $chrome.height() + 'px');
-            $chrome.on('click', $.proxy(function(event) {
-                window.location = grace.Settings.chrome.localURL
-            }, this));
-            var $download = $('<a/>').appendTo($container).addClass('grace-dataSource-chrome-official');
-            $download.text('官方下载…').css('color', '#ffffff');
-            $download.attr({
-                'target' : '_blank',
-                'href' : grace.Settings.chrome.officialURL
-            }).on('click', function(event) {
-                event.stopPropagation();
-            });
-        }
-        // Parse URL
-        var hashPairs = URLUtil.hashPairs();
-        if (hashPairs.dataSource === 'taobao') {
-            this._gotoTaobao();
+            return this._state;
         }
     };
-    andrea.blink.extend(DataSource, andrea.blink.mvc.View);
-
-    DataSource.prototype._gotoTaobao = function() {
-        var hashPairs = URLUtil.hashPairs();
-        var cdaSettings = grace.Settings.crossDomainAccessor;
-
-        if (hashPairs.access_token && hashPairs.taobao_user_id && hashPairs.taobao_user_nick) {
-            // Taobao OAuth redirect
-            this._watch = new Stopwatch([hashPairs.taobao_user_id, hashPairs.taobao_user_nick].join(','), true);
-            this._addLoading('', 0);
-            this._getCrossDomainAccessor($.proxy(function(cda) {
-                cda.setAccessToken(hashPairs.access_token);
-                var fields = [];
-                for (var i = 0; i < this._dp.columnDescriptors.length; i++) {
-                    fields.push(this._dp.columnDescriptors[i].id)
-                }
-                Log.interaction('dataSource', ['taobao', hashPairs.taobao_user_id, hashPairs.taobao_user_nick].join(','));
-                cda.load(cdaSettings.taobao.trade.maxResults, fields.join(','));
-                Log.performance('loadTaobaoTrades', [this._watch.type, 'loadSWF', this._watch.lap()].join(','));
-            }, this));
-        } else if (hashPairs.error) {
-            Log.interaction('authorizeError', [hashPairs.error, hashPairs.error_description.replace(/,/g, '|')]);
-            if (hashPairs.error === 'invalid_client') {
-                var shop = prompt('留下您的 店铺。(店铺网址/店铺名称 均可)\n应用尚未正式发布需要手动设置授权。');
-                var contact = prompt('留下您的 联系方式。以便完成授权之后通知您。\n(邮箱/QQ/微博 均可)');
-                Log.interaction('authorize', [shop, contact]);
-                if (shop && contact) {
-                    alert('您的店铺已保存，完成授权预计需要一天，请稍候。\n完成后会通知到您。');
-                } else if (shop) {
-                    alert('您的店铺已保存，完成授权预计需要一天，请稍候。');
-                }
-            }
+    DataSourceBase.prototype.progress = function(value) {
+        if (arguments.length > 0) {
+            this._progress = value;
+            this.state(DataSourceBase.STATE_LOADING);
+            return this;
         } else {
-            // Taobao OAuth
-            var urlVariables = [];
-            urlVariables.push(['client_id', cdaSettings.taobao.appKey].join('='));
-            urlVariables.push(['response_type', 'token'].join('='));
-            urlVariables.push(['redirect_uri', cdaSettings.taobao.redirect + '?dataSource=taobao'].join('='));
-            window.location.href = 'https://oauth.taobao.com/authorize?' + urlVariables.join('&');
+            return this._progress;
         }
-    };
-    DataSource.prototype.destroy = function() {
-        this._loading.close();
-    }
-    DataSource.prototype.faHoverHandler = function(hover) {
-        if (hover) {
-            this._btnAnalysis.showP2();
-        } else {
-            this._btnAnalysis.showP1();
-        }
-    };
-    DataSource.prototype.faClickHandler = function(hover) {
-        this._addLoading();
-    };
-    DataSource.prototype.faCancelHandler = function() {
-        this._removeLoading();
     };
 
-    DataSource.prototype.faDataHandler = function(name, rows, columnDescriptors) {
-        // Write some log for eg
-        if (grace.Settings.debug.egJS) {
-            var egJS = grace.Settings.debug.egJS;
-            var lines = [];
-            lines.push('(function() {');
-            lines.push('var grace = andrea.grace;');
-            lines.push('andrea.blink.declare("andrea.grace.eg.' + egJS + '");');
-            lines.push('var ' + egJS + ' = grace.eg.' + egJS + ' = function() {');
-            lines.push('this.columnDescriptors = \'' + columnDescriptors.replace(/\'/g, '\\\'') + '\';');
-            lines.push('this.rows = \'' + rows.replace(/\'/g, '\\\'') + '\';');
-            lines.push('}');
-            lines.push('})();');
-            console.log(lines.join('\n'));
-        }
-        Log.interaction('dataSource', ['file', this._decode(name)].join(','));
-        this._stringDataHandler(rows, columnDescriptors);
+    DataSourceBase.prototype.keyword = function() {
+        return null;
     };
-    DataSource.prototype.cdaReadyHandler = function() {
-        this._cdaReady = true;
-
-        var columnDescriptors = [];
-        var genColumn = function(id, name, converterType, analysisType) {
-            return {
-                'id' : id,
-                'name' : name,
-                'converterType' : converterType,
-                'analysisType' : analysisType
-            }
-        }
-        columnDescriptors.push(genColumn('status', '交易状态', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('type', '交易类型', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('created', '交易创建时间', ConverterType.DATE, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('buyer_nick', '买家昵称', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('receiver_state', '收货人省份', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('receiver_city', '收货人城市', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('has_yfx', '包含运费险', ConverterType.BOOLEAN, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('shipping_type', '物流方式', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('trade_from', '交易来源', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('orders.title', '商品标题', ConverterType.STRING, AnalysisType.DIMENSION));
-        columnDescriptors.push(genColumn('orders.logistics_company', '快递公司', ConverterType.STRING, AnalysisType.DIMENSION));
-
-        columnDescriptors.push(genColumn('orders.price', '商品价格', ConverterType.NUMBER, AnalysisType.MEASURE));
-        columnDescriptors.push(genColumn('orders.num', '购买数量', ConverterType.NUMBER, AnalysisType.MEASURE));
-        columnDescriptors.push(genColumn('orders.total_fee', '应付金额', ConverterType.NUMBER, AnalysisType.MEASURE));
-        this._dp = {
-            'rows' : [],
-            'columnDescriptors' : columnDescriptors,
-            'source' : 'taobao'
-        };
-    };
-    DataSource.prototype.cdaDataHandler = function(response) {
-        Log.performance('loadTaobaoTrades', [this._watch.type, 'loadData', this._watch.lap()].join(','));
-        var i, j, k;
-        response = this._decode(response);
-        var trades = response.trades_sold_get_response.trades.trade;
-        var rows = this._dp.rows;
-        var columnDescriptors = this._dp.columnDescriptors;
-        this._cdsNumTrades += trades.length;
-        for ( i = 0; i < trades.length; i++) {
-            var t = trades[i];
-            var orders = t.orders.order;
-            for ( j = 0; j < orders.length; j++) {
-                var o = orders[j];
-                var row = [];
-                for ( k = columnDescriptors.length - 1; k >= 0; k--) {
-                    var cd = columnDescriptors[k];
-                    var id = cd.id;
-                    var path = id.split('.');
-                    if (path[0] === 'orders') {
-                        id = path[1];
-                        row[k] = Taobao.toCaption(o[id], 'order', id);
-                    } else {
-                        id = path[0];
-                        row[k] = Taobao.toCaption(t[id], 'trade', id);
-                    }
-                }
-                rows.push(row);
-            }
-        }
-
-        var cdaSettings = grace.Settings.crossDomainAccessor;
-        var dataPercent = this._cdsNumTrades / Math.min(cdaSettings.taobao.trade.maxResults, response.trades_sold_get_response.total_results);
-        this._loading.percent(dataPercent);
-    };
-    DataSource.prototype.cdaCompleteHandler = function() {
-        Log.performance('loadTaobaoTrades', [this._watch.type, 'loadComplete', this._watch.lap(true), this._watch.total()].join(','));
-        this._dpReady();
-    };
-    DataSource.prototype._getCrossDomainAccessor = function(callback) {
-        var check = $.proxy(function() {
-            var $cda = $('#CrossDomainAccessor');
-            if ($cda[0] && this._cdaReady) {
-                callback($cda[0]);
-            } else {
-                _.delay(check, 500);
-            }
-        }, this);
-        check();
-    }
-    DataSource.prototype._stringDataHandler = function(rows, columnDescriptors) {
-        this._dp = {
-            'rows' : _.isString(rows) ? this._decode(rows) : rows,
-            'columnDescriptors' : _.isString(columnDescriptors) ? this._decode(columnDescriptors) : columnDescriptors,
-            'source' : 'excel'
-        };
-        this._dpReady();
-    };
-    DataSource.prototype._encode = function(o) {
+    DataSourceBase.prototype._encode = function(o) {
         var s = JSON.stringify(o);
         s = s.replace(/%/g, '%25');
         s = s.replace(/\\/g, '%5C');
         s = s.replace(/\"/g, '%22');
         return s;
     };
-    DataSource.prototype._decode = function(s) {
+    DataSourceBase.prototype._decode = function(s) {
         s = s.replace(/%22/g, '\"');
         s = s.replace(/%5C/g, '\\');
         s = s.replace(/%25/g, '%');
         return JSON.parse(s);
     };
-    DataSource.prototype._addLoading = function(label, percent) {
-        this._loading = new Loading($('<div/>'), label, percent);
-        this._loading.open(this._$main, true);
-    };
-    DataSource.prototype._removeLoading = function() {
-        this._loading.close();
+
+    /**
+     *
+     * @param {Object} settings {
+     *     color,
+     *     caption
+     * }
+     */
+    DataSourceBase.prototype._generateButton = function($container, settings) {
+        if ($container.length === 0) {
+            return;
+        }
+        var $dom = $container.addClass('grace-dataSource-main-example').css('background-color', settings.color);
+        var $p1 = $('<div/>').appendTo($dom).addClass('grace-dataSource-main-example-p1');
+        var $caption = $('<div/>').appendTo($p1).addClass('grace-dataSource-main-example-p1-caption');
+        _.each(settings.captions, function(caption) {
+            var size = $dom.height() - 25 * 2 + (settings.captions.length - 1);
+            size = Math.floor(size / settings.captions.length);
+
+            var $span = $('<span/>').appendTo($caption).text(caption).css('font-size', size + 'px');
+            var minus = 1;
+            while ($span.height() > (size + 2) || $span.width() > ($dom.width() - 15)) {
+                $span.css('font-size', size - minus + 'px');
+                minus++;
+            }
+            $('<br/>').appendTo($caption).css('line-height', size + 'px');
+        });
+        $caption.children().last().detach();
+        $caption.css({
+            'top' : ($container.height() - $caption.height()) / 2 + (settings.link ? -2 : 4),
+            'left' : ($container.width() - $caption.width()) / 2
+        });
+
+        if (settings.link) {
+            var $download = $('<a/>').appendTo($p1).addClass('grace-dataSource-main-example-p2-download');
+            $download.text(settings.link.text).css('color', '#e59999');
+            $download.attr({
+                'target' : '_blank',
+                'href' : settings.link.url,
+                'title' : '右键，另存为…'
+            });
+            $download.on('click', function(event) {
+                event.stopPropagation();
+            });
+        }
     };
 
-    DataSource.prototype._loadEg = function(jsPath, jsClassName) {
-        this._addLoading();
-        LazyLoad.js([jsPath], $.proxy(function() {
-            var eg = new grace.eg[jsClassName]();
-            Log.interaction('dataSource', ['sample', jsClassName].join(','));
-            this._stringDataHandler(eg.rows, eg.columnDescriptors);
-        }, this));
+    // /**
+    // *
+    // * @param {Object} settings {
+    // *     color,
+    // *     caption,
+    // *     description
+    // * }
+    // */
+    // DataSourceBase.prototype._generateMore = function($container, settings) {
+    // var $dom = $container.addClass('grace-dataSource-main-example');
+    // var $more = $('<div/>').appendTo($dom).addClass('grace-dataSource-main-example-more');
+    // // P1
+    // var $p1 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-example-p1').css('background-color',
+    // settings.color);
+    // var $caption = $('<div/>').appendTo($p1).addClass('grace-dataSource-main-example-p1-caption');
+    // _.each(settings.captions, function(caption) {
+    // $('<span/>').appendTo($caption).text(caption);
+    // $('<br/>').appendTo($caption).css('line-height', 30 + 'px');
+    // });
+    // $caption.children().last().detach();
+    // $caption.css({
+    // 'top' : ($container.height() - $caption.height()) / 2,
+    // 'left' : ($container.width() - $caption.width()) / 2
+    // });
+    // // P2
+    // var $p2 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-example-p2');
+    // $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-ribbon').css('background-color',
+    // settings.color);
+    // $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-icon');
+    // $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-text').text(settings.description);
+    //
+    // if (settings.link) {
+    // var $download = $('<a/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-download');
+    // $download.text(settings.link.text).css('color', settings.color);
+    // $download.attr({
+    // 'target' : '_blank',
+    // 'href' : settings.link.url,
+    // 'title' : '右键，另存为…'
+    // });
+    // $download.on('click', function(event) {
+    // event.stopPropagation();
+    // });
+    // }
+    // // More button
+    // return new MoreButton($more[0]);
+    // };
+    DataSourceBase.prototype._swfReadyHandler = function() {
+        this._swfReady = true;
     };
-    DataSource.prototype._dpReady = function() {
-        this.dispatchEvent(new DataSourceEvent(DataSourceEvent.DATA_SOURCE_READY, this, this._dp));
-    };
-    DataSource.prototype._createChildren = function($container) {
-        var $swf;
-        var w, h;
-        // Analysis excel
-        var $btnAnalysis = this._$btnAnalysis = this._createButtonAnalysis(this._genCell(0, 0, 2, 1), $container);
-
-        $swf = $('<div/>').appendTo($container);
-        w = $btnAnalysis.width();
-        h = $btnAnalysis.height();
-        var faSettings = grace.Settings.fileAccessor;
-        this._embedFlash($('<div/>').appendTo($swf), faSettings.name, faSettings.swfURL, 'transparent', w, h, {
-            'alpha' : 0,
-            'width' : w,
-            'height' : h,
-            'hoverCallback' : 'andrea.grace.Grace.faHoverCallback',
-            'clickCallback' : 'andrea.grace.Grace.faClickCallback',
-            'cancelCallback' : 'andrea.grace.Grace.faCancelCallback',
-            'dataCallback' : 'andrea.grace.Grace.faDataCallback',
-            'logFileURL' : grace.Settings.logFile.url
-        });
-        $swf.css({
-            'z-index' : 10000,
-            'position' : 'absolute',
-            'left' : parseFloat($btnAnalysis.css('left')) + 1,
-            'top' : parseFloat($btnAnalysis.css('top')) + 1,
-            'width' : w,
-            'height' : h
-        });
-        // Taobao
-        var cdaSettings = grace.Settings.crossDomainAccessor;
-        this._createButton(this._genCell(0, 1, 1, 1), $container, {
-            'color' : '#ff692f',
-            'captions' : ['淘宝', '销售分析'],
-            'description' : '分析卖家的近3个月销售数据。'
-        }).on('click', $.proxy(function(event) {
-            this._gotoTaobao();
-        }, this));
-        $swf = $('<div/>').appendTo($container);
-        w = h = 1;
-        this._embedFlash($('<div/>').appendTo($swf), cdaSettings.name, cdaSettings.swfURL, 'window', w, h, {
-            'readyCallback' : 'andrea.grace.Grace.cdaReadyCallback',
-            'dataCallback' : 'andrea.grace.Grace.cdaDataCallback',
-            'completeCallback' : 'andrea.grace.Grace.cdaCompleteCallback'
-        });
-        $swf.css('visibility', 'hidden');
-        // Customize data source
-        this._createButton(this._genCell(1, 1, 1, 1), $container, {
-            'color' : '#3498db',
-            'captions' : ['定制', '我的数据源…'],
-            'description' : '创建专属于您的数据源。请邮件至andiris29@gmail.com'
-        }).on('click', $.proxy(function(event) {
-            window.location.href = 'mailto:andiris29@gmail.com?subject=添加定制数据源&body=<请描述您的数据源（如数据库地址、网页地址等）。作者会在至多2个工作日内给您回复。';
-        }, this));
-        // Eg 1
-        this._createButton(this._genCell(2, 0, 1, 1), $container, {
-            'name' : 'SuperMarket',
-            'color' : '#e74c3c',
-            'captions' : ['样例', '超市销售'],
-            'description' : '时间、空间、产品、客户等多维度查看及分析超市的销售状况。',
-            'link' : {
-                'text' : '下载数据…',
-                'url' : grace.Settings.data.superMarket.excel
-            }
-        }).on('click', $.proxy(function(event) {
-            this._loadEg(grace.Settings.data.superMarket.js, 'SuperMarket');
-        }, this));
-        // Eg 2
-        this._createButton(this._genCell(2, 1, 1, 1), $container, {
-            'color' : '#e74c3c',
-            'captions' : ['样例', '世界银行'],
-            'description' : '世界银行公布的各国数据指标。涵盖股市、金融、商业等。',
-            'link' : {
-                'text' : '下载数据…',
-                'url' : grace.Settings.data.worldBank.excel
-            }
-        }).on('click', $.proxy(function(event) {
-            this._loadEg(grace.Settings.data.worldBank.js, 'WorldBank');
-        }, this));
-    };
-    DataSource.prototype._genCell = function(x, y, w, h) {
-        var gap = {
-            'horizontal' : 30,
-            'vertical' : 20
-        };
-        var cell = {
-            'width' : 160,
-            'height' : 100
-        };
-        var $div = $('<div/>');
-        $div.css({
-            'width' : cell.width * w + gap.horizontal * (w - 1) + 'px',
-            'height' : cell.height * h + gap.vertical * (h - 1) + 'px',
-            'left' : x * (cell.width + gap.horizontal) + 'px',
-            'top' : y * (cell.height + gap.vertical) + 'px'
-        });
-        return $div;
-    };
-    DataSource.prototype._embedFlash = function($ph, name, swfURL, wmode, w, h, flashvars) {
+    DataSourceBase.prototype._embedSWF = function($ph, name, swfURL, wmode, w, h, flashvars) {
         var uid = _.uniqueId('flashContent_');
 
         var params = {};
@@ -8404,71 +9813,1025 @@ andrea.blink.declare("andrea.grace");(function() {
         $ph.attr('id', uid);
         swfobject.embedSWF(swfURL, uid, w, h, '11.0.0', null, flashvars, params, attributes);
     };
+    DataSourceBase.prototype._getSWF = function(selector, callback) {
+        var check = $.proxy(function() {
+            var $swf = $(selector);
+            if ($swf[0] && this._swfReady) {
+                callback($swf[0]);
+            } else {
+                _.delay(check, 100);
+            }
+        }, this);
+        check();
+    };
+    DataSourceBase.prototype._stringDataReady = function(rows, columnDescriptors) {
+        var dp = {
+            'rows' : _.isString(rows) ? this._decode(rows) : rows,
+            'columnDescriptors' : _.isString(columnDescriptors) ? this._decode(columnDescriptors) : columnDescriptors,
+            'source' : 'excel'
+        };
+        this._dpReady(dp);
+    };
+    DataSourceBase.prototype._dpReady = function(dp) {
+        this.dispatchEvent(new DataSourceEvent(DataSourceEvent.DATA_PROVIDER_READY, this, {
+            'dataProvider' : dp,
+            'dsInfo' : this._options
+        }));
+    };
+})();
+(function() {
+    var grace = andrea.grace;
 
-    DataSource.prototype._createButtonAnalysis = function($cell, $parent) {
-        var $dom = $cell.addClass('grace-dataSource-main-analysis');
-        var $more = $('<div/>').appendTo($dom).addClass('grace-dataSource-main-analysis-more');
-        // P1
-        var $p1 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-analysis-p1').css('line-height', $cell.height() + 'px');
-        $('<span/>').appendTo($p1).text('数据文件');
-        // P2
-        var $p2 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-analysis-p2');
-        $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-ribbon');
-        $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-text').text('分析数据文件').css('line-height', $cell.height() + 'px');
-        var $type = $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-type');
-        $('<div/>').appendTo($type).addClass('grace-dataSource-main-analysis-p2-type-icon');
-        $('<div/>').appendTo($type).addClass('grace-dataSource-main-analysis-p2-type-text').text('2007,2003,CSV');
-        // More button
-        this._btnAnalysis = new MoreButton($more[0]);
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var MoreButton = grace.views.components.MoreButton;
+    var Log = grace.managers.Log;
+    var SerializeManager = grace.managers.SerializeManager;
 
-        $dom.appendTo($parent);
-        return $dom;
+    andrea.blink.declare('andrea.grace.views.dataSources.File');
+    var File = andrea.grace.views.dataSources.File = function(div) {
+        File.superclass.constructor.apply(this, arguments);
+
+        this._more = null;
+
+        this._hookupAPI();
+        this._createChildren();
+    };
+    andrea.blink.extend(File, andrea.grace.views.dataSources.DataSourceBase);
+
+    File.prototype.loadURL = function(hashPairs) {
+        this._load(hashPairs);
+    };
+    File.prototype.keyword = function() {
+        return 'file';
+    };
+    File.prototype._load = function(options) {
+        if (options.url) {
+            this.state(DataSourceBase.STATE_LOADING);
+
+            this._getSWF('#FileAccessor', $.proxy(function(swf) {
+                swf.load(options.url);
+            }, this));
+        }
+    };
+    File.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.file');
+
+        andrea.grace._api.dataSource.file.load = $.proxy(function(options) {
+            _.defer($.proxy(this._load, this), options);
+        }, this);
+        andrea.grace._api.dataSource.file.faReadyCallback = $.proxy(function() {
+            _.defer($.proxy(this._swfReadyHandler, this));
+        }, this);
+        andrea.grace._api.dataSource.file.faHoverCallback = $.proxy(function(hover) {
+            _.defer($.proxy(this._faHoverHandler, this), hover);
+        }, this);
+        andrea.grace._api.dataSource.file.faClickCallback = $.proxy(function() {
+            _.defer($.proxy(this._faClickHandler, this));
+        }, this);
+        andrea.grace._api.dataSource.file.faSelectCallback = $.proxy(function() {
+            _.defer($.proxy(this._faSelectCallback, this));
+        }, this);
+        andrea.grace._api.dataSource.file.faCancelCallback = $.proxy(function() {
+            _.defer($.proxy(this._faCancelHandler, this));
+        }, this);
+        andrea.grace._api.dataSource.file.faDataCallback = $.proxy(function(name, rows, columnDescriptors) {
+            _.defer($.proxy(this._faDataHandler, this), name, rows, columnDescriptors);
+            return true;
+        }, this);
+        andrea.grace._api.dataSource.file.faSaveCallback = $.proxy(function(response) {
+            _.defer($.proxy(this._faSaveHandler, this), response);
+            return true;
+        }, this);
+
+    };
+    File.prototype._createChildren = function() {
+        var $container = this._$dom;
+        $container.addClass('grace-dataSource-main-analysis');
+
+        // var $more = $('<div/>').appendTo($container).addClass('grace-dataSource-main-analysis-more');
+        // // P1
+        // var $p1 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-analysis-p1').css('line-height',
+        // $container.height() + 'px');
+        // $('<span/>').appendTo($p1).text('数据文件');
+        // // P2
+        // var $p2 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-analysis-p2');
+        // $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-ribbon');
+        // $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-text').text('分析数据文件').css('line-height',
+        // $container.height() + 'px');
+        // var $type = $('<div/>').appendTo($p2).addClass('grace-dataSource-main-analysis-p2-type');
+        // $('<div/>').appendTo($type).addClass('grace-dataSource-main-analysis-p2-type-icon');
+        // $('<div/>').appendTo($type).addClass('grace-dataSource-main-analysis-p2-type-text').text('2007,2003,CSV');
+        // // More button
+        // this._more = new MoreButton($more[0]);
+        this._generateButton($container, {
+            'color' : '#7db500',
+            'captions' : ['数据文件...', 'excel']
+        });
+
+        var flashVersion = swfobject.getFlashPlayerVersion();
+        if (!flashVersion || flashVersion.major < 10) {
+            $container.on('click', $.proxy(function(event) {
+                alert('请使用PC浏览器进行数据文件分析。');
+            }, this));
+            $container.css('-webkit-filter', 'grayscale(100%)');
+        } else {
+            // SWF
+            var $swf = $('<div/>').appendTo($container);
+            var w = $container.width();
+            var h = $container.height();
+            var faSettings = grace.Settings.fileAccessor;
+            this._embedSWF($('<div/>').appendTo($swf), faSettings.name, faSettings.swfURL, 'transparent', w, h, {
+                'alpha' : 0,
+                'width' : w,
+                'height' : h,
+                'readyCallback' : 'andrea.grace._api.dataSource.file.faReadyCallback',
+                'hoverCallback' : 'andrea.grace._api.dataSource.file.faHoverCallback',
+                'clickCallback' : 'andrea.grace._api.dataSource.file.faClickCallback',
+                'selectCallback' : 'andrea.grace._api.dataSource.file.faSelectCallback',
+                'cancelCallback' : 'andrea.grace._api.dataSource.file.faCancelCallback',
+                'dataCallback' : 'andrea.grace._api.dataSource.file.faDataCallback',
+                'saveURL' : grace.Settings.javaServer + '/dataSource/file',
+                'saveCallback' : 'andrea.grace._api.dataSource.file.faSaveCallback'
+            });
+            $swf.css({
+                'z-index' : 10000,
+                'position' : 'absolute',
+                'width' : w,
+                'height' : h
+            });
+        }
+    };
+
+    File.prototype._faHoverHandler = function(hover) {
+        if (!this._more) {
+            return;
+        }
+        if (hover) {
+            this._more.showP2();
+        } else {
+            this._more.showP1();
+        }
+    };
+    File.prototype._faClickHandler = function() {
+        this.state(DataSourceBase.STATE_LOADING);
+    };
+    File.prototype._faCancelHandler = function() {
+        this.state(DataSourceBase.STATE_NORMAL);
+    };
+    File.prototype._faSelectCallback = function() {
+    };
+
+    File.prototype._faDataHandler = function(name, rows, columnDescriptors) {
+        Log.interaction('dataSource', ['file', this._decode(name)].join(','));
+        this._stringDataReady(rows, columnDescriptors);
+    };
+    File.prototype._faSaveHandler = function(response) {
+        response = JSON.parse(response);
+
+        // Update the dsInfo
+        SerializeManager.instance().saveDataSource({
+            'dataSource' : 'jsonp',
+            'url' : grace.Settings.javaServer + '/dataSource/file?name=' + response.json
+        });
+    };
+
+})();
+(function() {
+    var grace = andrea.grace;
+
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var MoreButton = grace.views.components.MoreButton;
+    var Log = grace.managers.Log;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.DataSourceJSON');
+    var DataSourceJSON = andrea.grace.views.dataSources.DataSourceJSON = function(div) {
+        DataSourceJSON.superclass.constructor.apply(this, arguments);
+
+        this._more = null;
+
+        this._hookupAPI();
+    };
+    andrea.blink.extend(DataSourceJSON, andrea.grace.views.dataSources.DataSourceBase);
+
+    DataSourceJSON.prototype.loadURL = function(hashPairs) {
+        this._load(hashPairs);
+    };
+    DataSourceJSON.prototype.keyword = function() {
+        return 'json';
     };
     /**
-     *
-     * @param {Object} settings {
-     * 	   color,
-     *     caption,
-     *     description
-     * }
+     * @param {Object} options
+     * 	url: *.json
      */
-    DataSource.prototype._createButton = function($cell, $parent, settings) {
-        var $dom = $cell.addClass('grace-dataSource-main-example').appendTo($parent);
-        var $more = $('<div/>').appendTo($dom).addClass('grace-dataSource-main-example-more');
-        // P1
-        var $p1 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-example-p1').css('background-color', settings.color);
-        var $caption = $('<div/>').appendTo($p1).addClass('grace-dataSource-main-example-p1-caption');
-        _.each(settings.captions, function(caption) {
-            $('<span/>').appendTo($caption).text(caption);
-            $('<br/>').appendTo($caption).css('line-height', 30 + 'px');
-        });
-        $caption.children().last().detach();
-        $caption.css({
-            'top' : ($cell.height() - $caption.height()) / 2,
-            'left' : ($cell.width() - $caption.width()) / 2
-        })
-        // P2
-        var $p2 = $('<div/>').appendTo($more).addClass('grace-dataSource-main-example-p2');
-        $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-ribbon').css('background-color', settings.color);
-        $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-icon');
-        $('<div/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-text').text(settings.description);
+    DataSourceJSON.prototype._load = function(options) {
+        if (options.url) {
+            this.state(DataSourceBase.STATE_LOADING);
 
-        if (settings.link) {
-            var $download = $('<a/>').appendTo($p2).addClass('grace-dataSource-main-example-p2-download');
-            $download.text(settings.link.text).css('color', settings.color);
+            this._options = options;
+            $.ajax({
+                'url' : options.url,
+                'dataType' : 'json'
+            }).done($.proxy(function(json) {
+                this._dpReady(json);
+            }, this));
+        }
+    };
+    DataSourceJSON.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.json');
+        andrea.grace._api.dataSource.json.load = $.proxy(function(options) {
+            _.defer($.proxy(this._load, this), options);
+        }, this);
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var MoreButton = grace.views.components.MoreButton;
+    var Log = grace.managers.Log;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.DataSourceJSONP');
+    var DataSourceJSONP = andrea.grace.views.dataSources.DataSourceJSONP = function(div) {
+        DataSourceJSONP.superclass.constructor.apply(this, arguments);
+
+        this._more = null;
+
+        this._hookupAPI();
+    };
+    andrea.blink.extend(DataSourceJSONP, andrea.grace.views.dataSources.DataSourceBase);
+
+    DataSourceJSONP.prototype.loadURL = function(hashPairs) {
+        this._load(hashPairs);
+    };
+    DataSourceJSONP.prototype.keyword = function() {
+        return 'jsonp';
+    };
+    /**
+     * @param {Object} options
+     * 	url: *
+     */
+    DataSourceJSONP.prototype._load = function(options) {
+        if (options.url) {
+            this.state(DataSourceBase.STATE_LOADING);
+
+            this._options = options;
+            $.ajax({
+                'url' : options.url,
+                'dataType' : 'jsonp'
+            }).done($.proxy(function(json) {
+                this._dpReady(json);
+            }, this));
+        }
+    };
+    DataSourceJSONP.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.jsonp');
+        andrea.grace._api.dataSource.jsonp.load = $.proxy(function(options) {
+            _.defer($.proxy(this._load, this), options);
+        }, this);
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    var URLUtil = grace.utils.URLUtil;
+    var Log = grace.managers.Log;
+    var Stopwatch = grace.utils.Stopwatch;
+    var TaobaoAPI = grace.constants.TaobaoAPI;
+    var ConverterType = grace.utils.ConverterType;
+    var AnalysisType = grace.constants.AnalysisType;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.Taobao');
+    var Taobao = andrea.grace.views.dataSources.Taobao = function(div) {
+        Taobao.superclass.constructor.apply(this, arguments);
+
+        this._watch = null;
+        this._cdaNumTrades = 0;
+
+        this._rows = [];
+        this._columnDescriptors = this._generateColumnDescriptors();
+
+        this._hookupAPI();
+        this._createChildren();
+    };
+    andrea.blink.extend(Taobao, andrea.grace.views.dataSources.DataSourceBase);
+
+    Taobao.prototype.loadURL = function(hashPairs) {
+        var cdaSettings = grace.Settings.crossDomainAccessor;
+        if (hashPairs.access_token && hashPairs.taobao_user_id && hashPairs.taobao_user_nick) {
+            this._options = hashPairs;
+            // Taobao OAuth redirect
+            this._watch = new Stopwatch([hashPairs.taobao_user_id, hashPairs.taobao_user_nick].join(','), true);
+            this.progress(0);
+            this._getSWF('#CrossDomainAccessor', $.proxy(function(swf) {
+                swf.setAccessToken(hashPairs.access_token);
+                var fields = [];
+                for (var i = 0; i < this._columnDescriptors.length; i++) {
+                    fields.push(this._columnDescriptors[i].id);
+                }
+                Log.interaction('dataSource', ['taobao', hashPairs.taobao_user_id, hashPairs.taobao_user_nick].join(','));
+                swf.load(cdaSettings.taobao.trade.maxResults, fields.join(','));
+                Log.performance('loadTaobaoTrades', [this._watch.type, 'loadSWF', this._watch.lap()].join(','));
+            }, this));
+        } else if (hashPairs.error) {
+            Log.interaction('authorizeError', [hashPairs.error, hashPairs.error_description.replace(/,/g, '|')]);
+            if (hashPairs.error === 'invalid_client') {
+                var shop = prompt('留下您的 店铺。(店铺网址/店铺名称 均可)\n应用尚未正式发布需要手动设置授权。');
+                var contact = prompt('留下您的 联系方式。以便完成授权之后通知您。\n(邮箱/QQ/微博 均可)');
+                Log.interaction('authorize', [shop, contact, 'taobao']);
+                if (shop && contact) {
+                    alert('您的店铺已保存，完成授权预计需要一天，请稍候。\n完成后会通知到您。');
+                } else if (shop) {
+                    alert('您的店铺已保存，完成授权预计需要一天，请稍候。');
+                }
+            }
+        }
+    };
+    Taobao.prototype.keyword = function() {
+        return 'taobao';
+    };
+    Taobao.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.taobao');
+
+        andrea.grace._api.dataSource.taobao.cdaReadyCallback = $.proxy(function() {
+            _.defer($.proxy(this._swfReadyHandler, this));
+        }, this);
+        andrea.grace._api.dataSource.taobao.cdaDataCallback = $.proxy(function(response) {
+            _.defer($.proxy(this._cdaDataHandler, this), response);
+        }, this);
+        andrea.grace._api.dataSource.taobao.cdaCompleteCallback = $.proxy(function() {
+            _.defer($.proxy(this._cdaCompleteHandler, this));
+        }, this);
+    };
+    Taobao.prototype._createChildren = function() {
+        var $container = this._$dom.clone().appendTo(this._$dom);
+        $container.on('click', $.proxy(function(event) {
+            this._authorize();
+        }, this));
+
+        var cdaSettings = grace.Settings.crossDomainAccessor;
+        this._generateButton($container, {
+            'color' : '#ff692f',
+            'captions' : ['淘宝|天猫', '卖家']
+        });
+        // SWF
+        var $swf = $('<div/>').appendTo($container);
+        var w, h;
+        w = h = 1;
+        this._embedSWF($('<div/>').appendTo($swf), cdaSettings.name, cdaSettings.swfURL, 'window', w, h, {
+            'appKey' : cdaSettings.taobao.appKey,
+            'readyCallback' : 'andrea.grace._api.dataSource.taobao.cdaReadyCallback',
+            'dataCallback' : 'andrea.grace._api.dataSource.taobao.cdaDataCallback',
+            'completeCallback' : 'andrea.grace._api.dataSource.taobao.cdaCompleteCallback'
+        });
+        $swf.css('visibility', 'hidden');
+    };
+    Taobao.prototype._authorize = function() {
+        var cdaSettings = grace.Settings.crossDomainAccessor;
+        // Taobao OAuth
+        var urlVariables = [];
+        urlVariables.push(['client_id', cdaSettings.taobao.appKey].join('='));
+        urlVariables.push(['response_type', 'token'].join('='));
+        urlVariables.push(['redirect_uri', cdaSettings.taobao.redirect + '?dataSource=taobao'].join('='));
+        window.location.href = 'https://oauth.taobao.com/authorize?' + urlVariables.join('&');
+    };
+    Taobao.prototype._generateColumnDescriptors = function() {
+        var columnDescriptors = [];
+        var genColumn = function(id, name, converterType, analysisType) {
+            return {
+                'id' : id,
+                'name' : name,
+                'converterType' : converterType,
+                'analysisType' : analysisType
+            };
+        };
+        columnDescriptors.push(genColumn('status', '交易状态', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('type', '交易类型', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('created', '交易创建时间', ConverterType.DATE_IN_TEXT, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('buyer_nick', '买家昵称', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('receiver_state', '收货人省份', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('receiver_city', '收货人城市', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('has_yfx', '包含运费险', ConverterType.BOOLEAN, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('shipping_type', '物流方式', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('trade_from', '交易来源', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('orders.title', '商品标题', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('orders.logistics_company', '快递公司', ConverterType.STRING, AnalysisType.DIMENSION));
+
+        columnDescriptors.push(genColumn('orders.price', '商品价格', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('orders.num', '购买数量', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('orders.total_fee', '应付金额', ConverterType.NUMBER, AnalysisType.MEASURE));
+
+        return columnDescriptors;
+    };
+    Taobao.prototype._cdaDataHandler = function(response) {
+        Log.performance('loadTaobaoTrades', [this._watch.type, 'loadData', this._watch.lap()].join(','));
+        var i, j, k;
+        response = this._decode(response);
+
+        if (response.trades_sold_get_response.total_results > 0) {
+            var trades = response.trades_sold_get_response.trades.trade;
+            var rows = this._rows;
+            var columnDescriptors = this._columnDescriptors;
+            this._cdaNumTrades += trades.length;
+            for ( i = 0; i < trades.length; i++) {
+                var t = trades[i];
+                var orders = t.orders.order;
+                for ( j = 0; j < orders.length; j++) {
+                    var o = orders[j];
+                    var row = [];
+                    for ( k = columnDescriptors.length - 1; k >= 0; k--) {
+                        var cd = columnDescriptors[k];
+                        var id = cd.id;
+                        var path = id.split('.');
+                        if (path[0] === 'orders') {
+                            id = path[1];
+                            row[k] = TaobaoAPI.toCaption(o[id], 'order', id);
+                        } else {
+                            id = path[0];
+                            row[k] = TaobaoAPI.toCaption(t[id], 'trade', id);
+                        }
+                    }
+                    rows.push(row);
+                }
+            }
+
+            var cdaSettings = grace.Settings.crossDomainAccessor;
+            var dataPercent = this._cdaNumTrades / Math.min(cdaSettings.taobao.trade.maxResults, response.trades_sold_get_response.total_results);
+            this.progress(dataPercent);
+        }
+    };
+    Taobao.prototype._cdaCompleteHandler = function() {
+        Log.performance('loadTaobaoTrades', [this._watch.type, 'loadComplete', this._watch.lap(true), this._watch.total()].join(','));
+        this._dpReady({
+            'rows' : this._rows,
+            'columnDescriptors' : this._columnDescriptors,
+            'source' : 'taobao'
+        });
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    var URLUtil = grace.utils.URLUtil;
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var Log = grace.managers.Log;
+    var Stopwatch = grace.utils.Stopwatch;
+    var JingdongAPI = grace.constants.JingdongAPI;
+    var ConverterType = grace.utils.ConverterType;
+    var AnalysisType = grace.constants.AnalysisType;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.Jingdong');
+    var Jingdong = andrea.grace.views.dataSources.Jingdong = function(div) {
+        Jingdong.superclass.constructor.apply(this, arguments);
+
+        this._watch = null;
+        this._accessToken = null;
+
+        this._rows = [];
+        this._columnDescriptors = this._generateColumnDescriptors();
+
+        this._hookupAPI();
+        this._createChildren();
+    };
+    andrea.blink.extend(Jingdong, andrea.grace.views.dataSources.DataSourceBase);
+
+    Jingdong.prototype.loadURL = function(hashPairs) {
+        var jingdong = grace.Settings.dataSource.jingdong;
+        if (hashPairs.code && hashPairs.codeOverdue !== 'true') {
+            this._options = hashPairs;
+            $.ajax({
+                'url' : grace.Settings.javaServer + '/dataAccessor/jd?method=token',
+                'dataType' : 'jsonp',
+                'data' : {
+                    'oauth' : jingdong.oauth,
+                    'code' : hashPairs.code,
+                    'state' : hashPairs.state,
+                    'appKey' : jingdong.appKey,
+                    'redirect_uri' : jingdong.redirect + '?dataSource=jd'
+                }
+            }).done($.proxy(function(data) {
+                Log.interaction('dataSource', ['jingdong', JSON.stringify(data)].join(','));
+                window.location.hash = 'codeOverdue=true';
+                this._accessToken = data.access_token;
+                this._loadOrders();
+                this._logUser();
+            }, this)).fail($.proxy(function() {
+                Log.console('jingdong token fail.');
+            }, this));
+
+            this.state(DataSourceBase.STATE_LOADING);
+        } else if (hashPairs.error) {
+        }
+    };
+    Jingdong.prototype.keyword = function() {
+        return 'jd';
+    };
+    Jingdong.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.jingdong');
+
+        andrea.grace._api.dataSource.jingdong.load = $.proxy(function(options) {
+            _.defer($.proxy(this._load, this), options);
+        }, this);
+    };
+    Jingdong.prototype._load = function(options) {
+        this.state(DataSourceBase.STATE_LOADING);
+
+        var jingdong = grace.Settings.dataSource.jingdong;
+        jingdong.appKey = options.appKey || jingdong.appKey;
+
+        this._accessToken = options.accessToken;
+        this._loadOrders();
+
+    };
+    Jingdong.prototype._logUser = function(userID) {
+        var jingdong = grace.Settings.dataSource.jingdong;
+
+        $.ajax({
+            'url' : grace.Settings.nodeServer + '/node/jd/user/create',
+            'dataType' : 'jsonp',
+            'data' : {
+                'app_key' : jingdong.appKey,
+                'access_token' : this._accessToken,
+                'user_id' : userID
+            }
+        });
+    };
+    Jingdong.prototype._loadOrders = function() {
+        this._watch = new Stopwatch(['jingdong'].join(','), true);
+
+        var jingdong = grace.Settings.dataSource.jingdong;
+        var end = new Date();
+        var start = new Date();
+        start.setMonth(start.getMonth() - 1);
+
+        var optional_fields = [];
+        // Get vernder_id for log db
+        optional_fields.push('vender_id');
+        var complex = {};
+        _.each(this._columnDescriptors, function(column) {
+            var ids = column.id.split('.');
+            var id = ids[0];
+            if (ids.length === 1) {
+                optional_fields.push(id);
+            } else {
+                if (!complex[id]) {
+                    if (id === 'consignee_info') {
+                        optional_fields.push(id);
+                    } else {
+                        optional_fields.push(id + '_list');
+                    }
+                    complex[id] = true;
+                }
+            }
+        });
+
+        $.ajax({
+            'url' : grace.Settings.javaServer + '/dataAccessor/jd?method=access',
+            'data' : {
+                'api' : jingdong.api,
+                'token' : this._accessToken,
+                'appKey' : jingdong.appKey,
+                'start_date' : start.format('yyyy-MM-dd HH:mm:ss'),
+                'end_date' : end.format('yyyy-MM-dd HH:mm:ss'),
+                'optional_fields' : optional_fields.join(',')
+            },
+            'dataType' : 'jsonp'
+        }).done($.proxy(function(data) {
+            _.each(data, $.proxy(function(responses) {
+                _.each(responses, $.proxy(function(response) {
+                    this._dataHandler(response);
+                }, this));
+            }, this));
+
+            if (this._rows.length === 0) {
+                var contact = prompt('您还不是卖家吧？或者请您留下您的联系方式。');
+                Log.interaction('authorize', ['jingdong', contact]);
+                this.state(DataSourceBase.STATE_NORMAL);
+            } else {
+                this._completeHandler();
+            }
+        }, this));
+    };
+    Jingdong.prototype._createChildren = function() {
+        var $container = this._$dom.clone().appendTo(this._$dom);
+        $container.on('click', $.proxy(function(event) {
+            this._authorize();
+        }, this));
+
+        this._generateButton($container, {
+            'color' : '#00569b',
+            'captions' : ['京东']
+        });
+    };
+    Jingdong.prototype._authorize = function() {
+        var jingdong = grace.Settings.dataSource.jingdong;
+        // Jingdong OAuth
+        var urlVariables = [];
+        urlVariables.push(['client_id', jingdong.appKey].join('='));
+        urlVariables.push(['response_type', 'code'].join('='));
+        urlVariables.push(['redirect_uri', jingdong.redirect + '?dataSource=jd'].join('='));
+        window.location.href = jingdong.oauth + '/authorize?' + urlVariables.join('&');
+    };
+    Jingdong.prototype._generateColumnDescriptors = function() {
+        var columnDescriptors = [];
+        var genColumn = function(id, name, converterType, analysisType) {
+            return {
+                'id' : id,
+                'name' : name,
+                'converterType' : converterType,
+                'analysisType' : analysisType
+            };
+        };
+        columnDescriptors.push(genColumn('order_start_time', '下单时间', ConverterType.DATE_IN_TEXT, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('order_state', '订单状态', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('pay_type', '支付方式', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('item_info.sku_name', '商品名称+SKU', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('order_end_time', '结单时间', ConverterType.DATE_IN_TEXT, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('consignee_info.province', '收货人省份', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('coupon_detail.coupon_type', '优惠类型', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('order_state_remark', '订单状态说明', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('delivery_type', '送货（日期）类型', ConverterType.STRING, AnalysisType.DIMENSION));
+        columnDescriptors.push(genColumn('item_info.gift_point', '赠送积分', ConverterType.STRING, AnalysisType.DIMENSION));
+
+        columnDescriptors.push(genColumn('order_total_price', '总金额', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('order_payment', '应付金额', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('order_seller_price', '货款金额', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('seller_discount', '优惠金额', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('freight_price', '运费', ConverterType.NUMBER, AnalysisType.MEASURE));
+        columnDescriptors.push(genColumn('item_info.item_total', '商品名数量', ConverterType.NUMBER, AnalysisType.MEASURE));
+
+        return columnDescriptors;
+    };
+    Jingdong.prototype._dataHandler = function(response) {
+        var k;
+
+        if (response.error_response) {
+            Log.interaction('dataHandler', ['jingdong', 'error_response', response.error_response.en_desc]);
+            return;
+        }
+
+        response = response.order_search_response;
+        if (response && response.order_search) {
+            Log.interaction('dataHandler', ['jingdong', 'order_search', response.order_search.order_total]);
+
+            var userID = null;
+            var columnDescriptors = this._columnDescriptors;
+            var rows = this._rows;
+
+            var orders = response.order_search.order_info_list;
+            _.each(orders, function(o) {
+                userID = userID || o.vender_id;
+                var items = o.item_info_list;
+                _.each(items, function(i) {
+                    var row = [];
+                    for ( k = columnDescriptors.length - 1; k >= 0; k--) {
+                        var cd = columnDescriptors[k];
+                        var id = cd.id;
+                        var path = id.split('.');
+                        if (path[0] === 'item_info_list') {
+                            id = path[1];
+                            row[k] = JingdongAPI.toCaption(i[id], 'item', id);
+                        } else if (path[0] === 'consignee_info') {
+                            id = path[1];
+                            row[k] = JingdongAPI.toCaption(o.consignee_info[id], 'consignee', id);
+                        } else if (path[0] === 'coupon_detail_list') {
+                            id = path[1];
+                            row[k] = JingdongAPI.toCaption(o.coupon_detail_list[0][id], 'coupon', id);
+                        } else {
+                            id = path[0];
+                            row[k] = JingdongAPI.toCaption(o[id], 'order', id);
+                        }
+                    }
+                    rows.push(row);
+                });
+            });
+            if (userID) {
+                this._logUser(userID);
+            }
+        }
+    };
+    Jingdong.prototype._completeHandler = function() {
+        Log.performance('loadJingdongOrders', [this._watch.type, 'loadComplete', this._watch.lap(true), this._watch.total()].join(','));
+        this._dpReady({
+            'rows' : this._rows,
+            'columnDescriptors' : this._columnDescriptors,
+            'source' : 'jingdong'
+        });
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.Customize');
+    var Customize = andrea.grace.views.dataSources.Customize = function(div) {
+        Customize.superclass.constructor.apply(this, arguments);
+
+        this._createChildren();
+    };
+    andrea.blink.extend(Customize, andrea.grace.views.dataSources.DataSourceBase);
+
+    Customize.prototype._createChildren = function() {
+        var $container = this._$dom;
+        $container.on('click', $.proxy(function(event) {
+            window.location.href = 'mailto:andiris29@gmail.com?subject=添加定制数据源&body=<请描述您的数据源（如数据库地址、网页地址等）。作者会在2个工作日内给您回复。';
+        }, this));
+
+        this._generateButton($container, {
+            'color' : '#3498db',
+            'captions' : ['定制', '数据源…']
+        });
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+
+    var Log = grace.managers.Log;
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+
+    andrea.blink.declare('andrea.grace.views.dataSources.Sample');
+    var Sample = andrea.grace.views.dataSources.Sample = function(div, settings) {
+        Sample.superclass.constructor.apply(this, arguments);
+
+        this._settings = settings;
+        this._createChildren();
+    };
+    andrea.blink.extend(Sample, andrea.grace.views.dataSources.DataSourceBase);
+
+    Sample.prototype._createChildren = function() {
+        var settings = this._settings;
+
+        var $container = this._$dom;
+        $container.on('click', $.proxy(function(event) {
+            this._loadEg(settings.json, settings.name);
+        }, this));
+
+        this._generateButton($container, {
+            'color' : '#e74c3c',
+            'captions' : settings.captions,
+            'link' : {
+                'text' : '下载数据…',
+                'url' : settings.download
+            }
+        });
+    };
+    Sample.prototype._loadEg = function(jsonPath, name) {
+        this.state(DataSourceBase.STATE_LOADING);
+
+        grace.api.dataSource.load('json', {
+            'url' : jsonPath
+        });
+        Log.interaction('dataSource', ['sample', name].join(','));
+    };
+})();
+(function() {
+    var grace = andrea.grace;
+    var MoreButton = grace.views.components.MoreButton;
+    var DataSourceEvent = grace.views.analysisContainer.events.DataSourceEvent;
+    var URLUtil = grace.utils.URLUtil;
+    var Loading = grace.views.popUp.Loading;
+    var Log = grace.managers.Log;
+
+    var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var DataSourceJSON = andrea.grace.views.dataSources.DataSourceJSON;
+    var DataSourceJSONP = andrea.grace.views.dataSources.DataSourceJSONP;
+    var File = andrea.grace.views.dataSources.File;
+    var Taobao = andrea.grace.views.dataSources.Taobao;
+    var Jingdong = andrea.grace.views.dataSources.Jingdong;
+    var Customize = andrea.grace.views.dataSources.Customize;
+    var Sample = andrea.grace.views.dataSources.Sample;
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel;
+    var SerializeManager = grace.managers.SerializeManager;
+
+    var _LAYOUT = {
+        'sources' : {
+            'container' : {
+                'numCells' : {
+                    'horizontal' : 2,
+                    'vertical' : 1
+                },
+                'gap' : {
+                    'horizontal' : 10,
+                    'vertical' : 10
+                },
+                'cell' : {
+                    'width' : 140,
+                    'height' : 100
+                }
+            },
+            'file' : [0, 0, 2, 1]
+        },
+        'guide' : {
+        }
+    };
+    _LAYOUT.sources.samples = _LAYOUT.sources.samples || {};
+
+    andrea.blink.declare('andrea.grace.DataSource');
+    var DataSource = grace.DataSource = function(div) {
+        DataSource.superclass.constructor.apply(this, arguments);
+
+        this._$main = $('#divDataSourceMain', this._dom);
+        this._$main.empty();
+        this._$main.css({
+            'height' : this._$dom.height() - 48 - 66
+        });
+
+        this._$header = $('#divHeader', this._dom);
+        this._$header.on('click', function() {
+            window.location.href = grace.Settings.home;
+        });
+
+        this._loading = null;
+
+        this._dsMap = {};
+
+        this._json = null;
+        this._file = null;
+        this._taobao = null;
+        this._jingdong = null;
+
+        // Create container
+        var layoutContainer = _LAYOUT.sources.container;
+        var $container = this._generateCell(0, 0, layoutContainer.numCells.horizontal, layoutContainer.numCells.vertical).addClass('grace-dataSource-main-container').appendTo(this._$main);
+        $container.css({
+            'position' : 'absolute',
+            'left' : (this._$main.width() - $container.width()) / 2,
+            'top' : (this._$main.height() - $container.height()) / 2
+        });
+        if (_LAYOUT.guide.video) {
+            var videoSize = {
+                'width' : 480,
+                'height' : 270
+            };
+            var $videoContainer = $('<div/>').appendTo(this._$main);
+            $videoContainer.css({
+                'position' : 'absolute',
+                'left' : (this._$main.width() - 800) / 2,
+                'top' : Math.max(12, (this._$main.height() - $container.height()) / 2 - 60)
+            });
+            $container.css({
+                'left' : parseFloat($container.css('left')) + videoSize.width / 2 + 6,
+                'top' : (this._$main.height() - $container.height()) / 2 + 0
+            });
+
+            var $video = $('<video controls/>');
+            $video.addClass('video-js vjs-default-skin vjs-big-play-centered');
+            $video.attr({
+                'id' : 'videoGuide',
+                'preload' : 'none',
+                'width' : videoSize.width,
+                'height' : videoSize.height,
+                'poster' : './DataDiscovery/assets/videos/guide_poster.jpg',
+                'data-setup' : '{}'
+            });
+            var $source = $('<source/>').appendTo($video);
+            $source.attr({
+                'src' : './DataDiscovery/assets/videos/guide.mp4',
+                'type' : 'video/mp4'
+            });
+
+            $video.appendTo($videoContainer);
+        }
+
+        if ($.browser.webkit) {
+            // Chrome, Safari
+            this._createChildren($container);
+        } else {
+            // Browser fail
+            alertify.reset();
+            alertify.set({
+                'delay' : 1000 * 60 * 60
+            });
+            alertify.error('为了交互体验，请通过谷歌浏览器访问！');
+
+            var $chrome = this._generateCell(0, 0, 3, 2).appendTo($container);
+            $chrome.text('下载谷歌浏览器...').addClass('grace-dataSource-chrome');
+            $chrome.css('line-height', $chrome.height() + 'px');
+            $chrome.on('click', $.proxy(function(event) {
+                window.location = grace.Settings.chrome.localURL;
+            }, this));
+
+            var $download = $('<a/>').appendTo($container).addClass('grace-dataSource-chrome-official');
+            $download.text('官方下载…').css('color', '#ffffff');
             $download.attr({
                 'target' : '_blank',
-                'href' : settings.link.url,
-                'title' : '右键，另存为…'
-            });
-            $download.on('click', function(event) {
+                'href' : grace.Settings.chrome.officialURL
+            }).on('click', function(event) {
                 event.stopPropagation();
             });
         }
-        // More button
-        new MoreButton($more[0]);
+        // Parse URL
+        var hashPairs = URLUtil.hashPairs();
+        if (hashPairs.dataSource && this._dsMap[hashPairs.dataSource]) {
+            // Data source
+            var ds = this._dsMap[hashPairs.dataSource];
+            ds.loadURL(hashPairs);
+        } else if (hashPairs.collab) {
+            // Collaboration
+            SerializeManager.instance().deserialize(hashPairs.collab);
+        }
 
-        return $dom;
+        this._hookupAPI();
+    };
+    andrea.blink.extend(DataSource, andrea.blink.mvc.View);
+
+    DataSource.prototype.destroy = function() {
+        if (this._loading) {
+            this._loading.close();
+            this._loading = null;
+        }
+        if (_LAYOUT.guide.video) {
+            videojs('videoGuide').dispose();
+        }
+    };
+    DataSource.prototype._hookupAPI = function() {
+        andrea.blink.declare('andrea.grace._api.dataSource.dataProvider');
+        andrea.grace._api.dataSource.dataProvider.load = $.proxy(function(dataProvider) {
+            // Do not support dsInfo
+            _.defer($.proxy(this._dpReady, this), dataProvider, null);
+        }, this);
+    };
+    DataSource.prototype._dpReady = function(dataProvider, dsInfo) {
+        this.dispatchEvent(new DataSourceEvent(DataSourceEvent.DATA_PROVIDER_READY, this, {
+            'dataProvider' : dataProvider,
+            'dsInfo' : dsInfo
+        }));
+    };
+    DataSource.prototype._listen = function(ds) {
+        ds.addEventListener(DataSourceEvent.STATE_CHANGED, function(event) {
+            if (ds.state() === DataSourceBase.STATE_LOADING) {
+                var progress = ds.progress();
+                if (!this._loading) {
+                    if (progress !== null) {
+                        this._loading = new Loading($('<div/>'), '');
+                    } else {
+                        this._loading = new Loading($('<div/>'));
+                    }
+                    this._loading.open(this._$main, true);
+                }
+                if (progress !== null) {
+                    this._loading.percent(progress);
+                }
+            } else {
+                if (this._loading) {
+                    this._loading.close();
+                    this._loading = null;
+                }
+            }
+        }, this);
+        ds.addEventListener(DataSourceEvent.DATA_PROVIDER_READY, function(event) {
+            this._dpReady(event.data.dataProvider, event.data.dsInfo);
+        }, this);
+        return ds;
+    };
+    DataSource.prototype._createChildren = function($container) {
+        var create = $.proxy(function(clazz, layout, settings) {
+            var div = null;
+            if (layout) {
+                div = this._generateCell(layout[0], layout[1], layout[2], layout[3], $container);
+            }
+            var ds = new clazz(div, settings);
+            this._listen(ds);
+
+            if (ds.keyword()) {
+                this._dsMap[ds.keyword()] = ds;
+            }
+            return ds;
+        }, this);
+
+        create(DataSourceJSON, _LAYOUT.sources.json);
+        create(DataSourceJSONP, _LAYOUT.sources.jsonp);
+        create(File, _LAYOUT.sources.file);
+        create(Taobao, _LAYOUT.sources.taobao);
+        create(Jingdong, _LAYOUT.sources.jingdong);
+        create(Customize, _LAYOUT.sources.customize);
+        create(Sample, _LAYOUT.sources.samples.superMarket, {
+            'name' : 'SuperMarket',
+            'json' : grace.Settings.data.superMarket.json,
+            'captions' : ['样例', '超市销售'],
+            'description' : '时间、空间、产品、客户等多维度查看及分析超市的销售状况。',
+            'download' : grace.Settings.data.superMarket.excel
+        });
+        create(Sample, _LAYOUT.sources.samples.worldBank, {
+            'name' : 'WorldBank',
+            'json' : grace.Settings.data.worldBank.json,
+            'captions' : ['样例', '世界银行'],
+            'description' : '世界银行公布的各国数据指标。涵盖股市、金融、商业等。',
+            'download' : grace.Settings.data.worldBank.excel
+        });
+    };
+    DataSource.prototype._generateCell = function(x, y, w, h, $container) {
+        var layoutContainer = _LAYOUT.sources.container;
+        var gap = layoutContainer.gap;
+        var cell = layoutContainer.cell;
+        var $div = $('<div/>');
+        $div.css({
+            'width' : cell.width * w + gap.horizontal * (w - 1) + 'px',
+            'height' : cell.height * h + gap.vertical * (h - 1) + 'px',
+            'left' : x * (cell.width + gap.horizontal) + 'px',
+            'top' : y * (cell.height + gap.vertical) + 'px'
+        });
+
+        $div.appendTo($container);
+        return $div;
     };
 })();
 (function() {
@@ -8477,18 +10840,24 @@ andrea.blink.declare("andrea.grace");(function() {
     var DataSourceEvent = grace.views.analysisContainer.events.DataSourceEvent;
     var Log = grace.managers.Log;
     var URLUtil = grace.utils.URLUtil;
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel;
+    var SerializeManager = grace.managers.SerializeManager;
 
     andrea.blink.declare("andrea.grace.Grace");
-    var Grace = grace.Grace = function(dependencyFiles) {
+    var Grace = grace.Grace = function(dependentJSs, dependentCSSs) {
         var hashPairs = URLUtil.hashPairs();
         Log.user = hashPairs.andrea_user ? hashPairs.andrea_user : 'user';
         Log.interaction('open', JSON.stringify($.browser));
-        // Static
-        Grace._instance = this;
 
         $($.proxy(function() {
             // Load dependency js files for DataDiscovery
-            LazyLoad.js(dependencyFiles, $.proxy(this._jsReady, this));
+            LazyLoad.js(dependentJSs, $.proxy(function() {
+                if (dependentCSSs && dependentCSSs.length) {
+                    LazyLoad.css(dependentCSSs, $.proxy(this._jsReady, this));
+                } else {
+                    this._jsReady();
+                }
+            }, this));
             //
             this._$dataSource = $('#divDataSource');
             this._$dataDiscovery = $("#divDataDiscovery");
@@ -8497,7 +10866,7 @@ andrea.blink.declare("andrea.grace");(function() {
             });
 
             var dataSource = this._dataSource = new grace.DataSource(this._$dataSource[0]);
-            dataSource.addEventListener(DataSourceEvent.DATA_SOURCE_READY, this._dataSourceDataSourceReadyHandler, this);
+            dataSource.addEventListener(DataSourceEvent.DATA_PROVIDER_READY, this._dataSourceDataSourceReadyHandler, this);
         }, this));
 
         this._dataSource = null;
@@ -8506,51 +10875,26 @@ andrea.blink.declare("andrea.grace");(function() {
 
         this._lazyLoading = true;
         this._dp = null;
+        this._dsInfo = null;
 
-    };
-    // ------------------------------------
-    // Static for flash
-    // ------------------------------------
-    Grace._instance = null;
-
-    Grace._flashCallback = function(context, handler, args) {
-        _.defer($.proxy(function() {
-            this[handler].apply(this, arguments[0]);
-        }, context), args);
-    };
-    // File accessor callbacks
-    Grace.faHoverCallback = function(hover) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faHoverHandler', arguments);
-    };
-    Grace.faClickCallback = function(hover) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faClickHandler', arguments);
-    };
-    Grace.faCancelCallback = function(rows, columnDescriptors) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faCancelHandler', arguments);
-    };
-    Grace.faDataCallback = function(rows, columnDescriptors) {
-        Grace._flashCallback(Grace._instance._dataSource, 'faDataHandler', arguments);
-        return true;
-    };
-    // Cross domain accessor callbacks
-    Grace.cdaReadyCallback = function() {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaReadyHandler', arguments);
-    };
-    Grace.cdaDataCallback = function(response) {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaDataHandler', arguments);
-    };
-    Grace.cdaCompleteCallback = function() {
-        Grace._flashCallback(Grace._instance._dataSource, 'cdaCompleteHandler', arguments);
+        this._startup();
     };
     // ------------------------------------
     // Private methods
     // ------------------------------------
+    Grace.prototype._startup = function() {
+    };
     // Goto DataDiscovery
     Grace.prototype._dataSourceDataSourceReadyHandler = function(event) {
-        this._dp = event.data;
+        this._dp = event.data.dataProvider;
+        this._dsInfo = event.data.dsInfo;
         this._gotoDataDiscovery();
-    }
+    };
     Grace.prototype._jsReady = function() {
+        ZeroClipboard.config({
+            'moviePath' : grace.Settings.zeroClipboard.moviePath
+        });
+
         this._lazyLoading = false;
         this._gotoDataDiscovery();
     };
@@ -8564,6 +10908,7 @@ andrea.blink.declare("andrea.grace");(function() {
         this._dataSource.destroy();
         // Draw data discovery
         var dataDiscovery = new grace.DataDiscovery(this._$dataDiscovery[0]);
+        SerializeManager.instance().saveDataSource(this._dsInfo);
         dataDiscovery.rowBasedDataProvider(this._dp.rows, this._dp.columnDescriptors, this._dp.source);
 
         // Play animation
@@ -8571,10 +10916,20 @@ andrea.blink.declare("andrea.grace");(function() {
             '$page' : this._$dataSource,
             'classes' : ['pt-page-scaleDownCenter']
         }, {
-            '$page' : this._$dataDiscovery,            'classes' : ['pt-page-scaleUpCenter'],
+            '$page' : this._$dataDiscovery,
+            'classes' : ['pt-page-scaleUpCenter'],
             'delay' : 180
         }, $.proxy(function() {
-            this._$dataSource.css('z-index', -1);
+            this._$dataSource.css({
+                'z-index' : -1,
+                'width' : '0px',
+                'height' : '0px',
+                'overflow' : 'hidden'
+            });
+            // Could not set display to none here, since save file swf will be unloaded when display = none.
+            // this._$dataSource.css('display', 'none');
+
+            dataDiscovery.loadCollaboration();
         }, this));
         _.defer(function() {
             pt.play();

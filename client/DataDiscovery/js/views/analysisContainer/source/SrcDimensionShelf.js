@@ -39,5 +39,6 @@
         // availableOGs.push(OperationGroup.createByTypes([OperationType.CARD_ADD_TO_DIMENSION, OperationType.CARD_ADD_TO_MEASURE]));
         // SrcDimensionShelf.OGS_DEFAULT = availableOGs;
     // };
-    // SrcDimensionShelf._loadClass();
+    // SrcDimensionShelf._loadClass();
+
 })();

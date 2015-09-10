@@ -58,6 +58,7 @@
                     this._createMenu([operationGroups[i]], $li);
                 }
             }
-        }
+        }
+
     }
 })(jQuery);

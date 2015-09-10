@@ -14,6 +14,8 @@
         });
 
         this._classVisible = null;
+        this._visibleAnimationDuration = 600;
+
         this._$dock = null;
     };
     andrea.blink.extend(PopUpBase, andrea.blink.mvc.View);
@@ -42,16 +44,16 @@
         PopUpManager.createPopUp(this, modal);
 
         this.dispatchEvent(new PopUpEvent(PopUpEvent.POPUP_OPENED, this));
-    }
+    };
     PopUpBase.prototype.close = function(delay) {
         var _this = this;
         var $dom = $(this._dom);
         if (delay == null) {
-            delay = 1
+            delay = 1;
         }
         if (this._classVisible) {
             $dom.removeClass(this._classVisible);
-            delay = 2000;
+            delay = this._visibleAnimationDuration;
         }
         if (delay > 0) {
             setTimeout(function() {
@@ -65,5 +67,5 @@
     };
     PopUpBase.prototype.closeImmediately = function() {
         this.close(0);
-    }
+    };
 })(jQuery);

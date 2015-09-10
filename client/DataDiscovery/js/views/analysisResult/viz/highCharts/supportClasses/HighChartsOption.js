@@ -7,20 +7,33 @@
     andrea.blink.declare("andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption");
     var HighChartsOption = andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption;
 
+    // TODO Integrate title to model
+    HighChartsOption.title = null;
+
     HighChartsOption.genMain = function(chartType) {
-        return {
+        var main = {
             chart : {
                 type : chartType
             },
             title : {
-                text : null
+                text : HighChartsOption.title
             },
             credits : {
                 enabled : false
+            },
+            navigation : {
+                buttonOptions : {
+                    enabled : false
+                }
+            },
+            exporting : {
+                filename : 'chart',
+                type : 'image/jpeg'
             }
-
-        }
-    }
+        };
+        HighChartsOption.title = null;
+        return main;
+    };
     HighChartsOption.genLegend = function(enabled) {
         var legend = null;
         if (enabled) {
@@ -28,16 +41,16 @@
                 layout : 'vertical',
                 align : 'left',
                 verticalAlign : 'middle'
-            }
+            };
         } else {
             legend = {
                 "enabled" : false
-            }
+            };
         }
         return {
             "legend" : legend
-        }
-    }
+        };
+    };
     HighChartsOption._visualize = function(analyses, index) {
         var sa/*ShelvedAnalysis*/ = null;
         if (index < analyses.length) {
@@ -45,7 +58,7 @@
             sa.visualized = true;
         }
         return sa;
-    }
+    };
     HighChartsOption._setVisualized = function(shelvedAnalyses) {
         if (!shelvedAnalyses) {
             return;
@@ -57,7 +70,7 @@
             var sa = shelvedAnalyses[i];
             sa.visualized = true;
         }
-    }
+    };
     /**
      *
      */
@@ -85,7 +98,7 @@
 
             sortOperations.push(og.ascend());
             sortOperations.push(og.descend());
-        }
+        };
         if (seriesSA) {
             prepareRinseOperation(seriesSA.operationGroup);
         }
@@ -93,12 +106,12 @@
             prepareRinseOperation(categorySA.operationGroup);
         }
         for ( di = 0; di < dataSAs.length; di++) {
-            prepareRinseOperation(dataSAs[0].operationGroup);
+            prepareRinseOperation(dataSAs[di].operationGroup);
         }
         sortOperations = _.without(sortOperations, undefined);
         sortOperations.sort(function(o1, o2) {
             return o1.priority - o2.priority;
-        })
+        });
         sortOperations.pop();
         _.each(ogs, function(og) {
             _.each(sortOperations, function(o) {
@@ -110,13 +123,13 @@
             if (isSeriesByDatas) {
                 querySeriesIndex = function(values, indexDataSA) {
                     return indexDataSA;
-                }
+                };
                 sl = dataSAs.length;
                 dl = 1;
             } else {
                 querySeriesIndex = function(values, indexDataSA) {
                     return 0;
-                }
+                };
                 sl = 1;
                 dl = dataSAs.length;
             }
@@ -124,7 +137,7 @@
             sq = new ValueQuery(dataProvider, seriesSA, turboThreshold);
             querySeriesIndex = function(values, indexDataSA) {
                 return sq.queryIndex(values);
-            }
+            };
             sl = sq.names().length;
             dl = dataSAs.length;
         }
@@ -132,13 +145,13 @@
         if (!categorySA) {
             queryCategoryIndex = function(values) {
                 return 0;
-            }
+            };
             cl = 1;
         } else {
             cq = new ValueQuery(dataProvider, categorySA, turboThreshold);
             queryCategoryIndex = function(values) {
                 return cq.queryIndex(values);
-            }
+            };
             cl = cq.names().length;
         }
 
@@ -164,7 +177,7 @@
                             'si' : si,
                             'di' : di,
                             'ascend' : og.ascend()
-                        }
+                        };
                     }
                 }
             }
@@ -256,7 +269,7 @@
         } else {
             return sa.source.name;
         }
-    }
+    };
     HighChartsOption.saToDisplayAbbr = function(sa) {
         var abbr = sa.operationGroup.mapAbbrs().join(HighChartsOption.OPERATION_DISPLAY_SPLITTER_ABBR);
         if (abbr) {
@@ -264,5 +277,5 @@
         } else {
             return sa.source.name;
         }
-    }
+    };
 })();

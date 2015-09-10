@@ -27,7 +27,7 @@
             return [dataProvider, dimesionSAs[1], dimesionSAs[0], dataSAs, this._isSeriesByDatas, turboThreshold];
         } else {
             dataSAs = dataSAs;
-            this._isSeriesByDatas = true
+            this._isSeriesByDatas = true;
             return [dataProvider, null, dimesionSAs[0], dataSAs, this._isSeriesByDatas, turboThreshold];
         }
     };
@@ -36,18 +36,18 @@
         if (dimesionSAs && dimesionSAs[0]) {
             highConfig.xAxis.title = {
                 'text' : HighChartsOption.saToDisplayAbbr(dimesionSAs[0])
-            }
+            };
         } else {
             highConfig.xAxis.title = {
                 'text' : null
-            }
+            };
         }
         if (dataConfig.categories) {
             highConfig.xAxis.categories = dataConfig.categories;
             highConfig.xAxis.labels = {
                 'rotation' : -45,
                 'align' : 'right'
-            }
+            };
         } else {
             highConfig.xAxis.categories = [''];
         }
@@ -66,8 +66,8 @@
                 'title' : {
                     'text' : title
                 }
-            }
-        }
+            };
+        };
         if (this._isSeriesByDatas) {
             for (var i = 0; i < dataSAs.length; i++) {
                 var y = genYAxis.call(this, dataSAs[i]);
@@ -77,7 +77,8 @@
         } else {
             highConfig.yAxis.push(genYAxis.call(this, dataSAs.length === 1 ? dataSAs[0] : null));
         }
-        // Edit the common data config
+
+        // Edit the common data config
         for (var i = 0; i < dataConfig.series.length; i++) {
             var series = dataConfig.series[i];
             if (highConfig.yAxis.length === dataConfig.series.length) {
@@ -101,9 +102,9 @@
             hideDelay : 240
         };
         if (multiSeries) {
-            highConfig.tooltip.pointFormat = '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y}</b></td></tr>'
+            highConfig.tooltip.pointFormat = '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y}</b></td></tr>';
         } else {
-            highConfig.tooltip.pointFormat = '<tr>' + '<td style="padding:0"><b>{point.y}</b></td></tr>'
+            highConfig.tooltip.pointFormat = '<tr>' + '<td style="padding:0"><b>{point.y}</b></td></tr>';
         }
         if (this._vizType) {
             if (this._vizType === VizType.RADAR) {
@@ -111,13 +112,13 @@
                 highConfig.xAxis.labels = {
                     'rotation' : 0,
                     'align' : 'center'
-                }
+                };
             } else if (this._vizType === VizType.STACKED_BAR || this._vizType === VizType.STACKED_COLUMN) {
                 highConfig.plotOptions = {
                     'series' : {
                         'stacking' : 'normal'
                     }
-                }
+                };
             }
         }
 
@@ -140,5 +141,5 @@
         if (sizeProp && minSize > this._$dom[sizeProp]()) {
             this._$dom[sizeProp](minSize);
         }
-    }
+    };
 })(jQuery);

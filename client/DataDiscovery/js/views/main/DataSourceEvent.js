@@ -7,5 +7,7 @@
     };
     andrea.blink.extend(DataSourceEvent, andrea.blink.events.Event);
 
-    DataSourceEvent.DATA_SOURCE_READY = "dataSourceReady";
+    DataSourceEvent.DATA_PROVIDER_READY = "dataSourceReady";
+
+    DataSourceEvent.STATE_CHANGED = "stateChanged";
 })();

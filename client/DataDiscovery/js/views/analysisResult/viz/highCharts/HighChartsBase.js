@@ -4,6 +4,7 @@
     var HighChartsOption = andrea.grace.views.analysisResult.viz.highCharts.supportClasses.HighChartsOption;
     var VizType = grace.constants.VizType;
     var VizBase = grace.views.analysisResult.viz.VizBase;
+    var Log = grace.managers.Log;
 
     /**
      * chartType: column, bar, line, area
@@ -15,6 +16,17 @@
 
         this._chartType = chartType;
         this._vizType = vizType;
+
+        this._$highcharts = null;
+        this._highConfig = null;
+
+        this._$print = $('<button/>').addClass('grace-result-print');
+        this._$print.text('导出').appendTo(this._$dom);
+        this._$print.on('click', $.proxy(function() {
+            this._$highcharts.highcharts().exportChart();
+        }, this));
+        
+        this._validateSize();
     };
     andrea.blink.extend(HighChartsBase, VizBase);
 
@@ -42,8 +54,8 @@
                 'dataSAs' : dataSAs,
                 'isSeriesByDatas' : isSeriesByDatas,
                 'turboThreshold' : turboThreshold
-            }
-        }
+            };
+        };
         toObject.apply(this, dataConfigArgs.array);
         // Set visualized
         this._setVisualized.apply(this, dataConfigArgs.array);
@@ -76,20 +88,51 @@
                 }
             }
         }
-        $(this._dom).highcharts(highConfig);
+        this._highConfig = JSON.parse(JSON.stringify(highConfig));
+        this._$highcharts.highcharts(highConfig);
         return true;
     };
     HighChartsBase.prototype.dataConfigArgs = function(dataProvider, dimesionSAs, dataSAs) {
     };
     HighChartsBase.prototype.completeHighConfig = function(highConfig, dataConfig, dataProvider, dimesionSAs, dataSAs) {
     };
-    HighChartsBase.checkOutdate = function(vizType, dataConfigArgs) {        var clone = function(value) {
+
+    HighChartsBase.prototype._validateSize = function() {
+        var size = this.size();
+
+        this._$dom.css({
+            'height' : size.height + 'px',
+            'width' : size.width + 'px'
+        });
+        if (this._$highcharts) {
+            this._$highcharts.empty().detach();
+        }
+        // this._$highcharts = $('<div/>').appendTo(this._$dom);
+        this._$highcharts = $('<div/>');
+        this._$print.before(this._$highcharts);        
+        this._$highcharts.css({
+            'height' : size.height + 'px',
+            'width' : size.width + 'px'
+        });
+        if (this._highConfig) {
+            this._$highcharts.highcharts(this._highConfig);
+        }
+    };
+    HighChartsBase.prototype.toJSON = function() {
+        return {
+            'type' : 'highcharts',
+            'highConfig' : this._highConfig
+        };
+    };
+    HighChartsBase.checkOutdate = function(vizType, dataConfigArgs) {
+        var clone = function(value) {
             if (value != null) {
                 return JSON.parse(JSON.stringify(value));
             } else {
                 return null;
             }
-        }        var current = {
+        };
+        var current = {
             'vizType' : vizType,
             'numRows' : dataConfigArgs.object.dataProvider.numRows,
             'seriesSA' : clone(dataConfigArgs.object.seriesSA),
@@ -103,12 +146,12 @@
             outdate = {
                 'render' : true,
                 'animation' : true
-            }
+            };
         } else if (!_.isEqual(cache, current)) {
             outdate = {
                 'render' : true,
                 'animation' : cache.numRows === current.numRows
-            }
+            };
         } else {
             outdate = {
                 'render' : false

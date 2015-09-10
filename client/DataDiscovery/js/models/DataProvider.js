@@ -12,7 +12,8 @@
         this.numRows = 0;
         this.numColumns = 0;
 
-        this._columnBased = null;
+        this._columnBased = null;
+
         this._build();
     };
     andrea.blink.extend(DataProvider, andrea.blink.mvc.Model);
@@ -29,7 +30,8 @@
             'notNullValue2d' : [],
             'notNullUniqueValues2d' : [],
             'hasNull2d' : []
-        }
+        };
+
         this.numRows = this._values2d.length;
         this.numColumns = this.numRows > 0 ? this._values2d[0].length : 0;
 
