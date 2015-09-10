@@ -25,7 +25,7 @@
             'color' : '#e74c3c',
             'captions' : settings.captions,
             'link' : {
-                'text' : '下载数据…',
+                'text' : '下载原始数据…',
                 'url' : settings.download
             }
         });

@@ -90,7 +90,7 @@
 
         if (settings.link) {
             var $download = $('<a/>').appendTo($p1).addClass('grace-dataSource-main-example-p2-download');
-            $download.text(settings.link.text).css('color', '#e59999');
+            $download.text(settings.link.text).css('color', '#fff');
             $download.attr({
                 'target' : '_blank',
                 'href' : settings.link.url,

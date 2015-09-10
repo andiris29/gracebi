@@ -144,12 +144,17 @@
     Jingdong.prototype._createChildren = function() {
         var $container = this._$dom.clone().appendTo(this._$dom);
         $container.on('click', $.proxy(function(event) {
-            this._authorize();
+            // this._authorize();
         }, this));
 
         this._generateButton($container, {
             'color' : '#00569b',
-            'captions' : ['京东卖家']
+            'captions' : ['更多数据源', '敬请期待……']
+        });
+        $container.css({
+            'cursor' : 'default',
+            'filter' : 'gray', /* IE6-9 */
+            '-webkit-filter' : 'grayscale(100%)' /* Chrome 19+, Safari 6+, Safari 6+ iOS */
         });
     };
     Jingdong.prototype._authorize = function() {

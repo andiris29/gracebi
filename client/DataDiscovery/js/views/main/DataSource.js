@@ -42,13 +42,13 @@
             // 'taobao' : [0, 0, 2, 1],
             // 'file' : [0, 1, 1, 1],
             // jingdong
-            'taobao' : [0, 0, 1, 1],
-            'jingdong' : [1, 0, 1, 1],
+            'taobao' : [0, 2, 1, 1],
+            'jingdong' : [1, 2, 1, 1],
             'file' : [1, 1, 1, 1],
 
             'samples' : {
-                'superMarket' : [0, 2, 1, 1],
-                'worldBank' : [1, 2, 1, 1]
+                'superMarket' : [0, 0, 1, 1],
+                'worldBank' : [1, 0, 1, 1]
             }
         },
         'guide' : {
@@ -244,14 +244,14 @@
         create(Sample, _LAYOUT.sources.samples.superMarket, {
             'name' : 'SuperMarket',
             'json' : grace.Settings.data.superMarket.json,
-            'captions' : ['样例', '超市销售'],
+            'captions' : ['样例：大型超市', '销售数据'],
             'description' : '时间、空间、产品、客户等多维度查看及分析超市的销售状况。',
             'download' : grace.Settings.data.superMarket.excel
         });
         create(Sample, _LAYOUT.sources.samples.worldBank, {
             'name' : 'WorldBank',
             'json' : grace.Settings.data.worldBank.json,
-            'captions' : ['样例', '世界银行'],
+            'captions' : ['样例：世界银行', '各国数据指标'],
             'description' : '世界银行公布的各国数据指标。涵盖股市、金融、商业等。',
             'download' : grace.Settings.data.worldBank.excel
         });

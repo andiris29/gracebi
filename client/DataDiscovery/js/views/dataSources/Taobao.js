@@ -124,12 +124,17 @@
     Taobao.prototype._createChildren = function() {
         var $container = this._$dom.clone().appendTo(this._$dom);
         $container.on('click', $.proxy(function(event) {
-            this._authorize();
+            // this._authorize();
         }, this));
 
         this._generateButton($container, {
             'color' : '#ff692f',
-            'captions' : ['淘宝/天猫', '卖家']
+            'captions' : ['淘宝/天猫', '卖家（调试中……）']
+        });
+        $container.css({
+            'cursor' : 'default',
+            'filter' : 'gray', /* IE6-9 */
+            '-webkit-filter' : 'grayscale(100%)' /* Chrome 19+, Safari 6+, Safari 6+ iOS */
         });
     };
     Taobao.prototype._authorize = function() {

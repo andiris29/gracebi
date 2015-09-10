@@ -84,7 +84,7 @@
         // this._more = new MoreButton($more[0]);
         this._generateButton($container, {
             'color' : '#7db500',
-            'captions' : ['数据文件...', 'excel']
+            'captions' : ['数据文件...', 'Excel 2003, 2007; CSV']
         });
 
         var flashVersion = swfobject.getFlashPlayerVersion();
