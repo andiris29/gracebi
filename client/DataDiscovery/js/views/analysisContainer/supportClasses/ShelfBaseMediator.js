@@ -32,7 +32,7 @@
                 'shelfType' : _this._view.type(),
                 'shelvedContexts' : _this._view.getShelvedContexts()
             });
-        }
+        };
 
         this._view.addEventListener(ShelfEvent.CARD_SHELVED, function(event) {
             runAnalysis();
@@ -43,13 +43,13 @@
             _this._view.dropAnalysis(a, event.data.$helper, event.data.from, event.data.to);
         });
         this._view.addEventListener(ShelfEvent.CARD_COPIED, function(event) {
-            _this._model.viewNotify(AppConst.VIEW_NOTIFICATION_PASTE_TO, {
+            _this._model.hackNotify(AppConst.NOTIFICATION_VIEW_PASTE_TO, {
                 'analysis' : event.data.analysis,
                 'targetShelfType' : event.data.pasteTo
             });
         });
 
-        this._subscribe(AppConst.VIEW_NOTIFICATION_PASTE_TO, function(notification) {
+        this._subscribe(AppConst.NOTIFICATION_VIEW_PASTE_TO, function(notification) {
             if (_this._view.type() === notification.data.targetShelfType) {
                 _this._view.addCard(notification.data.analysis);
             }
@@ -64,11 +64,28 @@
                 return _this._model.getShelvedAnalysis(id);
             });
         });
-    }
+
+        this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_RESET, function(notification) {
+            var analyses = _this._modelAnalyses();
+
+            if (analyses && analyses.length) {
+                _.each(analyses, function(sa) {
+                    _this._view.addCard(sa.source, sa);
+                });
+
+                _this._view.updateShelvedAnalyses(function(id) {
+                    return _this._model.getShelvedAnalysis(id);
+                });
+            }
+        });
+    };
+    ShelfBaseMediator.prototype._modelAnalyses = function() {
+        return [];
+    };
     /**
      * @protected
      */
     ShelfBaseMediator.prototype._dataProviderChangedHandler = function(notification) {
         this._view.removeAll();
-    }
+    };
 })(jQuery);

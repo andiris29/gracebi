@@ -27,4 +27,5 @@
 
     ShelfType.dim = function(type) {
         return type === ShelfType.SRC_DIM || type === ShelfType.DES_DIM;
-    };})();
+    };
+})();

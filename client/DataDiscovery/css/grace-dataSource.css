@@ -12,16 +12,15 @@
     font-size: 15px;
 }
 .grace-dataSource-header {
+    cursor: pointer;
     margin: auto;
     height: 48px;
     width: 720px;
     padding: 6px 0px 0px 0px;
 }
 .grace-dataSource-main {
-    height: 460px;
-    margin: 25px auto;
-    width: 720px;
     position: relative;
+    height: calc(100% - 48px - 66px);
 }
 .grace-dataSource-main-container {
     position: relative;
@@ -29,7 +28,7 @@
 .grace-dataSource-chrome {
     background-color: #e74c3c;
     color: #ffffff;
-    font-size: 36px;
+    font-size: 24px;
     cursor: pointer;
     text-align: center;
 }
@@ -116,12 +115,13 @@
 }
 .grace-dataSource-main-example-p2-download {
     position: absolute;
-    bottom: 6px;
+    bottom: 2px;
     right: 9px;
-    font-size: 12px;
+    font-size: 10px;
 }
 .grace-dataSource-footer {
     margin: auto;
+    padding-bottom: 12px;
     height: 48px;
     width: 720px;
     text-align: center;

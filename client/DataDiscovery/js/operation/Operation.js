@@ -34,10 +34,10 @@
                 Operation._CLASSIFICATION_TO_TYPES[classification] = [];
             }
             Operation._CLASSIFICATION_TO_TYPES[classification].push(type);
-        }
+        };
         var loadClassification = function(classification, name) {
             Operation._CLASSIFICATION_TO_NAME[classification] = name;
-        }
+        };
         // Classification
         loadClassification(OperationClassification.CARD_OPERATION, '删除');
         loadClassification(OperationClassification.CALCULATE, '计算');
@@ -71,14 +71,38 @@
         loadType(OperationClassification.DRILL, OperationType.DRILL_WEEK, '每周 (' + currentMon.format('yyyy/M/d') + ' - ' + nextMon.format('M/d') + ')', '每周');
         loadType(OperationClassification.DRILL, OperationType.DRILL_DATE, '每日 (' + today.format('yyyy/M/d') + ')', '每日');
         // GROUP
-        loadType(OperationClassification.GROUP, OperationType.GROUP_MONTH, '月 (1 - 12)', '月');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_DATE, '日 (1 - 31)', '日');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_DAY, '星期 (1 - 7)', '星');
-        loadType(OperationClassification.GROUP, OperationType.GROUP_HOUR, '时 (0 - 23)', '时');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_MONTH, '分月 (1-12)', '月');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_DATE, '分日 (1-31)', '日');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_DAY, '分星期 (1-7)', '星');
+        loadType(OperationClassification.GROUP, OperationType.GROUP_HOUR, '分时 (0-23)', '时');
     };
     Operation._loadClass();
 
     Operation.getTypes = function(classification) {
         return Operation._CLASSIFICATION_TO_TYPES[classification];
-    }
+    };
+
+    Operation.toJSON = function(instance) {
+        return {
+            'id' : instance.id,
+            'type' : instance.type,
+            'priority' : instance.priority,
+            'name' : instance.name,
+            'abbreviation' : instance.abbreviation,
+            'classification' : instance.classification,
+            'classificationName' : instance.classificationName
+        };
+    };
+    Operation.fromJSON = function(json) {
+        var instance = new Operation();
+        instance.id = json.id;
+        instance.type = json.type;
+        instance.priority = json.priority;
+        instance.name = json.name;
+        instance.abbreviation = json.abbreviation;
+        instance.classification = json.classification;
+        instance.classificationName = json.classificationName;
+        grace.operation.OperationFactory.register(instance);
+        return instance;
+    };
 })(jQuery);

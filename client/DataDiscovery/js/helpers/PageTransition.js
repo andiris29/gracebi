@@ -9,7 +9,8 @@
      * }
      */
     var PageTransition = grace.helpers.PageTransition = function(outObj, inObj, endCallback) {
-        this._$outPage = outObj['$page'];        this._outClasses = outObj.classes.join(' ');
+        this._$outPage = outObj['$page'];
+        this._outClasses = outObj.classes.join(' ');
         this._outDelay = outObj.delay;
         this._$inPage = inObj['$page'];
         this._inClasses = inObj.classes.join(' ');

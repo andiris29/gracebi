@@ -1,0 +1,12 @@
+<web-app version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<servlet>
+		<servlet-name>JD</servlet-name>
+		<servlet-class>JD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JD</servlet-name>
+		<url-pattern>/jd/*</url-pattern>
+	</servlet-mapping>
+</web-app>

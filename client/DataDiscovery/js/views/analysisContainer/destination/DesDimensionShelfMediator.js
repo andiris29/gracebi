@@ -1,21 +1,25 @@
 (function($) {
 
-	var grace = andrea.grace;
+    var grace = andrea.grace;
 
-	andrea.blink.declare("andrea.grace.views.analysisContainer.destination.DesDimensionShelfMediator");
+    andrea.blink.declare("andrea.grace.views.analysisContainer.destination.DesDimensionShelfMediator");
 
-	var AppConst = grace.constants.AppConst;
-	/**
-	 * App Mediator.
-	 */
-	var DesDimensionShelfMediator = grace.views.analysisContainer.destination.DesDimensionShelfMediator = function() {
-		DesDimensionShelfMediator.superclass.constructor.apply(this, arguments);
-	};
+    var AppConst = grace.constants.AppConst;
+    /**
+     * App Mediator.
+     */
+    var DesDimensionShelfMediator = grace.views.analysisContainer.destination.DesDimensionShelfMediator = function() {
+        DesDimensionShelfMediator.superclass.constructor.apply(this, arguments);
+    };
 
-	andrea.blink.extend(DesDimensionShelfMediator, grace.views.analysisContainer.supportClasses.ShelfBaseMediator);
+    andrea.blink.extend(DesDimensionShelfMediator, grace.views.analysisContainer.supportClasses.ShelfBaseMediator);
 
-	DesDimensionShelfMediator.prototype.init = function() {
-		DesDimensionShelfMediator.superclass.init.apply(this, arguments);
-	}
+    DesDimensionShelfMediator.prototype.init = function() {
+        DesDimensionShelfMediator.superclass.init.apply(this, arguments);
+    };
+
+    DesDimensionShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisDimesions();
+    };
 
 })(jQuery);

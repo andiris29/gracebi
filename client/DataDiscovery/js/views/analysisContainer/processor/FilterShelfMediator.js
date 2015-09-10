@@ -16,6 +16,9 @@
 
 	FilterShelfMediator.prototype.init = function() {
 		FilterShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
+    FilterShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisFilters();
+    };
 })(jQuery);

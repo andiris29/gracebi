@@ -16,6 +16,9 @@
 
 	DesMeasureShelfMediator.prototype.init = function() {
 		DesMeasureShelfMediator.superclass.init.apply(this, arguments);
-	}
+	};
 
+    DesMeasureShelfMediator.prototype._modelAnalyses = function() {
+        return this._model.analysisDatas();
+    };
 })(jQuery);

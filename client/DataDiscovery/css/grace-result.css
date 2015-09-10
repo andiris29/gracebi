@@ -1,6 +1,7 @@
 .grace-result {
     background: #ffffff;
     border-radius: 3px;
+    position: relative;
 }
 .grace-result-viz {
     position: relative;
@@ -12,4 +13,52 @@
 .grace-result-viz-placeHolder-hint span {
     color: #666666;
     font-size: 24px;
+}
+
+.grace-result-collab-container {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+.grace-result-collab {
+    position: absolute;
+    outline: none;
+    -webkit-transition-property: background, color;
+    -webkit-transition-duration: 0.3s;
+    color: white;
+    border: none;
+    -webkit-border-radius: 3px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0px 4px;
+    font-size: 20px;
+    text-align: center;
+}
+.grace-result-collab:hover {
+    opacity: 1;
+}
+.grace-result-collab-save {
+    right: 0px;
+    top: 0px;
+    background: #7db500;
+}
+.grace-result-collab-save:before {
+    content: "\f0c7";
+}
+
+.grace-result-collab-save:hover {
+    background: #8fcf00;
+}
+.grace-result-collab-share {
+    font-size: 17px;
+    right: 30px;
+    top: 0px;
+    background: #00a1cb;
+}
+
+.grace-result-collab-share:before {
+    content: "\f064";
+}
+.grace-result-collab-share:hover {
+    background: #00b5e5;
 }

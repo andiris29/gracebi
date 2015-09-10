@@ -14,8 +14,10 @@
     andrea.blink.extend(PopUpMenu, grace.views.popUp.HoverPopUpBase);
 
     PopUpMenu.create = function(dataProvider) {
-        var menu = new PopUpMenu($('<div/>'));        menu._createChildren(dataProvider);
-        return menu;    }
+        var menu = new PopUpMenu($('<div/>'));
+        menu._createChildren(dataProvider);
+        return menu;
+    }
     /**
      *
      * @param {Array} value [{
@@ -26,7 +28,8 @@
     PopUpMenu.prototype._createChildren = function(dataProvider) {
         this._dataProvider = dataProvider;
 
-        this._createMenu(this._dataProvider, $(this._dom))    }
+        this._createMenu(this._dataProvider, $(this._dom))
+    }
     PopUpMenu.prototype._createMenu = function(dataProvider, $dom) {
         var _this = this;
 

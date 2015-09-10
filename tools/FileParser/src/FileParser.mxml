@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="800" height="450"
+					   applicationComplete="_applicationCompleteHandler(event)" invoke="_invokeHandler(event)"
+					   showStatusBar="false">
+	<fx:Script>
+		<![CDATA[
+			import andrea.grace.fileAccessor.parser.ExcelParser;
+			import andrea.grace.fileAccessor.parser.IParser;
+			import andrea.iris.contants.Char;
+			import andrea.iris.excelas.csv.Excel;
+			import andrea.iris.excelas.events.ExcelEvent;
+			import andrea.iris.excelas.expose.IExcel;
+			import andrea.iris.excelas.v2003.Excel;
+			import andrea.iris.excelas.v2007.Excel;
+			import andrea.iris.log.Stopwatch;
+
+			import mx.events.FlexEvent;
+
+			private var _autoClose:Boolean = false;
+
+			private var _watch:Stopwatch;
+
+			protected function _applicationCompleteHandler(event:FlexEvent):void {
+				// User interactive
+				this._btnSelect.addEventListener(MouseEvent.CLICK, function():void {
+					var file:File = new File();
+					_watch = new Stopwatch('FileAccessor_local');
+					file.addEventListener(Event.SELECT, function():void {
+						_watch.start();
+						_ctnSelect.visible = _ctnSelect.includeInLayout = false;
+
+						file.load();
+					});
+					file.addEventListener(Event.COMPLETE, function():void {
+						_parse(file.name, file.data, file.parent);
+					});
+					file.addEventListener(Event.CANCEL, function(event:Event):void {
+					});
+					file.browse([new FileFilter("数据文件(excel, csv)", "*.xlsx;*.xls;*.csv")]);
+				});
+			}
+
+			protected function _invokeHandler(event:InvokeEvent):void {
+				if (event.arguments && event.arguments.length > 0) {
+					_autoClose = true;
+
+					_watch = new Stopwatch('FileAccessor_remote');
+					_watch.start();
+					_ctnSelect.visible = _ctnSelect.includeInLayout = false;
+
+					var url:String = event.arguments[0];
+					url = url.replace(/\\/g, '/');
+
+					var file:File = new File(url);
+					file.addEventListener(IOErrorEvent.IO_ERROR, function(event:IOErrorEvent):void {
+						_log('IOError when load file: ' + event.toString());
+					});
+					file.addEventListener(SecurityErrorEvent.SECURITY_ERROR, function(event:SecurityErrorEvent):void {
+						_log('SecurityError when load file: ' + event.toString());
+					});
+					file.addEventListener(Event.COMPLETE, function(event:Event):void {
+						var name:String = url;
+						var slash:int = url.lastIndexOf('/');
+						var query:int = url.lastIndexOf('?');
+						if (slash !== -1) {
+							if (query !== -1) {
+								name = url.substring(slash + 1, query);
+							} else {
+								name = url.substring(slash + 1);
+							}
+						}
+						_parse(name, file.data, new File(url.substring(0, slash)));
+					});
+					file.load();
+				}
+			}
+
+			private function _parse(name:String, data:ByteArray, folder:File):void {
+				// Parse file
+				_log('[' + _watch.type + '] load ' + name + ': ' + _watch.lap());
+				var parser:IParser;
+				var excel:IExcel;
+				if (name.indexOf(".xlsx") != -1) {
+					excel = new andrea.iris.excelas.v2007.Excel();
+				} else if (name.indexOf(".xls") != -1) {
+					excel = new andrea.iris.excelas.v2003.Excel();
+				} else if (name.indexOf(".csv") != -1) {
+					excel = new andrea.iris.excelas.csv.Excel();
+				}
+				// Load
+				excel.addEventListener(ExcelEvent.LOAD_COMPLETE, function(event:ExcelEvent):void {
+					_log('[' + _watch.type + '] load excel: ' + _watch.lap());
+				});
+				excel.addEventListener(ExcelEvent.EXCEL_READY, function(event:ExcelEvent):void {
+					_log('[' + _watch.type + '] parse excel: ' + _watch.lap());
+				});
+				//					try {
+				excel.loadSynchronous(data);
+				//					} catch (error:Error) {
+				//						// TODO Handle error
+				//					}
+				// Parse
+				parser = new ExcelParser();
+				parser.target = excel;
+				parser.parse();
+				_log('[' + _watch.type + '] parse graceDataSource: ' + _watch.lap());
+				// Write JSON
+				var dot:int = name.lastIndexOf('.');
+				var json:File = new File(folder.nativePath + File.separator + name.substr(0, dot) + '.json');
+				var fs:FileStream = new FileStream();
+				fs.open(json, FileMode.WRITE);
+				fs.writeMultiByte(JSON.stringify({
+						'rows': parser.rawValues2d,
+						'columnDescriptors': parser.columnDescriptors,
+						'source': 'excel'
+					}), 'utf-8');
+				fs.close();
+				_log('[' + _watch.type + '] write json: ' + _watch.lap());
+
+				if (_autoClose) {
+					nativeApplication.exit();
+				}
+			}
+
+			private function _log(... logs:*):void {
+				_txtLog.text += logs.join(', ') + Char.NEWLINE;
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+	</fx:Declarations>
+	<s:TextArea id="_txtLog" width="100%" height="100%"
+				editable="false"/>
+	<s:BorderContainer id="_ctnSelect" width="100%" height="100%">
+		<s:layout>
+			<s:HorizontalLayout 
+								horizontalAlign="center" verticalAlign="middle"/>
+		</s:layout>
+		<s:Button id="_btnSelect" width="250" height="75" label="Select..."
+				  fontSize="22"/>
+	</s:BorderContainer>
+</s:WindowedApplication>

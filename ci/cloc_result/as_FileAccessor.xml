@@ -4,13 +4,13 @@
   <cloc_version>1.56</cloc_version>
   <elapsed_seconds>0.5</elapsed_seconds>
   <n_files>3</n_files>
-  <n_lines>293</n_lines>
+  <n_lines>380</n_lines>
   <files_per_second>6</files_per_second>
-  <lines_per_second>586</lines_per_second>
-  <report_file>C:\andiris29\13.SourceForge\antSoftware\personal.andrea.graceBI\trunk\dev\\ci\\cloc_result\as_FileAccessor.xml</report_file>
+  <lines_per_second>760</lines_per_second>
+  <report_file>C:\andiris29\svn\cloudForge\antSoftware\andrea.graceBI\trunk\dev\client\ci\cloc_result\as_FileAccessor.xml</report_file>
 </header>
 <languages>
-  <language name="ActionScript" files_count="3" blank="29" comment="30" code="234" />
-  <total sum_files="3" blank="29" comment="30" code="234" />
+  <language name="ActionScript" files_count="3" blank="37" comment="35" code="308" />
+  <total sum_files="3" blank="37" comment="35" code="308" />
 </languages>
 </results>

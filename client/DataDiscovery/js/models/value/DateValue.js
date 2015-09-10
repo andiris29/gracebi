@@ -12,12 +12,6 @@
 	};
 	andrea.blink.extend(DateValue, andrea.grace.models.value.ValueBase);
 
-	DateValue.parseQuantified = function(quantified) {
-		var d = new Date();
-		d.setTime(quantified);
-		return new DateValue(quantified.toString(), d);
-	};
-
 	DateValue._instances = {};
 	DateValue.instance = function(raw) {
 		return DateValue._instances[raw];
@@ -65,7 +59,7 @@
 				caption = Date.hourNames[this._value.getHours()];
 			}
 
-			this._captionsByFormat[format] = caption
+			this._captionsByFormat[format] = caption;
 		}
 		return this._captionsByFormat[format];
 	};

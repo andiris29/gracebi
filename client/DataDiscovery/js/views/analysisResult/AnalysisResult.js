@@ -7,6 +7,9 @@
     var VizType = grace.constants.VizType;
     var DataProvider = grace.models.DataProvider;
     var FilterUtil = grace.utils.FilterUtil;
+    var DataDiscoveryModel = grace.models.DataDiscoveryModel;
+    var AnalysisResultEvent = grace.views.analysisResult.AnalysisResultEvent;
+    var SerializeManager = grace.managers.SerializeManager;
 
     var AnalysisResult = grace.views.analysisResult.AnalysisResult = function(dom) {
         AnalysisResult.superclass.constructor.apply(this, arguments);
@@ -14,10 +17,50 @@
         this._$dom = $(dom);
         this._$dom.addClass('grace-result fancy-scrollbar');
 
-        this._renderArgs = null;
+        this._viz = null;
+        this._vizContainer$ = null;
+
+        this._$collab = null;
+
+        this._createChildren();
     };
     andrea.blink.extend(AnalysisResult, andrea.blink.mvc.View);
 
+    AnalysisResult.prototype._createChildren = function() {
+        this._vizContainer$ = $('<div/>').appendTo(this._$dom);
+
+        this._$collab = $('<div/>').addClass('grace-result-collab-container');
+
+        this._$save = $('<button/>').addClass('grace-result-collab grace-result-collab-save');
+        this._$save.attr('title', '保存当前状态');
+        this._$save.on('click', $.proxy(function() {
+            this.dispatchEvent(new AnalysisResultEvent(AnalysisResultEvent.SAVE, this, {
+                'layout' : 'dataDiscovery',
+            }));
+        }, this));
+        this._$save.appendTo(this._$collab);
+
+        this._$share = $('<button/>').addClass('grace-result-collab grace-result-collab-share');
+        this._$share.attr('title', '分享图表');
+        this._$share.on('click', $.proxy(function() {
+            alertify.reset();
+            alertify.prompt('为图表输入标题：', $.proxy(function(ok, title) {
+                if (ok) {
+                    this.dispatchEvent(new AnalysisResultEvent(AnalysisResultEvent.SAVE, this, {
+                        'layout' : 'vizOnly',
+                        'title' : title
+                    }));
+                } else {
+                    alertify.error('保存取消。');
+                }
+            }, this));
+        }, this));
+        this._$share.appendTo(this._$collab);
+
+        if (grace.Config.dataDiscovery.layout === 'vizOnly') {
+            this._$collab.hide();
+        }
+    };
     /**
      *
      * @param {Array.<Array.<*>>} dataProvider
@@ -25,13 +68,11 @@
      * @param {Array.<ShelvedAnalysis>} dataSAs
      */
     AnalysisResult.prototype.render = function(selectedVizType, dataProvider, filterSAs, dimesionSAs, dataSAs) {
-        this._renderArgs = arguments;
-
         // Prepare data
         var clear = function(sa) {
             sa.visualized = false;
             sa.numPartialVisualized = 0;
-        }
+        };
         _.each(dimesionSAs, clear);
         _.each(dataSAs, clear);
 
@@ -55,35 +96,41 @@
         // Prepare DOM
         var $viz = $('<div/>').css({
             'height' : this.size().height + 'px'
-        });
-        // this._$dom.empty().append($viz);
-        this._$dom.append($viz);
+        }).appendTo(this._vizContainer$);
         // Render viz
         var viz/*VizBase*/ = VizFactory.produce($viz[0], vizType, selectedVizType);
         var success = viz.render(dataProvider, dimesionSAs, dataSAs);
+
         if (success) {
-            while (this._$dom.children().length > 1) {
-                this._$dom.children().eq(0).detach();
+            // Rmove old one
+            this._$collab.detach();
+            if (this._viz) {
+                this._viz.destroy();
+            }
+            // Init new one
+            this._viz = viz;
+            var vizJSON = this._viz.toJSON();
+            SerializeManager.instance().saveViz(vizJSON);
+            if (vizJSON && SerializeManager.instance().serializable()) {
+                this._$collab.appendTo(this._$dom);
             }
             // Add scroll bar
             var domSize = this.size();
             var vizSize = viz.size();
-            this._$dom.css({
+            this._vizContainer$.css({
                 'overflow-x' : 'hidden',
                 'overflow-y' : 'hidden'
-            })
+            });
             if (vizSize.width > domSize.width) {
-                this._$dom.css('overflow-x', 'auto');
+                this._vizContainer$.css('overflow-x', 'auto');
             }
             if (vizSize.height > domSize.height) {
-                this._$dom.css('overflow-y', 'auto');
+                this._vizContainer$.css('overflow-y', 'auto');
             }
         } else {
-            while (this._$dom.children().length > 1) {
-                this._$dom.children().eq(this._$dom.children().length - 1).detach();
-            }
+            $viz.detach();
         }
-    }
+    };
     AnalysisResult.prototype._validateSize = function() {
         var size = this.size();
 
@@ -92,11 +139,12 @@
             'width' : size.width + 'px'
         });
 
-        if (this._renderArgs) {
-            this.render.apply(this, this._renderArgs);
+        if (this._viz) {
+            this._viz.size(size);
         }
     };
-    AnalysisResult.prototype._recommend = function(dataProvider, dimesionSAs, dataSAs) {        if (dataSAs.length === 0) {
+    AnalysisResult.prototype._recommend = function(dataProvider, dimesionSAs, dataSAs) {
+        if (dataSAs.length === 0) {
             return null;
         }
         // Dimension
@@ -136,7 +184,8 @@
             // Dim 0
             return VizType.BAR;
         }
-        return null;
+
+        return null;
     };
 
     AnalysisResult.prototype._valid = function(vizType, dataProvider, dimesionSAs, dataSAs) {
@@ -144,4 +193,5 @@
         var required = manifest.required;
 
         return dimesionSAs.length >= required.numDimensions && dataSAs.length >= required.numMeasures;
-    };})(jQuery);
+    };
+})(jQuery);

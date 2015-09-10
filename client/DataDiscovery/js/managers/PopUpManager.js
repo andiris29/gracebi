@@ -16,18 +16,18 @@
         var $popUp = $(popUp.dom());
         $popUp.appendTo($layer);
         return popUp;
-    }
+    };
     PopUpManager.removePopUp = function(popUp) {
         var $popUp = $(popUp.dom());
-        $popUp.parent().detach();
-    }
+        $popUp.parent().empty().detach();
+    };
     PopUpManager.centerPopUp = function(popUp) {
         var $popUp = $(popUp.dom());
         var $body = $('body');
-        var $root = $body.children().eq(0)
+        var $root = $body.children().eq(0);
         $popUp.css({
             'left' : ($root.width() - $popUp.width()) / 2 + 'px',
             'top' : ($root.height() - $popUp.height()) / 2 - 36 + 'px'
         });
-    }
+    };
 })(jQuery);

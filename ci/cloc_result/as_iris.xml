@@ -2,15 +2,15 @@
 <header>
   <cloc_url>http://cloc.sourceforge.net</cloc_url>
   <cloc_version>1.56</cloc_version>
-  <elapsed_seconds>1</elapsed_seconds>
-  <n_files>25</n_files>
-  <n_lines>1190</n_lines>
-  <files_per_second>25</files_per_second>
-  <lines_per_second>1190</lines_per_second>
-  <report_file>C:\andiris29\13.SourceForge\antSoftware\personal.andrea.graceBI\trunk\dev\\ci\\cloc_result\as_iris.xml</report_file>
+  <elapsed_seconds>0.5</elapsed_seconds>
+  <n_files>29</n_files>
+  <n_lines>1350</n_lines>
+  <files_per_second>58</files_per_second>
+  <lines_per_second>2700</lines_per_second>
+  <report_file>C:\andiris29\svn\cloudForge\antSoftware\andrea.graceBI\trunk\dev\client\ci\cloc_result\as_iris.xml</report_file>
 </header>
 <languages>
-  <language name="ActionScript" files_count="25" blank="209" comment="108" code="873" />
-  <total sum_files="25" blank="209" comment="108" code="873" />
+  <language name="ActionScript" files_count="29" blank="241" comment="108" code="1001" />
+  <total sum_files="29" blank="241" comment="108" code="1001" />
 </languages>
 </results>

@@ -28,6 +28,7 @@
             });
         }, this);
         this._subscribe(AppConst.NOTIFICATION_VIZ_CONTEXT_CHANGED, function(notification) {
-            _this._view.update(model.analysisDimesions().length, model.analysisDatas().length);        });
+            _this._view.update(model.analysisDimesions().length, model.analysisDatas().length);
+        });
     }
 })(jQuery);

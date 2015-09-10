@@ -21,6 +21,7 @@
     var OperationClassification = grace.operation.OperationClassification;
     var OperationPriorityBaseline = grace.operation.OperationPriorityBaseline;
     var OperationType = grace.operation.OperationType;
+    var QuantifiedHelper = grace.models.value.supportClasses.QuantifiedHelper;
 
     var TextFilter = grace.filter.TextFilter;
     var FilterUtil = grace.utils.FilterUtil;
@@ -96,7 +97,7 @@
                         }
                     } else {
                         if (ShelfType.src(from)) {
-                            return true
+                            return true;
                         }
                     }
                 } else if (ShelfType.des(to)) {
@@ -142,11 +143,12 @@
                     '$helper' : ui.helper,
                     'from' : from,
                     'to' : to
-                }))
+                }));
 
                 _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this, {
                     'shelvedContexts' : _this.getShelvedContexts()
-                }));            },
+                }));
+            },
             over : function(event, ui) {
                 ui.helper.attr('__overContainerType', _this._type);
                 _this._$ph.attr('__toIndex', '');
@@ -171,12 +173,13 @@
                             top : $card.offset().top,
                             left : $card.offset().left
                         });
-                    }, true, false)
+                    }, true, false);
+
                     var p;
                     if (_this._layout === 'vertical') {
                         p = 'top';
                     } else if (_this._layout === 'horizontal') {
-                        p = 'left'
+                        p = 'left';
                     }
                     var draggingPosition = ui.helper.offset()[p];
                     for ( i = -1; i < bases.length; i++) {
@@ -224,7 +227,7 @@
             contexts.push(ctx);
         }, true, true);
         return contexts;
-    }
+    };
     ShelfBase.prototype._traversalCards = function(callback, ignorePH, ignoreDragging) {
         var $cards = this._$cards;
         var children = $cards.children();
@@ -244,11 +247,11 @@
             callback.call(card, index);
             index++;
         }
-    }
+    };
     ShelfBase.prototype._setTitle = function(title) {
         var $h2 = $(this._dom).find('h2');
         $h2.text(title);
-    }
+    };
     ShelfBase.prototype._setRequired = function(required) {
         var $h2 = $(this._dom).find('h2');
         if (required) {
@@ -256,7 +259,7 @@
         } else {
             $h2.removeClass('grace-analysis-title-text_required');
         }
-    }
+    };
     ShelfBase.prototype.addSuffix = function(suffix) {
         var $h2 = $(this._dom).find('h2');
 
@@ -267,34 +270,51 @@
         } else {
             $h2.removeClass('grace-analysis-title-text_suffix');
         }
-    }
+    };
     ShelfBase.prototype.type = function(value) {
         if (arguments.length > 0) {
             this._type = value;
         } else {
             return this._type;
         }
-    }
+    };
     ShelfBase.prototype.dropAnalysis = function(a, $helper, from, to) {
-        var $card = this._addCardAt(a, parseInt(this._$ph.attr('__toIndex')), $helper, from !== to);
+        var shelvedAnalysisID, operationIDs;
+        if (from === to) {
+            shelvedAnalysisID = $helper.attr('__shelvedAnalysisID');
+        }
+        if ($helper.attr('__operationIDs') && $helper.attr('__shelfType') === this._type) {
+            operationIDs = JSON.parse($helper.attr('__operationIDs'));
+        }
+        var $card = this._addCardAt(a, parseInt(this._$ph.attr('__toIndex')), shelvedAnalysisID, operationIDs);
     };
 
-    ShelfBase.prototype.addCard = function(a) {
-        return this._addCardAt(a);
+    ShelfBase.prototype.addCard = function(a, sa) {
+        var shelvedAnalysisID, operationIDs;
+        if (sa) {
+            shelvedAnalysisID = sa.id;
+        }
+        if (sa && sa.operationGroup) {
+            operationIDs = sa.operationGroup.mapIDs();
+        }
+        var filter;
+        if (sa && sa.filter) {
+            filter = sa.filter;
+        }
+        return this._addCardAt(a, -1, shelvedAnalysisID, operationIDs, filter);
     };
     // Override by child class
     ShelfBase.prototype._getOperationInfo = function() {
         return {
             'availableOGs' : [],
-            'defaultTypes' : []        }
+            'defaultTypes' : []
+        };
     };
     /**
      * @param a Analysis
      * @param index optional int
-     * @param $helper optional object
-     * @param newShelved optional boolean
      */
-    ShelfBase.prototype._addCardAt = function(a, index, $helper, newShelved) {
+    ShelfBase.prototype._addCardAt = function(a, index, shelvedAnalysisID, operationIDs, filter) {
         var _this = this;
 
         var $cards = this._$cards;
@@ -304,11 +324,10 @@
         }
         $card.width('');
 
-        $cards.appendAt($card, index);
+        $cards.appendAt($card, index);
+
         var shelvedAnalysisID;
-        if ($helper && !newShelved) {
-            shelvedAnalysisID = $helper.attr('__shelvedAnalysisID');
-        } else {
+        if (!shelvedAnalysisID) {
             shelvedAnalysisID = _.uniqueId('shelvedAnalysisID_');
         }
         // TODO Use data replace attr
@@ -331,10 +350,6 @@
             $card.attr('title', '');
         });
         // Handler operation
-        var operationIDs;
-        if ($helper && $helper.attr('__operationIDs') && $helper.attr('__shelfType') === this._type) {
-            operationIDs = JSON.parse($helper.attr('__operationIDs'));
-        }
         var info = this._getOperationInfo(a);
         var availableOGs = info.availableOGs;
         var defaultTypes = info.defaultTypes;
@@ -342,86 +357,108 @@
         var stopPropagation = function(event) {
             return false;
         };
-        var removeFromShelf = function() {
-            var $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-removeFromShelf', 'grace-analysis-card-operation-1'].join(' '));
-            $operation.attr('title', '移除');
-            $operation.on('click', function() {                _this._hide($card, function() {
-                    $card.detach();
-                    _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
-                });
-            }).on('mousedown', stopPropagation);
+        var genOperation = function(type, position, title, handlers) {
+            var $operation = $('<span/>').appendTo($card);
+            $operation.addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
+            $operation.addClass(['grace-analysis-card-operation-' + type, 'grace-analysis-card-operation-' + position].join(' '));
+            if (title) {
+                $operation.attr('title', title);
+            }
+            $operation.on('click', function(event) {
+                if (handlers && handlers.click) {
+                    handlers.click(event);
+                }
+            }).on('mouseenter', function(event) {
+                if (handlers && handlers.mouseenter) {
+                    handlers.mouseenter(event);
+                }
+            }).on('mousedown', function(event) {
+                event.stopPropagation();
+            });
             return $operation;
-        }
+        };
+        var genOperationRemove = function() {
+            return genOperation('remove', 1, '移除', {
+                'click' : function() {
+                    _this._hide($card, function() {
+                        $card.detach();
+                        _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
+                    });
+                }
+            });
+        };
         var $operation;
         if (ShelfType.proc(this._type)) {
             // Proc filter shelf
             // Remove
-            removeFromShelf();
+            genOperationRemove();
             // Filter
-            var cValues = this._model().dataProvider.getCValues(a.index, true, false);
-            var hasNull = this._model().dataProvider.isCHasNull(a.index);
-            if (a.quantifiable) {
-                if (a.valueType() === ValueType.DATE) {
-                    $card.data('__filter', new RangeFilter(cValues, hasNull, DateValue.parseQuantified));
-                } else if (a.valueType() === ValueType.NUMBER) {
-                    $card.data('__filter', new RangeFilter(cValues, hasNull, NumberValue.parseQuantified));
-                }
+            if (filter) {
+                $card.data('__filter', filter);
             } else {
-                $card.data('__filter', new TextFilter(cValues, hasNull));
+                var cValues = this._model().dataProvider.getCValues(a.index, true, false);
+                var hasNull = this._model().dataProvider.isCHasNull(a.index);
+                if (a.quantifiable) {
+                    if (a.valueType() === ValueType.DATE) {
+                        $card.data('__filter', new RangeFilter(cValues, hasNull, QuantifiedHelper.TYPE_DATE));
+                    } else if (a.valueType() === ValueType.NUMBER) {
+                        $card.data('__filter', new RangeFilter(cValues, hasNull, QuantifiedHelper.TYPE_NUMBER));
+                    }
+                } else {
+                    $card.data('__filter', new TextFilter(cValues, hasNull));
+                }
             }
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-filter', 'grace-analysis-card-operation-2'].join(' '));
-            $operation.on('hover', function(event) {
-                if (event.type === 'mouseenter') {
+            $operation = genOperation('filter', 2, '', {
+                'mouseenter' : function(event) {
                     _this._createPopUpFilter(a, $card, $operation);
                 }
-            }).on('mousedown', stopPropagation);
+            });
         } else if (ShelfType.des(this._type)) {
             // Des shelf
             // Remove
-            removeFromShelf();
+            genOperationRemove();
             // Drop down
             if (availableOGs && availableOGs.length > 0) {
-                $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-                $operation.addClass(['grace-analysis-card-operation-dropDown', 'grace-analysis-card-operation-2'].join(' '));
-                $operation.on('hover', function(event) {
-                    if (event.type === 'mouseenter') {
+                $operation = genOperation('dropDown', 2, '', {
+                    'mouseenter' : function(event) {
                         _this._createPopUpMenu(availableOGs, a, $card, $operation);
                     }
-                }).on('mousedown', stopPropagation);
+                });
             }
         } else if (ShelfType.src(this._type)) {
             // Src shelf
-            // Add
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-addToAnalysis', 'grace-analysis-card-operation-1'].join(' '));
-            if (this._type === ShelfType.SRC_DIM)
-                $operation.attr('title', '添加到分析纬度');
-            else if (this._type === ShelfType.SRC_MEA)
-                $operation.attr('title', '添加到分析指标');
-
-            var copyCard = function() {
-                var pasteTo;
-                if (this._type === ShelfType.SRC_DIM) {
-                    pasteTo = ShelfType.DES_DIM;
-                } else if (this._type === ShelfType.SRC_MEA) {
-                    pasteTo = ShelfType.DES_VALUE;
+            // Add to analysis
+            var copyCard = $.proxy(function(event, pasteTo) {
+                if (!pasteTo) {
+                    if (this._type === ShelfType.SRC_DIM) {
+                        pasteTo = ShelfType.DES_DIM;
+                    } else if (this._type === ShelfType.SRC_MEA) {
+                        pasteTo = ShelfType.DES_VALUE;
+                    }
                 }
                 this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_COPIED, this, {
                     'analysis' : $card.data('__analysis'),
                     'pasteTo' : pasteTo
                 }));
-            }
-            $card.on('dblclick', $.proxy(copyCard, this))
-            $operation.on('click', $.proxy(copyCard, this)).on('mousedown', stopPropagation);
+            }, this);
+
+            $operation = genOperation('addToAnalysis', 1, '分析', {
+                'click' : copyCard
+            });
+            $card.on('dblclick', copyCard);
+            // Add to filter
+            $operation = genOperation('addToFilter', 2, '过滤', {
+                'click' : function(event) {
+                    copyCard(event, ShelfType.PROC_FILTER);
+                }
+            });
             // Hide
-            $operation = $('<span/>').appendTo($card).addClass(['grace-analysis-operation', 'grace-analysis-card-operation'].join(' '));
-            $operation.addClass(['grace-analysis-card-operation-moveToTrash', 'grace-analysis-card-operation-2'].join(' '));
-            $operation.attr('title', '隐藏');
-            $operation.on('click', $.proxy(function() {
+            var moveToTrash = $.proxy(function() {
                 this._addToTrash($card);
-            }, this)).on('mousedown', stopPropagation);
+            }, this);
+            $operation = genOperation('moveToTrash', 3, '隐藏', {
+                'click' : moveToTrash
+            });
         }
         if (!operationIDs || operationIDs.length === 0) {
             operationIDs = OperationGroup.createByTypes(defaultTypes).mapIDs();
@@ -534,7 +571,12 @@
 
         var operationIDsStringify = JSON.stringify(operationIDs);
         if (operationIDsStringify) {
-            if ($card.attr('__operationIDs') !== operationIDsStringify) {
+            var existing = $card.attr('__operationIDs');
+            if (!existing) {
+                $card.attr({
+                    '__operationIDs' : operationIDsStringify
+                });
+            } else if (existing !== operationIDsStringify) {
                 $card.attr({
                     '__shelvedAnalysisID' : _.uniqueId('shelvedAnalysisID_'),
                     '__operationIDs' : operationIDsStringify
@@ -582,10 +624,11 @@
                 filterSAs.push(sa);
             }
         });
-        var dataProvider = FilterUtil.filter(model.dataProvider, filterSAs)        var cValues = dataProvider.getCValues(a.index, true, true);
+        var dataProvider = FilterUtil.filter(model.dataProvider, filterSAs);
+        var cValues = dataProvider.getCValues(a.index, true, true);
         var hasNull = dataProvider.isCHasNull(a.index);
         if (a.quantifiable) {
-            this._popUpFilter = PopUpRangeFilter.create(new RangeValuesProxy($card.data('__filter'), hasNull));
+            this._popUpFilter = PopUpRangeFilter.create(new RangeValuesProxy($card.data('__filter'), cValues, hasNull));
         } else {
             this._popUpFilter = PopUpTextFilter.create(new TextValuesProxy($card.data('__filter'), cValues, hasNull));
         }
@@ -603,7 +646,7 @@
             _this._popUpFilter = null;
         }, this);
         this._popUpFilter.open($operation);
-    }
+    };
     ShelfBase.prototype._showOperation = function(show, $card, $operation) {
         if (show) {
             $card.find('.grace-analysis-card-text').addClass('grace-analysis-card-text-shrink');
@@ -612,7 +655,7 @@
             $card.find('.grace-analysis-card-text').removeClass('grace-analysis-card-text-shrink');
             $operation.removeClass('grace-analysis-card-operation-show');
         }
-    }
+    };
     /**
      * Should be overrided
      * @param {Object} $card
@@ -628,7 +671,8 @@
         // Update menu when open
         this._popUpMenu = PopUpMenu.create(new OperationGroupProxy(operationGroups));
         this._popUpMenu.addEventListener(MenuEvent.ITEM_SELECTED, function(event) {
-            var operation = event.data.item;            _this._addOperation(operation.type, $card);
+            var operation = event.data.item;
+            _this._addOperation(operation.type, $card);
             // Dispatch CARD_SHELVED to notify visualization update
             _this.dispatchEvent(new ShelfEvent(ShelfEvent.CARD_SHELVED, _this));
         });
@@ -641,7 +685,7 @@
             _this._popUpMenu = null;
         }, this);
         this._popUpMenu.open($operation);
-    }
+    };
     ShelfBase.prototype.updateShelvedAnalyses = function(getSA) {
         var _this = this;
         var numVisualized = 0;
@@ -688,7 +732,7 @@
                     }, this);
                     trashMenu.open($trashBin);
                 }
-            }, this)
+            }, this);
             this._show($trashBin).on('hover', hover);
         }
         trash.push(a);
@@ -711,14 +755,23 @@
     };
     ShelfBase.prototype._hide = function($target, complete) {
         $target.width($target.width());
-        return $target.show(0).hide('explode', {
-            'easing' : 'easeOutSine'
-        }, 180, complete);
+
+        if ($(':visible', $target).length > 0) {
+            return $target.show(0).hide('explode', {
+                'easing' : 'easeOutSine'
+            }, 180, complete);
+        } else {
+            return $target.hide();
+        }
     };
     ShelfBase.prototype._show = function($target, complete) {
-        return $target.hide(0).show('explode', {
-            'easing' : 'easeInSine'
-        }, 250, complete);
+        if ($(':visible', $target).length > 0) {
+            return $target.hide(0).show('explode', {
+                'easing' : 'easeInSine'
+            }, 300, complete);
+        } else {
+            return $target.show();
+        }
     };
     ShelfBase.prototype.removeAll = function() {
         this._$cards.empty();

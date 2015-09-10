@@ -63,7 +63,8 @@
 		}
 
 		viewRecommendIcon.enabled(true);
-		this._select(this._defaultViewIcon);	};
+		this._select(this._defaultViewIcon);
+	};
 	andrea.blink.extend(VizNavigator, andrea.blink.mvc.View);
 
 	VizNavigator.prototype._createGroup = function($line, group) {

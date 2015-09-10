@@ -8,5 +8,53 @@
 }
 .grace-dataDiscovery-footer a {
     color: #ffffff;
-    font-size: 15px;
+    font-size: 12px;
+}
+
+.grace-dataDiscovery-header {
+    width: 210px;
+    cursor: pointer;
+}
+.grace-dataDiscovery-icon {
+    margin: 0px 6px 0px 12px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../assets/icons/icon_24.png');
+}
+.grace-dataDiscovery-slogon {
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+}
+.grace-dataDiscovery-guide {
+    position: absolute;
+    width: calc(100% - 172px);
+    height: 100%;
+    top: 0px;
+    left: 172px;
+}
+.grace-dataDiscovery-guide-mask {
+    background-color: #000000;
+    opacity: .6;
+    border-radius: 3px;
+    width: 100%;
+    height: calc(100% - 2px);
+}
+.grace-dataDiscovery-guide-arrow {
+    background-image: url('../assets/component/guide_arrow.png');
+    position: absolute;
+    left: -5px;
+    top: calc(50% - 48px);
+    width: 254px;
+    height: 104px;
+    background-repeat: no-repeat;
+}
+.grace-dataDiscovery-guide-arrow p {
+    cursor: default;
+    color: #ffffff;
+    width: 180px;
+    position: absolute;
+    left: 68px;
+    top: 20px;
+    font-size: 14px;
 }

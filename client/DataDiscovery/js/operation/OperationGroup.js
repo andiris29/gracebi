@@ -59,7 +59,7 @@
     OperationGroup.prototype.mapIDs = function() {
         return _.map(this._operations, function(o) {
             return o.id;
-        })
+        });
     };
     OperationGroup.prototype.mapNames = function() {
         return _.map(this._operations, function(o) {
@@ -116,5 +116,17 @@
         var operation = OperationFactory.get(id);
         this._operations = _.without(this._operations, operation);
         delete this._typeToOperation[operation.type];
+    };
+    OperationGroup.toJSON = function(instance) {
+        return {
+            '_operations' : grace.utils.SerializeUtil.batchToJSON(instance._operations, Operation.toJSON),
+            '_typeToOperation' : instance._typeToOperation
+        };
+    };
+    OperationGroup.fromJSON = function(json) {
+        var instance = new OperationGroup();
+        instance._operations = grace.utils.SerializeUtil.batchFromJSON(json._operations, Operation.fromJSON);
+        instance._typeToOperation = json._typeToOperation;
+        return instance;
     };
 })(jQuery);

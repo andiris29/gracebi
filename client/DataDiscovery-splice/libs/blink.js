@@ -551,7 +551,8 @@
 	// * @param {Object} data
 	// */
 	// Action.prototype._notify = function(name, data) {
-	// };
+	// };
+
 	/**
 	 *
 	 * @param {String} name
@@ -666,6 +667,10 @@
         return this._$dom;
     };
 
+    View.prototype.destroy = function() {
+        this._$dom.empty().detach();
+    };
+    
     View.prototype.activateAnimation = function() {
         this._animationActivated = true;
     };
@@ -696,7 +701,7 @@
             return {
                 width : this._explicitWidth != null ? this._explicitWidth : this._measuredWidth,
                 height : this._explicitHeight != null ? this._explicitHeight : this._measuredHeight,
-            }
+            };
         }
     };
     View.prototype.invalidateSize = function() {
@@ -812,7 +817,8 @@
 		// var notification = new mvc.Notification(name, source, data);
 		// viewMediatorsEventBus.dispatchEvent(notification);
 		// }
-		// };
+		// };
+
 		/**
 		 *
 		 * @param {String} name
@@ -885,14 +891,18 @@
 					var actionInstance = new actionClz();
 					if ( actionInstance instanceof mvc.Action) {
 						// inject functions
-						// actionInstance._notify = action_notify;						actionInstance._getModel = action_getModel;
-						// try {							result = actionInstance.execute.call(actionInstance, parameters);
+						// actionInstance._notify = action_notify;
+						actionInstance._getModel = action_getModel;
+						// try {
+							result = actionInstance.execute.call(actionInstance, parameters);
 						// } catch(e) {
 							// throw e;
 						// } finally {
 							// delete actionInstance._notify;
 							// delete actionInstance._getModel;
-						// }					}
+						// }
+
+					}
 					actionInstance = null;
 					return result;
 				}

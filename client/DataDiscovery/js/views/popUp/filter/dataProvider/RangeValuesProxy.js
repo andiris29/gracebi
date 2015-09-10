@@ -3,8 +3,9 @@
 	var NullValue = grace.models.value.NullValue;
 
 	andrea.blink.declare('andrea.grace.views.popUp.filter.dataProvider.RangeValuesProxy');
-	var RangeValuesProxy = grace.views.popUp.filter.dataProvider.RangeValuesProxy = function(filter, hasNull) {
-		this.filter = filter
+	var RangeValuesProxy = grace.views.popUp.filter.dataProvider.RangeValuesProxy = function(filter, values, hasNull) {
+		this.filter = filter;
+		this.filter.optionValues(values);
 		// For null checkbox
 		this._hasNull = hasNull;
 	};
@@ -28,9 +29,9 @@
 		}
 	};
 	RangeValuesProxy.prototype.getMinCaption = function(value) {
-		return this.filter.parseQuantified(this.min()).caption();
+		return this.filter.fromQuantified(this.min()).caption();
 	};
 	RangeValuesProxy.prototype.getMaxCaption = function(value) {
-		return this.filter.parseQuantified(this.max()).caption();
+		return this.filter.fromQuantified(this.max()).caption();
 	};
 })(jQuery);

@@ -33,7 +33,8 @@
 
         highConfig.tooltip = {
             hideDelay : 240
-        };        highConfig.plotOptions = {
+        };
+        highConfig.plotOptions = {
             "series" : {
                 "dataLabels" : {
                     "enabled" : true,

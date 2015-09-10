@@ -53,7 +53,8 @@
 		// var notification = new mvc.Notification(name, source, data);
 		// viewMediatorsEventBus.dispatchEvent(notification);
 		// }
-		// };
+		// };
+
 		/**
 		 *
 		 * @param {String} name
@@ -126,14 +127,18 @@
 					var actionInstance = new actionClz();
 					if ( actionInstance instanceof mvc.Action) {
 						// inject functions
-						// actionInstance._notify = action_notify;						actionInstance._getModel = action_getModel;
-						// try {							result = actionInstance.execute.call(actionInstance, parameters);
+						// actionInstance._notify = action_notify;
+						actionInstance._getModel = action_getModel;
+						// try {
+							result = actionInstance.execute.call(actionInstance, parameters);
 						// } catch(e) {
 							// throw e;
 						// } finally {
 							// delete actionInstance._notify;
 							// delete actionInstance._getModel;
-						// }					}
+						// }
+
+					}
 					actionInstance = null;
 					return result;
 				}

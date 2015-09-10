@@ -13,8 +13,10 @@
     andrea.blink.extend(PopUpTextFilter, grace.views.popUp.HoverPopUpBase);
 
     PopUpTextFilter.create = function(dataProvider) {
-        var filter = new PopUpTextFilter($('<div/>')[0], dataProvider);        filter._createChildren();
-        return filter;    }
+        var filter = new PopUpTextFilter($('<div/>')[0], dataProvider);
+        filter._createChildren();
+        return filter;
+    }
 
     PopUpTextFilter.prototype._createChildren = function() {
         var _this = this;

@@ -1,1 +1,1 @@
-andrea.blink.declare("andrea.grace");
+andrea.blink.declare('andrea.grace');
