@@ -129,7 +129,7 @@
 
         this._generateButton($container, {
             'color' : '#ff692f',
-            'captions' : ['淘宝/天猫', '卖家（调试中……）']
+            'captions' : ['淘宝/天猫商家', '调试中……']
         });
         $container.css({
             'cursor' : 'default',
