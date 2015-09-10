@@ -1,0 +1,20 @@
+<web-app version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<servlet>
+		<servlet-name>LogServlet</servlet-name>
+		<servlet-class>LogServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogServlet</servlet-name>
+		<url-pattern>/log/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FileServlet</servlet-name>
+		<servlet-class>FileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileServlet</servlet-name>
+		<url-pattern>/file/*</url-pattern>
+	</servlet-mapping>
+</web-app>

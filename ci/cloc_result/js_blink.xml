@@ -1,0 +1,16 @@
+<?xml version="1.0"?><results>
+<header>
+  <cloc_url>http://cloc.sourceforge.net</cloc_url>
+  <cloc_version>1.56</cloc_version>
+  <elapsed_seconds>0.5</elapsed_seconds>
+  <n_files>10</n_files>
+  <n_lines>991</n_lines>
+  <files_per_second>20</files_per_second>
+  <lines_per_second>1982</lines_per_second>
+  <report_file>C:\andiris29\13.SourceForge\antSoftware\personal.andrea.graceBI\trunk\dev\\ci\\cloc_result\js_blink.xml</report_file>
+</header>
+<languages>
+  <language name="Javascript" files_count="10" blank="128" comment="358" code="505" />
+  <total sum_files="10" blank="128" comment="358" code="505" />
+</languages>
+</results>

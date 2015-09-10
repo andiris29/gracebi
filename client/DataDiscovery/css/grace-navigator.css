@@ -1,0 +1,104 @@
+.grace-navigator-contaier {
+    width: 285px;
+    height: 125px;
+    background: #e3e3e3;
+    border-radius: 3px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #404040;
+    position: relative;
+}
+.grace-navigator-selector {
+    float: left;
+}
+.grace-navigator-recommend {
+    float: left;
+    width: 50px;
+    height: 100%;
+}
+.grace-navigator-recommend-icon {
+    cursor: default;
+    top: 39px;
+    left: 6px;
+    position: absolute;
+    background-color: #ffffff;
+    width: 42px;
+    height: 42px;
+    border-radius: 3px;
+    border: 1px solid #bfbfbf;
+    -webkit-box-shadow: none;
+    text-align: center;
+    font-size: 15px;
+    -webkit-transition: 0.6s ease-out;
+}
+.grace-navigator-recommend-icon-enabled {
+    cursor: pointer;
+}
+.grace-navigator-recommend-icon-enabled:hover {
+    border-color: #1f6993;
+    -webkit-box-shadow: 0px 2px 0px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.grace-navigator-recommend-icon-selected {
+    border: 1px solid #1f6993;
+    -webkit-box-shadow: inset 0px 0px 32px 32px #5dade2;
+    color: #ffffff;
+}
+
+.grace-navigator-group {
+    float: left;
+    margin: 2px 7px 0 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.grace-navigator-group:last-child {
+    margin-right: 7px;
+}
+.grace-navigator-group-text {
+    display: inline;
+    line-height: 18px;
+    margin: 0 3px 0 0;
+    min-height: 19px;
+    min-width: 30px;
+    font-size: 13px;
+    line-height: 1.2em;
+    margin: 0 0 9px;
+}
+.grace-navigator-group-icons {
+    clear: both;
+    margin-bottom: 0;
+    min-height: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px 3px 1px;
+}
+.grace-navigator-group-icon {
+    float: left;
+    margin-right: 5px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #BFBFBF;
+    -webkit-box-shadow: none;
+    -webkit-filter: grayscale(1);
+    -webkit-transition: 0.6s ease-out;
+}
+
+.grace-navigator-group-icon:last-child {
+    margin-right: 0px;
+}
+.grace-navigator-group-icon-enabled {
+    cursor: pointer;
+    -webkit-filter: grayscale(0);
+}
+.grace-navigator-group-icon-enabled:hover {
+    border-color: #1f6993;
+    -webkit-box-shadow: 0px 2px 0px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.grace-navigator-group-icon-selected {
+    -webkit-filter: grayscale(0);
+    border: 1px solid #1f6993;
+    -webkit-box-shadow: inset 0px 0px 32px 32px rgba(93, 173, 226, .7);
+}

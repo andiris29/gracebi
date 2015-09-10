@@ -1,0 +1,65 @@
+.grace-text-filter {
+	background-color: #34495e;
+	width: auto;
+	opacity: 0;
+	visibility: hidden;
+	margin-top: -4px;
+	-webkit-transition-property: margin-top, opacity;
+	transition-property: top, opacity;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+}
+.grace-text-filter-visible {
+	opacity: 1;
+	visibility: visible;
+	margin-top: 0px;
+}
+
+.grace-text-filter > ul > li > ul {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.grace-text-filter ul {
+	min-width: 90px;
+	max-height: 360px;
+	list-style: none;
+	padding: 0px;
+	border-radius: 3px;
+	margin: 0px;
+	display: inline-block;
+	/*	max-width: 220px;*/
+	position: absolute;
+}
+.grace-text-filter ul > div {
+	border-style: solid;
+	border-width: 1px 0px 0px 0px;
+	border-color: #ffffff;
+	width: 95%;
+	margin: 0px auto;
+}
+.grace-text-filter li {
+	background-color: #34495e;
+	padding: 2px 6px 2px 0px;
+	position: relative;
+}
+.grace-text-filter-li-ascontainer {
+	background-color: #34495e !important;
+}
+.grace-text-filter li:hover {
+	background-color: #1abc9c;
+}
+.grace-text-filter li:first-child {
+	border-radius: 3px 3px 0 0;
+	/*padding-top: 3px;*/
+}
+.grace-text-filter li:last-child {
+	border-radius: 0 0 3px 3px;
+}
+.grace-text-filter li:only-child {
+	border-radius: 3px;
+}
+.grace-text-filter li label {
+	padding: 0 0 0 4px;
+}

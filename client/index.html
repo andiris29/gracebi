@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+        <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+
+        <title>易分析 - 点燃数据思维</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Andrea" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="DataDiscovery/assets/icons/icon_16.png" />
+        <link rel="apple-touch-icon" href="DataDiscovery/assets/icons/icon_16.png" />
+        <!-- Styles -->
+        <link href="DataDiscovery/css/jquery-ui-smoothness.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/font-awsome.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/fancy-scrollbar.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/animations.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-loading.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-dataSource.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-dataDiscovery.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-analysis.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-analysis-operation.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-menu.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-range-filter.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-text-filter.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-range-filter.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="DataDiscovery/css/grace-navigator.css" rel="stylesheet" spliceTo="css/grace.css" />
+        <link href="DataDiscovery/css/grace-result.css" rel="stylesheet" spliceTo="css/grace.css" />
+        <link href="DataDiscovery/css/grace-morebutton.css" rel="stylesheet" spliceTo="css/grace.css"/>
+    </head>
+
+    <body style="">
+        <div id="divDataSource" class="grace-dataSource">
+            <div class="grace-dataSource-header">
+                <div style="float: left; margin-right: 12px" class="grace-dataSource-icon"></div>
+                <div style="float: left" class="grace-dataSource-slogon">
+                    易分析 - 点燃数据思维
+                </div>
+            </div>
+            <div id="divDataSourceMain" class="grace-dataSource-main"></div>
+            <div class="grace-dataSource-footer">
+                <div style="margin-bottom: 6px;">
+                    <span style="margin-right: 0px">联系作者：</span>
+                    <a href="mailto:andiris29@gmail.com" title="andiris29@gmail.com 欢迎各种吐槽"><i style="margin-right: 6px" class="icon-envelope-alt"></i></a>
+                    <a target="_blank" href="http://www.weibo.com/u/3676359525" title="易分析"><i style="margin-right: 6px" class="icon-weibo"></i></a>
+                    <span>andiris29@gmail.com</span>
+                </div>
+                <div>
+                    <span style="margin-right: 30px">Copyright © 2013-2013 王铮</span><span style="margin-right: 30px">沪ICP备13032240号</span>
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1000061576'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000061576%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div id="divDataDiscovery"  class="grace-analysis">
+            <div id="divHeader" class="grace-analysis-header"></div>
+            <div id="divMain" class="grace-analysis-main">
+                <div id="divCol1" style="float: left; margin-right: 10px;">
+                    <div id="divSrcDim" style="margin-bottom: 8px"></div>
+                    <div id="divSrcMea" style=""></div>
+                </div>
+                <div id="divCol2" style="float: left; margin-right: 10px;">
+                    <div id="divProcFilter" style=""></div>
+                </div>
+                <div id="divCol3" style="float: left;">
+                    <div style="margin-bottom: 8px; height: 128px;">
+                        <div id="divDestinations" style="float: left; margin-right: 10px">
+                            <div id="divDesAnalysisDim" style="margin-bottom: 8px"></div>
+                            <div id="divDesAnalysisMea" style=""></div>
+                        </div>
+                        <div id="divVizNavigator" class="grace-navigator-contaier" style="float: left;"></div>
+                    </div>
+
+                    <div id="divAnalysisResult" style=""></div>
+                </div>
+            </div>
+            <div id="divFooter" class="grace-dataDiscovery-footer">
+                <div style="">
+                    <span style="margin-right: 12px">Copyright © 2013-2013 王铮</span>
+                    <span style="margin-right: 12px;">沪ICP备13032240号</span>
+                    <span style="margin-right: 0px">联系作者：</span>
+                    <a href="mailto:andiris29@gmail.com" title="andiris29@gmail.com 欢迎各种吐槽"><i style="margin-right: 6px" class="icon-envelope-alt"></i></a>
+                    <a target="_blank" href="http://www.weibo.com/u/3676359525" title="易分析"><i style="margin-right: 6px" class="icon-weibo"></i></a>
+                    <span>andiris29@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- Libs -->
+    <script src="DataDiscovery/libs/spin.js/spin.js"></script>
+    <script>
+        var spinner = new Spinner();
+        spinner.spin(document.getElementById('divDataSourceMain'));
+    </script>
+    <!-- blink -->
+    <script src="DataDiscovery/libs/blink/blink.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/utils/_functions.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/events/Event.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/events/EventDispatcher.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/Action.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/Model.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/Notification.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/View.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/ViewMediator.js" spliceTo="libs/blink.js"></script>
+    <script src="DataDiscovery/libs/blink/mvc/App.js" spliceTo="libs/blink.js"></script>
+
+    <script>
+        andrea.blink.declare("andrea.grace.Settings");
+        var grace = andrea.grace;
+        var Settings = grace.Settings = {
+            'version' : '1.0.2',
+            'log' : {
+                'version' : '1',
+                'url' : 'http://127.0.0.1:8080/graceLogger/log',
+                'console' : false
+            },
+            'logFile' : {
+                'url' : 'http://127.0.0.1:8080/graceLogger/file'
+            },
+            'debug' : {
+                // TODO Integrate to log
+                'egJS' : ''
+            },
+            'chrome' : {
+                'localURL' : './ChromeStandaloneSetup.exe',
+                'officialURL' : 'http://www.google.com/chrome/eula.html?standalone=1'
+            },
+            'data' : {
+                'superMarket' : {
+                    'js' : './DataDiscovery/data/SuperMarket.js?v1',
+                    'excel' : './DataDiscovery/data/SuperMarket.xlsx?v1'
+                },
+                'worldBank' : {
+                    'js' : './DataDiscovery/data/WorldBank.js?v1',
+                    'excel' : './DataDiscovery/data/WorldBank.xlsx?v1'
+                }
+            },
+            'dataDiscovery' : {
+                'folder' : './DataDiscovery/',
+                'highcharts' : {
+                    'turboThreshold' : {
+                        'xy' : 500,
+                        'pie' : 100,
+                        'scatter' : 2000
+                    }
+                }
+            },
+            'fileAccessor' : {
+                'name' : 'FileAccessor',
+                'folder' : './FileAccessor/',
+                'swfURL' : './FileAccessor/bin-release/FileAccessor.swf?v8'
+            },
+            'crossDomainAccessor' : {
+                'name' : 'CrossDomainAccessor',
+                'folder' : './CrossDomainAccessor/',
+                'swfURL' : './CrossDomainAccessor/bin-release/CrossDomainAccessor.swf?v1',
+                'taobao' : {
+                    'appKey' : '21613035',
+                    'redirect' : 'http://127.0.0.1:8080/grace/',
+                    'trade' : {
+                        'maxResults' : 3000
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="DataDiscovery/libs/jquery-1.8.3/jquery-1.8.3.min.js" spliceTo="libs/tp.js"></script>
+    <script src="DataDiscovery/libs/lazyload.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/libs/swfobject.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/libs/underscore-1.4.4/underscore-min.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/libs/underscore.string/underscore.string.min.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/libs/toolbox/date.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/libs/jquery-number-2.1.0/jquery.number.js" spliceTo="js/grace.js"></script>
+
+    <!-- Lib extensions -->
+    <script src="DataDiscovery/tpExtensions/jQueryExtension.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/tpExtensions/dateExtension.js" spliceTo="js/grace.js"></script>
+
+    <!-- grace -->
+    <script src="DataDiscovery/js/grace.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/constants/AppConst.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/constants/ShelfType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/constants/AnalysisType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/constants/ValueType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/constants/VizType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/constants/Taobao.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/operation/OperationPriorityBaseline.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/operation/OperationType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/operation/OperationClassification.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/operation/Operation.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/operation/OperationFactory.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/operation/OperationGroup.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/models/value/ValueBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/value/BooleanValue.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/value/DateValue.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/value/NullValue.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/value/NumberValue.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/value/StringValue.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/utils/URLUtil.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/utils/FilterUtil.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/utils/ConverterType.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/utils/DataConvertUtil.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/utils/ColorUtil.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/utils/Stopwatch.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/log/Log.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/helpers/PageTransition.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/calculator/supportClasses/ICalculator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/Sum.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/Max.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/Min.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/Avg.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/Count.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/calculator/UniqCount.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/filter/IFilter.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/filter/TextFilter.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/filter/RangeFilter.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/managers/PopUpManager.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/models/vo/Analysis.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/vo/ShelvedAnalysis.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/DataProvider.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/models/DataDiscoveryModel.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/actions/ChangeDataProviderAction.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/actions/RunAnalysisAction.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/views/analysisContainer/events/ShelfEvent.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/views/components/MoreButton.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/PopUpEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/PopUpBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/HoverPopUpBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/Loading.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/filter/dataProvider/TextValuesProxy.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/filter/dataProvider/RangeValuesProxy.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/filter/FilterEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/filter/PopUpTextFilter.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/filter/PopUpRangeFilter.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/menu/dataProvider/OperationGroupProxy.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/menu/dataProvider/AnalysesProxy.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/menu/MenuEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/popUp/menu/PopUpMenu.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/supportClasses/ShelfBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/supportClasses/ShelfBaseMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/source/SrcDimensionShelf.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/source/SrcDimensionShelfMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/source/SrcMeasureShelf.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/source/SrcMeasureShelfMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/destination/DesDimensionShelf.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/destination/DesDimensionShelfMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/destination/DesMeasureShelf.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/destination/DesMeasureShelfMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/processor/FilterShelf.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisContainer/processor/FilterShelfMediator.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/views/analysisResult/viz/VizFactory.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/VizBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/placeHolder/VizPH.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/supportClasses/ValueQuery.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/supportClasses/HighChartsOption.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/HighChartsBase.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/Pie.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/BasicXY.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/viz/highCharts/Scatter.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/AnalysisResult.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/analysisResult/AnalysisResultMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/vizNavigator/VizIconEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/vizNavigator/VizIcon.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/vizNavigator/VizNavigatorEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/vizNavigator/VizNavigator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/vizNavigator/VizNavigatorMediator.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/views/main/DataDiscovery.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/main/DataDiscoveryMediator.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/main/DataSourceEvent.js" spliceTo="js/grace.js"></script>
+    <script src="DataDiscovery/js/views/main/DataSource.js" spliceTo="js/grace.js"></script>
+
+    <script src="DataDiscovery/js/views/main/Grace.js" spliceTo="js/grace.js"></script>
+
+    <!--
+    <script src="DataDiscovery/libs/jquery-ui-1.10.2/jquery-ui.min.js" spliceTo="libs/tpLazy.js"></script>
+    <script src="DataDiscovery/libs/Highcharts-3.0.1/js/highcharts.js" spliceTo="libs/tpLazy.js"></script>
+    <script src="DataDiscovery/libs/Highcharts-3.0.1/js/highcharts-more.js" spliceTo="libs/tpLazy.js"></script>
+    -->
+    <script>
+        var files = [];
+        files.push('DataDiscovery/libs/jquery-ui-1.10.2/jquery-ui.min.js');
+        files.push('DataDiscovery/libs/Highcharts-3.0.1/js/highcharts.js');
+        files.push('DataDiscovery/libs/Highcharts-3.0.1/js/highcharts-more.js');
+
+        new andrea.grace.Grace(files);
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] ||
+            function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-37094953-2', '1fenxi.com');
+        ga('send', 'pageview');
+    </script>
+</html>

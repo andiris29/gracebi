@@ -1,0 +1,27 @@
+.grace-loading {
+    background-color: rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 6px;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+}
+.grace-loading-visible {
+    -webkit-transition: opacity .3s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+.grace-loading-spin {
+    position: relative;
+}
+.grace-loading-label {
+    color: #ffffff;
+    line-height: 15px;
+    text-align: center;
+    cursor: default;
+    font-size: 16px;
+    bottom: 10px;
+    position: absolute;
+    width: 100%;
+}

@@ -1,0 +1,240 @@
+.grace-analysis {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #23658b;
+}
+.grace-analysis-header {
+	height: 0px;
+}
+.grace-analysis-main {
+	margin: 8px 8px 1px 8px;
+}
+.grace-analysis-contaier {
+	background: #e3e3e3;
+	border-radius: 3px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #404040;
+	/*float: left;*/
+	/*margin: 0 5px;*/
+	padding: 0 3px;
+	position: relative;
+	/*width: 204px;*/
+}
+/*
+ .grace-analysis-contaier_dropAcceptable {
+ -webkit-transition: 0.6s ease-out;
+ box-shadow: 0px 0px 2px 2px #2ecc71;
+ -webkit-box-shadow: 0px 0px 2px 2px #2ecc71;
+ }
+ */
+@-webkit-keyframes grace-analysis-contaier_dropAcceptable_keyframes
+{
+0% {-webkit-box-shadow:0px 0px 4px 4px #f28f43;}
+40% {-webkit-box-shadow:0px 0px 7px 7px #f28f43;}
+60% {-webkit-box-shadow:0px 0px 7px 7px #f28f43;}
+100% {-webkit-box-shadow:0px 0px 4px 4px #f28f43;}
+}
+.grace-analysis-contaier_dropAcceptable {
+	-webkit-animation: grace-analysis-contaier_dropAcceptable_keyframes .4s ease-out;
+	-webkit-box-shadow: 0px 0px 4px 4px #f28f43;
+}
+/*.grace-analysis-contaier_dropUnacceptable {
+ box-shadow: 0px 0px 3px 3px #e74c3c;
+ -webkit-box-shadow: 0px 0px 3px 3px #e74c3c;
+ }*/
+.grace-analysis-titleArea {
+	position: relative;
+	/*	min-height: 19px;*/
+	cursor: default;
+}
+.grace-analysis-clearfix {
+	zoom: 1;
+}
+.grace-analysis-clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.grace-analysis-title {
+	margin: 2px 26px 0 7px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.grace-analysis-title-text {
+	display: inline;
+	line-height: 18px;
+	margin: 0 3px 0 0;
+	min-height: 19px;
+	min-width: 30px;
+	font-size: 13px;
+	line-height: 1.2em;
+	margin: 0 0 9px;
+}
+.grace-analysis-title-text_suffix:after {
+	content: attr(__suffix);
+	background: #bdc3c7;
+	border-radius: 4px;
+	margin-left: 4px;
+	padding: 0px 3px 0px 1px;
+	color: #ffffff;
+	font-weight: normal;
+}
+.grace-analysis-title-text_required:before {
+	font-family: 'FontAwesome';
+	font-size: 12px;
+	content: "\f069";
+	font-weight: normal;
+	vertical-align: middle;
+	color: #e74c3c;
+}
+.grace-analysis-title-text::selection {
+	background: transparent;
+}
+.grace-analysis-cardArea {
+	position: relative;
+	padding-bottom: 6px;
+}
+.grace-analysis-cardArea-gradientTop {
+	background: -webkit-linear-gradient(top, #e3e3e3 0%, rgba(227, 227, 227, 0) 100%);
+	background: linear-gradient(to bottom, #e3e3e3 0%, rgba(227, 227, 227, 0) 100%);
+	top: 0px;
+}
+.grace-analysis-cardArea-gradientBottom {
+	bottom: 4px;
+	background: -webkit-linear-gradient(top, rgba(227, 227, 227, 0) 0%, #e3e3e3 100%);
+	background: linear-gradient(to bottom, rgba(227, 227, 227, 0) 0%, #e3e3e3 100%);
+}
+.grace-analysis-cardArea-gradientTop, .grace-analysis-cardArea-gradientBottom {
+	height: 6px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	/*z-index: 2;*/
+}
+.grace-analysis-cards {
+	clear: both;
+	margin-bottom: 0;
+	min-height: 20px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 4px 3px 1px;
+	/*z-index: 1;*/
+}
+.grace-analysis-cards.fancy-scrollbar::-webkit-scrollbar-button {
+	display: block;
+	height: 4px
+}
+.grace-analysis-cards-horizontal {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+.grace-analysis-cards_horizontal::-webkit-scrollbar {
+	height: 0px;
+	width: 0px;
+}
+.grace-analysis-card {
+	background-color: #fff;
+	border: 1px solid #b9b9b9;
+	border-bottom-color: #939393;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-bottom: 5px;
+	height: 18px;
+	padding: 4px 8px 4px;
+	position: relative;
+	/*z-index: 0;*/
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+.grace-analysis-card-transition {
+	-webkit-transition-property: background, margin-bottom, opacity;
+	transition-property: background, margin-bottom, opacity;
+	-webkit-transition-duration: 0.2s, 0.1s, 0.2s;
+	transition-duration: 0.2s, 0.1s, 0.2s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.grace-analysis-card_placeholder {
+	min-height: 18px;
+	background: #c0c0c0;
+	border: none;
+	margin-bottom: 5px;
+}
+.grace-analysis-card_horizontal {
+	float: left;
+	margin-right: 5px;
+	min-width: 140px;
+	max-width: 140px;
+}
+.grace-analysis-card_asDimension {
+	border-color: #3498db;
+}
+.grace-analysis-card_asDimension:hover {
+	border-color: #5dade2;
+}
+.grace-analysis-card_asMeasure {
+	border-color: #2ecc71;
+}
+.grace-analysis-card_asMeasure:hover {
+	border-color: #58d68d;
+}
+.grace-analysis-card_asSource:hover {
+	border-color: #1f6993;
+}
+.grace-analysis-card:hover .grace-analysis-operation {
+	visibility: visible;
+	opacity: 1;
+}
+.grace-analysis-card:hover .grace-analysis-card-text {
+	padding: 0 38px 0 0;
+}
+.grace-analysis-card-text-shrink {
+	padding: 0 38px 0 0;
+}
+.grace-analysis-card-text {
+	display: block;
+	font-weight: normal;
+	/*margin: 0 0 5px;*/
+	overflow: hidden;
+	text-decoration: none;
+	word-wrap: break-word;
+	/*-webkit-transition-duration: 0.1s;
+	 transition-duration: 0.1s;
+	 -webkit-transition-timing-function: ease-out;
+	 transition-timing-function: ease-out;*/
+}
+.grace-analysis-card-text_suffix:after {
+	content: attr(__suffix);
+	background: #bdc3c7;
+	border-radius: 4px;
+	margin-left: 4px;
+	padding: 0px 2px;
+	color: #ffffff;
+}
+.grace-analysis-card-text_prefix:before {
+	content: attr(__prefix);
+	background: #e3e3e3;
+	border-radius: 4px;
+	margin-right: 2px;
+	padding: 2px 2px;
+	font-size: 12px;
+}
+.grace-analysis-card_draggingHelper {
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	box-shadow: 2px 2px 1px 1px #444;
+	-webkit-box-shadow: 2px 2px 1px 1px #444;
+}
+.grace-analysis-card_draggingHelper_noDrop {
+}
+.grace-analysis-card_draggingHelper_grabbing {
+	cursor: -webkit-grabbing;
+}
+.grace-analysis-card_disabled {
+	opacity: .3;
+}

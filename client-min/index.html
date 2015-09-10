@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+        <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+
+        <title>易分析 - 点燃数据思维</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Andrea" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="DataDiscovery/assets/icons/icon_16.png" />
+        <link rel="apple-touch-icon" href="DataDiscovery/assets/icons/icon_16.png" />
+
+        <!-- Styles -->
+        <link href="DataDiscovery/css/grace.min.css?v1" rel="stylesheet"/>
+
+    </head>
+
+    <body style="">
+        <div id="divDataSource" class="grace-dataSource">
+            <div class="grace-dataSource-header">
+                <div style="float: left; margin-right: 12px" class="grace-dataSource-icon"></div>
+                <div style="float: left" class="grace-dataSource-slogon">
+                    易分析 - 点燃数据思维
+                </div>
+            </div>
+            <div id="divDataSourceMain" class="grace-dataSource-main"></div>
+            <div class="grace-dataSource-footer">
+                <div style="margin-bottom: 6px;">
+                    <span style="margin-right: 0px">联系作者：</span>
+                    <a href="mailto:andiris29@gmail.com" title="andiris29@gmail.com 欢迎各种吐槽"><i style="margin-right: 6px" class="icon-envelope-alt"></i></a>
+                    <a target="_blank" href="http://www.weibo.com/u/3676359525" title="易分析"><i style="margin-right: 6px" class="icon-weibo"></i></a>
+                    <span>andiris29@gmail.com</span>
+                </div>
+                <div>
+                    <span style="margin-right: 30px">Copyright © 2013-2013 王铮</span><span style="margin-right: 30px">沪ICP备13032240号</span>
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1000061576'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000061576%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div id="divDataDiscovery"  class="grace-analysis">
+            <div id="divHeader" class="grace-analysis-header"></div>
+            <div id="divMain" class="grace-analysis-main">
+                <div id="divCol1" style="float: left; margin-right: 10px;">
+                    <div id="divSrcDim" style="margin-bottom: 8px"></div>
+                    <div id="divSrcMea" style=""></div>
+                </div>
+                <div id="divCol2" style="float: left; margin-right: 10px;">
+                    <div id="divProcFilter" style=""></div>
+                </div>
+                <div id="divCol3" style="float: left;">
+                    <div style="margin-bottom: 8px; height: 128px;">
+                        <div id="divDestinations" style="float: left; margin-right: 10px">
+                            <div id="divDesAnalysisDim" style="margin-bottom: 8px"></div>
+                            <div id="divDesAnalysisMea" style=""></div>
+                        </div>
+                        <div id="divVizNavigator" class="grace-navigator-contaier" style="float: left;"></div>
+                    </div>
+
+                    <div id="divAnalysisResult" style=""></div>
+                </div>
+            </div>
+            <div id="divFooter" class="grace-dataDiscovery-footer">
+                <div style="">
+                    <span style="margin-right: 12px">Copyright © 2013-2013 王铮</span>
+                    <span style="margin-right: 12px;">沪ICP备13032240号</span>
+                    <span style="margin-right: 0px">联系作者：</span>
+                    <a href="mailto:andiris29@gmail.com" title="andiris29@gmail.com 欢迎各种吐槽"><i style="margin-right: 6px" class="icon-envelope-alt"></i></a>
+                    <a target="_blank" href="http://www.weibo.com/u/3676359525" title="易分析"><i style="margin-right: 6px" class="icon-weibo"></i></a>
+                    <span>andiris29@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="DataDiscovery/libs/spin.js/spin.min.js"></script>
+    <script>
+        var spinner = new Spinner();
+        spinner.spin(document.getElementById('divDataSourceMain'));
+    </script>
+    <script src="DataDiscovery/libs/blink.min.js"></script>
+
+    <script>
+        andrea.blink.declare("andrea.grace.Settings");
+        var grace = andrea.grace;
+        var Settings = grace.Settings = {
+            'version' : '1.0.2',
+            'log' : {
+                'version' : '1',
+                'url' : 'http://127.0.0.1:8080/graceLogger/log',
+                'console' : false
+            },
+            'logFile' : {
+                'url' : 'http://127.0.0.1:8080/graceLogger/file'
+            },
+            'debug' : {
+                // TODO Integrate to log
+                'egJS' : ''
+            },
+            'chrome' : {
+                'localURL' : './ChromeStandaloneSetup.exe',
+                'officialURL' : 'http://www.google.com/chrome/eula.html?standalone=1'
+            },
+            'data' : {
+                'superMarket' : {
+                    'js' : './DataDiscovery/data/SuperMarket.js?v1',
+                    'excel' : './DataDiscovery/data/SuperMarket.xlsx?v1'
+                },
+                'worldBank' : {
+                    'js' : './DataDiscovery/data/WorldBank.js?v1',
+                    'excel' : './DataDiscovery/data/WorldBank.xlsx?v1'
+                }
+            },
+            'dataDiscovery' : {
+                'folder' : './DataDiscovery/',
+                'highcharts' : {
+                    'turboThreshold' : {
+                        'xy' : 500,
+                        'pie' : 100,
+                        'scatter' : 2000
+                    }
+                }
+            },
+            'fileAccessor' : {
+                'name' : 'FileAccessor',
+                'folder' : './FileAccessor/',
+                'swfURL' : './FileAccessor/bin-release/FileAccessor.swf?v8'
+            },
+            'crossDomainAccessor' : {
+                'name' : 'CrossDomainAccessor',
+                'folder' : './CrossDomainAccessor/',
+                'swfURL' : './CrossDomainAccessor/bin-release/CrossDomainAccessor.swf?v1',
+                'taobao' : {
+                    'appKey' : '21613035',
+                    'redirect' : 'http://127.0.0.1:8080/grace/',
+                    'trade' : {
+                        'maxResults' : 3000
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="DataDiscovery/libs/tp.min.js"></script>
+
+    <script src="DataDiscovery/js/grace.min.js?v=4"></script>
+
+    <script>
+        var files = [];
+        files.push('DataDiscovery/libs/tpLazy.min.js');
+
+        new andrea.grace.Grace(files);
+    </script>
+</html>

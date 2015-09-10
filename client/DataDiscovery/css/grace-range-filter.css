@@ -1,0 +1,30 @@
+.grace-range-filter {
+    background-color: #34495e;
+    color: #ffffff;
+    border-radius: 3px;
+    width: auto;
+    width: 240px;
+    padding: 9px 6px;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -4px;
+    -webkit-transition-property: margin-top, opacity;
+    transition-property: top, opacity;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+}
+.grace-range-filter-visible {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0px;
+}
+.grace-range-filter-label {
+    cursor: default;
+}
+.grace-range-filter-slider {
+    /*width: 220px;*/
+    margin: 6px 12px 6px 10px;
+    font-size: 75%;
+}

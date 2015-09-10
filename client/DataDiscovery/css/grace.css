@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Trellicons Regular';
+    src: url("../font/trellicons-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../font/fontawesome-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background: #f0f0f0;
+    margin: 0px;
+}
+html, body, input, select, textarea, button {
+    font: 13px/18px Arial, Helvetica, sans-serif, FontAwesome;
+    /*    "MicroSoft YaHei" "微软雅黑", */
+    color: #393939;
+}
+.grace-text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.grace-popup-layer {
+    position: absolute;
+    z-index: 1;
+}
+a {
+    color: #393939;
+    text-decoration: none;
+}
+a:hover {
+    color: #0a8cd2;
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+input[type="checkbox"] + label span[usage="icon"] {
+    -webkit-transform: scale(.9,.9);
+    margin: -2px 3px 0 0;
+    vertical-align: middle;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url('../assets/component/check_radio_sheet.png') left top no-repeat;
+}
+
+input[type="checkbox"]:checked + label span[usage="icon"] {
+    background: url('../assets/component/check_radio_sheet.png') -19px top no-repeat;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+input[type="radio"] + label span[usage="icon"] {
+    -webkit-transform: scale(.9,.9);
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -2px 3px 0 0;
+    vertical-align: middle;
+    background: url('../assets/component/check_radio_sheet.png') -38px top no-repeat;
+}
+
+input[type="radio"]:checked + label span[usage="icon"] {
+    background: url('../assets/component/check_radio_sheet.png') -57px top no-repeat;
+}

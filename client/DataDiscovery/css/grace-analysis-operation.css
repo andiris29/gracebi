@@ -1,0 +1,75 @@
+.grace-analysis-operation {
+	background-color: #fff;
+	background-clip: content-box;
+	background-origin: content-box;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background: transparent;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 0.2s, 0.1s, 0.2s;
+	transition-duration: 0.2s, 0.1s, 0.2s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.grace-analysis-card-operation {
+	color: #a9a9a9;
+	padding: 5px;
+	height: 16px;
+	width: 16px;
+	font-size: 14px;
+	line-height: 16px;
+	visibility: hidden;
+	opacity: 0;
+}
+.grace-analysis-operation:hover {
+	color: #1f6993;
+}
+.grace-analysis-title-operation-recycleBin {
+	display: none;
+	padding: 0px 0px 5px 0px;
+	position: absolute;
+	top: 1px;
+	right: 12px;
+	height: 16px;
+	width: 16px;
+	line-height: 16px;
+}
+.grace-analysis-title-operation-recycleBin:before {
+	content: "\f014";
+	font-size: 16px;
+}
+.grace-analysis-card-operation-1 {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.grace-analysis-card-operation-2 {
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+.grace-analysis-card-operation-show {
+	visibility: visible;
+	opacity: 1;
+}
+.grace-analysis-card-operation-dropDown:before {
+	content: "\f078";
+}
+.grace-analysis-card-operation-filter:before {
+	content: "\f0b0";
+}
+.grace-analysis-card-operation-addToAnalysis:before {
+	content: "\f055";
+}
+.grace-analysis-card-operation-moveToTrash:before {
+	content: "\f014";
+}
+.grace-analysis-card-operation-removeFromShelf:before {
+	content: "\f057";
+}

@@ -1,0 +1,126 @@
+.pt-page-onTop {
+    z-index: 999;
+}
+.pt-page-scaleDown {
+    -webkit-animation: scaleDown .7s ease both;
+    -moz-animation: scaleDown .7s ease both;
+    animation: scaleDown .7s ease both;
+}
+
+/*.pt-page-delay300 {
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    animation-delay: .3s;
+}
+.pt-page-delay400 {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    animation-delay: .4s;
+}*/
+
+.pt-page-moveToTop {
+    -webkit-animation: moveToTop .6s ease both;
+    -moz-animation: moveToTop .6s ease both;
+    animation: moveToTop .6s ease both;
+}
+
+.pt-page-moveFromTop {
+    -webkit-animation: moveFromTop .6s ease both;
+    -moz-animation: moveFromTop .6s ease both;
+    animation: moveFromTop .6s ease both;
+}
+
+.pt-page-moveToBottom {
+    -webkit-animation: moveToBottom .6s ease both;
+    -moz-animation: moveToBottom .6s ease both;
+    animation: moveToBottom .6s ease both;
+}
+
+.pt-page-moveFromBottom {
+    -webkit-animation: moveFromBottom .6s ease both;
+    -moz-animation: moveFromBottom .6s ease both;
+    animation: moveFromBottom .6s ease both;
+}
+
+.pt-page-scaleDownCenter {
+    -webkit-animation: scaleDownCenter .18s ease-in both;
+    -moz-animation: scaleDownCenter .18s ease-in both;
+    animation: scaleDownCenter .18s ease-in both;
+}
+
+.pt-page-scaleUpCenter {
+    -webkit-animation: scaleUpCenter .6s ease-out both;
+    -moz-animation: scaleUpCenter .6s ease-out both;
+    animation: scaleUpCenter .6s ease-out both;
+}
+/* @formatter:off */
+@-webkit-keyframes moveToTop {
+    to { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTop {
+    to { -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+    to { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromTop {
+    from { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTop {
+    from { -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTop {
+    from { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottom {
+    to { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveToBottom {
+    to { -moz-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+    to { transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveFromBottom {
+    from { -moz-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+    from { transform: translateY(100%); }
+}
+
+@-webkit-keyframes scaleDown {
+    to { opacity: 0; -webkit-transform: scale(.6); }
+}
+@-moz-keyframes scaleDown {
+    to { opacity: 0; -moz-transform: scale(.6); }
+}
+@keyframes scaleDown {
+    to { opacity: 0; transform: scale(.6); }
+}
+
+@-webkit-keyframes scaleDownCenter {
+    to { opacity: 0; -webkit-transform: scale(.9); }
+}
+@-moz-keyframes scaleDownCenter {
+    to { opacity: 0; -moz-transform: scale(.9); }
+}
+@keyframes scaleDownCenter {
+    to { opacity: 0; transform: scale(.9); }
+}
+
+@-webkit-keyframes scaleUpCenter {
+    from { opacity: 0; -webkit-transform: scale(.7); }
+}
+@-moz-keyframes scaleUpCenter {
+    from { opacity: 0; -moz-transform: scale(.7); }
+}
+@keyframes scaleUpCenter {
+    from { opacity: 0; transform: scale(.7); }
+}
+/* @formatter:on */
