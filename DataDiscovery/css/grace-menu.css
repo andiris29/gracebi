@@ -1,0 +1,76 @@
+.grace-menu {
+    /*-webkit-transition: 0.3s ease-out;
+     -moz-transition: 0.3s ease-out;
+     -o-transition: 0.3s ease-out;
+     transition: 0.3s ease-out;*/
+    width: auto;
+}
+.grace-menu ul {
+    background-color: #34495e;
+    list-style: none;
+    padding: 0px;
+    border-radius: 3px;
+    margin: 0px;
+    display: inline-block;
+    min-width: 90px;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    position: absolute;
+    top: -4px;
+    opacity: 0;
+    visibility: hidden;
+}
+.grace-menu-visible ul {
+    opacity: 1;
+    visibility: visible;
+    top: 0px;
+}
+.grace-menu ul > div {
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: #ffffff;
+    width: 95%;
+    margin-left: 2%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.grace-menu li {
+    background-color: #34495e;
+    /*padding: 0 3px 3px;*/
+    position: relative;
+}
+.grace-menu li:first-child {
+    border-radius: 3px 3px 0 0;
+    /*padding-top: 3px;*/
+}
+.grace-menu li:last-child {
+    border-radius: 0 0 3px 3px;
+}
+.grace-menu a {
+    color: #ffffff;
+    display: block;
+    padding: 3px 6px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'FontAwesome';
+    white-space: nowrap;
+}
+.grace-menu > ul > li a:hover, .grace-menu > ul > li a:focus {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+.grace-menu > ul > li > ul {
+    left: 100%;
+    padding-left: 2px;
+    opacity: 0;
+    visibility: hidden;
+    top: -6px;
+    position: absolute;
+}
+.grace-menu > ul > li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    top: 6px;
+}

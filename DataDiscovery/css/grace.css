@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Trellicons Regular';
+    src: url("../font/trellicons-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../font/fontawesome-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background: #f0f0f0;
+    margin: 0px;
+}
+html, body, input, select, textarea, button {
+    font: 13px/18px Arial, Helvetica, sans-serif, "MicroSoft YaHei" "微软雅黑", FontAwesome;
+    color: #393939;
+}
+.grace-text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+a {
+    color: #393939;
+    text-decoration: none;
+}
+.grace-dataSource a:hover {
+    color: #0a8cd2;
+    text-decoration: underline;
+}

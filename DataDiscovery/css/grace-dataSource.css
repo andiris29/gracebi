@@ -1,0 +1,119 @@
+.grace-dataSource {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    z-index: 1;
+}
+.grace-dataSource > div {
+    /*    border: solid 1px #ffffff;*/
+}
+.grace-dataSource-footer a {
+    font-size: 15px;
+}
+.grace-dataSource-header {
+    margin: auto;
+    height: 48px;
+    width: 900px;
+    padding: 6px 0px 0px 0px;
+}
+.grace-dataSource-main {
+    height: 460px;
+    margin: 25px auto;
+    width: 900px;
+    position: relative;
+}
+.grace-dataSource-main-analysis {
+    position: absolute;
+    width: 320px;
+    height: 180px;
+    border: solid 1px #cccccc;
+    cursor: pointer;
+}
+.grace-dataSource-main-analysis-more {
+    width: 100%;
+    height: 100%;
+}
+.grace-dataSource-main-analysis-p1 {
+    background-color: #3498db;
+    color: #ffffff;
+    text-align: center;
+    line-height: 180px;
+    font-size: 46px;
+}
+.grace-dataSource-main-analysis-p2 {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+.grace-dataSource-main-analysis-p2-ribbon {
+    width: 48px;
+    height: 6px;
+    margin-left: 12px;
+    background-color: #3498db;
+}
+.grace-dataSource-main-analysis-p2-icon {
+    width: 96px;
+    height: 96px;
+    margin: 28px auto 12px auto;
+    background-image: url('../assets/icons/excel_96.png');
+}
+.grace-dataSource-main-analysis-p2-text {
+}
+.grace-dataSource-main-example {
+    position: absolute;
+    width: 240px;
+    height: 85px;
+    border: solid 1px #cccccc;
+    cursor: pointer;
+}
+.grace-dataSource-main-example-more {
+    width: 100%;
+    height: 100%;
+}
+.grace-dataSource-main-example-p1 {
+    background-color: #e74c3c;
+    color: #ffffff;
+    text-align: center;
+    line-height: 85px;
+    font-size: 23px;
+}
+.grace-dataSource-main-example-p2 {
+    background-color: #f0f0f0;
+}
+.grace-dataSource-main-example-p2-ribbon {
+    width: 48px;
+    height: 4px;
+    margin-left: 12px;
+    background-color: #e74c3c;
+}
+.grace-dataSource-main-example-p2-text {
+    margin: 12px 12px 2px 12px;
+}
+.grace-dataSource-main-example-p2-download {
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    color: #e74c3c;
+    font-size: 12px;
+}
+.grace-dataSource-footer {
+    margin: auto;
+    height: 48px;
+    width: 900px;
+    text-align: center;
+    font-size: 13px;
+}
+.grace-dataSource-icon {
+    width: 48px;
+    height: 48px;
+    background-image: url('../assets/icons/icon_48.png');
+}
+.grace-dataSource-slogon {
+    padding-top: 18px;
+    font-size: 20px;
+}
+.grace-dataSource-buttonContainer {
+    position: absolute;
+    top: 280px;
+    left: 750px;
+}

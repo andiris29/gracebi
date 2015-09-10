@@ -1,0 +1,16 @@
+<?xml version="1.0"?><results>
+<header>
+  <cloc_url>http://cloc.sourceforge.net</cloc_url>
+  <cloc_version>1.56</cloc_version>
+  <elapsed_seconds>0.5</elapsed_seconds>
+  <n_files>25</n_files>
+  <n_lines>1150</n_lines>
+  <files_per_second>50</files_per_second>
+  <lines_per_second>2300</lines_per_second>
+  <report_file>C:/andiris29/13.SourceForge/Andiris29/incubator/grace/ci/cloc_iris.xml</report_file>
+</header>
+<languages>
+  <language name="ActionScript" files_count="25" blank="205" comment="108" code="837" />
+  <total sum_files="25" blank="205" comment="108" code="837" />
+</languages>
+</results>

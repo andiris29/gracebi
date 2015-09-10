@@ -1,0 +1,90 @@
+.pt-page-onTop {
+    z-index: 999;
+}
+.pt-page-scaleDown {
+    -webkit-animation: scaleDown .7s ease both;
+    -moz-animation: scaleDown .7s ease both;
+    animation: scaleDown .7s ease both;
+}
+
+.pt-page-delay300 {
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.pt-page-moveToTop {
+    -webkit-animation: moveToTop .6s ease both;
+    -moz-animation: moveToTop .6s ease both;
+    animation: moveToTop .6s ease both;
+}
+
+.pt-page-moveFromTop {
+    -webkit-animation: moveFromTop .6s ease both;
+    -moz-animation: moveFromTop .6s ease both;
+    animation: moveFromTop .6s ease both;
+}
+
+.pt-page-moveToBottom {
+    -webkit-animation: moveToBottom .6s ease both;
+    -moz-animation: moveToBottom .6s ease both;
+    animation: moveToBottom .6s ease both;
+}
+
+.pt-page-moveFromBottom {
+    -webkit-animation: moveFromBottom .6s ease both;
+    -moz-animation: moveFromBottom .6s ease both;
+    animation: moveFromBottom .6s ease both;
+}
+
+/* @formatter:off */
+@-webkit-keyframes moveToTop {
+    to { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTop {
+    to { -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+    to { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromTop {
+    from { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTop {
+    from { -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTop {
+    from { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottom {
+    to { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveToBottom {
+    to { -moz-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+    to { transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveFromBottom {
+    from { -moz-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+    from { transform: translateY(100%); }
+}
+
+@-webkit-keyframes scaleDown {
+    to { opacity: 0; -webkit-transform: scale(.6); }
+}
+@-moz-keyframes scaleDown {
+    to { opacity: 0; -moz-transform: scale(.6); }
+}
+@keyframes scaleDown {
+    to { opacity: 0; transform: scale(.6); }
+}
+/* @formatter:on */

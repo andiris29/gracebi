@@ -1,0 +1,16 @@
+<?xml version="1.0"?><results>
+<header>
+  <cloc_url>http://cloc.sourceforge.net</cloc_url>
+  <cloc_version>1.56</cloc_version>
+  <elapsed_seconds>1</elapsed_seconds>
+  <n_files>69</n_files>
+  <n_lines>6426</n_lines>
+  <files_per_second>69</files_per_second>
+  <lines_per_second>6426</lines_per_second>
+  <report_file>C:/andiris29/13.SourceForge/Andiris29/incubator/grace/ci/cloc_DataDiscovery.xml</report_file>
+</header>
+<languages>
+  <language name="Javascript" files_count="69" blank="513" comment="385" code="5528" />
+  <total sum_files="69" blank="513" comment="385" code="5528" />
+</languages>
+</results>

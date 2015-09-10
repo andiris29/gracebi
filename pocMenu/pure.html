@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>pure</title>
+		<meta name="description" content="" />
+		<meta name="author" content="I068020" />
+
+		<style>
+			body {
+				/*				margin: 0px;*/
+				padding: 0px;
+			}
+			.grace-menu {
+				/*-webkit-transform: scale(1, 0.99);
+				 -webkit-transform-origin: 0 0;*/
+				opacity: 1;
+				visibility: visible;
+				padding-top: 12px;
+				width: auto;
+			}
+			.grace-menu_hide {
+				/*opacity: 0;
+				 visibility: hidden;
+				 padding-top: 0px;*/
+			}
+			.grace-menu ul {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+				display: inline-block;
+				min-width: 120px;
+				top: 0px;
+				position: absolute;
+				-webkit-transition: 0.3s ease-out;
+				-moz-transition: 0.3s ease-out;
+				-o-transition: 0.3s ease-out;
+				transition: 0.3s ease-out;
+			}
+			.grace-menu li {
+				background-color: #34495e;
+				padding: 0 3px 3px;
+				position: relative;
+			}
+			.grace-menu li:first-child {
+				border-radius: 6px 6px 0 0;
+				padding-top: 3px;
+			}
+			.grace-menu li:last-child {
+				border-radius: 0 0 6px 6px;
+			}
+			.grace-menu a {
+				color: #ffffff;
+				display: block;
+				padding: 6px 6px;
+				cursor: pointer;
+				border-radius: 2px;
+			}
+			.grace-menu > ul > li a:hover, .grace-menu > ul > li a:focus {
+				background-color: #1abc9c;
+				color: #ffffff;
+			}
+			/*
+			 * Sub menu...
+			 */
+			.grace-menu > ul > li > ul {
+				left: 100%;
+				padding-left: 5px;
+				opacity: 0;
+				visibility: hidden;
+				padding-top: 0px;
+			}
+			.grace-menu > ul > li:hover ul {
+				opacity: 1;
+				visibility: visible;
+				padding-top: 4px;
+			}
+		</style>
+		<script src="../DataDiscovery/libs/jquery-1.8.3/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function() {
+				$("#divTrigger").hover(function() {
+					$("#divMenu").removeClass("grace-menu_hide")
+				}, function() {
+					$("#divMenu").addClass("grace-menu_hide")
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="divTrigger" style="width: 120px; height: 20px; background-color: #123456"></div>
+		<div id="divMenu" class="grace-menu grace-menu_hide">
+			<ul>
+				<li>
+					<a>element 1</a>
+				</li>
+				<li>
+					<a>element 2</a>
+					<ul>
+						<li>
+							<a>Element One</a>
+						</li>
+						<li>
+							<a>Element Two</a>
+						</li>
+						<li>
+							<a>Element Three</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a>element 3</a>
+					<ul>
+						<li>
+							<a>Element One</a>
+						</li>
+						<li>
+							<a>Element Two</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+.grace-result {
+    background: #ffffff;
+    border-radius: 3px;
+}
+.grace-result-viz {
+    position: relative;
+}
+.grace-result-viz-placeHolder-hint {
+    position: absolute;
+    text-align: center;
+}
+.grace-result-viz-placeHolder-hint span {
+    color: #666666;
+    font-size: 24px;
+}

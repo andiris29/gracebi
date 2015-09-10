@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>SampleMoreButton</title>
+        <meta name="description" content="" />
+        <meta name="author" content="I068020" />
+
+        <link href="css/animations.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="css/grace.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="css/grace-index.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <link href="css/grace-morebutton.css" rel="stylesheet" spliceTo="css/grace.css"/>
+        <!-- Libs -->
+        <script src="libs/jquery-1.8.3/jquery-1.8.3.min.js"></script>
+        <!-- blink -->
+        <script src="libs/blink/blink.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/utils/_functions.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/events/Event.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/events/EventDispatcher.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/Action.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/Model.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/Notification.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/View.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/ViewMediator.js" spliceTo="js/blink.js"></script>
+        <script src="libs/blink/mvc/App.js" spliceTo="js/blink.js"></script>
+
+        <script>
+            andrea.blink.declare("andrea.grace");
+        </script>
+        <script src="js/helpers/PageTransition.js" spliceTo="js/grace.js"></script>
+        <script src="js/views/components/MoreButton.js" spliceTo="js/grace.js"></script>
+        <script>
+            $(function() {
+                var grace = andrea.grace;
+                var PageTransition = grace.helpers.PageTransition;
+                var MoreButton = grace.views.components.MoreButton;
+
+                var $dom = $('<div/>');
+                $dom.css({
+                    'width' : 200 + 'px',
+                    'height' : 200 + 'px'
+                });
+                var $p1 = $('<div/>').appendTo($dom).css({
+                    'background-color' : '#48c9b0'
+                });
+                var $p2 = $('<div/>').appendTo($dom).css({
+                    'background-color' : '#e74c3c'
+                });
+                $dom.appendTo($('body'));
+
+                var button = new MoreButton($dom[0]);
+            });
+        </script>
+    </head>
+
+    <body></body>
+</html>

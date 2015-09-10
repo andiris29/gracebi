@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>Grace(mockup)</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Andrea" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<link href="css/smoothness/jquery-ui.min.css" rel="stylesheet" />
+		<link href="css/sap.viz.container/style.css" rel="stylesheet" />
+
+		<script src="libs/jquery-1.9.1/jquery-1.9.1.min.js"></script>
+		<script>
+			// TODO Remove it
+			// This property has been removed by jquery since 1.9.0, but ui5 will use it
+			jQuery.browser = {};
+		</script>
+		<script src="libs/jquery-ui-1.10.2/jquery-ui.min.js"></script>
+
+		<!--
+		<script id="sap-ui-bootstrap"
+		src="http://localhost:8080/_p4/components/sap.viz.container/trunk/dev/libs/sapui5/resources/sap-ui-core-nojQuery.js"
+		data-sap-ui-theme="sap_platinum"
+		data-sap-ui-libs="sap.ui.commons"></script>
+		-->
+
+		<!--
+		<script id="sap-ui-bootstrap"
+		src="http://localhost:8080/Andiris29/incubator/grace/sap.viz.container/libs/sapui5/resources/sap-ui-core-nojQuery.js"
+		data-sap-ui-theme="sap_platinum"
+		data-sap-ui-libs="sap.ui.commons"></script>
+		-->
+
+		<script id="sap-ui-bootstrap"
+		src="../../sap/p4/sap.viz.container/trunk/dev/libs/sapui5/resources/sap-ui-core-nojQuery.js"
+		data-sap-ui-theme="sap_platinum"
+		data-sap-ui-libs="sap.ui.commons"></script>
+
+		<script src="./libs/sap.viz.container/viz.container.min.js"></script>
+
+		<script src="./js/constants/AppConst.js"></script>
+		<script src="./js/constants/ColumnType.js"></script>
+		<script src="./js/constants/ColumnContainerType.js"></script>
+		<script src="./js/constants/DataProviderType.js"></script>
+		<script src="./js/constants/GraceAttribute.js"></script>
+
+		<script src="./js/calculator/CalculatorType.js"></script>
+		<script src="./js/calculator/Sum.js"></script>
+		<script src="./js/calculator/Max.js"></script>
+		<script src="./js/calculator/Avg.js"></script>
+		<script src="./js/calculator/CalculatorFactory.js"></script>
+
+		<script src="./js/models/vo/Column.js"></script>
+		<script src="./js/models/vo/DataProvider.js"></script>
+		<script src="./js/models/GraceModel.js"></script>
+
+		<script src="./js/actions/ChangeDataProviderAction.js"></script>
+		<script src="./js/actions/ChangeSelectedColumnAction.js"></script>
+
+		<script src="./js/views/events/ColumnContainerEvent.js"></script>
+
+		<script src="./js/views/ui/ColumnContainerBase.js"></script>
+		<script src="./js/views/ui/ColumnList.js"></script>
+		<script src="./js/views/ui/ColumnXAxis.js"></script>
+		<script src="./js/views/ui/ColumnYAxis.js"></script>
+		<script src="./js/views/ui/ColumnMarker.js"></script>
+		<script src="./js/views/ui/VizContainer.js"></script>
+
+		<script src="./js/views/ColumnContainerMediatorBase.js"></script>
+		<script src="./js/views/ColumnListMediator.js"></script>
+		<script src="./js/views/ColumnXAxisMediator.js"></script>
+		<script src="./js/views/ColumnYAxisMediator.js"></script>
+		<script src="./js/views/ColumnMarkerMediator.js"></script>
+		<script src="./js/views/VizContainerMediator.js"></script>
+
+		<script src="./js/testingData/SampleStock.js"></script>
+		<script src="./js/testingData/SampleTOPTrade.js"></script>
+		<script src="./js/testingData/SampleWebTrade.js"></script>
+		<script src="./js/testingData/SampleWebTrade_BearMammy.js"></script>
+
+		<script src="./js/GraceAPIMediator.js"></script>
+		<script src="./js/Grace.js"></script>
+
+		<script>
+			var vc = sap.viz.container;
+			var grace;
+
+			$(window).load(function() {
+				grace = new sap.viz.container.grace.Grace();
+
+				var samples = [];
+				var changeDataSource = function() {
+					var index = parseInt($("#cobSource").val());
+
+					$(swfDataParser).css("visibility", "hidden");
+					if (!samples[index]) {
+						if (index === 0) {
+							samples[index] = new vc.grace.testingData.SampleStock(vc.grace.testingData.SampleStock.SAMPLE_2K);
+						} else if (index === 1) {
+							samples[index] = new vc.grace.testingData.SampleTOPTrade();
+						} else if (index === 2) {
+							samples[index] = new vc.grace.testingData.SampleWebTrade();
+						} else if (index === 3) {
+							// samples[index] = new vc.grace.testingData.SampleWebTrade_BearMammy();
+							var i;
+							var source = new vc.grace.testingData.SampleWebTrade_BearMammy();
+							var dp1 = source.dataProvider;
+							for ( i = 0; i < dp1.length; i++) {
+								dp1[i]["dim_dianpu"] = "时尚欧洲";
+							}
+							var dp2 = new vc.grace.testingData.SampleWebTrade().dataProvider;
+							for ( i = 0; i < dp2.length; i++) {
+								dp2[i]["dim_dianpu"] = "乐贩天";
+							}
+
+							samples[index] = {
+								"dataProvider" : dp1.concat(dp2),
+								"idToName" : source.idToName
+							};
+							samples[index].idToName["dim_dianpu"] = "店铺"
+						} else if (index === 9) {
+							$(swfDataParser).css("visibility", "");
+						}
+					}
+					if (samples[index]) {
+						grace.rowBasedDataProvider(samples[index].dataProvider, samples[index].idToName);
+					}
+				}
+				$("#cobSource").change(function() {
+					changeDataSource();
+				});
+				changeDataSource();
+			});
+
+			window.setDP = function(dp, idToName) {
+				grace.rowBasedDataProvider(dp, idToName);
+			}
+		</script>
+		<style>
+			body {
+				font: 62.5% "Trebuchet MS", sans-serif;
+				margin: 50px;
+			}
+			a:focus {
+				outline: 0;
+			}
+
+		</style>
+		<script>
+			// $(function() {
+			// $("#ulSources, #ulColumnXAxis, #ulColumnYAxis").sortable({
+			// connectWith : ".connectedSortable"
+			// }).disableSelection();
+			// });
+		</script>
+		<script type="text/javascript">
+			$(window).load(function() {
+			})
+		</script>
+		<style>
+			.grace-dimensionContainer {
+				background-color: #ffffff;
+				border: 1px solid #aaaaaa;
+			}
+			.grace-dimensionHeader {
+				width: 100%;
+				text-align: center;
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 4px;
+				padding-bottom: 4px;
+				padding-top: 4px;
+			}
+			.grace-dimensionUL {
+				list-style-type: none;
+				padding-left: 0px;
+				margin-top: 2px;
+				margin-bottom: 4px;
+			}
+
+			.grace-dimensionLI {
+				margin-left: 6px;
+				margin-right: 6px;
+				margin-top: 4px;
+				font-size: 1.2em;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 6px">
+		<div>
+			<div style="float: left; margin-right: 12px">
+				<div style="width: 100%; margin-bottom: 6px;">
+					<select id="cobSource" style="float: left">
+						<option value="0" selected="true">默认(测试数据)</option>
+						<option value="1">淘宝数据平台：交易(测试数据)</option>
+						<option value="2">淘宝网页：交易(乐贩天@04/27)</option>
+						<option value="3">淘宝网页：交易(乐 vs 时尚欧洲)</option>
+						<option value="9">Excel 数据...</option>
+					</select>
+					<object id="swfDataParser" style="float: left; margin-left: 13px" width="94px" height="21px" type="application/x-shockwave-flash" id="DataFileParser" name="DataFileParser" align="middle" data="../DataFileParser/bin-debug/DataFileParser.swf" width="100%" height="100%">
+						<param name="quality" value="high">
+						<param name="bgcolor" value="#ffffff">
+						<param name="allowscriptaccess" value="sameDomain">
+						<param name="allowfullscreen" value="true">
+					</object>
+				</div>
+				<div>
+					<div style="float: left;">
+						<div id="divDimensions" style="width: 160px;"></div>
+					</div>
+					<div style="float: left; width: 12px; height: 1px"></div>
+					<div style="float: left;">
+						<div id="divColumnXAxis" style="width: 160px;"></div>
+						<div style="margin-bottom: 12px"></div>
+						<div id="divColumnMarker" style="width: 160px;"></div>
+						<div style="margin-bottom: 12px"></div>
+						<div id="divColumnYAxis" style="width: 160px;"></div>
+					</div>
+				</div>
+			</div>
+			<div id="divVizContainer" style="float: left"></div>
+		</div>
+	</body>
+</html>
