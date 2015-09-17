@@ -7,6 +7,7 @@
     var Log = grace.managers.Log;
 
     var DataSourceBase = andrea.grace.views.dataSources.DataSourceBase;
+    var ChingshowLog = andrea.grace.views.dataSources.ChingshowLog;
     var DataSourceJSON = andrea.grace.views.dataSources.DataSourceJSON;
     var DataSourceJSONP = andrea.grace.views.dataSources.DataSourceJSONP;
     var File = andrea.grace.views.dataSources.File;
@@ -255,6 +256,7 @@
             'description' : '世界银行公布的各国数据指标。涵盖股市、金融、商业等。',
             'download' : grace.Settings.data.worldBank.excel
         });
+        create(ChingshowLog, null);
     };
     DataSource.prototype._generateCell = function(x, y, w, h, $container) {
         var layoutContainer = _LAYOUT.sources.container;
